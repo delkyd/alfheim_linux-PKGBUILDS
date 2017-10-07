@@ -1,0 +1,51 @@
+# Colored makepkg-like functions
+msg_blue() {
+  printf "${blue}==>${bold} $1${all_off}\n"
+}
+
+note() {
+  printf "${blue}==>${yellow} NOTE:${bold} $1${all_off}\n"
+}
+
+all_off="$(tput sgr0)"
+bold="${all_off}$(tput bold)"
+blue="${bold}$(tput setaf 4)"
+yellow="${bold}$(tput setaf 3)"
+
+# arg 1:  the new package version
+post_install() {
+    msg_blue "Starting and enabling ckb-next daemon..."
+    systemctl daemon-reload
+    systemctl start ckb-daemon
+    systemctl enable ckb-daemon
+}
+
+# arg 1:  the new package version
+# arg 2:  the old package version
+pre_upgrade() {
+    msg_blue "Terminating ckb-next GUI..."
+    killall -9 ckb
+    msg_blue "Terminating ckb-next daemon..."
+    systemctl daemon-reload
+    systemctl stop ckb-daemon
+    systemctl disable ckb-daemon
+}
+
+# arg 1:  the new package version
+# arg 2:  the old package version
+post_upgrade() {
+    msg_blue "Starting and enabling ckb-next daemon..."
+    systemctl daemon-reload
+    systemctl start ckb-daemon
+    systemctl enable ckb-daemon
+}
+
+# arg 1:  the old package version
+pre_remove() {
+    msg_blue "Terminating ckb-next GUI..."
+    killall -9 ckb
+    msg_blue "Terminating ckb-next daemon..."
+    systemctl daemon-reload
+    systemctl stop ckb-daemon
+    systemctl disable ckb-daemon
+}

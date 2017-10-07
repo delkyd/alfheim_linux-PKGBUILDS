@@ -1,0 +1,16 @@
+pkgbase = intel-opencl
+	pkgdesc = OpenCL(TM) 2.0 Driver for Intel(R) HD, Iris(TM), and Iris(TM) Pro Graphics for Linux
+	pkgver = 4.1.r61547
+	pkgrel = 1
+	url = https://software.intel.com/en-us/articles/opencl-drivers#latest_linux_driver
+	arch = x86_64
+	license = custom:intel
+	depends = zlib
+	depends = libdrm
+	optdepends = intel-opencl-sdk: Intel SDK for OpenCL Applications
+	provides = opencl
+	source = intel-opencl-4.1.r61547-linux64.zip::http://registrationcenter-download.intel.com/akdlm/irc_nas/11396/SRB4.1_linux64.zip
+	sha256sums = d29ff894efe9b3f7cde4e52c499b63eafa449cc4efdfbfaf03b424939523be5d
+
+pkgname = intel-opencl
+

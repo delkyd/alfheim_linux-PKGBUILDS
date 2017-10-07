@@ -1,0 +1,15 @@
+pkgbase = re
+	pkgdesc = portable library for real-time communications
+	pkgver = 0.5.0
+	pkgrel = 1
+	url = http://creytiv.com/re.html
+	arch = i686
+	arch = x86_64
+	license = BSD
+	depends = openssl
+	depends = zlib
+	source = http://creytiv.com/pub/re-0.5.0.tar.gz
+	md5sums = 40823ef4391886fbe3ecad665180e98b
+
+pkgname = re
+

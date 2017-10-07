@@ -1,0 +1,28 @@
+# Maintainer: Clar Charr <clar@charr.xyz>
+_pkgbase=theme
+pkgname=clarcharr-$_pkgbase
+pkgver=0.4.1
+pkgrel=1
+pkgdesc="Clar's theme configuration."
+arch=(any)
+url="https://github.com/clarcharr/config-$_pkgbase"
+license=(CC0)
+depends=(arc-gtk-theme arc-icon-theme arc-kde-git dapper dmenu elementary-icon-theme firefox i3status kvantum-qt5 sway qt5ct qterminal uim clarcharr-fontconfig clarcharr-shell)
+groups=(clarcharr-config)
+source=(git+https://github.com/clarcharr/config-$_pkgbase#$pgkver
+        clarcharr-theme.install)
+install=clarcharr-theme.install
+sha256sums=(SKIP 35ef3dd99f11e42f6b31a8e9b15db6f08885ee0c7e1ba3bc9a7d98dfabb4437a)
+validpgpkeys=(4BDA23A98EE4E049CBC3BA6C69DA5B388573EE35)
+_dirs=(etc usr)
+prepare() {
+  cd "config-$_pkgbase" || exit 1
+  git tag --verify $pkgver
+}
+package() {
+  for dir in "${_dirs[@]}"; do
+    cp -R "$srcdir/config-$_pkgbase/$dir" -T "$pkgdir/$dir"
+  done
+  mv "$pkgdir/etc/sway/"{,clarcharr-}config
+  mv "$pkgdir/etc/"{,clarcharr-}i3status.conf
+}

@@ -1,0 +1,39 @@
+pkgbase = perl-courriel
+	pkgdesc = High level email parsing and manipulation
+	pkgver = 0.39
+	pkgrel = 1
+	url = https://metacpan.org/release/Courriel
+	arch = any
+	license = PerlArtistic
+	license = GPL
+	checkdepends = perl-test-differences
+	checkdepends = perl-test-fatal
+	checkdepends = perl-test-requires
+	depends = perl-datetime
+	depends = perl-datetime-format-mail
+	depends = perl-datetime-format-natural
+	depends = perl-devel-partialdump
+	depends = perl-email-abstract
+	depends = perl-email-address
+	depends = perl-email-mime-encodings
+	depends = perl-email-messageid
+	depends = perl-file-libmagic
+	depends = perl-file-slurp-tiny
+	depends = perl-list-allutils
+	depends = perl-list-moreutils>=0.28
+	depends = perl-moose
+	depends = perl-moosex-params-validate>=0.21
+	depends = perl-moosex-role-parameterized
+	depends = perl-moosex-strictconstructor
+	depends = perl-moosex-types
+	depends = perl-moosex-types-common
+	depends = perl-sub-exporter
+	depends = perl-namespace-autoclean
+	depends = perl>=5.10.0
+	options = !emptydirs
+	source = http://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Courriel-0.39.tar.gz
+	md5sums = e96ed4029f5d92aa481b2351b9cb9058
+	sha512sums = b138cbfc3285b597c00987e1d04cec11435c9ea946d7ac71031cfa008acbf8105bb5b7d4c07852494a504214dfae719ca8c4261d8cbaf6030a142205e1a8c47e
+
+pkgname = perl-courriel
+

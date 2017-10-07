@@ -1,0 +1,41 @@
+pkgbase = firefox-beta-zh-cn
+pkgdesc = Chinese Simplified For Firefox Beta
+pkgver = 54.0b13
+pkgrel = 1
+url = https://www.mozilla.org/zh-CN/firefox/channel/#beta
+install = firefox-beta-zh-cn.install
+arch = i686
+arch = x86_64
+license = MPL
+license = GPL
+license = LGPL
+makedepends = pacman>=4.2.0
+depends = alsa-lib
+depends = dbus-glib
+depends = desktop-file-utils
+depends = flashplugin
+depends = gtk2
+depends = gtk3
+depends = hicolor-icon-theme
+depends = icu
+depends = libevent
+depends = libvpx
+depends = libxt
+depends = mime-types
+depends = nss
+depends = sqlite
+optdepends = ffmpeg: additional video and audio decoders
+optdepends = libpulse: PulseAudio driver
+optdepends = networkmanager: Location detection via available WiFi networks
+optdepends = upower: Battery API
+provides = firefox
+conflicts = firefox-beta-bin-zh
+source = firefox-beta-zh-cn.desktop
+source = vendor.js
+source = https://ftp.mozilla.org/pub/firefox/candidates/-candidates/build/linux-/zh-CN/
+sha512sums = SKIP
+sha512sums = SKIP
+sha512sums = 
+
+pkgname = firefox-beta-zh-cn
+

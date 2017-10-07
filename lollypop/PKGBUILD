@@ -1,0 +1,57 @@
+# $Id$
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: kirek <rbuldo@gmail.com>
+# Contributor: Cédric Bellegarde <gnumdk@gmail.com>
+
+pkgname=lollypop
+pkgver=0.9.244
+_portal_pkgver=0.9.3
+pkgrel=2
+pkgdesc='Music player for GNOME'
+arch=('any')
+url='https://github.com/gnumdk/lollypop'
+license=('GPL')
+depends=('desktop-file-utils' 'gst-python' 'gtk3' 'python-cairo'
+         'python-dbus' 'python-gobject' 'totem-plparser')
+makedepends=('gobject-introspection' 'intltool' 'itstool' 'meson' 'python')
+optdepends=('easytag: Modify tags'
+            'flatpak: Flatpak Portal'
+            'gst-libav: FFmpeg plugin for GStreamer'
+            'kid3-qt: Store covers in tags'
+            'libsecret: Last.FM support'
+            'python-pylast: Last.FM support'
+            'python-wikipedia: Wikipedia support'
+            'youtube-dl: YouTube playback')
+_commit='8f3fec20c99498a48f33df00eb64d5af20f81a38'
+source=("https://github.com/gnumdk/lollypop/releases/download/${pkgver}/lollypop-${pkgver}.tar.xz"
+        "https://github.com/gnumdk/lollypop-portal/releases/download/${_portal_pkgver}/lollypop-portal-${_portal_pkgver}.tar.xz"
+        'lollypop-libexecdir.patch')
+sha256sums=('7ca012a6a6b4dc4d517d79e888b1b17a9e24a55faea925d8a6957c7a33af3679'
+            '40cdb62f3a9dc2f7606d39ede54a9157f99fbf9c4e3729375bc430251112848c'
+            'd094e2cb434cb402a4ebf6b9282f9b428b59d7bf64bc7fa2c513579d25346519')
+
+prepare() {
+  cd lollypop-${pkgver}
+  patch -Np1 -i ../lollypop-libexecdir.patch
+}
+
+build() {
+  for d in lollypop-portal-${_portal_pkgver} lollypop-${pkgver}; do
+    pushd $d
+    meson \
+      --buildtype='release' \
+      --prefix='/usr' \
+      --libexecdir='lib/lollypop' \
+      build
+    ninja -C build
+    popd
+  done
+}
+
+package() {
+  for d in lollypop-portal-${_portal_pkgver} lollypop-${pkgver}; do
+    DESTDIR="${pkgdir}" ninja -C $d/build install
+  done
+}
+
+# vim: ts=2 sw=2 et:

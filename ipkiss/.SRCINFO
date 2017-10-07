@@ -1,0 +1,17 @@
+pkgbase = ipkiss
+	pkgdesc = IPKISS is a parametric design framework focused (but not limited) to Photonic circuit design, originally constructed at Ghent University and IMEC.
+	pkgver = 2.4ce
+	pkgrel = 1
+	url = https://github.com/jtambasco/ipkiss
+	arch = x86_64
+	groups = ipkiss
+	license = GPLv2
+	depends = geos
+	depends = python2-shapely
+	depends = descartes
+	depends = python2-matplotlib
+	source = git+https://github.com/jtambasco/ipkiss.git
+	md5sums = SKIP
+
+pkgname = ipkiss
+

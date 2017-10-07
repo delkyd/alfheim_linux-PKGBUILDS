@@ -1,0 +1,24 @@
+# Maintainer: Clar Charr <clar@charr.xyz>
+_pkgbase=pacman
+pkgname=clarcharr-$_pkgbase
+pkgver=2.0.2
+pkgrel=1
+pkgdesc="Clar's pacman configuration."
+depends=(pacman reflector)
+arch=(i686 x86_64)
+url="https://github.com/clarcharr/config-$_pkgbase"
+license=(CC0)
+groups=(clarcharr-config)
+source=(git+https://github.com/clarcharr/config-$_pkgbase#$pgkver)
+sha256sums=(SKIP)
+validpgpkeys=(4BDA23A98EE4E049CBC3BA6C69DA5B388573EE35)
+_dirs=(usr)
+prepare() {
+  cd "config-$_pkgbase" || exit 1
+  git tag --verify $pkgver
+}
+package() {
+  for dir in "${_dirs[@]}"; do
+    cp -R "$srcdir/config-$_pkgbase/$dir" -T "$pkgdir/$dir"
+  done
+}

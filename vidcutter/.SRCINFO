@@ -1,0 +1,22 @@
+pkgbase = vidcutter
+	pkgdesc = the simplest + fastest video cutter & joiner
+	pkgver = 4.0.0
+	pkgrel = 2
+	url = http://vidcutter.ozmartians.com
+	install = vidcutter.install
+	changelog = changelog
+	arch = any
+	license = GPL3
+	makedepends = python-setuptools
+	depends = python-pyqt5
+	depends = mpv
+	depends = ffmpeg
+	depends = mediainfo
+	depends = python-opengl
+	provides = vidcutter
+	conflicts = vidcutter-git
+	source = https://github.com/ozmartian/vidcutter/archive/4.0.0.tar.gz
+	sha256sums = 18686af2454480f6aa2ba2c27cd32f8a1b580309460c6b3ee9fb03ccfeecf513
+
+pkgname = vidcutter
+

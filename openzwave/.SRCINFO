@@ -1,0 +1,15 @@
+pkgbase = openzwave
+	pkgdesc = Opensource Z-Wave control
+	pkgver = 1.5
+	pkgrel = 1
+	url = http://www.openzwave.com
+	arch = i686
+	arch = x86_64
+	license = LGPL
+	makedepends = doxygen
+	depends = libsystemd
+	source = https://github.com/OpenZWave/open-zwave/archive/V1.5.tar.gz
+	sha256sums = abfb4c7e7728e86ba374c2e0ef7de912594eb24a8c44935457352df844530238
+
+pkgname = openzwave
+

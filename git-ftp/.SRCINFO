@@ -1,0 +1,15 @@
+pkgbase = git-ftp
+	pkgdesc = Git powered FTP client written as shell script
+	pkgver = 1.4.0
+	pkgrel = 1
+	url = https://github.com/git-ftp/git-ftp
+	arch = any
+	license = GPL
+	makedepends = pandoc
+	depends = curl
+	depends = git
+	source = git-ftp-v1.4.0.tar.gz::https://github.com/git-ftp/git-ftp/archive/1.4.0.tar.gz
+	sha256sums = 080e9385a9470d70a5a2a569c6e7db814902ffed873a77bec9d0084bcbc3e054
+
+pkgname = git-ftp
+

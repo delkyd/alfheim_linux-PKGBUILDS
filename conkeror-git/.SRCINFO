@@ -1,0 +1,20 @@
+pkgbase = conkeror-git
+	pkgdesc = A highly programmable web browser based on Mozilla XULRunner
+	pkgver = 1.0.3.r0.g11121be
+	pkgrel = 1
+	url = http://conkeror.mozdev.org/
+	changelog = Changelog
+	arch = i686
+	arch = x86_64
+	license = MPL
+	license = GPL
+	license = LGPL
+	makedepends = git
+	depends = firefox
+	provides = conkeror
+	conflicts = conkeror
+	source = git+http://repo.or.cz/conkeror.git
+	md5sums = SKIP
+
+pkgname = conkeror-git
+

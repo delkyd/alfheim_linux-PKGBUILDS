@@ -1,0 +1,18 @@
+pkgbase = buku-git
+	pkgdesc = cmdline bookmark management utility written in Python3 and SQLite3
+	pkgver = 998.6abfea2
+	pkgrel = 2
+	url = https://github.com/jarun/Buku
+	arch = any
+	license = GPL3
+	makedepends = make
+	depends = python
+	depends = python-crypto
+	depends = sqlite
+	provides = buku
+	conflicts = buku
+	source = git+https://github.com/jarun/buku.git
+	md5sums = SKIP
+
+pkgname = buku-git
+

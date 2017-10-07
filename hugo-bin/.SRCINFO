@@ -1,0 +1,26 @@
+pkgbase = hugo-bin
+	pkgdesc = A Fast and Flexible Static Site Generator built in Go - Precompiled binary from official repository
+	pkgver = 0.29
+	pkgrel = 1
+	url = https://gohugo.io/
+	arch = x86_64
+	arch = i686
+	arch = arm
+	arch = armv6h
+	arch = armv7h
+	license = Apache
+	optdepends = pygmentize: source code highlighting
+	optdepends = asciidoc: AsciiDoc support
+	optdepends = asciidoctor: AsciiDoc support (Ruby implementation)
+	optdepends = python-docutils: reStructuredText support
+	provides = hugo
+	conflicts = hugo
+	source_x86_64 = https://github.com/spf13/hugo/releases/download/v0.29/hugo_0.29_Linux-64bit.tar.gz
+	sha256sums_x86_64 = 80011b40b64781a5adfbf882fe3ab3b3c526e9ba8583fb532cd2331ffbe44a9e
+	source_i686 = https://github.com/spf13/hugo/releases/download/v0.29/hugo_0.29_Linux-32bit.tar.gz
+	sha256sums_i686 = 3c1679f3c31fb0b84940705127e81f9ab015c167056f0ce41ce2d9ef501782d8
+	source_arm = https://github.com/spf13/hugo/releases/download/v0.29/hugo_0.29_linux_ARM.tar.gz
+	sha256sums_arm = 40affe943d363f8d5bee685e1ef1b5c9132e9ae1ba1255c86d434d2739163b5a
+
+pkgname = hugo-bin
+

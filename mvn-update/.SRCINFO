@@ -1,0 +1,16 @@
+pkgbase = mvn-update
+	pkgdesc = Maven artifact version updater for build.gradle config files
+	pkgver = 0.3.1
+	pkgrel = 1
+	url = https://github.com/victorhaggqvist/mvn-update
+	arch = any
+	license = MIT
+	depends = python-lxml
+	depends = python-requests
+	depends = python-semantic-version
+	depends = python-argparse
+	source = https://github.com/victorhaggqvist/mvn-update/archive/v0.3.1.zip
+	sha512sums = 8334e6867f83efbad5a25019526fe134dc0dd5f42cb54b6bf9a2b45c1704d24f601b7ab6049654e4c6be1c5b64f928fcc67aef0e908209d0bf97f63ba2871a07
+
+pkgname = mvn-update
+

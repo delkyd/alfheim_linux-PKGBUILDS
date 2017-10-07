@@ -1,0 +1,13 @@
+pkgbase = python-statprof
+	pkgdesc = Statistical profiling for Python
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = http://pypi.python.org/pypi/statprof-smarkets/
+	arch = any
+	license = GPL2
+	depends = python
+	source = http://pypi.python.org/packages/source/s/statprof-smarkets/statprof-smarkets-1.0.0.tar.gz
+	md5sums = 723d9c727da43a342042fe00486857d9
+
+pkgname = python-statprof
+

@@ -1,0 +1,20 @@
+pkgbase = python-catkin_pkg
+	pkgdesc = catkin package library
+	pkgver = 0.3.6
+	pkgrel = 1
+	url = http://wiki.ros.org/catkin_pkg
+	arch = any
+	license = BSD
+	makedepends = python-setuptools
+	depends = python
+	depends = python-argparse
+	depends = python-dateutil
+	depends = python-docutils
+	provides = python-catkin-pkg
+	conflicts = python2-catkin_pkg
+	conflicts = python-catkin-pkg
+	source = https://files.pythonhosted.org/packages/source/c/catkin_pkg/catkin_pkg-0.3.6.tar.gz
+	md5sums = eaa7659090ab16d927e8a72494977522
+
+pkgname = python-catkin_pkg
+

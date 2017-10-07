@@ -1,0 +1,18 @@
+pkgbase = cepl-git
+	pkgdesc = An interactive C (ISO/IEC 9899:2011) read–eval–print loop (REPL) currently supporting multiple compilers, shell-esque readline key-bindings/tab-completion, variable tracking, and incremental undo.
+	pkgver = 2.5.0.r27.ge2acc92
+	pkgrel = 1
+	url = https://github.com/alyptik/cepl
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	depends = gcc
+	depends = readline
+	provides = cepl
+	conflicts = cepl
+	options = zipman
+	source = cepl::git+http://github.com/alyptik/cepl
+	sha256sums = SKIP
+
+pkgname = cepl-git
+

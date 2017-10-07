@@ -1,0 +1,7 @@
+*
+!.gitignore
+!.SRCINFO
+!PKGBUILD
+!lsi-lsa.install
+!lsi_lsa.service
+!lsa_launcher.sh

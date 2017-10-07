@@ -1,0 +1,16 @@
+pkgbase = arm-frc-linux-gnueabi-frcmake-hg
+	pkgdesc = Wrapper scripts for using CMake with the FRC toolchain
+	pkgver = r97.5de14e5bbf2c
+	pkgrel = 3
+	url = https://bitbucket.org/byteit101/toolchain-builder/
+	arch = any
+	groups = frc-toolchain
+	license = GPL
+	makedepends = mercurial
+	depends = cmake
+	provides = arm-frc-linux-gnueabi-frcmake
+	source = hg+https://bitbucket.org/byteit101/toolchain-builder
+	sha512sums = SKIP
+
+pkgname = arm-frc-linux-gnueabi-frcmake-hg
+

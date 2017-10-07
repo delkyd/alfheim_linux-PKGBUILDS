@@ -1,0 +1,21 @@
+pkgbase = punes
+	pkgdesc = Nintendo Entertaiment System emulator
+	pkgver = 0.100
+	pkgrel = 1
+	url = http://forums.nesdev.com/viewtopic.php?t=6928
+	install = punes.install
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	makedepends = autoconf-archive
+	depends = sdl
+	depends = qt5-base
+	depends = alsa-lib
+	depends = hicolor-icon-theme
+	depends = desktop-file-utils
+	depends = nvidia-cg-toolkit
+	source = https://github.com/punesemu/puNES/archive/v0.100.tar.gz
+	md5sums = f4659d85e3f5d1b53b9ee5574eedd871
+
+pkgname = punes
+

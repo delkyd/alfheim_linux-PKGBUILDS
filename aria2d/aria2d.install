@@ -1,0 +1,20 @@
+post_install(){
+	useradd aria2 -r -U -d /var/share/aria2/ -s /bin/nologin
+	passwd -l aria2 &> /dev/null	
+	install -d -o aria2 -g aria2 /var/share/aria2/
+	touch /var/share/aria2/aria2.session
+
+cat << EOF
+
+Now the aria2d is installed, you may want to ...
+ 1. check the config file for aria2 at /etc/conf.d/aria2.conf
+ 2. get the downloaded files at /var/share/aria2/
+
+EOF
+
+}
+
+post_remove() {
+	userdel aria2
+	echo -n -e "Now the aria2d was removed from your system,\n you may need to check the directory /var/share/aria2/ by manual."
+}

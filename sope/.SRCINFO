@@ -1,0 +1,30 @@
+pkgbase = sope
+	pkgdesc = application server used by SOGo
+	pkgver = 3.2.10
+	pkgrel = 2
+	url = http://www.sogo.nu/files/downloads/SOGo/Sources/
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = gcc-objc
+	makedepends = gnustep-make
+	makedepends = libxml2
+	makedepends = libmariadbclient
+	makedepends = libldap
+	makedepends = openssl
+	makedepends = postgresql-libs
+	depends = gnustep-base
+	optdepends = libxml2: parse XML coniguration files
+	optdepends = mariadb: run database server for sogo locally
+	optdepends = openldap: run directory server for sogo locally
+	optdepends = openssl: create SSL secured connectons
+	optdepends = postgresql: run database server for sogo locally
+	replaces = sope2
+	options = !strip
+	source = http://www.sogo.nu/files/downloads/SOGo/Sources/SOPE-3.2.10.tar.gz
+	source = sope_configure.patch
+	sha256sums = 7994bf985ed8e2c63b605e4e3495d8bcdcce68bffc8fea87251c999382c3df66
+	sha256sums = 7ff3387daffd15b5f97146da1fd61aefc9591b7b6a41f1f0e60b572106fdbc9a
+
+pkgname = sope
+

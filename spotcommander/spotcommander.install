@@ -1,0 +1,24 @@
+post_install()
+{
+
+echo "
+ ---------------------------------------------------------------
+ | Installation complete!                                      |
+ |                                                             |
+ | GO TO THIS WEB PAGE TO COMPLETE THE INSTALLATION:           |
+ |                                                             |
+ | https://www.olejon.net/code/spotcommander/?install_from_aur |
+ ---------------------------------------------------------------
+"
+
+}
+
+pre_remove()
+{
+	spotcommander stop
+
+	rm -f /usr/share/webapps/spotcommander/run/daemon-user-*.socket
+	rm -f /usr/bin/spotcommander
+	rm -f /etc/httpd/conf/extra/spotcommander.conf
+	rm -f /etc/xdg/autostart/spotcommander.desktop	
+}

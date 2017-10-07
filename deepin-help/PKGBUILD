@@ -1,0 +1,21 @@
+# $Id$
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Josip Ponjavic <josipponjavic at gmail dot com>
+# Contributor: Xu Fasheng <fasheng.xu[AT]gmail.com>
+
+pkgname=deepin-help
+pkgver=15.4.8
+pkgrel=1
+pkgdesc='Help files for DDE'
+arch=('any')
+url="https://github.com/linuxdeepin/dde-help"
+license=('GPL3')
+depends=('deepin-manual')
+groups=('deepin')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/linuxdeepin/dde-help/archive/$pkgver.tar.gz")
+sha512sums=('9e764372016de3f472a8a4164db7e1a43f4b74a17e4f6baaac993c2fa83c4053717085dc06c3e307fe784ca5771abf41fadadde99a20bf1f08441f6113af14ae')
+
+package() {
+  cd dde-help-$pkgver
+  make DESTDIR="$pkgdir" install
+}

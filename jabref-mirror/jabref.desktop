@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=JabRef
+GenericName=BibTeX Editor
+Exec=jabref %U
+Icon=jabref
+Terminal=false
+Type=Application
+StartupWMClass=net-sf-jabref-JabRefMain
+Categories=Office;
+MimeType=text/x-bibtex;

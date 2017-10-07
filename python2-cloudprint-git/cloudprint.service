@@ -1,0 +1,13 @@
+[Unit]
+Description=Python cloudprint Service
+After=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/cloudprint
+User=cloudprint
+ExecStart=/usr/bin/cloudprint $EXTRA_PARAMETERS
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

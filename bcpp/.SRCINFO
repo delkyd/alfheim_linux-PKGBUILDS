@@ -1,0 +1,16 @@
+pkgbase = bcpp
+	pkgdesc = utility for indents C/C++ source programs
+	pkgver = 20150811
+	pkgrel = 1
+	url = http://dickey.his.com/bcpp/bcpp.html
+	arch = i686
+	arch = x86_64
+	arch = sh4
+	license = custom
+	makedepends = gcc
+	depends = bash
+	source = http://invisible-island.net/datafiles/release/bcpp.tar.gz
+	md5sums = bc67edacc3a8d43026529afda8102d39
+
+pkgname = bcpp
+

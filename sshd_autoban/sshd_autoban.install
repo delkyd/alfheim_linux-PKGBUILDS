@@ -1,0 +1,38 @@
+post_install() {
+    pkgname=sshd_autoban
+
+    # Fixing membership
+    chown root: /var/log/$pkgname
+    chown -R root: /etc/$pkgname
+
+    # Reload systemctl
+    systemctl daemon-reload
+
+    echo "Adding sshd_autoban in systemctl:"
+    echo "  systemctl enable sshd_autoban"
+    echo "  systemctl start sshd_autoban"
+
+    true
+}
+
+post_upgrade() {
+    # Reload systemctl
+    systemctl daemon-reload
+
+    echo "You should restart sshd_autoban:"
+    echo "  systemctl restart sshd_autoban"
+
+    true
+}
+
+pre_remove() {
+    pkgname=sshd_autoban
+    # Remove symlink in systemd
+    systemctl disable $pkgname
+    # Stop server
+    systemctl stop $pkgname
+    # Reload systemctl
+    systemctl daemon-reload
+
+    true
+}

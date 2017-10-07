@@ -1,0 +1,15 @@
+pkgbase = idba
+	pkgdesc = iterative de Bruijn graph assembler
+	pkgver = 1.1.2
+	pkgrel = 1
+	url = http://i.cs.hku.hk/~alse/hkubrg/projects/idba_ud/
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	checkdepends = python2
+	depends = gcc-libs
+	source = https://github.com/loneknightpy/idba/releases/download/1.1.2/idba-1.1.2.tar.gz
+	md5sums = 0f0efa1534c7f15ae4bf64473a7709a4
+
+pkgname = idba
+

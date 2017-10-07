@@ -1,0 +1,20 @@
+pkgbase = amor
+	pkgdesc = On-Screen Creature
+	pkgver = 15.08.3
+	pkgrel = 1
+	url = https://projects.kde.org/projects/kde/kdetoys/amor
+	install = amor.install
+	arch = i686
+	arch = x86_64
+	groups = kde-applications
+	license = GPL
+	license = LGPL
+	license = FDL
+	makedepends = cmake
+	makedepends = automoc4
+	depends = kdebase-runtime
+	source = git+https://github.com/gregodadone/amor.git
+	sha1sums = SKIP
+
+pkgname = amor
+

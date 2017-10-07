@@ -1,0 +1,37 @@
+# $Id$
+# Maintainer: Alexander F Rødseth <xyproto@archlinux.org>
+# Contributor: Angel Velasquez <angvp@archlinux.org>
+# Contributor: Douglas Soares de Andrade <dsa@aur.archlinux.br>
+
+pkgbase=python-pyro
+pkgname=("$pkgbase" "${pkgbase/-/2-}")
+pkgver=4.62
+pkgrel=1
+pkgdesc='Distributed object middleware for Python (RPC)'
+url='https://github.com/irmen/Pyro4'
+arch=('any')
+license=('MIT')
+depends=('python' 'python2')
+source=("https://github.com/irmen/Pyro4/archive/$pkgver.tar.gz")
+sha256sums=('ac2a8f16ab62eca1d572192b1af43aa75cc3c3313e61cf277b028cc75b523484')
+
+package_python-pyro() {
+  depends=('python')
+
+  cd "Pyro4-$pkgver"
+
+  python setup.py install --root="$pkgdir"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
+
+package_python2-pyro() {
+  depends=('python2')
+
+  cd "Pyro4-$pkgver"
+
+  python2 setup.py install --root="$pkgdir"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
+
+# getver: github.com/irmen/Pyro4/tags
+# vim:ts=2 sw=2 et:

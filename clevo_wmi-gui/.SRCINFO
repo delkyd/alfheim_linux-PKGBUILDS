@@ -1,0 +1,19 @@
+pkgbase = clevo_wmi-gui
+	pkgdesc = GUI for Clevo Notebooks with a backlit keyboard with controllable LEDs.
+	pkgver = 7.674ae23
+	pkgrel = 1
+	url = https://github.com/ChristophHaag/clevo_wmi_kivy-gui
+	arch = x86_64
+	arch = i686
+	license = GPL
+	depends = python3
+	depends = python-kivy
+	depends = clevo-wmi-dkms-git
+	options = !emptydirs
+	source = git+https://github.com/ChristophHaag/clevo_wmi_kivy-gui.git
+	source = clevo_wmi-gui.sh
+	md5sums = SKIP
+	md5sums = 387fb7ad32c65c675805b52419e5c28e
+
+pkgname = clevo_wmi-gui
+

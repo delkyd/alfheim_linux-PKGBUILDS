@@ -1,0 +1,37 @@
+pkgbase = spotify-legacy
+	pkgdesc = A proprietary music streaming service.
+	pkgver = 0.9.17
+	pkgrel = 3
+	url = https://www.spotify.com/download/linux/
+	arch = x86_64
+	license = custom
+	depends = alsa-lib
+	depends = desktop-file-utils
+	depends = ffmpeg0.10
+	depends = gconf
+	depends = glib2
+	depends = gtk2
+	depends = nss
+	depends = libcurl-compat
+	depends = libgcrypt15
+	depends = libsystemd
+	depends = libx11
+	depends = libxss
+	depends = libxtst
+	depends = nss
+	depends = openssl-1.0
+	depends = qt4
+	depends = rtmpdump
+	depends = zenity
+	provides = spotify=0.9.17
+	conflicts = spotify
+	conflicts = spotify-beta
+	conflicts = spotify094
+	conflicts = spotify-stable
+	source = http://repository-origin.spotify.com/pool/non-free/s/spotify/spotify-client-0.9.17_0.9.17.8.gd06432d.31-1_amd64.deb
+	source = spotify-LICENSE.html::https://www.spotify.com/us/legal/end-user-agreement/
+	md5sums = 69a320368ded33cfcc4e3bb4cc71575c
+	md5sums = SKIP
+
+pkgname = spotify-legacy
+

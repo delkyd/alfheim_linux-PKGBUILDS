@@ -1,0 +1,14 @@
+pkgbase = dosage
+	pkgdesc = A comic downloader and archiver.
+	pkgver = 2.15
+	pkgrel = 1
+	url = http://dosage.rocks
+	arch = any
+	license = GPL
+	depends = python
+	depends = python-requests
+	source = https://github.com/webcomics/dosage/archive/2.15.tar.gz
+	md5sums = fc685c521478a95a9b667e05faa99d10
+
+pkgname = dosage
+

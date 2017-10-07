@@ -1,0 +1,19 @@
+pkgbase = htslib
+	pkgdesc = library for high-throughput sequencing data formats
+	pkgver = 1.6
+	pkgrel = 1
+	url = https://github.com/samtools/htslib
+	arch = i686
+	arch = x86_64
+	license = custom
+	depends = bzip2
+	depends = curl
+	depends = xz
+	provides = tabix
+	conflicts = tabix
+	replaces = tabix
+	source = https://github.com/samtools/htslib/releases/download/1.6/htslib-1.6.tar.bz2
+	md5sums = d6fd14e208aca7e08cbe9072233d0af9
+
+pkgname = htslib
+

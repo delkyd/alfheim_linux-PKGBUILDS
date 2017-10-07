@@ -1,0 +1,76 @@
+# $Id$
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Peter Simons <simons@cryp.to>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+
+pkgname=rfc
+pkgver=20170817
+pkgrel=1
+pkgdesc="RFCs from rfc-editor.org"
+arch=('any')
+url="https://www.rfc-editor.org/"
+license=("custom:as-is")
+options=('docs')
+source=(rfc-index-$pkgver.txt::https://www.rfc-editor.org/rfc/rfc-index.txt
+        license
+        https://www.rfc-editor.org/rfc/tar/RFCs0001-0500.tar.gz
+        https://www.rfc-editor.org/rfc/tar/RFCs0501-1000.tar.gz
+        https://www.rfc-editor.org/rfc/tar/RFCs1001-1500.tar.gz
+        https://www.rfc-editor.org/rfc/tar/RFCs1501-2000.tar.gz
+        https://www.rfc-editor.org/rfc/tar/RFCs2001-2500.tar.gz
+        https://www.rfc-editor.org/rfc/tar/RFCs2501-3000.tar.gz
+        https://www.rfc-editor.org/rfc/tar/RFCs3001-3500.tar.gz
+        https://www.rfc-editor.org/rfc/tar/RFCs3501-4000.tar.gz
+        https://www.rfc-editor.org/rfc/tar/RFCs4001-4500.tar.gz
+        https://www.rfc-editor.org/rfc/tar/RFCs4501-5000.tar.gz
+        https://www.rfc-editor.org/rfc/tar/RFCs5001-5500.tar.gz
+        https://www.rfc-editor.org/rfc/tar/RFCs5501-6000.tar.gz
+        https://www.rfc-editor.org/rfc/tar/RFCs6001-6500.tar.gz
+        https://www.rfc-editor.org/rfc/tar/RFCs6501-7000.tar.gz
+        https://www.rfc-editor.org/rfc/tar/RFCs7001-7500.tar.gz
+        https://www.rfc-editor.org/rfc/tar/RFCs7501-8000.tar.gz
+        https://www.rfc-editor.org/rfc/tar/RFCs8001-latest.tar.gz)
+sha256sums=('0916d82541097be80a8b60a94acd962821eff6f6111e0353151613dbced941d5'
+            'ac9cd91c2e15b0840b6ecd4f7d30d6d12c49e18b4f9eb383a0ce05a64901624e'
+            '7aba251dc4c08a8a1dded1760741dfa1a5c7a34ce66ad29ed720f48ec4baeebe'
+            'a0004b2b6f95ed9d70d00f59eadd9a82f1a4051669a34bd5c05792b2729e3fcc'
+            '08d298daadf2eb6e8a8187e6cd8ff35c7be87f94d7063a63d19d4535cadd4def'
+            'b768d2c85d9abd95f2663004dff40f9c8662718135c7a1a8a6cfe8a2ce391518'
+            'ff9dd9002265a086bf2cc273cf84637d12deaa4aa21c6d4d4eed210b0a236684'
+            '9f8b9eb01989b238c11391e0a8716c21345ea14bd4ee94c41db63fdc5d4b1233'
+            'cbf2f02582e5d46057ec20537c44a299a892b5cbe0d2a958513a602f870db46c'
+            '2bb25fe0a028c23e93f2c76a0af789a27edb19c98c00fb7038cfb523a64c6f45'
+            'ef290c50518cbd03940025b68743dce84000404208056b45cfb1e7939ec19380'
+            '511c563502c023bbe335bc8c6e570a89fad96e79d18b48bcbc2c8ece41aabb0d'
+            'e92fb80378cb8bf9d9079cf9973d8c4b11bdc231cffd234ffcd8336352c68d57'
+            '06698e782986b8ee8468cfded41e09e75c96edaa17dbe373d8c37353a21d84af'
+            '3b09aac2ef9f9b247249a7b1716a1420fad2e1febc57cdcc452344e80e646848'
+            '7bc48265a44b37995642a0e0415de945d59c6a0499dc5d4e9cc99eb670fe69e7'
+            'f127da04e81241dbf8fe54061edda97011dff169df78e5afd529bf5d4dd421e2'
+            '19eb7778cd6c792f851ebd827ed84ff87117c1bb6a96642dc70bc380378c8c4f'
+            '5cdc5c9e66f41a13af8031f72b14fa31536a1432c5282b03591faef4604c95c5')
+
+package() {
+    cd "$srcdir"
+
+    mkdir -p "$pkgdir/usr/share/doc/rfc"
+    cp rfc-index-$pkgver.txt "$pkgdir/usr/share/doc/rfc/rfc-index.txt"
+    rm -f rfc-index-$pkgver.txt
+
+    tar xf rfc1305.tar
+    rm -f rfc1305.tar
+    for n in ntpv3*; do
+      mv "$n" "rfc1305-$n"
+    done
+
+    for fmt in txt ps pdf; do
+      mkdir -p "$pkgdir/usr/share/doc/rfc/${fmt}"
+      mv *.${fmt} "$pkgdir/usr/share/doc/rfc/${fmt}/"
+    done
+
+    cd "$pkgdir/usr/share/doc/rfc"
+    find . -type f -exec chmod 444 {} \;
+    find . -type d -exec chmod 555 {} \;
+    chown -R root:root .
+    install -D -m0644 "$srcdir"/license "$pkgdir"/usr/share/licenses/$pkgname/license
+}

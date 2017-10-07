@@ -1,0 +1,5 @@
+*
+!.gitignore
+!.SRCINFO
+!PKGBUILD
+!libappindicator2.patch

@@ -1,0 +1,41 @@
+#Maintainer: Bhoppi Chaw <bhoppi#outlook,com>
+
+pkgname=audenc
+pkgver=3.3.4
+pkgrel=3
+pkgdesc='a batch shell script for encoding audio files in directories from one format to another.'
+arch=(any)
+url='https://audenc.sourceforge.io/'
+license=(GPL2)
+depends=(mediainfo
+         mplayer)
+optdepends=('lame: MP3 encoder'
+            'flac: FLAC encoder'
+            'vorbis-tools: OGG encoder'
+            'neroaacenc: Nero AAC encoder'
+            'neroaactag: Nero AAC tagger'
+            'neroaac: Nero AAC encoder and tagger within one package'
+            'faac: FAAC encoder'
+            'aacplusenc: AAC+ encoder'
+            'fdk-aac-enc: FDK-AAC encoder'
+            'gpac: MP4 container for AAC+/FDK-AAC'
+            'opus-tools: Opus encoder'
+            'amrenc: AMR encoder'
+            'aften: A/52 encoder'
+            'dcaenc: DTS encoder')
+source=("https://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.gz")
+sha256sums=('33638422463f92e9ba3815d89b3b84cfb9425a2ca3f3e8896cd5ad63b4cfbdcd')
+
+prepare()
+{
+    cd "$srcdir/$pkgname-$pkgver"
+    sed -i -e "s,/usr/local,$pkgdir/usr,g" \
+           -e '/^MANDIR=/s,usr/man,usr/share/man,' install
+}
+
+package()
+{
+    cd "$srcdir/$pkgname-$pkgver"
+    ./install
+    rm "$pkgdir/usr/share/doc/audenc/uninstall"
+}

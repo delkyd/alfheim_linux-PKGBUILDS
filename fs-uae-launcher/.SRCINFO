@@ -1,0 +1,21 @@
+pkgbase = fs-uae-launcher
+	pkgver = 2.8.3
+	pkgrel = 1
+	url = http://fs-uae.net/launcher
+	arch = any
+	license = GPL2
+	depends = fs-uae
+	depends = python-pyqt5
+	depends = python-setuptools
+	depends = python-six
+	depends = hicolor-icon-theme
+	depends = xdg-utils
+	optdepends = p7zip: for .7z zip support
+	optdepends = python-lhafile: for .lha file support
+	source = http://fs-uae.net/fs-uae/stable/2.8.3/fs-uae-launcher-2.8.3.tar.gz
+	source = remove_inbuilt_six.patch
+	md5sums = 6afb73337cdeaca9339264350e4a5d17
+	md5sums = 0ead6046d867517d42fb981a10d49d81
+
+pkgname = fs-uae-launcher
+

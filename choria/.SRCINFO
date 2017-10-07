@@ -1,0 +1,17 @@
+pkgbase = choria
+	pkgdesc = a 2D MMORPG that's all about grinding and doing chores.
+	pkgver = 0.4.2
+	pkgrel = 1
+	url = https://github.com/jazztickets/choria
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = cmake
+	depends = gcc-libs
+	depends = irrlicht
+	depends = sqlite
+	source = https://github.com/jazztickets/choria/releases/download/v0.4.2/choria-0.4.2-src.tar.gz
+	sha256sums = 28f794394d2bdbff9b3c97f1cf16de2f9dffb84551f6f685d0d2110782efc172
+
+pkgname = choria
+

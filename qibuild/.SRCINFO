@@ -1,0 +1,24 @@
+pkgbase = qibuild
+	pkgdesc = The meta build framework
+	pkgver = 3.11.6
+	pkgrel = 1
+	url = http://doc.aldebaran.com/qibuild/
+	arch = any
+	license = BSD
+	makedepends = python2
+	makedepends = python2-docutils
+	depends = cmake
+	depends = python2-setuptools
+	depends = python2-virtualenv
+	optdepends = git: for qisrc
+	optdepends = python2-sphinx: Sphinx support in qidoc
+	optdepends = doxygen: Doxygen support in qidoc
+	optdepends = gettext: Gettext support in qilinguist
+	optdepends = qt5-tools: QtLinguist support in qilinguist
+	optdepends = gcovr: for qitest run --coverage
+	optdepends = python2-xdg: honoring XDG environment variables
+	source = https://github.com/aldebaran/qibuild/archive/v3.11.6.tar.gz
+	md5sums = d5b2ad1b2a7073971f4cb294d629c708
+
+pkgname = qibuild
+

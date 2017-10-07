@@ -1,0 +1,27 @@
+pkgbase = weboob-headless
+	pkgdesc = Web Out Of Browsers provides several applications to interact with a lot of websites. Headless version, for use in e.g. Cozy/Kresus.
+	pkgver = 1.2
+	pkgrel = 1
+	url = http://weboob.org/
+	arch = any
+	license = GPL
+	makedepends = python2-setuptools
+	depends = python2-dateutil
+	depends = python2-feedparser
+	depends = python2-lxml
+	depends = python2-prettytable
+	depends = python2-requests
+	depends = python2-pillow
+	depends = python2-simplejson
+	depends = python2-yaml
+	depends = python2-mechanize
+	depends = python2-gdata
+	depends = python2-futures
+	provides = weboob
+	conflicts = weboob
+	source = https://symlink.me/attachments/download/342/weboob-1.2.tar.gz
+	md5sums = a77675b2443e4570d30f569951512b11
+	sha256sums = 1e3b7e35bd1e5d203e5d716be4a25e898aba6887b3c3b8341e3a0ce2ad8e87b0
+
+pkgname = weboob-headless
+

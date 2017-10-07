@@ -1,0 +1,61 @@
+# $Id$
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Blackleg <blacklg@openaliasbox.org>
+# Contributor: Nidhogg
+# Contributor: juantascon
+
+pkgbase=python-peewee
+pkgname=('python-peewee' 'python2-peewee')
+pkgver=2.10.1
+pkgrel=1
+pkgdesc="a little orm"
+url="https://pypi.python.org/pypi/peewee/"
+arch=('i686' 'x86_64')
+license=('MIT')
+makedepends=('python-setuptools' 'python2-setuptools' 'cython' 'cython2')
+checkdepends=('python-apsw' 'python2-apsw' 'python-flask' 'python2-flask')
+             # 'python-psycopg2' 'python2-psycopg2')
+source=("$pkgbase-$pkgver.tar.gz::https://github.com/coleifer/peewee/archive/$pkgver.tar.gz")
+sha512sums=('16ccf5983f331ca83294f3b72ca850c9ddf305613fd9cdeb2ca1206faa18c53c0b34fe1fe80397e089a58ccd5ad4b59f8dba37298f5226a8ed43abb7c5d74b8c')
+
+prepare() {
+  cp -a peewee-$pkgver{,-py2}
+}
+
+build() {
+  cd "$srcdir"/peewee-$pkgver
+  python setup.py build
+
+  cd "$srcdir"/peewee-$pkgver-py2
+  python2 setup.py build
+}
+
+check() {
+  cd "$srcdir"/peewee-$pkgver
+  python runtests.py -a
+
+  cd "$srcdir"/peewee-$pkgver-py2
+  python2 runtests.py -a
+}
+
+package_python-peewee() {
+  depends=('python')
+  optdepends=('python-psycopg2: for PostgreSQL database support'
+              'mysql-python: for MySQL database support')
+
+  cd "$srcdir"/peewee-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -D -m644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}
+
+package_python2-peewee() {
+  depends=('python2')
+  optdepends=('python2-psycopg2: for PostgreSQL database support')
+
+  cd "$srcdir"/peewee-$pkgver-py2
+  python2 setup.py install --root="$pkgdir" --optimize=1
+  install -D -m644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+
+  mv "$pkgdir"/usr/bin/pwiz{,2}.py
+  mv "$pkgdir"/usr/bin/pskel{,2}
+}

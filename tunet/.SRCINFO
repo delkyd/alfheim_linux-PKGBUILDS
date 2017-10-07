@@ -1,0 +1,18 @@
+pkgbase = tunet
+	pkgdesc = Tsinghua University network authentication client for Linux.
+	pkgver = 2015
+	pkgrel = 1
+	url = http://net.tsinghua.edu.cn
+	install = tunet.install
+	arch = i686
+	arch = x86_64
+	license = Unknown
+	source = http://net.tsinghua.edu.cn/files/Tunet2015_linux.rar
+	source = TUNet.desktop
+	source = logo.png
+	md5sums = c4c286c59a3baf453cc08c3654511ceb
+	md5sums = 195dd8feecedd85aaef8e7b4a1c2884a
+	md5sums = e4c03714b61b1d3906865c08672348d9
+
+pkgname = tunet
+

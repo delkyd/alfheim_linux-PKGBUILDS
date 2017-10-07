@@ -1,0 +1,5 @@
+Based on Sirius 4.1
+Based on Eclipse Neon
+Include the JRE in the product (#895)
+Unselect by default elements from the Add element wizard (#892)
+Bug fixes on Class diagram, Component diagram and Sequence diagram (#891, #896, #893, #890)

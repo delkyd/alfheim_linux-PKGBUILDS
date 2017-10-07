@@ -1,0 +1,8 @@
+*.swp
+*.sh
+*.tar.gz
+*.tar.xz
+*.tar
+/extract
+/pkg
+/src

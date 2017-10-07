@@ -1,0 +1,32 @@
+# $Id$
+# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Contributor: Roman G <drakosha@au.ru>
+
+pkgname=axel
+pkgver=2.14.1
+pkgrel=1
+pkgdesc="Light command line download accelerator"
+arch=('i686' 'x86_64')
+url="https://github.com/eribertomota/axel"
+license=('GPL')
+depends=('glibc' 'openssl')
+source=($pkgname-$pkgver.tar.gz::https://github.com/eribertomota/$pkgname/archive/v$pkgver.tar.gz)
+sha256sums=('acf6820d98a792faf309fc9acf22f7caf4b8a4b7001072c8f546b3c4fc755e39')
+
+prepare() {
+  cd "$srcdir/$pkgname-$pkgver"
+  ./autogen.sh
+}
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make DESTDIR="$pkgdir" install
+}
+
+# vim:set ts=2 sw=2 et:

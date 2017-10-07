@@ -1,0 +1,32 @@
+pkgbase = emacs-lucid-git
+	pkgdesc = GNU Emacs. Official git master.
+	pkgver = 27.0.50.r130669
+	pkgrel = 1
+	url = http://www.gnu.org/software/emacs/
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = git
+	makedepends = texlive-core
+	depends = alsa-lib
+	depends = gpm
+	depends = hicolor-icon-theme
+	depends = m17n-lib
+	depends = libxrandr
+	depends = libxinerama
+	depends = imagemagick
+	depends = librsvg
+	depends = gnutls
+	depends = xaw3d
+	depends = libdbus
+	depends = libxfixes
+	provides = emacs
+	conflicts = emacs
+	options = docs
+	options = !emptydirs
+	options = !makeflags
+	source = git://git.savannah.gnu.org/emacs.git
+	md5sums = SKIP
+
+pkgname = emacs-lucid-git
+

@@ -1,0 +1,30 @@
+pkgbase = cowrie-git
+	pkgdesc = Medium interaction SSH honeypot designed to log brute force attacks and entire shell interaction
+	pkgver = 1.1.0+1352+115ccd6
+	pkgrel = 2
+	url = https://github.com/micheloosterhof/cowrie
+	install = cowrie.install
+	arch = any
+	license = BSD
+	makedepends = git
+	depends = python2-twisted
+	depends = python2-zope-interface
+	depends = python2-crypto
+	depends = python2-pyasn1
+	depends = python2-cryptography
+	depends = python2-gmpy2
+	depends = python2-pyopenssl
+	depends = mysql-python
+	depends = python2-dateutil
+	depends = python2-tftpy
+	depends = python2-configparser
+	depends = python2-service-identity
+	depends = python2-requests
+	provides = cowrie
+	conflicts = cowrie
+	backup = etc/cowrie.cfg
+	source = cowrie-git::git+https://github.com/micheloosterhof/cowrie.git
+	sha512sums = SKIP
+
+pkgname = cowrie-git
+

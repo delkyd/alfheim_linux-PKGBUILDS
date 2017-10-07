@@ -1,0 +1,45 @@
+pkgbase = mkchromecast-git
+	pkgdesc = Python application to cast your audio to your Google Cast devices.
+	pkgver = r1008.ea1b49a7
+	pkgrel = 2
+	url = http://mkchromecast.com
+	arch = any
+	license = MIT
+	makedepends = git
+	makedepends = python-setuptools
+	makedepends = python-pip
+	depends = gi
+	depends = mutagen
+	depends = pavucontrol
+	depends = pulseaudio
+	depends = python
+	depends = python-flask
+	depends = python-netifaces
+	depends = python-psutil
+	depends = python-pychromecast-git
+	depends = python-requests
+	depends = python-setuptools
+	depends = python-pyqt5
+	depends = python-yaml
+	depends = sox
+	depends = lame
+	depends = flac
+	depends = faac
+	optdepends = ffmpeg
+	optdepends = python-pyqt5: system tray menu support
+	optdepends = youtube-dl: youtube URLs casting support
+	optdepends = socos: cast to Sonos speakers
+	provides = mkchromecast
+	conflicts = mkchromecast
+	options = !emptydirs
+	source = git+https://github.com/muammar/mkchromecast.git#branch=devel
+	source = mkchromecast.sh
+	source = mkchromecast.desktop
+	source = mkchromecast.png
+	md5sums = SKIP
+	md5sums = SKIP
+	md5sums = SKIP
+	md5sums = SKIP
+
+pkgname = mkchromecast-git
+

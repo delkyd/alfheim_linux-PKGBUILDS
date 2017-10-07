@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /usr/share/ib-tws/jars
+/usr/share/ib-tws/jre/bin/java -cp \* \
+                                     -Xmx768m -Dsun.awt.nopixfmt=true -Dsun.java2d.noddraw=true -Dswing.boldMetal=false -Dsun.locale.formatasdefault=true \
+                                     jclient.LoginFrame $HOME/.ib-tws

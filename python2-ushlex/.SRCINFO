@@ -1,0 +1,14 @@
+pkgbase = python2-ushlex
+	pkgdesc = Shlex is A lexical analyzer class for simple shell-like syntaxes.
+	pkgver = 0.99
+	pkgrel = 1
+	url = https://pypi.python.org/pypi/ushlex
+	arch = any
+	license = MIT
+	makedepends = python2-distribute
+	depends = python2
+	source = https://bitbucket.org/mixmastamyk/ushlex/get/default.tar.gz
+	sha512sums = b7fb8bccea275fcfaca501e1e6e47d2dbf03f655981992be629bf845197a4b70238f8bbf958271d3d5cddc2d0ee7bd137f95c1785f5fd3bbe4d11799daff7923
+
+pkgname = python2-ushlex
+

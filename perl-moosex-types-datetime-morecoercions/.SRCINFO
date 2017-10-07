@@ -1,0 +1,24 @@
+pkgbase = perl-moosex-types-datetime-morecoercions
+	pkgdesc = Extensions to MooseX::Types::DateTime
+	pkgver = 0.15
+	pkgrel = 1
+	url = https://metacpan.org/release/MooseX-Types-DateTime-MoreCoercions
+	arch = any
+	license = PerlArtistic
+	license = GPL
+	checkdepends = perl-test-fatal
+	depends = perl-datetime>=0.4302
+	depends = perl-datetimex-easy>=0.085
+	depends = perl-moose>=0.41
+	depends = perl-moosex-types>=0.04
+	depends = perl-moosex-types-datetime>=0.07
+	depends = perl-time-duration-parse>=0.06
+	depends = perl-namespace-clean>=0.19
+	depends = perl>=5.006
+	options = !emptydirs
+	source = http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/MooseX-Types-DateTime-MoreCoercions-0.15.tar.gz
+	md5sums = fe679ed09baf96dff62092538fc9466a
+	sha512sums = c0e3e1d1d4969d674d0c5d88b99aa401049b8ca7a61c3ec139a8e7c39d44e8a12ee2a8151029d24b1ef0063af3de6ec235c81c576ef21d6ab0b680f0a94cc020
+
+pkgname = perl-moosex-types-datetime-morecoercions
+

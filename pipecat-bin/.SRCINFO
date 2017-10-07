@@ -1,0 +1,15 @@
+pkgbase = pipecat-bin
+	pkgdesc = Connect UNIX pipes and message queues
+	pkgver = 0.2
+	pkgrel = 1
+	url = https://github.com/lukasmartinelli/pipecat
+	arch = i686
+	arch = x86_64
+	license = MIT
+	provides = pipecat
+	source = https://github.com/lukasmartinelli/pipecat/releases/download/v0.2/pipecat_linux_amd64
+	source = https://raw.githubusercontent.com/lukasmartinelli/pipecat/v0.2/LICENSE
+	sha1sums = c6b3592c707d89b188dc01176dfa10f0f1ab5774
+	sha1sums = 22c0aa2b7651553ea85bdab73d8358df9cfe77f2
+
+pkgname = pipecat-bin

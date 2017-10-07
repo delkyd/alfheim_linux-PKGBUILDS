@@ -1,0 +1,19 @@
+pkgbase = ocaml-mysql
+	pkgdesc = OCaml bindings for MySQL
+	pkgver = 1.2.1
+	pkgrel = 3
+	url = http://ocaml-mysql.forge.ocamlcore.org/
+	arch = i686
+	arch = x86_64
+	license = LGPL
+	makedepends = ocaml
+	makedepends = ocaml-findlib
+	makedepends = libmariadbclient
+	depends = camlp4
+	options = !strip
+	options = staticlibs
+	source = https://github.com/ygrek/ocaml-mysql/releases/download/v1.2.1/ocaml-mysql-1.2.1.tar.gz
+	md5sums = 776d07219ac3a6ffa000811defd91eb3
+
+pkgname = ocaml-mysql
+

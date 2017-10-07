@@ -1,0 +1,16 @@
+pkgbase = python-stagger-git
+	pkgdesc = ID3v1/ID3v2 tag manipulation package in pure Python 3
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://github.com/lorentey/stagger
+	arch = any
+	license = BSD
+	makedepends = git
+	depends = python
+	provides = python-stagger-git
+	conflicts = python3-stagger-svn
+	source = git://github.com/lorentey/stagger.git
+	md5sums = SKIP
+
+pkgname = python-stagger-git
+

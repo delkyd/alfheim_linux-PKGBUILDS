@@ -1,0 +1,20 @@
+# Contributor: ugaciaka <ugaciaka@gmail.com>
+# Maintainer : Frederic Bezies <fredbezies@gmail.com>
+
+pkgname=xsane2tess
+pkgver=1.0
+pkgrel=9
+pkgdesc="Script for OCR with tesseract and xsane"
+arch=('any')
+license=('unknown')
+url="http://doc.ubuntu-fr.org/xsane2tess"
+depends=('tesseract' 'xsane' 'imagemagick')
+source=(script)
+md5sums=('12097af189b452bc3a1312722b11f460')
+install=$pkgname.install
+
+package() {
+  install -D -m755 ${startdir}/script ${pkgdir}/usr/bin/xsane2tess
+}
+
+

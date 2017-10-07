@@ -1,0 +1,31 @@
+# $Id$
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Geoffroy Carrier <geoffroy.carrier@aur.archlinux.org>
+# Contributor: neodreams <yanbrodeur@videotron.ca>
+# Maintainer: Daniel J Griffiths <ghost1227@archlinux.us>
+
+pkgname=icoutils
+pkgver=0.31.3
+pkgrel=1
+pkgdesc='Extracts and converts images in MS Windows(R) icon and cursor files.'
+arch=('i686' 'x86_64')
+license=('GPL')
+url='http://www.nongnu.org/icoutils/'
+depends=('libpng>=1.0.0' 'perl-libwww>=5.64')
+validpgpkeys=('3776FFA2692D84ECA895F98E3424F3704FF4EDEC')
+source=("https://savannah.nongnu.org/download/${pkgname}/${pkgname}-${pkgver}.tar.bz2"{,.sig})
+sha256sums=('d4651de8e3f9e28d24b5343a2b7564f49754e5fe7d211c5d4dd60dcd65c8a152'
+            'SKIP')
+
+build() {
+  cd ${pkgname}-${pkgver}
+  ./configure \
+    --prefix=/usr \
+    --mandir=/usr/share/man
+  make
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  make DESTDIR="$pkgdir" install
+}

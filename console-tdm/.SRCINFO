@@ -1,0 +1,16 @@
+pkgbase = console-tdm
+	pkgdesc = Console display manager based on CDM
+	pkgver = 1.2.3
+	pkgrel = 2
+	url = https://github.com/dopsi/console-tdm
+	arch = any
+	license = GPL3
+	depends = xorg-xinit
+	optdepends = dialog: for curses UI
+	provides = console-tdm
+	conflicts = console-tdm
+	source = console-tdm-v1.2.3.tar.gz::https://github.com/dopsi/console-tdm/archive/v1.2.3.tar.gz
+	sha256sums = 0cc53d72077b7d27e5adaa5cbe61d0302f4971355e66fadebb9440fd9bff3845
+
+pkgname = console-tdm
+

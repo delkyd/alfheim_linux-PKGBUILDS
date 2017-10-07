@@ -1,0 +1,17 @@
+pkgbase = perl-authen-sasl-saslprep
+	pkgdesc = A Stringprep Profile for User Names and Passwords (RFC 4013)
+	pkgver = 1.011
+	pkgrel = 1
+	url = https://metacpan.org/release/Authen-SASL-SASLprep
+	arch = any
+	license = PerlArtistic
+	license = GPL
+	checkdepends = perl-test-nowarnings
+	depends = perl-unicode-stringprep
+	options = !emptydirs
+	source = http://search.cpan.org/CPAN/authors/id/C/CF/CFAERBER/Authen-SASL-SASLprep-1.011.tar.gz
+	md5sums = eb9cc1f59968047e23ac44c02a0ecc21
+	sha512sums = c6b2f83afa43ef5ac7df1a1d7cf728ea5d7e5bde6723fcc189d643872530d9f31a3a484e1c10b0af0a5d2d99091122899db14f43559f39494dd0f3f76d20cfd4
+
+pkgname = perl-authen-sasl-saslprep
+

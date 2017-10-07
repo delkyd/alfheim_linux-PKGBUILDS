@@ -1,0 +1,12 @@
+pkgbase = seasonproxer
+	pkgdesc = A tool to passivly check for updates on seasons, for proxer.me
+	pkgver = 1.1.0
+	pkgrel = 1
+	url = https://github.com/Skycoder42/SeasonProxer
+	arch = i686
+	arch = x86_64
+	license = BSD
+	depends = anirem
+
+pkgname = seasonproxer
+

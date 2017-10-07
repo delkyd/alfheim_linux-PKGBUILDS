@@ -1,0 +1,23 @@
+pkgbase = pepper
+	pkgdesc = The Flexible Game Engine
+	pkgver = 0.0.25
+	pkgrel = 2
+	url = https://github.com/taylor001/crown
+	arch = x86_64
+	license = MIT
+	license = GPL
+	depends = glib2>=2.40
+	depends = gtk3>=3.14
+	depends = libgl
+	depends = libpulse
+	depends = libx11
+	depends = libxrandr
+	source = https://github.com/taylor001/crown/releases/download/v0.0.25/pepper-0.0.25-linux-x64.tar.gz
+	source = pepper.sh
+	source = pepper.desktop
+	md5sums = 3e009f5c146005973bcf33730361a016
+	md5sums = 8fca300dce4e3858e34e7a2d550a3728
+	md5sums = 7424db2a97c159d516cfa813be148966
+
+pkgname = pepper
+

@@ -1,0 +1,12 @@
+pkgbase = bash-link
+	pkgdesc = a high reliable bash library
+	pkgver = 1.0.9
+	pkgrel = 7
+	url = http://torben.website/bashLink
+	arch = any
+	license = CC-BY-3.0
+	source = bashLink.sh
+	md5sums = SKIP
+
+pkgname = bash-link
+

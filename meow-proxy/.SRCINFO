@@ -1,0 +1,21 @@
+pkgbase = meow-proxy
+	pkgdesc = MEOW is a fork of MEOW that uses whitelist mode
+	pkgver = 1.5
+	pkgrel = 1
+	url = https://github.com/renzhn/MEOW
+	install = meow-proxy.install
+	arch = i686
+	arch = x86_64
+	license = custom
+	conflicts = meow-proxy-git
+	source = meow@.service
+	source = meow_user.service
+	sha1sums = bf9f1c5c58807e39c969d1ec5cb6535579f0dc92
+	sha1sums = 4ab8d5afaf78c992bdd7c45a7fcd7dd4ae3875d5
+	source_i686 = meow-i686-1.5.gz::https://raw.githubusercontent.com/renzhn/MEOW/gh-pages/dist/MEOW-linux-386-1.5.gz
+	sha1sums_i686 = 5383b11f614ff054f82f557de4420c45345d8a6a
+	source_x86_64 = meow-x86_64-1.5.gz::https://raw.githubusercontent.com/renzhn/MEOW/gh-pages/dist/MEOW-linux-amd64-1.5.gz
+	sha1sums_x86_64 = ec843a07cf9eeb993746074416c8c0eed77cca62
+
+pkgname = meow-proxy
+

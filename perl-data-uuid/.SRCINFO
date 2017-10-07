@@ -1,0 +1,17 @@
+pkgbase = perl-data-uuid
+	pkgdesc = Globally/Universally Unique Identifiers (GUIDs/UUIDs)
+	pkgver = 1.221
+	pkgrel = 1
+	url = https://metacpan.org/release/Data-UUID
+	arch = i686
+	arch = x86_64
+	license = PerlArtistic
+	license = GPL
+	depends = perl>=0
+	options = !emptydirs
+	source = http://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Data-UUID-1.221.tar.gz
+	md5sums = 7619929e8fe205a7fb83bc1c29ecbf99
+	sha512sums = fa40219890f9adeb486a7ff636603d8695d81765ee858e396130100aaba96b524d80eef76e0c06eac2086fe3bb2d26114d94459466d29ddc82a7a7fcb2f5adac
+
+pkgname = perl-data-uuid
+

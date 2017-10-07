@@ -1,0 +1,38 @@
+# $Id$
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Eschwartz <eschwartz93@gmail.com>
+
+pkgname=firefox-adblock-plus
+pkgver=2.9.1
+pkgrel=1
+_file=541651
+pkgdesc="Extension for firefox which block ads and banners"
+arch=('any')
+url="http://adblockplus.org/"
+license=('GPL')
+groups=('firefox-addons')
+depends=("firefox")
+makedepends=('unzip')
+# https://addons.mozilla.org/en-US/firefox/addon/adblock-plus/versions/
+source=("https://addons.mozilla.org/firefox/downloads/file/${_file}/adblock-plus-${pkgver}.xpi")
+noextract=("adblock-plus-$pkgver.xpi")
+sha256sums=('2de5616ae0ad17fd6345c6f8f8ec5bd8a8db1bdf8d8dad9995857ad2d6454306')
+
+prepare() {
+  cd "${srcdir}"
+  unzip -qqo "adblock-plus-${pkgver}.xpi" -d "adblock-plus-${pkgver}"
+}
+
+package() {
+  cd "${srcdir}"
+
+  _extension_id="$(sed -n '/.*<em:id>\(.*\)<\/em:id>.*/{s//\1/p;q}' adblock-plus-${pkgver}/install.rdf)"
+  _extension_dest="${pkgdir}/usr/lib/firefox/browser/extensions/${_extension_id}"
+  if grep '<em:unpack>true</em:unpack>' adblock-plus-${pkgver}/install.rdf > /dev/null; then
+    install -dm755 "${_extension_dest}"
+    cp -R adblock-plus-${pkgver}/* "${_extension_dest}"
+    chmod -R ugo+rX "${_extension_dest}"
+  else
+    install -Dm644 adblock-plus-${pkgver}.xpi "${_extension_dest}.xpi"
+  fi
+}

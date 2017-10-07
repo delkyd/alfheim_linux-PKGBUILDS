@@ -1,0 +1,17 @@
+pkgbase = adasockets
+	pkgdesc = BSD sockets in Ada
+	pkgver = 1.10.1
+	pkgrel = 2
+	url = http://www.rfc1149.net/devel/adasockets
+	install = adasockets.install
+	arch = i686
+	arch = x86_64
+	license = custom:GNAT_Modified_GPL
+	makedepends = gcc-ada
+	depends = sh
+	options = !libtool
+	source = http://www.rfc1149.net/download/adasockets/adasockets-1.10.1.tar.gz
+	md5sums = 2df503f3b72fe0fb8a29e3451fa6e9a0
+
+pkgname = adasockets
+

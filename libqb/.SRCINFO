@@ -1,0 +1,17 @@
+pkgbase = libqb
+	pkgdesc = Library with the primary purpose of providing high performance client server reusable features
+	pkgver = 1.0.2
+	pkgrel = 1
+	url = https://github.com/ClusterLabs/libqb
+	arch = i686
+	arch = x86_64
+	arch = mips64el
+	license = LGPL2.1
+	makedepends = doxygen
+	makedepends = splint
+	options = !libtool
+	source = libqb-1.0.2.tar.gz::https://github.com/ClusterLabs/libqb/archive/v1.0.2.tar.gz
+	sha512sums = 6991719cc860f2596254697a7cd568dfe90653987332e71e4278f2a9d74b351e02fd77cbd65372f56d93594ace5f781ea84d5c480969f8f6e837ff506f701ee1
+
+pkgname = libqb
+

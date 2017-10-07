@@ -1,0 +1,23 @@
+pkgbase = python2-puppetboard
+	pkgdesc = Web frontend for PuppetDB which relies on pypuppetdb
+	pkgver = 0.2.0
+	pkgrel = 1
+	url = https://github.com/puppet-community/puppetboard
+	install = puppetboard.install
+	arch = any
+	license = APACHE
+	depends = python2
+	depends = python2-flask
+	depends = python2-flask-wtf
+	depends = python2-jinja
+	depends = python2-markupsafe
+	depends = python2-wtforms
+	depends = python2-werkzeug
+	depends = python2-itsdangerous
+	depends = python2-requests
+	depends = python2-pypuppetdb
+	source = https://github.com/puppet-community/puppetboard/archive/v0.2.0.tar.gz
+	sha512sums = d525bd48a0a0ee6c22f08226026f45684980279ccef386ec1890aa9cb728126bc7fd104d094b56dea85bf14c0b8cafa641f7d2596f25bf99d63fce856966424c
+
+pkgname = python2-puppetboard
+

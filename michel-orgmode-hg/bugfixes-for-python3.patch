@@ -1,0 +1,129 @@
+diff -aur michel-orgmode.pristine/michel/diff3.py michel-orgmode.new/michel/diff3.py
+--- michel-orgmode.pristine/michel/diff3.py	2016-09-01 16:24:44.290659982 +0200
++++ michel-orgmode.new/michel/diff3.py	2016-09-01 16:46:02.570976348 +0200
+@@ -9,9 +9,9 @@
+     "Perform diff3 merge on the text-string arguments."
+     
+     # create temp files for operating on with diff3 tool
+-    my_file = tempfile.NamedTemporaryFile()
+-    orig_file = tempfile.NamedTemporaryFile()
+-    other_file = tempfile.NamedTemporaryFile()
++    my_file = tempfile.NamedTemporaryFile("w")
++    orig_file = tempfile.NamedTemporaryFile("w")
++    other_file = tempfile.NamedTemporaryFile("w")
+     
+     # write text strings to files
+     my_file.write(my_text)
+@@ -25,17 +25,19 @@
+ 
+     # call the diff3 executable, and collect results
+     p = subprocess.Popen([
+-                             'diff3', 
+-                             '-m',
+-                             '-L', 'MINE',
+-                             '-L', 'ORIGINAL',
+-                             '-L', 'OTHER',
+-                             my_file.name,
+-                             orig_file.name,
+-                             other_file.name
+-                         ],
+-                        stdout=subprocess.PIPE,
+-                        stderr=subprocess.PIPE)
++        'diff3', 
++        '-m',
++        '-L', 'MINE',
++        '-L', 'ORIGINAL',
++        '-L', 'OTHER',
++        my_file.name,
++        orig_file.name,
++        other_file.name
++    ],
++                         stdout=subprocess.PIPE,
++                         stderr=subprocess.PIPE,
++                         universal_newlines=True
++    )
+     stdout_text, stderr_text = p.communicate()
+     retcode = p.wait()
+     
+diff -aur michel-orgmode.pristine/michel/michel.py michel-orgmode.new/michel/michel.py
+--- michel-orgmode.pristine/michel/michel.py	2016-09-01 16:24:44.290659982 +0200
++++ michel-orgmode.new/michel/michel.py	2016-09-01 16:54:41.478892705 +0200
+@@ -19,12 +19,15 @@
+ # Set default encoding to 'UTF-8' instead of 'ascii'
+ # http://stackoverflow.com/questions/11741574/how-to-set-the-default-encoding-to-utf-8-in-python
+ # Bad things might happen though
+-reload(sys)
+-sys.setdefaultencoding("UTF8")
++
++# Martin Kaffanke <m.kaffanke@gmail.com>: Removing this for arch linux.
++# You will have troubles if you don't set your default encoding to utf-8 on the console.
++# reload(sys)
++#sys.setdefaultencoding("UTF8")
+ import re
+-import cPickle as pickle
+-import cStringIO
+-import diff3
++import pickle
++from io import StringIO
++from . import diff3
+ import datetime
+ import dateutil.parser
+ 
+@@ -86,7 +89,7 @@
+                 TasksTree(title, task_id, task_notes, task_status, task_due))
+         else:
+             if self.get_task_with_id(parent_id) is None:
+-                raise ValueError, "No element with suitable parent id"
++                raise ValueError ("No element with suitable parent id")
+             self.get_task_with_id(parent_id).add_subtask(title, task_id, None,
+                     task_notes, task_status, task_due)
+ 
+@@ -312,7 +315,7 @@
+                 break
+         else:
+             # no list with the given name was found
+-            print '\nERROR: No google task-list named "%s"\n' % list_name
++            print ('\nERROR: No google task-list named "%s"\n' % list_name)
+             sys.exit(2)
+ 
+     return list_id
+@@ -398,7 +401,7 @@
+ def parse_text_to_tree(text):
+     """Parses an org-mode formatted block of text and returns a tree"""
+     # create a (read-only) file object containing *text*
+-    f = cStringIO.StringIO(text)
++    f = StringIO(text)
+     
+     headline_regex = re.compile("^(\*+ )( *)(DONE )?")
+     # DEADLINE timestmaps can have the formats described at
+@@ -541,17 +544,17 @@
+                "'%s' has been updated to contain the contents of the "
+                "list, and a backup of this file has been created "
+                "as '%s'.  Please update '%s' as desired, and re-run "
+-               "the synchronization.\n") % (list_name, path, bkup_fname, path)
++               "the synchronization.\n" % (list_name, path, bkup_fname, path))
+     
+     merged_tree, conflict_occurred = treemerge(orgfile_tree, orig_tree, gtasks_tree)
+     
+     if conflict_occurred:
+         conflicted_filename = path + ".conflicted"
+-        open(conflicted_filename, "wb").write(str(merged_tree))
++        open(conflicted_filename, "w").write(str(merged_tree))
+         print ("\nWARNING:  Org-file and task-list could not be cleanly merged:  "
+               "the attempted merge can be found in '%s'.  Please "
+               "modify this file, copy it to '%s', and push '%s' back "
+-              "to the desired GTasks list.\n") % (conflicted_filename, path, path)
++              "to the desired GTasks list.\n" % (conflicted_filename, path, path))
+         sys.exit(2)
+     else:
+         # store the successfully merged tree locally so we can use it as the
+@@ -566,7 +569,7 @@
+         merged_tree.push(service, list_id)
+         
+         # write merged tree to orgfile
+-        open(path, 'wb').write(str(merged_tree))
++        open(path, 'w').write(str(merged_tree))
+ 
+ 
+ def main():
+Nur in michel-orgmode.new/michel: __pycache__.

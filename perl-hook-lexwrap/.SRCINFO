@@ -1,0 +1,16 @@
+pkgbase = perl-hook-lexwrap
+	pkgdesc = Lexically scoped subroutine wrappers
+	pkgver = 0.26
+	pkgrel = 1
+	url = https://metacpan.org/release/Hook-LexWrap
+	arch = any
+	license = PerlArtistic
+	license = GPL
+	depends = perl>=5.006
+	options = !emptydirs
+	source = http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Hook-LexWrap-0.26.tar.gz
+	md5sums = 5d022159b0c56d48d04ef9334309b488
+	sha512sums = f7771d4fb8379f43fa5b864e345f4526603914c3c486c637ea07fb9e2d41569bf40948a9039fab7d10c683fb85e16a8653876613903d34cc6801fcc9e92aa58b
+
+pkgname = perl-hook-lexwrap
+

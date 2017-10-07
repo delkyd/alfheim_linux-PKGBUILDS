@@ -1,0 +1,20 @@
+pkgbase = orp-svn
+	pkgdesc = Osmarender in Perl - a complete re-implemenation of Osmarender in Perl
+	pkgver = r31608
+	pkgrel = 1
+	url = http://wiki.openstreetmap.org/wiki/Osmarender/orp
+	arch = i686
+	arch = x86_64
+	license = GPL
+	depends = perl-xml-libxml
+	depends = perl-xml-xpath
+	depends = perl-set-object
+	depends = perl-xml-writer
+	depends = libxml-perl
+	source = orp::svn+http://svn.openstreetmap.org/applications/rendering/osmarender/orp
+	source = orp.pl.patch
+	md5sums = SKIP
+	md5sums = 25bf26a5a39150ede6a43e9c9fe3d8ce
+
+pkgname = orp-svn
+

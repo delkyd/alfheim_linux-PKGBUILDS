@@ -1,0 +1,7 @@
+post_install() {
+echo ""
+echo ">>> Start your cups service:"
+echo ">>>	systemctl start org.cups.cupsd"
+echo ">>> and add your printer in http://localhost:631/admin"
+echo ""
+}

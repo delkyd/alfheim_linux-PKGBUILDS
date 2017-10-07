@@ -1,0 +1,19 @@
+pkgbase = nginx-mainline-mod-rtmp
+	pkgdesc = Module for mainline nginx that adds RTMP support
+	pkgver = 1.2.0
+	pkgrel = 2
+	url = https://github.com/arut/nginx-rtmp-module
+	arch = i686
+	arch = x86_64
+	license = BSD
+	depends = nginx-mainline
+	source = http://nginx.org/download/nginx-1.13.3.tar.gz
+	source = http://nginx.org/download/nginx-1.13.3.tar.gz.asc
+	source = https://github.com/arut/nginx-rtmp-module/archive/v1.2.0.tar.gz
+	validpgpkeys = B0F4253373F8F6F510D42178520A9993A1C052F8
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = a8026f5ade30b178a06f12c46dff053cfe12256016ad465a46646183086b16b0
+
+pkgname = nginx-mainline-mod-rtmp
+

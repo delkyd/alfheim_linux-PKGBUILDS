@@ -1,0 +1,18 @@
+pkgbase = go-git
+	pkgdesc = Core compiler tools for the Go programming language
+	pkgver = 1.9
+	pkgrel = 1
+	epoch = 2
+	url = http://golang.org/
+	arch = i686
+	arch = x86_64
+	license = BSD
+	makedepends = git
+	makedepends = go
+	options = !strip
+	options = staticlibs
+	source = git+https://go.googlesource.com/go#commit=c8aec4095e089ff6ac50d18e97c3f46561f14f48
+	md5sums = SKIP
+
+pkgname = go-git
+

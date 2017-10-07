@@ -1,0 +1,15 @@
+pkgbase = python-aioftp
+	pkgdesc = ftp client/server for asyncio
+	pkgver = 0.7.0
+	pkgrel = 1
+	url = http://pohmelie.github.io/aioftp/
+	arch = any
+	license = WTFPL
+	makedepends = python
+	makedepends = python-setuptools
+	depends = python
+	source = https://github.com/pohmelie/aioftp/archive/0.7.0.tar.gz
+	md5sums = f5c8d510855d7328660598a42c1c0155
+
+pkgname = python-aioftp
+

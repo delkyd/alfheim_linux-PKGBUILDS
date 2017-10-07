@@ -1,0 +1,13 @@
+# editor errata
+*~
+*~?~
+*.swp
+*.swo
+\#*\#
+.tramp_history
+
+# Archives
+*.zip
+*.gz
+*.bz
+*.xz

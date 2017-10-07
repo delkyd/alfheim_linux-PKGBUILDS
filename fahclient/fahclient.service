@@ -1,0 +1,11 @@
+[Unit]
+Description=Folding@Home
+
+[Service]
+Type=simple
+ExecStartPre=/usr/bin/mkdir -p %h/.local/share/fahclient
+WorkingDirectory=%h/.local/share/fahclient
+ExecStart=/usr/bin/FAHClient --config %h/.config/fahclient.cfg
+
+[Install]
+WantedBy=default.target

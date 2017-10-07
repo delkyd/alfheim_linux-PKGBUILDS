@@ -1,0 +1,15 @@
+pkgbase = citro3d
+	pkgdesc = Library providing a stateful interface to the PICA200 GPU of the Nintendo 3DS (CTR) for homebrew development
+	pkgver = 1.3.0
+	pkgrel = 1
+	url = http://devkitpro.org
+	arch = any
+	license = custom: zlib
+	depends = libctru
+	options = !strip
+	options = staticlibs
+	source = citro3d-1.3.0.tar.gz::https://github.com/fincs/citro3d/archive/v1.3.0.tar.gz
+	sha256sums = 5996ac923e3c913ee90fb2efafcff461f67f503723b078c1107c760a30341f93
+
+pkgname = citro3d
+

@@ -1,0 +1,28 @@
+pkgbase = planetary-annihilation
+	pkgdesc = RTS gameplay in a way that's never been seen before.
+	pkgver = 86765
+	pkgrel = 1
+	url = http://www.uberent.com/pa/
+	arch = x86_64
+	license = custom
+	depends = alsa-lib
+	depends = gconf
+	depends = nss
+	depends = gtk2
+	depends = libtxc_dxtn
+	depends = rtmpdump
+	conflicts = planetary-annihilation-pte
+	noextract = PA_Linux_86765.tar.bz2
+	options = !libtool
+	options = !strip
+	source = PA_Linux_86765.tar.bz2::https://manual-download-required
+	source = PA.desktop
+	source = PA.png
+	source = PA.sh
+	md5sums = 3dbad53028e91bd69ef7063178963f77
+	md5sums = 16b2acc35fe4cd6fa06aff57b4a6fdc4
+	md5sums = 463f4e99f44ff6ce9c09e383767a6b1d
+	md5sums = 2f62773702cc5fcee03b160296738b29
+
+pkgname = planetary-annihilation
+

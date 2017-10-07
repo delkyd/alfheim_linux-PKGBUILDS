@@ -1,0 +1,11 @@
+pkgbase = maintenance-website
+	pkgdesc = Maintenance website for documentation-, home- and websites.
+	pkgver = 1.0.0
+	pkgrel = 1
+	arch = any
+	license = CC-BY-3.0
+	source = index.html
+	md5sums = SKIP
+
+pkgname = maintenance-website
+

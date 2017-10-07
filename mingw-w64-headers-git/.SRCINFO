@@ -1,0 +1,20 @@
+pkgbase = mingw-w64-headers-git
+	pkgdesc = MinGW-w64 headers for Windows
+	pkgver = 5.0.rc2.r126.gb48e3ac
+	pkgrel = 1
+	url = http://mingw-w64.sourceforge.net
+	arch = any
+	groups = mingw-w64-toolchain
+	groups = mingw-w64
+	license = custom
+	makedepends = git
+	provides = mingw-w64-headers
+	conflicts = mingw-w64-headers
+	options = !strip
+	options = !libtool
+	options = !emptydirs
+	source = git://git.code.sf.net/p/mingw-w64/mingw-w64
+	md5sums = SKIP
+
+pkgname = mingw-w64-headers-git
+

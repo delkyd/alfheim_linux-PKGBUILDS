@@ -1,0 +1,4 @@
+post_install() {
+  setcap 'cap_net_bind_service=+ep' /usr/bin/node
+  echo "You can run HTTPjs with httpjs command."
+}

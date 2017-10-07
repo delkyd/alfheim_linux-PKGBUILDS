@@ -1,0 +1,28 @@
+# Maintainer: Clar Charr <clar@charr.xyz>
+_pkgbase=shell
+pkgname=clarcharr-$_pkgbase
+pkgver=0.8.0
+pkgrel=1
+pkgdesc="Clar's shell configuration."
+depends=(bash exa fish kmscon ripgrep)
+arch=(any)
+url="https://github.com/clarcharr/config-$_pkgbase"
+license=(CC0)
+groups=(clarcharr-config)
+source=(git+https://github.com/clarcharr/config-$_pkgbase#$pgkver
+        clarcharr-shell.install)
+install=clarcharr-shell.install
+sha256sums=(SKIP
+            c68f3abb85bca0bb739a8311838353f5410b074fc4e353d90b61cdf25156ba90)
+validpgpkeys=(4BDA23A98EE4E049CBC3BA6C69DA5B388573EE35)
+_dirs=(etc usr)
+prepare() {
+  cd "config-$_pkgbase" || exit 1
+  git tag --verify $pkgver
+}
+package() {
+  for dir in "${_dirs[@]}"; do
+    cp -R "$srcdir/config-$_pkgbase/$dir" -T "$pkgdir/$dir"
+  done
+  mv "$pkgdir/etc/"{,clarcharr-}bash.bashrc
+}

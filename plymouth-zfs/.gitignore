@@ -1,0 +1,6 @@
+/src
+/pkg
+.directory
+*.pkg*
+*.orig
+*.log

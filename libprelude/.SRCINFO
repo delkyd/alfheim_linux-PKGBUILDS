@@ -1,0 +1,23 @@
+pkgbase = libprelude
+	pkgdesc = Provides the framework for using the Prelude system
+	pkgver = 4.0.0
+	pkgrel = 1
+	url = https://www.prelude-siem.org
+	arch = i686
+	arch = x86_64
+	license = GPLv2
+	depends = gnutls
+	depends = python2
+	depends = python3
+	depends = gtk-doc
+	depends = lua
+	depends = ruby
+	backup = etc/prelude/default/client.conf
+	backup = etc/prelude/default/global.conf
+	backup = etc/prelude/default/idmef-client.conf
+	backup = etc/prelude/default/tls.conf
+	source = https://www.prelude-siem.org/pkg/src/4.0.0/libprelude-4.0.0.tar.gz
+	md5sums = f4bd0ece58245797db14c971133536a2
+
+pkgname = libprelude
+

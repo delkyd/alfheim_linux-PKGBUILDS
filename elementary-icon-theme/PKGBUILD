@@ -1,0 +1,33 @@
+# $Id$
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Diego Principe <cdprincipe@gmail.com>
+# Contributor: paterbrown <paterbrown@silberhelme.de>
+# Contributor: Josip <josipponjavic@gmail.com>
+
+pkgname=elementary-icon-theme
+pkgver=4.2.0
+pkgrel=1
+pkgdesc='An icon theme designed to be smooth, sexy, clear, and efficient'
+arch=('any')
+url='https://launchpad.net/elementaryicons'
+license=('GPL3')
+depends=('gtk-update-icon-cache' 'hicolor-icon-theme')
+options=('!emptydirs' '!strip')
+source=("https://launchpad.net/elementaryicons/${pkgver%%.*}.x/${pkgver}/+download/elementary-icon-theme-${pkgver}.tar.xz")
+sha256sums=('7505f498f712713415bc8a5468cd20fba9689cd7b42878659bad1118294c3470')
+
+prepare() {
+  cd elementary-icon-theme-${pkgver}
+
+  rm AUTHORS CONTRIBUTORS COPYING
+}
+
+package() {
+  install -dm 755 "${pkgdir}"/usr/share/icons
+  cp -dr --no-preserve='ownership' elementary-icon-theme-${pkgver} "${pkgdir}"/usr/share/icons/elementary
+
+  find "${pkgdir}" -type d -exec chmod 755 {} +
+  find "${pkgdir}" -type f -exec chmod 644 {} +
+}
+
+# vim: ts=2 sw=2 et:

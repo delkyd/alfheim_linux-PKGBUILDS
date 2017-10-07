@@ -1,0 +1,48 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+
+pkgname=scapy3k
+_pkgname=scapy
+pkgver=0.21
+pkgrel=2
+pkgdesc='Powerful interactive packet manipulation program written in Python 3'
+url='https://github.com/phaethon/scapy'
+depends=('tcpdump' 'python' )
+optdepends=('python-cryptography: WEP decryption, IPsec and certificate support'
+            'python-pyx: psdump() and pdfdump() functions'
+            'python-matplotlib: plotting support'
+            'python-netifaces: network interface information support'
+            'graphviz: conversations() method support'
+            'sox: for VOIP support')
+checkdepends=('python-cryptography' 'python-pyx' 'python-matplotlib' 'python-netifaces' 'graphviz' 'sox')
+arch=('any')
+license=('GPL2')
+source=(${pkgname}-${pkgver}.tar.gz::https://github.com/phaethon/scapy/archive/v${pkgver}.tar.gz)
+sha256sums=('23468d89024ba3179bbf9ab9f58ca192a21a8803ee8d9131f6baecbae2556f56')
+sha512sums=('24d091db701eeabf55f5f4c3c7314be414c4d221f7e8d20c781fe015765dca4b22b20022fa4059053eed44d5e1a3a34c98f418324a7a3a5a74f0f869a3016be1')
+
+prepare() {
+  cd ${_pkgname}-${pkgver}
+  sed -r 's|((bin\|doc)/(UT)?scapy)|\13k|g' -i setup.py
+  mv doc/scapy.1.gz doc/scapy3k.1.gz
+  mv bin/scapy{,3k}
+  mv bin/UTscapy{,3k}
+}
+
+build() {
+  cd ${_pkgname}-${pkgver}
+  python setup.py build
+}
+
+check() {
+  cd ${_pkgname}-${pkgver}/test
+  # skip tests as they hang
+  # ./run_tests -t regression.uts -K netaccess
+}
+
+package() {
+  cd ${_pkgname}-${pkgver}
+  python setup.py install -O1 --skip-build --root="${pkgdir}" --prefix=/usr
+  install -Dm 644 doc/scapy/*.rst -t "${pkgdir}/usr/share/doc/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:

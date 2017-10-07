@@ -1,0 +1,187 @@
+post_install(){
+
+    /usr/bin/mkdir -p /opt/sentry/celery
+    # Restart systemd-sysusers so it picks up our user account.
+    /usr/bin/systemd-sysusers /usr/lib/sysusers.d/sentry.conf
+
+    # Generate a new configuration.
+    if [ ! -e "/etc/sentry/sentry.conf.py" ] || [ ! -e "/etc/sentry/config.yml" ] ; then
+        "/opt/sentry/bin/sentry" init "/etc/sentry"
+    fi
+
+    /usr/bin/chown -R sentry:sentry /opt/sentry
+    /usr/bin/chown -R sentry:sentry /etc/sentry
+
+    /usr/bin/chmod 0600 /etc/sentry/sentry.conf.py
+    /usr/bin/chmod 0600 /etc/sentry/config.yml
+
+cat << EOF
+
+INSTALLATION STEPS
+
+1) Edit the configurations in /etc/sentry before proceeding to the next step.
+
+2) Run migrations:
+
+    sudo -u sentry /opt/sentry/bin/sentry --config=/etc/sentry upgrade
+
+3) Create the initial superuser if you skipped doing so in the previous step:
+
+    sudo -u sentry /opt/sentry/bin/sentry --config=/etc/sentry createuser
+
+4) Start Sentry:
+
+    sudo systemctl start sentry
+
+If you wish to run Sentry manually, e.g. to test your configuration:
+
+    sudo -u sentry /opt/sentry/bin/sentry --config=/etc/sentry run web
+
+EXTRAS
+
+To install additional plugins, you'll need to use Sentry's local copy of pip:
+
+    sudo -u sentry /opt/sentry/bin/pip install <package>
+
+REMOVAL
+
+As of Sentry 7.1.4, this package will no longer remove the Sentry user by
+default. You must perform this step manually.
+
+THANKS
+
+I appreciate the tips and suggestions I've received since converting this
+package to a (mostly) pure virtualenv installation. Please report any issues
+related to the PKGBUILD on the AUR page or open a ticket on my Github
+project page:
+
+https://aur.archlinux.org/packages/sentry/
+https://github.com/zancarius/archlinux-pkgbuilds
+
+EOF
+}
+
+post_upgrade(){
+
+    /usr/bin/mkdir -p /opt/sentry/celery
+
+    /usr/bin/chown -R sentry:sentry /etc/sentry
+    /usr/bin/chown -R sentry:sentry /opt/sentry
+
+    /usr/bin/chmod 0600 /etc/sentry/sentry.conf.py
+    /usr/bin/chmod 0600 /etc/sentry/config.yml
+
+cat << EOF
+
+UPGRADE STEPS
+
+1) Stop Sentry and its related services (and reload systemd)
+
+    sudo systemctl stop sentry
+    sudo systemctl daemon-reload
+
+2) If you're upgrading from a Sentry version < 8.0, you'll need to update the
+configuration by hand. Sentry's configuration setup has changed dramatically
+and increasingly more options are being moved to Sentry's YAML-based configs:
+
+    sudo -u sentry mkdir /etc/sentry/temp
+    sudo -u sentry /opt/sentry/bin/sentry init /etc/sentry/temp
+
+    # Optionally edit the old configurations:
+    sudo vimdiff /etc/sentry/sentry.conf.py /etc/sentry/temp/sentry.conf.py
+    sudo vimdiff /etc/sentry/config.yml /etc/sentry/temp/config.yml
+
+    # ...or move Sentry's YAML configuration to the config root:
+    sudo -u sentry mv /etc/sentry/temp/sentry.conf.py /etc/sentry/
+    sudo -u sentry mv /etc/sentry/temp/config.yml /etc/sentry/
+
+    # Delete the temporary config directory:
+    sudo rm -r /etc/sentry/temp
+
+    See here:
+    https://docs.getsentry.com/on-premise/server/config/
+
+3) Run the database migrations:
+
+!!! ALWAYS BACK-UP YOUR DATABASE PRIOR TO UPGRADING SENTRY !!!
+
+    sudo -u sentry /opt/sentry/bin/sentry --config=/etc/sentry upgrade
+
+4) Start Sentry:
+
+    sudo systemctl start sentry
+
+If you wish to run Sentry manually, e.g. to test your configuration:
+
+    sudo -u sentry /opt/sentry/bin/sentry --config=/etc/sentry run web
+
+You may need to run the following services if Sentry's web service fails
+during manual testing:
+
+    sudo -u sentry /opt/sentry/bin/sentry --config=/etc/sentry run worker
+    sudo -u sentry /opt/sentry/bin/sentry --config=/etc/sentry run cron
+
+EXTRAS
+
+To install additional plugins, you'll need to use Sentry's local copy of pip:
+
+    sudo -u sentry /opt/sentry/bin/pip install <package>
+
+IMPORTANT 8.0 UPGRADE NOTICE
+
+If you're upgrading from an earlier version of Sentry, the Sentry team has
+deprecated MySQL support. You will need to plan for one of the following
+options: 1) Manage schema migration manually, 2) consider migrating your data
+away from MySQL (there may be some tools to assist, linked below), or 3)
+reinstall from scratch with PostgreSQL.
+
+SENTRY WON'T START?
+
+Recent versions of Sentry included a configuration for specifying large integers
+for certain ID columns, most notably sentry_project.id. If your migrations fail
+and SENTRY_USE_BIG_INTS is enabled, try disabling it and restart the migration.
+While this is unlikely to bite you unless you've migrated from a much earlier
+version of Sentry (version 6 or early 7), it is one of the most likely blockers
+that may prevent you from updating.
+
+THANKS
+
+I appreciate the tips and suggestions I've received since converting this
+package to a (mostly) pure virtualenv installation. Please report any issues
+related to the PKGBUILD on the AUR page or open a ticket on my Github
+project page:
+
+https://aur.archlinux.org/packages/sentry/
+https://github.com/zancarius/archlinux-pkgbuilds
+
+SENTRY 8.9.0 UPGRADE NOTICE
+
+dsym support has been integrated into Sentry directly and is no longer a
+plugin. If you've been relying on the sentry-dsym package, you may notice that
+this package is no longer built. Instead, symsynd is installed automatically
+as part of Sentry's "install_requires" dependencies. You will encounter an
+error during Sentry's install as a consequence of this; that's normal. Remove
+your sentry-dsym package first.
+
+If you haven't previously required dsym support, this means that Sentry now
+requires that you also install LLVM for symsynd. It may be possible to remove
+LLVM from the package dependencies, but the build may fail if it's not
+installed. As a workaround if you cannot have LLVM installed for whatever
+reason, try removing "llvm" from the "depends" array, build Sentry on a machine
+that has LLVM installed, and then copy the package to your target server. This
+will cause problems if you use something that requires dsym support, but it's
+presently the easiest way to install Sentry on a target host without LLVM
+installed.
+
+EOF
+
+}
+
+post_remove(){
+
+cat << EOF
+Sentry has been removed. If this is a permanent decision, you'll need to
+remove Sentry's system account manually (userdel sentry).
+EOF
+
+}

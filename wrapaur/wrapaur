@@ -1,0 +1,709 @@
+#!/usr/bin/bash
+
+#A simple pacman and AUR wrapper written in bash
+#Developer: William Hahn <bill@hahn3.com>
+
+##########Initialization##########
+
+#ensure that the HOME variable exists, fix for running under systemd timer
+if [[ -z $HOME ]]; then
+	HOME=/root
+fi
+
+#if .wrapaur folder does not exist, create it
+if [ ! -d $HOME/.wrapaur ]; then
+	mkdir $HOME/.wrapaur
+	echo "wrapaur directory created at $HOME/.wrapaur"
+fi
+
+#check for wrapaur config file and source it
+if [ -f $HOME/.wrapaurrc ]; then
+	source $HOME/.wrapaurrc
+else
+	echo -e "#Configuration file for wrapaur\n\n#Set country for mirror update\ncountry=\n\n#Set number of top mirrors to sync\nmirrorcount=\n\n#Set for no prompts on mirror update\nmirrorprompt=\n\n#Set email for package updates\nemail=\n\n#Set colors\ncolor1=''\ncolor2=''\ncolor3=''" > $HOME/.wrapaurrc
+	echo "wrapaur configuration file created at $HOME/.wrapaurrc"
+	chmod 600 $HOME/.wrapaurrc
+fi
+
+#make sure wrapaur_history file exists
+if [ ! -f $HOME/.wrapaur_history ]; then
+	touch $HOME/.wrapaur_history
+fi
+
+if [[ -z $EDITOR ]]; then
+	EDITOR=nano
+fi
+
+#aur url location
+aururl="aur.archlinux.org"
+
+
+##########Functions##########
+
+#update option selected
+update_all()
+{
+	#run pacman update
+	sudo pacman -Syu
+
+	#check for AUR updates and assign item names to downloads variable
+	echo -e "${color1}:: ${color2}Checking the AUR for updates...${color3}"
+	aurpkgs=$(pacman -Qm | awk '{print $1}')
+	for line in $aurpkgs
+	do
+		vcheck=$(check_pkgversion $line)
+		if [[ $vcheck == 1 ]]; then
+			downloads=$(echo -e "$downloads\n$line")
+		fi
+	done
+	#check if updates were found and assigned to downloads variable
+	if [[ -z $downloads ]]; then
+		echo -e " ${color3}there is nothing to do"
+	else
+		#if downloads were found, echo download list and ask to install
+		echo -e "${color1}:: ${color2}Updates found...${color3}"
+		for line in $downloads
+		do
+			echo -e $line
+		done
+		for line in $downloads
+		do
+			aur_dep_install $line
+		done
+	fi
+}
+
+#search option selected
+package_search()
+{
+	#search with pacman
+	pacman -Ss $1
+	#aur search
+	curl -s "https://${aururl}/rpc.php?type=search&arg=$1" | awk -F , 'BEGIN {RS = "{"} {print $0}' | awk -F : 'BEGIN {RS = ","} {print $0}' | grep -E '"Name":"|"Version":"|"Description":"' | while read line; do if [[ $line == *"Name"* ]]; then name=$(echo $line | awk -F : '{print $2}' | sed 's/"//g'); elif [[ $line == *"Version"* ]]; then version=$(echo $line| awk -F : '{print $2}' | sed 's/"//g'); elif [[ $line == *"Description"* ]]; then desc=$(echo $line | awk -F : '{print $2}' | sed 's/"//g') && echo -e "aur/$name $version\n    $desc";fi; done < /dev/stdin
+
+}
+
+#official install option selected
+pac_install()
+{
+	#install from pacman
+	sudo pacman -S $1
+}
+
+#remove package using pacman
+pac_remove()
+{
+	#remove with pacman
+	sudo pacman -Rsn $1
+}
+
+#clear cache option selected
+clear_cache()
+{
+	#clear pacman cache and optimize pacman database
+	sudo pacman -Sc
+	oprompt=$(echo -e "${color1}:: ${color2}Optimize Pacman Database? [Y/n] ${color3}")
+	ochoice=z
+	until [ "$ochoice" == "y" ] || [ "$ochoice" == "n" ] || [ "$ochoice" == "Y" ] || [ "$ochoice" == "N" ] || [[ -z $ochoice ]]; do
+		read -p "$oprompt" ochoice
+	done
+	if [ "$ochoice" == "y" ] || [ "$ochoice" == "Y" ] || [[ -z $ochoice ]]; then
+		sudo pacman-optimize
+	fi
+	#empty source folders from .wrapaur folder
+	cprompt=$(echo -e "${color1}:: ${color2}Clear contents of .wrapaur folder? [Y/n] ${color3}")
+	cchoice=z
+	until [ "$cchoice" == "y" ] || [ "$cchoice" == "n" ] || [ "$cchoice" == "Y" ] || [ "$cchoice" == "N" ] || [[ -z $cchoice ]]; do
+		read -p "$cprompt" cchoice
+	done
+	if [ "$cchoice" == "y" ] || [ "$cchoice" == "Y" ] || [[ -z $cchoice ]]; then			
+		rm -Rf $HOME/.wrapaur/*
+		echo -e "$HOME/.wrapaur contents cleared..."
+	fi
+}
+
+#Query Package Information
+query_packages()
+{
+	pacman -Qi $1
+}
+
+mirror_speed()
+{
+	mirrorpinglist=$(curl -s "$mirrorsurl" | sed 's/#Server/Server/g' | head -n $((6+2*$mirrorcount)) | grep 'http:' | sed 's/Server = //g')
+	pingtempfile=$(mktemp -t wrapaur_pingtemp.XXXXXXXXXX)
+	echo " " > $pingtempfile
+	pinglast=999
+	for line in $mirrorpinglist
+	do
+		pingtest=$(echo $line | awk -F/ '{print $3}')
+		pingtime=$(ping -c 1 $pingtest | grep 'time=' | awk '{print $8}' | sed 's/time=//g' | sed 's/\.[0-9]*$//g')
+		pingtimeint=$(echo $pingtime | grep "^-\?[0-9]*$")
+		if [[ -z $pingtimeint ]]; then
+			pingtime=$(ping -c 1 $pingtest | grep 'time=' | awk '{print $7}' | sed 's/time=//g' | sed 's/\.[0-9]*$//g')
+		fi
+		if [[ ! -z $pingtime ]] && [[ ! -z $pinglast ]] && [ "$pingtime" -le "$pinglast" ]; then
+			sed -i "1i${pingtime} ${line}" $pingtempfile
+		elif [[ ! -z $pingtime ]]; then
+			echo "$pingtime $line" >> $pingtempfile
+		else
+			echo "999 $line" >> $pingtempfile
+		fi
+		if [[ ! -z $pingtime ]]; then
+			pinglast=$(echo $pingtime)
+		fi
+	done
+	sortedmirrors=$(sort -k1 < $pingtempfile)
+	re='^http:'
+	mirrordate=$(date)
+	echo "##Mirror List Generated by Wrapaur on $mirrordate" > $pingtempfile
+	for line in $sortedmirrors
+	do
+		if [[ $line =~ $re ]]; then
+			echo "Server = $line" >> $pingtempfile
+		fi
+	done
+	sudo cp $pingtempfile /etc/pacman.d/mirrorlist
+	rm $pingtempfile
+}
+
+#update pacman mirrors
+update_mirrors()
+{
+	if [[ -t 0 ]]; then
+		echo -e "${color1}:: ${color2}Updating pacman mirror list...${color3}"
+	fi
+	#check for mirrorcount option and set to 200 if not found
+	if [[ -z $mirrorcount ]]; then
+		mirrorcount=200
+	fi
+	#run with no prompts
+	if [ "$mirrorprompt" == "no" ] || [[ ! -t 0 ]]; then
+		sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+		if [[ -z $country ]]; then
+			mirrorsurl="https://www.archlinux.org/mirrorlist/?country=all&protocol=http&ip_version=4&use_mirror_status=on"
+			mirror_speed
+		else
+			mirrorsurl="https://www.archlinux.org/mirrorlist/?country=${country}&protocol=http&ip_version=4&use_mirror_status=on"
+			mirror_speed
+		fi
+	#run with prompts
+	else
+		mprompt=$(echo -e "${color1}:: ${color2}Warning: This will overwrite your pacman mirror list at /etc/pacman.d/mirrorlist.  Proceed? [Y/n] ${color3}")
+		mchoice=z
+		until [ "$mchoice" == "y" ] || [ "$mchoice" == "n" ] || [ "$mchoice" == "Y" ] || [ "$mchoice" == "N" ] || [[ -z $mchoice ]]; do
+			read -p "$mprompt" mchoice
+		done
+		if [ "$mchoice" == "y" ] || [ "$mchoice" == "Y" ] || [[ -z $mchoice ]]; then			
+			sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+			if [[ -z $country ]]; then
+				rcprompt=$(echo -e "${color1}:: ${color2}Enter Country or All: ${color3}")
+				PS3=${rcprompt}
+				moptions=("Australia" "Austria" "Bangladesh" "Belarus" "Belgium" "Brazil" "Bulgaria" "Canada" "Chile" "China" "Colombia" "Croatia" "Czech Republic" "Denmark" "Ecuador" "Estonia" "France" "Germany" "Greece" "Hungary" "Iceland" "India" "Indonesia" "Ireland" "Israel" "Italy" "Japan" "Kazakhstan" "Latvia" "Lithuania" "Luxembourg" "Macedonia" "Netherlands" "New Caledonia" "New Zealand" "Norway" "Poland" "Portugal" "Romania" "Russia" "Serbia" "Singapore" "Slovakia" "South Africa" "South Korea" "Spain" "Sweden" "Switzerland" "Taiwan" "Turkey" "Ukraine" "United Kingdom" "United States" "Vietnam" "All")
+				select opt in "${moptions[@]}"
+				do
+					case $opt in
+						"Australia")
+							country="AU"
+							break
+							;;
+						"Austria")
+							country="AT"	
+							break
+							;;
+						"Bangladesh")
+							country="BD"	
+							break
+							;;
+						"Belarus")
+							country="BY"	
+							break
+							;;
+						"Belgium")
+							country="BE"	
+							break
+							;;
+						"Brazil")
+							country="BR"	
+							break
+							;;
+						"Bulgaria")
+							country="BG"	
+							break
+							;;
+						"Canada")
+							country="CA"	
+							break
+							;;
+						"Chile")
+							country="CL"	
+							break
+							;;
+						"China")
+							country="CN"	
+							break
+							;;
+						"Colombia")
+							country="CO"	
+							break
+							;;
+						"Croatia")
+							country="HR"	
+							break
+							;;
+						"Czech Republic")
+							country="CZ"	
+							break
+							;;
+						"Denmark")
+							country="DK"	
+							break
+							;;
+						"Ecuador")
+							country="EC"	
+							break
+							;;
+						"Estonia")
+							country="EE"	
+							break
+							;;
+						"France")
+							country="FR"	
+							break
+							;;
+						"Germany")
+							country="DE"	
+							break
+							;;
+						"Greece")
+							country="GR"	
+							break
+							;;
+						"Hungary")
+							country="HU"	
+							break
+							;;
+						"Iceland")
+							country="IS"	
+							break
+							;;
+						"India")
+							country="IN"	
+							break
+							;;
+						"Indonesia")
+							country="ID"
+							break
+							;;
+						"Ireland")
+							country="IE"	
+							break
+							;;
+						"Israel")
+							country="IL"
+							break
+							;;
+						"Italy")
+							country="IT"	
+							break
+							;;
+						"Japan")
+							country="JP"	
+							break
+							;;
+						"Kazakhstan")
+							country="KZ"	
+							break
+							;;
+						"Latvia")
+							country="LV"	
+							break
+							;;
+						"Lithuania")
+							country="LT"	
+							break
+							;;
+						"Luxembourg")
+							country="LU"	
+							break
+							;;
+						"Macedonia")
+							country="MK"	
+							break
+							;;
+						"Netherlands")
+							country="NL"	
+							break
+							;;
+						"New Caledonia")
+							country="NC"	
+							break
+							;;
+						"New Zealand")
+							country="NZ"	
+							break
+							;;
+						"Norway")
+							country="NO"	
+							break
+							;;
+						"Poland")
+							country="PL"	
+							break
+							;;
+						"Portugal")
+							country="PT"	
+							break
+							;;
+						"Romania")
+							country="RO"	
+							break
+							;;
+						"Russia")
+							country="RU"	
+							break
+							;;
+						"Serbia")
+							country="RS"	
+							break
+							;;
+						"Singapore")
+							country="SG"	
+							break
+							;;
+						"Slovakia")
+							country="SK"	
+							break
+							;;
+						"South Africa")
+							country="ZA"	
+							break
+							;;
+						"South Korea")
+							country="KR"
+							break
+							;;
+						"Spain")
+							country="ES"	
+							break
+							;;
+						"Sweden")
+							country="SE"	
+							break
+							;;
+						"Switzerland")
+							country="CH"	
+							break
+							;;
+						"Taiwan")
+							country="TW"	
+							break
+							;;
+						"Turkey")
+							country="TR"	
+							break
+							;;
+						"Ukraine")
+							country="UA"	
+							break
+							;;
+						"United Kingdom")
+							country="GB"	
+							break
+							;;
+						"United States")
+							country="US"	
+							break
+							;;
+						"Vietnam")
+							country="VN"	
+							break
+							;;
+						"All")
+							country="all"	
+							break
+							;;
+						*) echo Invalid Option;;
+					esac
+				done
+				mirrorsurl="https://www.archlinux.org/mirrorlist/?country=${country}&protocol=http&ip_version=4&use_mirror_status=on"
+				mirror_speed
+				echo -e " original mirrorlist has been backed up to /etc/pacman.d/mirrorlist.backup"
+			else
+				mirrorsurl="https://www.archlinux.org/mirrorlist/?country=${country}&protocol=http&ip_version=4&use_mirror_status=on"
+				mirror_speed
+				echo -e " original mirrorlist has been backed up to /etc/pacman.d/mirrorlist.backup"
+			fi
+		fi
+	fi
+}
+
+#list installed packages with package count
+list_packages()
+{
+	lprompt=$(echo -e "${color1}:: ${color2}List All, Explicitly Installed, Dependendies, Native only, Foreign Only, or Print Package Stats? [a/e/d/n/f/s] ${color3}")
+	until [ "$lchoice" == "a" ] || [ "$lchoice" == "A" ] || [ "$lchoice" == "e" ] || [ "$lchoice" == "E" ] || [ "$lchoice" == "d" ] || [ "$lchoice" == "D" ] || [ "$lchoice" == "n" ] || [ "$lchoice" == "N" ] || [ "$lchoice" == "f" ] || [ "$lchoice" == "F" ] || [ "$lchoice" == "s" ] || [ "$lchoice" == "S" ];  do
+		read -p "$lprompt" lchoice
+	done
+	if [ "$lchoice" == "a" ] || [ "$lchoice" == "A" ]; then
+		pacman -Q
+		totalpkg=$(pacman -Q | wc -l)
+		echo -e "Total installed packages: $totalpkg"
+	elif [ "$lchoice" == "e" ] || [ "$lchoice" == "E" ]; then
+		pacman -Qe
+		totalpkg=$(pacman -Qe | wc -l)
+		echo -e "Total explicitly installed packages: $totalpkg"
+	elif [ "$lchoice" == "d" ] || [ "$lchoice" == "D" ]; then
+		pacman -Qd
+		totalpkg=$(pacman -Qd | wc -l)
+		echo -e "Total installed as dependencies: $totalpkg"
+	elif [ "$lchoice" == "n" ] || [ "$lchoice" == "N" ]; then
+		pacman -Qn
+		totalpkg=$(pacman -Qn | wc -l)
+		echo -e "Total installed native packages: $totalpkg"
+	elif [ "$lchoice" == "f" ] || [ "$lchoice" == "F" ]; then
+		pacman -Qm
+		totalpkg=$(pacman -Qm | wc -l)
+		echo -e "Total installed foreign packages: $totalpkg"
+	elif [ "$lchoice" == "s" ] || [ "$lchoice" == "S" ]; then
+		totald=$(pacman -Qd | wc -l)
+		totale=$(pacman -Qe | wc -l)
+		totalen=$(pacman -Qen | wc -l)
+		totalef=$(pacman -Qem | wc -l)
+		totaldn=$(pacman -Qdn | wc -l)
+		totaldf=$(pacman -Qdm | wc -l)
+		totalp=$(pacman -Q | wc -l)
+		echo -e " Installed Package Stats:\n     Explicitly Installed Packages: ${totale}\n          Native: ${totalen}\n          Foreign: ${totalef}\n     Packages Installed as Dependencies: ${totald}\n          Native: ${totaldn}\n          Foreign: ${totaldf}\n     Total Packages Installed: ${totalp}"
+	fi
+}
+
+#check for updates and email results if email exists
+check_updates()
+{
+	#check for pacman updates with temp dir and fakeroot
+	echo -e "${color1}:: ${color2}Checking for updates... ${color3}"
+	pacpath=$(awk -F' *= *' '$1 ~ /DBPath/ { print $1 "=" $2 }' /etc/pacman.conf | sed -e 's/#DBPath=//g' -e 's/DBPath=//g')
+	if [[ -z $pacpath ]]; then
+		pacpath=/var/lib/pacman
+	fi
+	pactemp=$(mktemp -d -t pactemp.XXXXXXXXXX)
+	trap 'rm -rf $pactemp' INT TERM EXIT
+	ln -s "${pacpath}/local" "$pactemp" &> /dev/null
+	fakeroot pacman -Sy --dbpath "$pactemp" --logfile /dev/null &> /dev/null
+	pacupdates=$(pacman -Qqu --dbpath "$pactemp" 2> /dev/null)
+	rm -rf $pactemp
+
+	#check for updates and place in variables
+	aurpkgs=$(pacman -Qm | awk '{print $1}')
+	for line in $aurpkgs
+	do
+		vcheck=$(check_pkgversion $line)
+		if [[ $vcheck == 1 ]]; then
+			aurupdates=$(echo -e "$aurupdates\n$line")
+		fi
+	done
+	#write current updates to temp file
+	tempfile=$(mktemp -t wrapaur_current.XXXXXXXXXX)
+	echo -e "${pacupdates}\n${aurupdates}" > $tempfile
+	#check updates against history file to avoid repeated emails
+	diff -q <(sort $HOME/.wrapaur_history | uniq) <(sort $tempfile | uniq) > /dev/null
+	if [ $? -eq 1 ]; then
+		checkfile="yes"
+	fi
+	#remove temp files
+	rm $tempfile
+	if [[ ! -z $pacupdates ]] || [[ ! -z $aurupdates ]]; then
+		echo -e "[Official Updates]\n${pacupdates}\n\n[AUR Updates]\n${aurupdates}\n"
+	else
+		echo -e " No updates found."
+	fi
+	#send email if email option exists in config file
+	if [[ ! -z $email ]] && ( [[ ! -z $pacupdates ]] || [[ ! -z $aurupdates ]] ) && [ "$checkfile" == "yes" ]; then
+		echo -e "[Official Updates]\n${pacupdates}\n\n[AUR Updates]\n${aurupdates}\n" | mail -s "Arch Linux Updates Found" $email
+	fi
+	#save the history so email is not repeated for same updates
+	echo -e "${pacupdates}\n${aurupdates}" > $HOME/.wrapaur_history
+}
+
+check_pkgversion()
+{
+	newver=$(curl -s "https://${aururl}/rpc.php?type=info&arg=$1" | awk -F \": '{print $10}' | awk -F , '{print $1}' | sed 's/"//g')
+	currentver=$(pacman -Qi $1 | awk '{print $3}' | head -n 2 | tail -n 1)
+	if [[ $newver != $currentver ]] && [[ ! -z $newver ]]; then
+		echo 1
+	fi
+}
+
+check_all_depends()
+{
+	echo -e "${color1}:: ${color2}Checking Dependencies for ${1}...${color3}"
+	_pkgbasename=$(curl -s "https://${aururl}/cgit/aur.git/plain/PKGBUILD?h=$1" | sed -n "s/^_pkgbasename=//p")
+	pkgname=$(curl -s "https://${aururl}/cgit/aur.git/plain/PKGBUILD?h=$1" | sed -n "s/^pkgname=//p")
+	pkgver=$(curl -s "https://${aururl}/cgit/aur.git/plain/PKGBUILD?h=$1" | sed -n "s/^pkgver=//p")
+	depends=$(curl -s "https://${aururl}/cgit/aur.git/plain/PKGBUILD?h=$1" | awk '/^depends=/,/\)$/' | sed -e "s/[a-z]*=(//g" -e "s/'//g" -e "s/)//g")
+	mdepends=$(curl -s "https://${aururl}/cgit/aur.git/plain/PKGBUILD?h=$1" | awk '/^makedepends=/,/\)$/' | sed -e "s/[a-z]*=(//g" -e "s/'//g" -e "s/)//g")
+	arch=$(uname -m)
+	if [[ $arch == "x86_64" ]]; then
+		dependsx64=$(curl -s "https://${aururl}/cgit/aur.git/plain/PKGBUILD?h=$1" | awk '/^depends_x86_64=/,/\)$/' | sed -e "s/[a-zA-Z0-9_]*=(//g" -e "s/'//g" -e "s/)//g")
+	else
+		dependsi686=$(curl -s "https://${aururl}/cgit/aur.git/plain/PKGBUILD?h=$1" | awk '/^depends_i686=/,/\)$/' | sed -e "s/[a-zA-Z0-9_]*=(//g" -e "s/'//g" -e "s/)//g")
+	fi
+	#if no dependencies echo and leave loop
+	if [[ $depends == "" ]]; then
+		echo "No dependencies found..."
+	else
+		#loop through dependencies recursively, check if installed, try pacman install, then aur install
+		for line in $depends $mdepends $dependsx64 $dependsi686
+		do
+			line=$(echo "$line" | sed -e "s/>=[^=]*$//g" -e "s/<=[^=]*$//g" -e "s/<[^<]*$//g" -e "s/>[^>]*$//g")
+			pacman -Qi $line &>/dev/null
+			if [[ $? == 1 ]]; then
+				sudo pacman -S --needed --asdeps $line
+				if [[ $? == 1 ]]; then
+					check_all_depends $line
+					aur_git_install $line --asdeps
+				fi
+			fi
+		done 
+	fi
+}
+
+aur_dep_install()
+{
+	check_all_depends $1
+	aur_git_install $1
+}
+
+aur_git_install()
+{
+	#check if package exists in AUR
+	exists=$(curl -s "https://${aururl}/rpc.php?type=info&arg=$1" | awk -F : '{print $4}' | awk -F , '{print $1}')
+	if [[ $exists != 0 ]]; then
+		echo -e "${color1}:: ${color2}Downloading...${color3}"
+		echo -e $1
+		#clone git package to wrapaur folder or update if exists
+		if [[ ! -d $HOME/.wrapaur/$1 ]]; then
+			git clone https://${aururl}/${1}.git $HOME/.wrapaur/$1
+		else
+			cd $HOME/.wrapaur/$1
+			git pull
+		fi
+		aprompt=$(echo -e "${color1}:: ${color2}Proceed with installation? [Y/n] ${color3}")
+		ichoice=z
+		until [ "$ichoice" == "y" ] || [ "$ichoice" == "n" ] || [ "$ichoice" == "Y" ] || [ "$ichoice" == "N" ] || [[ -z $ichoice ]]; do
+			read -p "$aprompt" ichoice
+		done	
+		#if chosen to install now, compile and run pacman -U, then remove folder
+		if [ "$ichoice" == "y" ] || [ "$ichoice" == "Y" ] || [[ -z $ichoice ]]; then
+			cd $HOME/.wrapaur/$1
+			echo -e "installing ${1}..."
+			eprompt=$(echo -e "${color1}:: ${color2}Edit PKGBUILD? [Y/n] ${color3}")
+			echoice=z
+			until [ "$echoice" == "y" ] || [ "$echoice" == "n" ] || [ "$echoice" == "Y" ] || [ "$echoice" == "N" ] || [[ -z $echoice ]]; do
+				read -p "$eprompt" echoice
+			done	
+			#if chosen to edit PKGBUILD open editor
+			if [ "$echoice" == "y" ] || [ "$echoice" == "Y" ] || [[ -z $echoice ]]; then
+				$EDITOR PKGBUILD
+			fi			
+			makepkg -si $2
+			cd $HOME/.wrapaur
+			raprompt=$(echo -e "${color1}:: ${color2}Remove source folder? [Y/n] ${color3}")
+			rachoice=z
+			until [ "$rachoice" == "y" ] || [ "$rachoice" == "n" ] || [ "$rachoice" == "Y" ] || [ "$rachoice" == "N" ] || [[ -z $rachoice ]]; do
+				read -p "$raprompt" rachoice
+			done
+			if [ "$rachoice" == "y" ] || [ "$rachoice" == "Y" ] || [[ -z $rachoice ]]; then			
+				rm -Rf $HOME/.wrapaur/$1
+			fi
+			echoice="x"
+			rachoice="x"
+		else
+			echo -e " ${color3}updates downloaded to $HOME/.wrapaur"
+		fi
+	else
+		echo -e "Package not found."
+	fi
+}
+
+archnews()
+{
+	local IFS=\>
+	while read -d \< ENTITY CONTENT;
+	do
+		if [[ $ENTITY = "title" ]]; then
+			echo -e "------${CONTENT}------\n" | sed -r -e "s/&lt;\(.*\)&gt;//g"
+		elif [[ $ENTITY = "description" ]]; then
+			echo -e "${CONTENT}\n" | sed -r -e "s/amp;amp;//g" -e "s/&lt;[a-z|A-Z|/| |0-9|=|\"|:|_|\.|-|\?|;|#]*?&gt;//g"
+		fi
+	done < <(curl -s "https://www.archlinux.org/feeds/news/")
+}
+
+aur_comments()
+{
+	curl -s "https://${aururl}/packages/$1/?comments=all" | sed -r -n -e "/<div id=\"news\">/,/<!-- End of main content -->/p" | sed -e 's/<[^>]*>//g'
+}
+
+usage()
+{
+	echo $'Usage: wrapaur [OPTION]... [PACKAGE]...\n(for multiple packages pass option each time; e.g. -i package1 -i package2)\n  -a install from aur\n  -c clean pacman cache with pacman -Sc, optimize pacman database, and clear .wrapaur folder\n  -e check for updates from official repositories and aur and print available updates or email results if email is present in .wrapaurrc (add to cron or systemd timer to have email updates for new packages)\n      note: email must be properly configured on system\n  -i install from official repositories\n  -l list installed packages with package count\n  -m update pacman mirrorlist\n  -n print the latest news from archlinux.org\n  -o print aur comments for a specific package\n  -q query information on a specific package\n  -r remove a package with pacman -Rsn (for other removal options use pacman)\n  -s search official repositories and aur\n  -u update official repositories and aur'
+}
+
+##########Main Program##########
+
+#fix for running --help with getopts
+dashtest=$(echo $1 | grep "^--.*")
+if [[ ! -z $dashtest ]]; then
+	usage
+	exit
+fi
+
+while getopts "a:cei:lmno:q:r:s:u" args; do
+	case $args in
+		a)
+			aur_dep_install $OPTARG
+			;;
+		c)
+			clear_cache
+			;;
+		e)
+			check_updates
+			;;
+		i)
+			pac_install $OPTARG
+			;;
+		l)
+			list_packages
+			;;
+		m)
+			update_mirrors
+			;;
+		n)
+			archnews
+			;;
+		o)
+			aur_comments $OPTARG
+			;;
+		q)
+			query_packages $OPTARG
+			;;
+		r)
+			pac_remove $OPTARG
+			;;
+		s)
+			package_search $OPTARG
+			;;
+		u)
+			update_all
+			;;
+		*)
+			usage
+			;;
+	esac
+done
+
+if [ $OPTIND == 1 ]; then
+	usage
+fi
+
+echo -ne '\e[0m'

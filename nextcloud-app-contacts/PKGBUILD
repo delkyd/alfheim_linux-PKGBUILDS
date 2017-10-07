@@ -1,0 +1,19 @@
+# $Id: PKGBUILD 103944 2014-01-13 20:31:53Z spupykin $
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+
+pkgname=nextcloud-app-contacts
+pkgver=2.0.0
+pkgrel=1
+pkgdesc="Contacts app for nextcloud"
+arch=('any')
+url="https://nextcloud.com/"
+license=('GPL')
+depends=('nextcloud')
+options=('!strip')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/nextcloud/contacts/releases/download/$pkgver/contacts.tar.gz")
+sha256sums=('160363afc283b9b29ebca53c1f08e9c96d70f004f35a12781da6c849fbacd861')
+
+package() {
+  install -d "$pkgdir"/usr/share/webapps/nextcloud/apps
+  cp -a "$srcdir"/contacts "$pkgdir"/usr/share/webapps/nextcloud/apps/contacts
+}

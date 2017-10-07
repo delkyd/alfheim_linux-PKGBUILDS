@@ -1,0 +1,41 @@
+pkgbase = mate-session-manager-dev
+	pkgdesc = The MATE Session Handler (GTK3 version)
+	pkgver = 1.19.0
+	pkgrel = 5
+	url = http://mate-desktop.org
+	arch = i686
+	arch = x86_64
+	groups = mate
+	license = GPL
+	license = LGPL
+	makedepends = mate-common>=1.19
+	makedepends = xmlto
+	makedepends = xtrans
+	makedepends = gtk3
+	makedepends = mate-desktop>=1.19
+	makedepends = mate-polkit>=1.19
+	makedepends = mate-settings-daemon>=1.19
+	depends = dbus-glib
+	depends = glib2
+	depends = gtk3
+	depends = gtk-update-icon-cache
+	depends = libsm
+	depends = libxtst
+	depends = mate-desktop>=1.19
+	depends = mate-polkit>=1.19
+	depends = mate-settings-daemon>=1.19
+	depends = ttf-dejavu
+	depends = xdg-user-dirs
+	optdepends = lightdm-gtk-greeter: A lightweight display manager
+	optdepends = onboard: On-screen keyboard useful for mobility impaired users
+	optdepends = orca: Screen reader for blind or visually impaired individuals
+	optdepends = xdg-user-dirs-gtk: Add autostart that prompts to rename user directories when switching locales
+	provides = mate-session-manager
+	provides = mate-session-manager-gtk3
+	conflicts = mate-session-manager
+	conflicts = mate-session-manager-gtk3
+	source = http://pub.mate-desktop.org/releases/1.19/mate-session-manager-1.19.0.tar.xz
+	sha1sums = 17c4dd451b8841faa3341715f247595836f12d88
+
+pkgname = mate-session-manager-dev
+

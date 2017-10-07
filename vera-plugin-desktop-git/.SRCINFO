@@ -1,0 +1,22 @@
+pkgbase = vera-plugin-desktop-git
+	pkgdesc = Desktop plugin for vera
+	pkgver = 1.0.4.2
+	pkgrel = 1
+	url = https://github.com/vera-desktop/vera-plugin-desktop
+	install = vera-plugin-desktop.install
+	arch = i686
+	arch = x86_64
+	license = LGPL
+	makedepends = bake-sl
+	depends = vera-git
+	depends = gnome-menus
+	depends = libx11
+	depends = cairo
+	provides = vera-plugin-desktop-git
+	conflicts = vera-plugin-desktop-git
+	conflicts = vera-plugin-desktop
+	source = vera-plugin-desktop::git://github.com/vera-desktop/vera-plugin-desktop.git#branch=master
+	md5sums = SKIP
+
+pkgname = vera-plugin-desktop-git
+

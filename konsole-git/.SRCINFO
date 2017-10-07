@@ -1,0 +1,25 @@
+pkgbase = konsole-git
+	pkgdesc = KDE's terminal emulator
+	pkgver = r5645.4cbb5ad
+	pkgrel = 1
+	url = https://projects.kde.org/projects/kde/applications/konsole
+	arch = i686
+	arch = x86_64
+	license = GPL
+	license = LGPL
+	license = FDL
+	makedepends = extra-cmake-modules-git
+	makedepends = git
+	makedepends = kdoctools-git
+	makedepends = python
+	depends = knotifyconfig-git
+	depends = kpty-git
+	depends = kparts-git
+	provides = konsole
+	conflicts = konsole
+	conflicts = kdebase-konsole
+	source = git://anongit.kde.org/konsole.git
+	md5sums = SKIP
+
+pkgname = konsole-git
+

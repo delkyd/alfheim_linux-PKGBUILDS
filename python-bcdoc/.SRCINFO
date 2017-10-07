@@ -1,0 +1,15 @@
+pkgbase = python-bcdoc
+	pkgdesc = Tools to help document botocore-based projects.
+	pkgver = 0.14.0
+	pkgrel = 2
+	url = https://github.com/boto/bcdoc
+	arch = any
+	license = Apache
+	makedepends = python
+	makedepends = python-distribute
+	source = bcdoc-0.14.0.tar.gz::https://github.com/boto/bcdoc/archive/0.14.0.tar.gz
+	sha256sums = f39a87c8667a059503d2dde24d7bfe181b8d863cb7e2aa993f2561ff15683aa4
+
+pkgname = python-bcdoc
+	depends = python
+

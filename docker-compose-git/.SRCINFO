@@ -1,0 +1,26 @@
+pkgbase = docker-compose-git
+	pkgdesc = Define and run complex applications using Docker
+	pkgver = r1
+	pkgrel = 1
+	url = https://github.com/docker/compose
+	arch = any
+	license = Apache
+	makedepends = git
+	depends = python
+	depends = python-docopt
+	depends = python-yaml
+	depends = python-requests
+	depends = python-texttable
+	depends = python-websocket-client
+	depends = python-docker-py
+	depends = python-dockerpty
+	depends = python-six
+	depends = python-jsonschema
+	depends = python-setuptools
+	provides = docker-compose
+	conflicts = docker-compose
+	source = compose::git+https://github.com/docker/compose.git
+	sha512sums = SKIP
+
+pkgname = docker-compose-git
+

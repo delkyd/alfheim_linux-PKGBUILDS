@@ -1,0 +1,16 @@
+pkgbase = perl-xml-treepp
+	pkgdesc = XML::TreePP module parses an XML document and expands it for a hash tree.
+	pkgver = 0.43
+	pkgrel = 2
+	url = https://metacpan.org/release/XML-TreePP
+	arch = any
+	license = GPL
+	license = PerlArtistic
+	depends = perl
+	options = !emptydirs
+	options = purge
+	source = http://search.cpan.org/CPAN/authors/id/K/KA/KAWASAKI/XML-TreePP-0.43.tar.gz
+	md5sums = f69693066e52591bf1142d3f4e6d37e5
+
+pkgname = perl-xml-treepp
+

@@ -1,0 +1,27 @@
+pkgbase = snf-image-creator
+	pkgdesc = Command line tool for creating images
+	pkgver = 0.9
+	pkgrel = 2
+	url = https://github.com/grnet/snf-image-creator
+	changelog = ChangeLog
+	arch = any
+	license = GPL3
+	makedepends = python2-distribute
+	makedepends = python2-sphinx
+	depends = python2
+	depends = rsync
+	depends = libguestfs
+	depends = python2-pythondialog
+	depends = python2-sendfile
+	depends = python2-progress
+	depends = python2-ansicolors
+	depends = kamaki
+	depends = python2-sh
+	depends = python2-pyparted
+	optdepends = winexe: support for Windows images,
+	optdepends = hivex: support for Windows images
+	source = https://pypi.python.org/packages/source/s/snf_image_creator/snf_image_creator-0.9.tar.gz
+	md5sums = 13be21e7beebac5b81a3db5e5c0c7f38
+
+pkgname = snf-image-creator
+

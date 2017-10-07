@@ -1,0 +1,31 @@
+pkgbase = lib32-gst-plugins-ugly
+	pkgdesc = GStreamer Multimedia Framework Ugly Plugins (32-bit)
+	pkgver = 1.12.1
+	pkgrel = 1
+	url = https://gstreamer.freedesktop.org/
+	arch = x86_64
+	license = LGPL
+	makedepends = python
+	makedepends = lib32-libx264
+	makedepends = autoconf-archive
+	makedepends = git
+	makedepends = valgrind-multilib
+	depends = lib32-gst-plugins-base-libs
+	depends = lib32-libdvdread
+	depends = lib32-lame
+	depends = lib32-libmpeg2
+	depends = lib32-a52dec
+	depends = lib32-libmad
+	depends = lib32-libsidplay
+	depends = lib32-libcdio
+	depends = lib32-libx264
+	depends = lib32-opencore-amr
+	depends = lib32-mpg123
+	depends = gst-plugins-ugly
+	source = git+https://anongit.freedesktop.org/git/gstreamer/gst-plugins-ugly#commit=53e145066bd6302f041880f2450d7549768d1976
+	source = gst-common::git+https://anongit.freedesktop.org/git/gstreamer/common
+	sha256sums = SKIP
+	sha256sums = SKIP
+
+pkgname = lib32-gst-plugins-ugly
+

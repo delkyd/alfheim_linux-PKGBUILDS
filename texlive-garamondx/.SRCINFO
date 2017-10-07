@@ -1,0 +1,16 @@
+pkgbase = texlive-garamondx
+	pkgdesc = URW Garamond No8 Adobe Type1 fonts from CTAN (for texlive)
+	pkgver = 1.20
+	pkgrel = 3
+	url = http://www.ctan.org/tex-archive/fonts/garamondx
+	arch = any
+	license = CUSTOM:alladin
+	depends = texlive-core
+	noextract = garamondx.tds-1.20.zip
+	source = garamondx.tds-1.20.zip::http://mirrors.ctan.org/install/fonts/garamondx.tds.zip
+	source = garamondx.maps
+	md5sums = d81a2e0bc611480e58e414bf9585cc86
+	md5sums = 80761a71120a9861400927b591ac463f
+
+pkgname = texlive-garamondx
+

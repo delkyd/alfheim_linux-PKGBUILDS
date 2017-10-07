@@ -1,0 +1,22 @@
+pkgbase = python-sphinxcontrib-tikz
+	pkgdesc = TikZ extension for Sphinx.
+	pkgver = 0.4.2
+	pkgrel = 2
+	url = https://bitbucket.org/philexander/tikz
+	arch = any
+	license = BSD
+	makedepends = python
+	makedepends = python-setuptools
+	makedepends = python2
+	makedepends = python2-setuptools
+	source = https://pypi.python.org/packages/source/s/sphinxcontrib-tikz/sphinxcontrib-tikz-0.4.2.tar.gz
+	sha1sums = e7828e2f1dfbb190eb37374905356cfd29ff83d3
+
+pkgname = python-sphinxcontrib-tikz
+	depends = python
+	depends = python-setuptools
+
+pkgname = python2-sphinxcontrib-tikz
+	depends = python2
+	depends = python2-setuptools
+

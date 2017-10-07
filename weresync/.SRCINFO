@@ -1,0 +1,19 @@
+pkgbase = weresync
+	pkgdesc = Incrementally clone linux drives
+	pkgver = 1.0.7
+	pkgrel = 1
+	url = https://github.com/DonyorM/weresync
+	arch = any
+	groups = any
+	license = Apache
+	makedepends = python
+	makedepends = python-setuptools
+	depends = python
+	depends = python-parse
+	depends = python-yapsy
+	options = !emptydirs
+	source = https://files.pythonhosted.org/packages/source/W/WereSync/WereSync-1.0.7.tar.gz
+	md5sums = e86bf6cd5a6708ae9d1ad30a5e710951
+
+pkgname = weresync
+

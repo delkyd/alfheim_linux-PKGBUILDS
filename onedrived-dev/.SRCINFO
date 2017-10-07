@@ -1,0 +1,18 @@
+pkgbase = onedrived-dev
+	pkgdesc = A Microsoft OneDrive client for Linux, written in Python3
+	pkgver = r164.62ceee1
+	pkgrel = 2
+	url = https://github.com/xybu/onedrived-dev
+	arch = any
+	license = MIT
+	makedepends = python-setuptools
+	depends = python
+	depends = ngrok
+	provides = onedrived
+	conflicts = onedrived
+	replaces = onedrive-d
+	source = git+https://github.com/xybu/onedrived-dev.git
+	md5sums = SKIP
+
+pkgname = onedrived-dev
+

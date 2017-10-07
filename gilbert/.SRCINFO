@@ -1,0 +1,13 @@
+pkgbase = gilbert
+	pkgdesc = Font made in tribute of Gilbert Baker, creator of the Rainbow Flag. Two versions of the font are available, one is compatible system-wide while the other is only compatible with Firefox because it is an OpenType-SVG font.
+	pkgver = 1.004
+	pkgrel = 3
+	url = https://www.typewithpride.com/
+	install = gilbert.install
+	arch = any
+	license = Creative Commons BY-SA
+	source = https://github.com/Fontself/TypeWithPride/archive/1.004.tar.gz
+	sha512sums = 7e2671935c36ec0eb9a082c47b935b14b97466ebb713f480646c3014337297bb14a8ce1d2bcfebbfff264071e8bf6c71c4dfd77cc9aec8395f2969203b40597b
+
+pkgname = gilbert
+

@@ -1,0 +1,24 @@
+pkgbase = expressvpn
+	pkgdesc = Proprietary VPN client for Linux
+	pkgver = 1.2.0
+	pkgrel = 1
+	url = https://expressvpn.com
+	install = expressvpn.install
+	arch = x86_64
+	arch = i686
+	license = custom
+	depends = net-tools
+	source = license-20170317.html::https://www.expressvpn.com/vpn-software/vpn-linux/open-source
+	validpgpkeys = 1D0B09AD6C93FEE93FDDBD9DAFF2A1415F6A3A38
+	sha512sums = SKIP
+	source_x86_64 = https://download.expressvpn.xyz/clients/linux/expressvpn_1.2.0_amd64.deb
+	source_x86_64 = https://download.expressvpn.xyz/clients/linux/expressvpn_1.2.0_amd64.deb.asc
+	sha512sums_x86_64 = a72a674bb94e92351d8a7790ea83d929c77173c753f9f5dda50da5f0f4fdded8e50f53488c16eca2c82e8efd65d90585a804a85298255417a37c293e0e9d4421
+	sha512sums_x86_64 = SKIP
+	source_i686 = https://download.expressvpn.xyz/clients/linux/expressvpn_1.2.0_i386.deb
+	source_i686 = https://download.expressvpn.xyz/clients/linux/expressvpn_1.2.0_i386.deb.asc
+	sha512sums_i686 = e3b29dcf085a39cc17de6589f705a5b90feaacfd0806350b91fbab6a32e2d82b1987d2bbd112ee81e1e29bb3abb922baa1eae5f4286b20f95bea366581046303
+	sha512sums_i686 = SKIP
+
+pkgname = expressvpn
+

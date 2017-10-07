@@ -1,0 +1,30 @@
+pkgbase = tlclient
+	pkgdesc = A remote desktop application
+	pkgver = 4.8.0
+	pkgrel = 1
+	url = https://www.cendio.com/thinlinc/download
+	arch = i686
+	arch = x86_64
+	arch = armv7h
+	license = custom:cendio
+	depends = python2
+	depends = pygtk
+	depends = openssh
+	depends = libx11
+	depends = alsa-lib
+	depends = zlib
+	optdepends = cups: required for remote printing
+	optdepends = python2-ldap: auth against ldap
+	source = tlclient.desktop
+	source = tlclient.png
+	sha256sums = 3db307225f95453eeac89f4fcd4618efd01a977cc66998ba11fc22f97c194004
+	sha256sums = bb7cdf717ba1ee425be21d6bce245a17f2ba798b7202d9189fc964a408e3208a
+	source_i686 = https://www.cendio.com/downloads/clients/tl-4.8.0-5456-client-linux-dynamic-i686.tar.gz
+	sha256sums_i686 = 76e845db9ec63bcad51a8ff4f1400fff57c1f92a47d43341a5e3f3a7ffcd31dc
+	source_x86_64 = https://www.cendio.com/downloads/clients/tl-4.8.0-5456-client-linux-dynamic-x86_64.tar.gz
+	sha256sums_x86_64 = bc72d1dfaa031cdeb0335f73824154b41ef265e04935adc7780ac2a0ad64fbda
+	source_armv7h = https://www.cendio.com/downloads/clients/tl-4.8.0-5456-client-linux-dynamic-armhf.tar.gz
+	sha256sums_armv7h = 10fd82eb5e1741e3c6baade6bdad0aaf76cdab92fb8e928076d9a1314d2d6204
+
+pkgname = tlclient
+

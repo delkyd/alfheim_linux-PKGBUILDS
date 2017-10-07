@@ -1,0 +1,33 @@
+pkgbase = birdie-git
+	pkgdesc = Twitter client for Linux
+	pkgver = 1.1+git.57.g7003d5b
+	pkgrel = 1
+	url = http://birdieapp.github.io
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = git
+	makedepends = desktop-file-utils
+	makedepends = hicolor-icon-theme
+	makedepends = intltool
+	makedepends = yelp-tools
+	makedepends = gnome-common
+	makedepends = gobject-introspection
+	depends = glib2
+	depends = gtk3
+	depends = hicolor-icon-theme
+	depends = vala
+	depends = granite-git
+	depends = libpurple
+	depends = gtksourceview3
+	depends = libdbusmenu-gtk3
+	depends = webkitgtk
+	provides = birdie
+	conflicts = birdie
+	conflicts = birdie-bzr
+	options = !libtool
+	source = birdie::git+https://github.com/birdieapp/birdie.git
+	md5sums = SKIP
+
+pkgname = birdie-git
+

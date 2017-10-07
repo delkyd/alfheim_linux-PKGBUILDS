@@ -1,0 +1,15 @@
+pkgbase = ukopp
+	pkgdesc = A backup program for USB devices
+	pkgver = 6.3
+	pkgrel = 1
+	url = http://www.kornelix.com/ukopp
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	depends = gtk3
+	options = !emptydirs
+	source = http://www.kornelix.net/downloads/tarballs/ukopp-6.3.tar.gz
+	sha256sums = 601ec3a2611242f310db0624452a09e4e0f3f873057ddfbcdeaf792bfe9ca55a
+
+pkgname = ukopp
+

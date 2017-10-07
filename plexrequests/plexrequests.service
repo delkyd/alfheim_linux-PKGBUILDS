@@ -1,0 +1,17 @@
+[Unit]
+Description=PlexRequests
+After=network.target
+
+[Service]
+# Add additional path here to change base url, like http://localhost:3000/plexrequests
+Environment=ROOT_URL=http://localhost:3000/
+User=plexrequests
+Group=plexrequests
+Type=simple
+WorkingDirectory=/opt/plexrequests
+ExecStart=/usr/bin/meteor
+KillMode=process
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

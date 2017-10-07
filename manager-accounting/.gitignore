@@ -1,0 +1,5 @@
+pkg/
+src/
+*.zip
+*.tar.xz
+sqlite3.c

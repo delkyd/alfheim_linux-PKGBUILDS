@@ -1,0 +1,19 @@
+pkgbase = pypy-virtualenv
+	pkgdesc = Virtual Python Environment builder for pypy
+	pkgver = 15.1.0
+	pkgrel = 1
+	url = https://virtualenv.pypa.io/
+	arch = any
+	license = MIT
+	makedepends = pypy
+	makedepends = pypy3
+	source = https://pypi.io/packages/source/v/virtualenv/virtualenv-15.1.0.tar.gz
+	md5sums = 44e19f4134906fe2d75124427dc9b716
+	sha256sums = 02f8102c2436bb03b3ee6dede1919d1dac8a427541652e5ec95171ec8adbc93a
+
+pkgname = pypy-virtualenv
+	depends = pypy
+
+pkgname = pypy3-virtualenv
+	depends = pypy3
+

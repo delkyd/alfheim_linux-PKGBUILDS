@@ -1,0 +1,20 @@
+pkgbase = viewvc
+	pkgdesc = web-based vcs version control repository browsing, formerly viewcvs
+	pkgver = 1.1.24
+	pkgrel = 1
+	url = http://viewvc.tigris.org/
+	install = viewvc.install
+	arch = i686
+	arch = x86_64
+	license = custom:ViewVC
+	makedepends = cvs
+	makedepends = rcs
+	depends = subversion
+	depends = python2
+	depends = diffutils
+	backup = usr/share/viewvc/viewvc.conf
+	source = http://viewvc.tigris.org//files/documents/3330/49471/viewvc-1.1.24.tar.gz
+	sha256sums = 0620f69fa5ba02ac65e000586ba31015a2053a82711bedb30629fd6087003d7e
+
+pkgname = viewvc
+

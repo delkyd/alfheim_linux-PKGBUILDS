@@ -1,0 +1,18 @@
+pkgbase = esniper
+	pkgdesc = A simple, lightweight tool for sniping eBay auctions.
+	pkgver = 2.33.0
+	pkgrel = 0
+	url = http://esniper.sourceforge.net/
+	arch = i686
+	arch = x86_64
+	arch = armv6h
+	arch = armv7h
+	arch = arm
+	license = BSD
+	depends = curl
+	depends = openssl
+	source = http://downloads.sourceforge.net/esniper/esniper-2-33-0.tgz
+	sha512sums = 0ce5d1f1d4860cc52c69be620fdd99065c8ac8b70e0f0042fd7426542aee78be31fa2acf2c3b230467cf20491c1238a36d7cd196238aecaff39a9560a267edd0
+
+pkgname = esniper
+

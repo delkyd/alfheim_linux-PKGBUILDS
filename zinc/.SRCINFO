@@ -1,0 +1,23 @@
+pkgbase = zinc
+	pkgdesc = Zinc is a stand-alone version of sbt's incremental compiler
+	pkgver = 0.3.13
+	pkgrel = 0
+	url = https://github.com/typesafehub/zinc
+	arch = any
+	license = Apache
+	depends = java-environment
+	provides = zinc
+	conflicts = zinc-git
+	options = !strip
+	backup = etc/conf.d/zincer.conf
+	source = http://downloads.typesafe.com/zinc/0.3.13/zinc-0.3.13.tgz
+	source = zincer.sh
+	source = zincer.conf
+	source = zincer.service
+	md5sums = SKIP
+	md5sums = SKIP
+	md5sums = SKIP
+	md5sums = SKIP
+
+pkgname = zinc
+

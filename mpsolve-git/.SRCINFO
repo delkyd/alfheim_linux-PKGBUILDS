@@ -1,0 +1,23 @@
+pkgbase = mpsolve-git
+	pkgdesc = Multiprecision rootfinder for complex roots of univariate polynomials
+	pkgver = 3.1.4
+	pkgrel = 6
+	url = http://numpi.dm.unipi.it/software/mpsolve
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = git
+	makedepends = gcc-fortran
+	depends = gmp
+	depends = mpfr
+	optdepends = cython: Python bindings
+	optdepends = gtk3: Graphical debugger
+	optdepends = octave: Octave bindings
+	optdepends = qt4: Graphical interface xmpsolve
+	provides = mpsolve
+	conflicts = mpsolve
+	source = git://github.com/robol/MPSolve.git
+	sha256sums = SKIP
+
+pkgname = mpsolve-git
+

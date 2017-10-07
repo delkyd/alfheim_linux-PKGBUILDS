@@ -1,0 +1,20 @@
+pkgbase = gien
+	pkgdesc = Export Github issue tracker and wiki contents to local email storage
+	pkgver = 0.4.1
+	pkgrel = 1
+	url = https://github.com/2ion/gien
+	arch = any
+	license = GPL
+	makedepends = python-setuptools
+	depends = python
+	depends = python-markdown
+	depends = python-progressbar
+	depends = python-pygithub
+	depends = python-pygit2
+	depends = python-requests
+	options = !emptydirs
+	source = https://pypi.python.org/packages/d2/7a/59ce610d3026da98ccb51967ae1e041b33e542053074f510b3daf1dc92c2/gien-0.4.1.tar.gz
+	sha256sums = 8986465917a7a275167b0f6cfe94951e3c8484a850ec29fdba521b25d2ff8fc5
+
+pkgname = gien
+

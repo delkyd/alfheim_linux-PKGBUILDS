@@ -1,0 +1,20 @@
+pkgbase = zazu-bin
+	pkgdesc = A cross platform productivity application.
+	pkgver = 0.5.2
+	pkgrel = 1
+	url = http://zazuapp.org/
+	arch = x86_64
+	license = MIT
+	makedepends = gendesk
+	depends = alsa-lib
+	depends = gconf
+	depends = gtk2
+	depends = libxss
+	depends = libxtst
+	depends = nss
+	provides = zazu
+	source = zazu_0.5.2_amd64.deb::https://github.com/tinytacoteam/zazu/releases/download/v0.5.2/zazu_0.5.2_amd64.deb
+	sha256sums = b3fd978e482a56ab38b38576ca9ca6b6703592dca500b22122103002b5181548
+
+pkgname = zazu-bin
+

@@ -1,0 +1,17 @@
+pkgbase = numix-bevel-icon-theme-bzr
+	pkgdesc = Bevel icon theme from the Numix project
+	pkgver = r8
+	pkgrel = 1
+	url = http://numixproject.org/
+	arch = any
+	license = GPL3
+	makedepends = bzr
+	depends = numix-icon-theme-git
+	provides = numix-bevel-icon-theme
+	conflicts = numix-bevel-icon-theme
+	options = !strip
+	source = numix-bevel-icon-theme::bzr+lp:numix-bevel
+	sha256sums = SKIP
+
+pkgname = numix-bevel-icon-theme-bzr
+

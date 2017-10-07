@@ -1,0 +1,16 @@
+pkgbase = nxfilter
+	pkgdesc = NxFilter DNS filter
+	pkgver = 4.1.5
+	pkgrel = 5
+	url = http://nxfilter.org/p3/
+	install = nxfilter.install
+	arch = i686
+	arch = x86_64
+	license = custom
+	depends = java-runtime
+	provides = nxfilter
+	source = https://github.com/Erwinovitch/NxFilter/raw/master/Release/4.1.5/nxfilter.zip
+	md5sums = SKIP
+
+pkgname = nxfilter
+

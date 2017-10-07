@@ -1,0 +1,20 @@
+pkgbase = mingw-w64-freeimage
+	pkgdesc = Library project for developers who would like to support popular graphics image formats (mingw-w64)
+	pkgver = 3.17.0
+	pkgrel = 1
+	url = http://freeimage.sourceforge.net/
+	arch = any
+	license = GPL
+	license = custom:FIPL
+	makedepends = mingw-w64-gcc
+	depends = mingw-w64-crt
+	options = !strip
+	options = !buildflags
+	options = staticlibs
+	source = http://downloads.sourceforge.net/sourceforge/freeimage/FreeImage3170.zip
+	source = gcc5.patch
+	md5sums = 459e15f0ec75d6efa3c7bd63277ead86
+	md5sums = ea0a75f431a09ce8fbd539bb9a969679
+
+pkgname = mingw-w64-freeimage
+

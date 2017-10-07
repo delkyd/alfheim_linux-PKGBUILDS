@@ -1,0 +1,13 @@
+post_install() {
+	/opt/brother/Printers/mfcj6920dw/inf/setupPrintcapij mfcj6920dw -i
+	/opt/brother/Printers/mfcj6920dw/cupswrapper/cupswrappermfcj6920dw
+}
+
+post_upgrade() {
+	/bin/true
+}
+
+pre_remove() {
+	/opt/brother/Printers/mfcj6920dw/inf/setupPrintcapij mfcj6920dw -e
+	/opt/brother/Printers/mfcj6920dw/cupswrapper/cupswrappermfcj6920dw -e
+}

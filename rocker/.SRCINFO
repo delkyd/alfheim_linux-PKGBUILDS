@@ -1,0 +1,14 @@
+pkgbase = rocker
+	pkgdesc = Docker build tool with additional features
+	pkgver = 1.3.1
+	pkgrel = 1
+	url = https://github.com/grammarly/rocker
+	arch = i686
+	arch = x86_64
+	license = Apache
+	makedepends = go
+	source = https://github.com/grammarly/rocker/archive/1.3.1.zip
+	sha256sums = caef42c70cf36adb6b02fd3fefab2981bf84b847ad36c67fa1ead0867b25b8e8
+
+pkgname = rocker
+

@@ -1,0 +1,20 @@
+pkgbase = cross-mips-elf-gcc
+	pkgdesc = The GNU Compiler Collection for the MIPS-elf architecture
+	pkgver = 5.4.0
+	pkgrel = 1
+	url = http://www.gnu.org/software/gcc/
+	arch = i686
+	arch = x86_64
+	license = GPL
+	depends = libmpc
+	depends = cross-mips-elf-binutils
+	options = !ccache
+	options = !distcc
+	options = !emptydirs
+	options = !libtool
+	options = !strip
+	source = ftp://ftp.gnu.org/gnu/gcc/gcc-5.4.0/gcc-5.4.0.tar.bz2
+	md5sums = 4c626ac2a83ef30dfb9260e6f59c2b30
+
+pkgname = cross-mips-elf-gcc
+

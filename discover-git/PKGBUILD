@@ -1,0 +1,45 @@
+# Maintainer: Aimilius <aimilius at protonmail dot com>
+# Contributor: Antonio Rojas <arojas@archlinux.org> 
+
+pkgname=discover-git
+pkgver=r5530.7aeec871
+pkgrel=1
+pkgdesc='KDE and Plasma resources management GUI'
+arch=(i686 x86_64)
+url='https://projects.kde.org/projects/kde/workspace/discover'
+license=(LGPL)
+depends=(knewstuff kdeclarative kitemmodels qt5-graphicaleffects appstream-qt archlinux-appstream-data
+         hicolor-icon-theme kirigami2)
+makedepends=(extra-cmake-modules-git git python plasma-framework packagekit-qt5)
+optdepends=('packagekit-qt5: To install packages from Arch repositories')
+conflicts=(muon discover muon-git)
+provides=(discover)
+replaces=(muon-git)
+source=('git://anongit.kde.org/discover.git')
+groups=(plasma)
+md5sums=('SKIP')
+
+pkgver() {
+  cd discover
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../discover \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DKDE_INSTALL_LIBDIR=lib \
+    -DKDE_INSTALL_LIBEXECDIR=lib \
+    -DBUILD_TESTING=OFF
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="$pkgdir" install
+}

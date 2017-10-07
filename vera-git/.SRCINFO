@@ -1,0 +1,25 @@
+pkgbase = vera-git
+	pkgdesc = A simple, lightweight, GTK3 based desktop environment
+	pkgver = 1.0.2.1
+	pkgrel = 1
+	url = https://github.com/vera-desktop/vera
+	install = vera.install
+	arch = i686
+	arch = x86_64
+	license = LGPL
+	makedepends = bake-sl
+	depends = vala
+	depends = libpeas
+	depends = gtk3
+	depends = libgee06
+	depends = vera-xsettings-git
+	depends = libxss-vapi-git
+	depends = gobject-introspection
+	provides = vera-git
+	conflicts = vera-git
+	conflicts = vera-desktop-environment
+	source = vera::git://github.com/vera-desktop/vera.git#branch=master
+	md5sums = SKIP
+
+pkgname = vera-git
+

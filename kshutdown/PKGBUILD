@@ -1,0 +1,32 @@
+# $Id$
+# Maintainer: Alexander F Rødseth <xyproto@archlinux.org>
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+
+pkgname=kshutdown
+pkgver=4.0
+pkgrel=2
+pkgdesc='Shutdown Utility for KDE'
+arch=('x86_64' 'i686')
+url='https://kshutdown.sourceforge.net/'
+license=('GPL')
+depends=('knotifyconfig' 'kidletime')
+makedepends=('extra-cmake-modules' 'ninja' 'python')
+source=("https://downloads.sourceforge.net/$pkgname/KShutdown/$pkgver/$pkgname-source-$pkgver.zip")
+sha256sums=('75733e5b55b36add775a2788365ee6f5fe8b3d21598e2a17e68b2f8dd62199fc')
+
+build() {
+  mkdir -p build; cd build
+  cmake "../$pkgname-$pkgver" \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DKS_KF5=ON \
+    -GNinja
+  ninja
+}
+
+package() {
+  DESTDIR="$pkgdir" ninja -C build install
+}
+
+# vim:set ts=2 sw=2 et:

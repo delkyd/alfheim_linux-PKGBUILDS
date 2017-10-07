@@ -1,0 +1,19 @@
+dbus_tip() {
+  echo "If it doesn't launch when in an ssh session try something like:"
+  echo "\$ export \$(dbus-launch); hubic args"
+}
+
+post_install() {
+  echo "Don't forget to run 'hubiC login <email> <folder to synchronize>' to initialize the service."
+  dbus_tip
+}
+
+post_upgrade() {
+  dbus_tip
+  if [ "$1" = "2.1.0-58" ]; then
+      echo "Due to a change in mono backend, you need to login again against your local folder."
+      echo "WARNING: after you login again, Hubic will perform a full re-index of your Hubic folder. It may result in the creation of many conflict resolution file. Try to stop hubic from your various devices before login again to avoid conflicts."
+      echo ""
+      echo "Also, if you have not perform a login action since a long time, Hubic will ask you first to modify your password. It is a normal procedure."
+  fi
+}

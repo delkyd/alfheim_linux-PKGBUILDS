@@ -1,0 +1,25 @@
+pkgbase = cutemarked-git
+	pkgdesc = Qt Markdown Editor
+	pkgver = 0.0.0
+	pkgrel = 2
+	url = https://github.com/cloose/CuteMarkEd
+	install = cutemarked-git.install
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	makedepends = git
+	makedepends = qt5-tools
+	depends = qt5-webkit
+	depends = hunspell
+	depends = discount>=2.1.7
+	depends = desktop-file-utils
+	depends = hicolor-icon-theme
+	provides = cutemarked
+	conflicts = cutemarked
+	source = git://github.com/cloose/CuteMarkEd.git
+	source = cutemarked-git.install
+	md5sums = SKIP
+	md5sums = 262fc1597fb332894d1367f510a7f39b
+
+pkgname = cutemarked-git
+

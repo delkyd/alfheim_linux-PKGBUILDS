@@ -1,0 +1,41 @@
+# $Id: PKGBUILD 162811 2016-02-20 15:24:54Z arodseth $
+# Maintainer: Alexander F Rødseth <xyproto@archlinux.org>
+
+pkgname=duktape
+pkgver=2.1.1
+pkgrel=2
+pkgdesc='Embeddable Javascript engine'
+arch=('x86_64' 'i686')
+url='http://duktape.org/'
+makedepends=('setconf')
+depends=('glibc')
+license=('MIT')
+source=("http://duktape.org/duktape-$pkgver.tar.xz" # no https available
+        'duktape.pc')
+sha256sums=('6a58e5e8d8c7e3e638cd6e5b91be3bcaa4c89778d3892054a36052ae043dd11e'
+            'ab3bfffcae474a528b9bb0e6797d2942c8436a7e5e32484b2991a86de1cc04a2')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+
+  mv Makefile.sharedlibrary Makefile
+  sed 's/-Wall -Wextra/$(CFLAGS)/g' -i Makefile
+  setconf Makefile INSTALL_PREFIX="$pkgdir/usr"
+  setconf "$srcdir/duktape.pc" Version "$pkgver"
+}
+
+build() {
+  CFLAGS="$CFLAGS -D DUK_USE_FASTINT -w" make -C "$pkgname-$pkgver"
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+
+  install -d "$pkgdir/usr/lib" "$pkgdir/usr/include"
+  make install
+  install -Dm644 "$srcdir/duktape.pc" "$pkgdir/usr/lib/pkgconfig/duktape.pc"
+  install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
+
+# getver: github.com/svaarala/duktape
+# vim: ts=2 sw=2 et:

@@ -1,0 +1,15 @@
+pkgbase = temp-throttle-git
+	pkgdesc = A shell script for throttling system CPU frequency based on a desired maximum temperature.
+	pkgver = r53.311790a
+	pkgrel = 1
+	url = https://github.com/Sepero/temp-throttle
+	arch = any
+	license = GPL2
+	makedepends = git
+	depends = bash
+	conflicts = temp-throttle
+	source = git://github.com/Sepero/temp-throttle.git#branch=testing
+	sha256sums = SKIP
+
+pkgname = temp-throttle-git
+

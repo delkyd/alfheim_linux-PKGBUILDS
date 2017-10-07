@@ -1,0 +1,17 @@
+pkgbase = ruby-fog-vmfusion
+	pkgdesc = This library can be used as a module for fog or as standalone provider to use the VMWARE FUSION in applications.
+	pkgver = 0.1.0
+	pkgrel = 1
+	url = http://rubygems.org/gems/fog-vmfusion
+	arch = any
+	license = MIT
+	depends = ruby
+	depends = ruby-fog-core
+	depends = ruby-fission
+	noextract = fog-vmfusion-0.1.0.gem
+	options = !emptydirs
+	source = https://rubygems.org/downloads/fog-vmfusion-0.1.0.gem
+	sha512sums = a842b47e162e915fbee76b08acec344d092802c5d32bc57a46b11b3d122491c74f5a04ef31201d4798abd6806ac5be947efbe9def51be62f1c2b7950f7cfc22a
+
+pkgname = ruby-fog-vmfusion
+

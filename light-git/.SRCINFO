@@ -1,0 +1,17 @@
+pkgbase = light-git
+	pkgdesc = Program to easily change brightness on backlight-controllers.
+	pkgver = 1.0.r6.g674ada0
+	pkgrel = 1
+	url = https://github.com/haikarainen/light
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = git
+	makedepends = help2man
+	provides = light
+	conflicts = light
+	source = git+https://github.com/haikarainen/light.git
+	sha256sums = SKIP
+
+pkgname = light-git
+

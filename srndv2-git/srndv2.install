@@ -1,0 +1,13 @@
+post_install()
+{
+	echo "Set up the sql server:
+	\`su postgres\`
+	\`psql\`
+
+	A prompt will then appear, enter:
+	\`CREATE ROLE srnduser WITH LOGIN PASSWORD 'srndpassword';\`
+	\`CREATE DATABASE srnd WITH ENCODING 'UTF8' OWNER srnduser;\`
+	\`\\q\`
+
+	Change the username and password as desired."
+}

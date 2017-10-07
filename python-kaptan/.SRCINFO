@@ -1,0 +1,16 @@
+pkgbase = python-kaptan
+	pkgdesc = Python configuration manager
+	pkgver = 0.5.8
+	pkgrel = 1
+	url = http://emre.github.io/kaptan/
+	arch = any
+	license = BSD
+	makedepends = python-setuptools
+	depends = python
+	depends = python-yaml
+	options = !emptydirs
+	source = http://pypi.python.org/packages/source/k/kaptan/kaptan-0.5.8.tar.gz
+	md5sums = a6ab9fc711b243a7652903c969c72319
+
+pkgname = python-kaptan
+

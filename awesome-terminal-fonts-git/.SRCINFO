@@ -1,0 +1,17 @@
+pkgbase = awesome-terminal-fonts-git
+	pkgdesc = fonts/icons for powerlines
+	pkgver = 60.b5fdcfd
+	pkgrel = 1
+	url = https://github.com/gabrielelana/awesome-terminal-fonts
+	install = awesome-terminal-fonts.install
+	arch = any
+	license = MIT
+	makedepends = git
+	depends = fontconfig
+	provides = awesome-terminal-fonts
+	conflicts = awesome-terminal-fonts
+	source = git+https://github.com/gabrielelana/awesome-terminal-fonts
+	sha512sums = SKIP
+
+pkgname = awesome-terminal-fonts-git
+

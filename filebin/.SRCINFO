@@ -1,0 +1,28 @@
+pkgbase = filebin
+	pkgdesc = A pastebin service written in PHP
+	pkgver = 0.9.18
+	pkgrel = 1
+	url = https://wiki.server-speed.net/projects/filebin
+	install = filebin.install
+	arch = any
+	license = AGPL
+	makedepends = nodejs
+	makedepends = git
+	depends = php
+	depends = pygmentize
+	depends = python-ansi2html
+	depends = php-gd
+	depends = imagemagick
+	options = !strip
+	options = emptydirs
+	backup = etc/webapps/filebin/config-local.php
+	backup = etc/webapps/filebin/contact-info.php
+	backup = etc/webapps/filebin/database.php
+	backup = etc/webapps/filebin/memcached.php
+	source = git+https://github.com/Bluewind/filebin.git
+	source = filebin-nginx.conf
+	sha256sums = SKIP
+	sha256sums = 5500d423d798478bf4f7bb0a147fe8a42b00e843513dd70665ec81f304a6c729
+
+pkgname = filebin
+

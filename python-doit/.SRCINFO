@@ -1,0 +1,18 @@
+pkgbase = python-doit
+	pkgdesc = doit automation tool
+	pkgver = 0.30.3
+	pkgrel = 1
+	url = http://pydoit.org/
+	arch = any
+	license = MIT
+	depends = python
+	depends = python-pyinotify
+	depends = python-six
+	depends = python-setuptools
+	depends = python-cloudpickle
+	options = !emptydirs
+	source = https://pypi.io/packages/source/d/doit/doit-0.30.3.tar.gz
+	md5sums = 8e574838ca72f7174f24c17d2c65639c
+
+pkgname = python-doit
+

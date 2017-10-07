@@ -1,0 +1,24 @@
+pkgbase = sh3eb-elf-gcc
+	pkgdesc = The GNU Compiler Collection for the sh3eb-elf target.
+	pkgver = 7.2.0
+	pkgrel = 1
+	url = http://gcc.gnu.org
+	arch = i686
+	arch = x86_64
+	license = GPL
+	license = LGPL
+	depends = sh3eb-elf-binutils
+	depends = libmpc
+	depends = elfutils
+	options = staticlibs
+	options = !buildflags
+	options = !libtool
+	options = !emptydirs
+	options = zipman
+	options = docs
+	options = !strip
+	source = ftp://gcc.gnu.org/pub/gcc/releases/gcc-7.2.0/gcc-7.2.0.tar.xz
+	sha256sums = 1cf7adf8ff4b5aa49041c8734bbcf1ad18cc4c94d0029aae0f4e48841088479a
+
+pkgname = sh3eb-elf-gcc
+

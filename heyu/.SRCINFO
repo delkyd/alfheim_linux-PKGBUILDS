@@ -1,0 +1,16 @@
+pkgbase = heyu
+	pkgdesc = X10 Automation for Linux, Unix, and Mac OS X
+	pkgver = 2.11_rc2
+	pkgrel = 4
+	url = http://www.heyu.org/
+	arch = i686
+	arch = x86_64
+	license = unknown
+	makedepends = make
+	provides = heyu
+	conflicts = heyu
+	source = https://github.com/HeyuX10Automation/heyu/archive/v2.11-rc2.tar.gz
+	md5sums = 97f5d0ed8be6bd2931dc796024b1c0bd
+
+pkgname = heyu
+

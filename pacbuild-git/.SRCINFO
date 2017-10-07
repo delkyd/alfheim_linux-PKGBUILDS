@@ -1,0 +1,14 @@
+pkgbase = pacbuild-git
+	pkgdesc = A simple abs wrapper to download single PKGBUILDs
+	pkgver = 12
+	pkgrel = 2
+	url = https://github.com/Nauxuron/pacbuild
+	arch = any
+	license = GPL3
+	makedepends = git
+	depends = abs
+	source = git+https://github.com/Nauxuron/pacbuild
+	md5sums = SKIP
+
+pkgname = pacbuild-git
+

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Albion Live Server
+Comment=The first true cross-platform Sandbox MMO -- live server
+#Exec=optirun -b primus albion-online-live
+Exec=albion-online-live
+Icon=/opt/albion-online-launcher-bin/AlbionOnline.xpm
+Terminal=false

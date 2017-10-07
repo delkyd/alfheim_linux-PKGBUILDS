@@ -1,0 +1,24 @@
+pkgbase = kissplayer
+	pkgdesc = KISS Player
+	pkgver = 0.6.4
+	pkgrel = 1
+	url = http://sourceforge.net/projects/kissplayer/
+	install = kissplayer.install
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = pkgconfig>=0.9.0
+	makedepends = gettext
+	depends = fmodex
+	depends = zlib
+	depends = libpng
+	depends = sqlite
+	depends = taglib
+	depends = fltk
+	depends = libxpm
+	provides = kissplayer
+	source = http://downloads.sourceforge.net/kissplayer/kissplayer-0.6.4.tar.gz
+	md5sums = edb957ebfdc1dac505bfb7746f18638a
+
+pkgname = kissplayer
+

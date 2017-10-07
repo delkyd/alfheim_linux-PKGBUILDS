@@ -1,0 +1,62 @@
+# Maintainer: ValHue <vhuelamo at gmail dot com>
+# https://github.com/ValHue/AUR-PKGBUILDs
+#
+# Contributor: ValHue <vhuelamo at gmail dot com>
+#
+_pkgname="Snap4Arduino_desktop-gnu"
+pkgname="snap4arduino"
+pkgver="1.2.3"
+pkgrel="1"
+pkgdesc="A modification of the Snap! visual programming language that lets you seamlessly interact with almost all versions of the Arduino board."
+arch=('i686' 'x86_64')
+url="http://snap4arduino.org/"
+license=('GPL3')
+depends=('nss' 'libxtst' 'alsa-lib' 'libxss' 'gtk2' 'gconf' 'freetype2')
+provides=("${pkgname}")
+
+source_i686=("http://${pkgname}.org/downloads/${pkgver}/Snap4Arduino_desktop-gnu-32_${pkgver}.tar.gz")
+source_x86_64=("http://${pkgname}.org/downloads/${pkgver}/Snap4Arduino_desktop-gnu-64_${pkgver}.tar.gz")
+
+sha256sums_i686=('4992756afc07978c57f77b2d5888ddee2f4c02dfdba776bc45a9923fcdb80e76')
+sha256sums_x86_64=('90addb370593ebdc36649fc8e56be505f6bd03306a508a2690d7baa1eb937e06')
+
+if [[ $CARCH == i686 ]]; then
+    _dir="32";
+else
+    _dir="64";
+fi
+
+build() {
+    cd "${_pkgname}-${_dir}_${pkgver}"
+    sed -i "s|Icon=|Icon=/opt/Snap4Arduino/icons/128x128x32.png|g" Snap4Arduino.desktop
+    sed -i "s|cd \$(dirname %k)|cd /opt/Snap4Arduino/|g" Snap4Arduino.desktop
+}
+
+package() {
+    cd "${_pkgname}-${_dir}_${pkgver}"
+
+    # Data
+    install -d ${pkgdir}/opt/${pkgname}/{icons,lib,locales,pnacl}
+    install -m 644 icons/* "${pkgdir}/opt/${pkgname}/icons/"
+    install -m 755 lib/* "${pkgdir}/opt/${pkgname}/lib/"
+    install -m 644 locales/* "${pkgdir}/opt/${pkgname}/locales/"
+    install -m 644 pnacl/* "${pkgdir}/opt/${pkgname}/pnacl/"
+    rm -rf ./{icons,lib,locales,pnacl}
+    chmod +x ${pkgdir}/opt/${pkgname}/pnacl/*_nexe
+    
+    # Desktop file
+    install -Dm 644 Snap4Arduino.desktop "${pkgdir}/usr/share/applications/Snap4Arduino.desktop"
+    rm Snap4Arduino.desktop
+
+    # License
+    install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    rm LICENSE
+
+    # Rest of data
+    install -m 644 ./* "${pkgdir}/opt/${pkgname}/"
+
+    # Fix for permissions
+    chmod +x ${pkgdir}/opt/${pkgname}/{chromedriver,launcher*,minidump_stackwalk,nacl_*,nwjc,payload,run}
+}
+
+# vim:set ts=4 sw=2 ft=sh et:

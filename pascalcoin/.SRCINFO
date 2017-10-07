@@ -1,0 +1,25 @@
+pkgbase = pascalcoin
+	pkgdesc = PascalCoin Wallet and Daemon
+	pkgver = 2.1.2
+	pkgrel = 1
+	url = https://github.com/PascalCoin/PascalCoin
+	install = pascalcoin.install
+	arch = i686
+	arch = x86_64
+	license = MIT
+	makedepends = lazarus
+	makedepends = lazarus-qt
+	makedepends = fpc
+	depends = qt4
+	depends = qt4pas
+	source = git+https://github.com/PascalCoin/PascalCoin.git
+	source = pascalcoinwallet.desktop
+	source = pascalcoin.service
+	source = pascalcoin.install
+	sha256sums = SKIP
+	sha256sums = 547801a11497ee52220e4dc6cb6d2c43aeb6e94d989697cb0a54d26e4a4cad58
+	sha256sums = 74713e3702cbd13a8847de340029f6c3608f1dbae536e58cfa53c5035101d060
+	sha256sums = 5b308a22ea19b9b71b67cc5178b03bbcf1c90cc5d0abe42592e26b701649231a
+
+pkgname = pascalcoin
+

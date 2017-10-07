@@ -1,0 +1,16 @@
+pkgbase = openhab-addons
+	pkgdesc = openHAB automation addons
+	pkgver = 1.8.3
+	pkgrel = 1
+	url = http://www.openhab.org/
+	arch = any
+	license = EPL
+	makedepends = unzip
+	depends = java-runtime-headless>=7
+	depends = openhab-runtime=1.8.3
+	noextract = distribution-1.8.3-addons.zip
+	source = https://bintray.com/artifact/download/openhab/bin/distribution-1.8.3-addons.zip
+	md5sums = c5803a3517f520e756647e20746c83a5
+
+pkgname = openhab-addons
+

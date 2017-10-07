@@ -1,0 +1,16 @@
+[Unit]
+Description=SickRage Daemon
+After=network.target
+
+[Service]
+Restart=on-success
+User=sickrage
+Group=sickrage
+
+#Type=forking
+#PIDFile=/run/sickrage/sickrage.pid
+#ExecStart=/opt/sickrage/app/bin/sickrage -q --nolaunch --daemon --datadir /opt/sickrage/data --pidfile=/run/sickrage/sickrage.pid
+ExecStart=/opt/sickrage/app/bin/sickrage -q --nolaunch --datadir /opt/sickrage/data
+
+[Install]
+WantedBy=multi-user.target

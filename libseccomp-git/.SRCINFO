@@ -1,0 +1,17 @@
+pkgbase = libseccomp-git
+	pkgdesc = Enhanced seccomp library
+	pkgver = 2.2.0.r179.g9e61fd7
+	pkgrel = 1
+	url = https://github.com/seccomp/libseccomp
+	arch = i686
+	arch = x86_64
+	license = LGPL2.1
+	makedepends = git
+	depends = glibc
+	provides = libseccomp
+	conflicts = libseccomp
+	source = git+https://github.com/seccomp/libseccomp
+	md5sums = SKIP
+
+pkgname = libseccomp-git
+

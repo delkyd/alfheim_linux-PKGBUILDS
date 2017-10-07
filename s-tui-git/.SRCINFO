@@ -1,0 +1,20 @@
+pkgbase = s-tui-git
+	pkgdesc = Terminal UI stress test and monitoring tool
+	pkgver = r222.397e17f
+	pkgrel = 1
+	url = https://github.com/amanusk/s-tui
+	arch = any
+	license = GPLv2
+	makedepends = git
+	makedepends = python-setuptools
+	depends = stress
+	depends = python2
+	depends = python2-urwid
+	depends = python2-psutil
+	conflicts = s-tui
+	options = !emptydirs
+	source = s-tui-git::git+https://github.com/amanusk/s-tui
+	sha1sums = SKIP
+
+pkgname = s-tui-git
+

@@ -1,0 +1,25 @@
+pkgbase = facette
+	pkgdesc = Facette is a software to display time series data from several various sources
+	pkgver = 0.3.0
+	pkgrel = 1
+	url = http://facette.io/
+	install = facette.install
+	arch = i686
+	arch = x86_64
+	license = BSD
+	makedepends = pkg-config
+	makedepends = go
+	makedepends = nodejs
+	makedepends = npm
+	makedepends = pandoc-bin
+	depends = rrdtool<1.5.0
+	provides = facette
+	source = https://github.com/facette/facette/archive/0.3.0.tar.gz
+	source = facette.service
+	source = facette.install
+	md5sums = 40efaaed5a806f38d09b0279cae03ee7
+	md5sums = SKIP
+	md5sums = SKIP
+
+pkgname = facette
+

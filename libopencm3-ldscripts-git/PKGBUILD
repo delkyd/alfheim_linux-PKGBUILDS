@@ -1,0 +1,33 @@
+# Maintainer: KIV <kiv.apple@gmail.com>
+
+pkgname=libopencm3-ldscripts-git
+pkgver=1
+pkgrel=3
+pkgdesc="ldscripts generator for ARM MCUs from libopencm3 library"
+url="https://github.com/libopencm3/libopencm3"
+arch=('any')
+license=('LGPL3')
+depends=()
+optdepends=('libopencm3-git')
+makedepends=('git')
+conflicts=()
+replaces=()
+backup=()
+
+source=()
+md5sums=()
+
+build() {
+	cd "${srcdir}"
+	git clone https://github.com/libopencm3/libopencm3
+}
+
+package() {
+	cd "${srcdir}/libopencm3"
+	mkdir -p "${pkgdir}/usr/arm-none-eabi/ld"
+	install ./ld/devices.data "${pkgdir}/usr/arm-none-eabi/ld/"
+	install ./ld/linker.ld.S "${pkgdir}/usr/arm-none-eabi/ld/"
+	install ./ld/Makefile.linker "${pkgdir}/usr/arm-none-eabi/ld/"
+	mkdir -p "${pkgdir}/usr/arm-none-eabi/scripts"
+	install ./scripts/genlink.awk "${pkgdir}/usr/arm-none-eabi/scripts"
+}

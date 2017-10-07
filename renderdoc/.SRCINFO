@@ -1,0 +1,22 @@
+pkgbase = renderdoc
+	pkgdesc = OpenGL and Vulkan debugging tool
+	pkgver = 0.91
+	pkgrel = 1
+	url = https://github.com/baldurk/renderdoc
+	arch = i686
+	arch = x86_64
+	license = MIT
+	makedepends = cmake
+	depends = libx11
+	depends = libxcb
+	depends = mesa
+	depends = libgl
+	depends = qt5-base
+	depends = qt5-svg
+	depends = qt5-x11extras
+	depends = xcb-util-keysyms
+	source = https://github.com/baldurk/renderdoc/archive/v0.91.tar.gz
+	sha384sums = 0ec9b9b1303ac8ae5f2488bccd0b72e61cefacf96d048c9880bb077d1d2368574642dbef334457ff528c6bcf4b3d7ea4
+
+pkgname = renderdoc
+

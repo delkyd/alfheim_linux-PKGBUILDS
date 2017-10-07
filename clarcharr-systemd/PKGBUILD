@@ -1,0 +1,29 @@
+# Maintainer: Clar Charr <clar@charr.xyz>
+_pkgbase=systemd
+pkgname=clarcharr-$_pkgbase
+pkgver=2.1.0
+pkgrel=1
+pkgdesc="Clar's systemd configuration."
+depends=(systemd mkinitcpio glibc wine wine_gecko winetricks)
+arch=(i686 x86_64)
+url="https://github.com/clarcharr/config-$_pkgbase"
+license=(CC0)
+groups=(clarcharr-config)
+source=(git+https://github.com/clarcharr/config-$_pkgbase#$pgkver clarcharr-systemd.install)
+install=clarcharr-systemd.install
+sha256sums=(SKIP b42e40f1f9437f563eadc9c78dc1b135a8e21fde070cf358a080281dd372954d)
+validpgpkeys=(4BDA23A98EE4E049CBC3BA6C69DA5B388573EE35)
+_dirs=(etc)
+prepare() {
+  cd "config-$_pkgbase" || exit 1
+  git tag --verify $pkgver
+}
+package() {
+  for dir in "${_dirs[@]}"; do
+    cp -R "$srcdir/config-$_pkgbase/$dir" -T "$pkgdir/$dir"
+  done
+  mv "$pkgdir/etc/"{,clarcharr-}locale.gen
+  mv "$pkgdir/etc/"{,clarcharr-}mkinitcpio.conf
+  mv "$pkgdir/etc/systemd/"{,clarcharr-}journald.conf
+  mv "$pkgdir/etc/systemd/"{,clarcharr-}logind.conf
+}

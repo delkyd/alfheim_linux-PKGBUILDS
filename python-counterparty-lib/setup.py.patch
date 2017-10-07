@@ -1,0 +1,58 @@
+--- ./setup.py	2017-05-01 10:04:13.760210632 -0700
++++ ./setup.py	2017-05-01 10:04:57.488264752 -0700
+@@ -202,22 +202,22 @@
+         self.execute(post_install, (self, False), msg="Running post install tasks")
+ 
+ required_packages = [
+-    'python-dateutil==2.5.3',
+-    'Flask-HTTPAuth==3.1.2',
+-    'Flask==0.11',
+-    'appdirs==1.4.0',
+-    'colorlog==2.7.0',
+-    'json-rpc==1.10.3',
+-    'pycoin==0.77',
+-    'pycrypto==2.6.1',
+-    'pysha3==0.3',
+-    'pytest==2.9.2',
+-    'pytest-cov==2.2.1',
+-    'python-bitcoinlib>=0.7.0,<0.7.1',
+-    'requests==2.10.0',
+-    'tendo==0.2.8',
+-    'xmltodict==0.10.1',
+-    'cachetools==1.1.6',
++    'python-dateutil',
++    'Flask-HTTPAuth',
++    'Flask',
++    'appdirs',
++    'colorlog',
++    'json-rpc',
++    'pycoin',
++    'pycrypto',
++    'pysha3',
++    'pytest',
++    'pytest-cov',
++    'python-bitcoinlib',
++    'requests',
++    'tendo',
++    'xmltodict',
++    'cachetools',
+ ]
+ 
+ setup_options = {
+@@ -248,15 +248,8 @@
+     'provides': ['counterpartylib'],
+     'packages': find_packages(),
+     'zip_safe': False,
+-    'setup_requires': ['appdirs'],
+     'install_requires': required_packages,
+-    'include_package_data': True,
+-    'cmdclass': {
+-        'install': install,
+-        'move_old_db': move_old_db,
+-        'install_apsw': install_apsw,
+-        'install_serpent': install_serpent
+-    }
++    'include_package_data': True
+ }
+ 
+ if sys.argv[1] == 'sdist':

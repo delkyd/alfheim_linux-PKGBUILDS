@@ -1,0 +1,42 @@
+pkgbase = xgboost-git
+	pkgver = r2965.a073a2c3
+	pkgrel = 1
+	url = https://github.com/dmlc/xgboost
+	arch = x86_64
+	license = APACHE
+	makedepends = python2-setuptools
+	makedepends = python-setuptools
+	source = git+https://github.com/dmlc/xgboost.git
+	source = git+https://github.com/dmlc/dmlc-core
+	source = git+https://github.com/dmlc/rabit
+	source = python_no_libs.patch
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = dd66a09be68f38fef140c948027e44e3733778e741c84491124b5de8acf6c336
+
+pkgname = xgboost-git
+	pkgdesc = An optimized distributed gradient boosting library designed to be highly efficient, flexible and portable
+	optdepends = python-xgboost-git: Python 3 Wrapper
+	optdepends = python2-xgboost-git: Python 2 Wrapper
+	provides = xgboost
+	conflicts = xgboost
+
+pkgname = python-xgboost-git
+	pkgdesc = XGBoost Python 3 wrapper
+	depends = xgboost
+	depends = python
+	depends = python-numpy
+	depends = python-scipy
+	provides = python-xgboost
+	conflicts = python-xgboost
+
+pkgname = python2-xgboost-git
+	pkgdesc = XGBoost Python 2 wrapper
+	depends = xgboost
+	depends = python2
+	depends = python2-numpy
+	depends = python2-scipy
+	provides = python2-xgboost
+	conflicts = python2-xgboost
+

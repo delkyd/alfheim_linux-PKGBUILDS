@@ -1,0 +1,11 @@
+pkgbase = legal-notes
+	pkgdesc = Legal notes for documentation-, home- and websites.
+	pkgver = 1.0.8
+	pkgrel = 8
+	arch = any
+	license = CC-BY-3.0
+	source = index.html
+	md5sums = SKIP
+
+pkgname = legal-notes
+

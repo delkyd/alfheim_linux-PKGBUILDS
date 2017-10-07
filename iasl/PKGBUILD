@@ -1,0 +1,36 @@
+# $Id$
+# Maintainer : Laurent Carlier <lordheavym@gmail.com>
+# Contributor: Giovanni Scafora <giovanni@archlinux.org>
+# Contributor: Alessio 'mOlOk' Bolognino <themolok@gmail.com>
+
+pkgname=iasl
+pkgver=20170303
+pkgrel=1
+pkgdesc="Intel ACPI Source Language compiler"
+arch=('i686' 'x86_64')
+url="http://acpica.org"
+license=('custom')
+depends=('glibc')
+makedepends=('flex' 'bison')
+options=('!makeflags')
+source=(https://acpica.org/sites/acpica/files/acpica-unix-${pkgver}.tar.gz
+	LICENSE)
+sha256sums=('c093c9eabd1f8c51d79364d829975c5335c8028c4816a7a80dfb8590f31889b5'
+            'a8eeb8c94b709f91be8575c229cc1df7f8aacb018224b23b0ab6f833a7f18591')
+
+build() {
+  cd "${srcdir}/acpica-unix-${pkgver}"/generate/unix
+
+  #sed -i -e 's/_CYGWIN/_LINUX/g' -e 's/-Werror//g' Makefile.config
+
+  make clean
+  make
+}
+
+package() {
+  cd "${srcdir}/acpica-unix-${pkgver}"/generate/unix
+
+  make DESTDIR=${pkgdir} install
+
+  install -D -m644 "${srcdir}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

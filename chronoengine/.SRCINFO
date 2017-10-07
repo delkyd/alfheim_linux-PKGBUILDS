@@ -1,0 +1,25 @@
+pkgbase = chronoengine
+	pkgdesc = C++ library for physics simulation
+	pkgver = 3.0.0
+	pkgrel = 1
+	url = http://projectchrono.org/chronoengine/
+	arch = i686
+	arch = x86_64
+	license = custom
+	makedepends = cmake
+	makedepends = git
+	makedepends = glm
+	makedepends = irrlicht
+	makedepends = glut
+	makedepends = openmpi
+	depends = glew
+	depends = glfw
+	optdepends = irrlicht: Runtime visualization with Irrlicht.
+	optdepends = glm: Runtime visualization with OpenGL.
+	source = chronoengine::git+https://github.com/projectchrono/chrono.git
+	source = chronoengine.sh
+	sha1sums = SKIP
+	sha1sums = 8d8cb3fc9324e50cec8f5bb5dbf8a78817a32b81
+
+pkgname = chronoengine
+

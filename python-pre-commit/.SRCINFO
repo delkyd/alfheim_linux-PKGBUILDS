@@ -1,0 +1,39 @@
+pkgbase = python-pre-commit
+	pkgdesc = A framework for managing and maintaining multi-language pre-commit hooks.
+	pkgver = 0.18.2
+	pkgrel = 1
+	url = http://pre-commit.com/
+	arch = any
+	license = MIT
+	makedepends = python
+	makedepends = python-nodeenv
+	makedepends = python-aspy-yaml
+	makedepends = python-virtualenv
+	makedepends = python-cached-property
+	makedepends = python-identify
+	makedepends = python2
+	makedepends = python2-aspy-yaml
+	makedepends = python2-virtualenv
+	makedepends = python2-cached-property
+	makedepends = python2-identify
+	source = https://pypi.io/packages/source/p/pre_commit/pre_commit-0.18.2.tar.gz
+	md5sums = 61d35e38bd01ad6186fd182111dd2719
+
+pkgname = python-pre-commit
+	pkgdesc = Python 3 client for pre-commit
+	depends = python
+	depends = python-nodeenv
+	depends = python-aspy-yaml
+	depends = python-virtualenv
+	depends = python-cached-property
+	depends = python-identify
+
+pkgname = python2-pre-commit
+	pkgdesc = Python 2 client for pre-commit
+	depends = python2
+	depends = python-nodeenv
+	depends = python2-aspy-yaml
+	depends = python2-virtualenv
+	depends = python2-cached-property
+	depends = python2-identify
+

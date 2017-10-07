@@ -1,0 +1,21 @@
+# Maintainer: Jelle van der Waa <jelle@archlinux.org>
+# Contributor: Sander Boom <sanderboom@gmail.com>
+
+pkgname=ansible-lint
+pkgver=3.4.15
+pkgrel=1
+pkgdesc="Checks playbooks for practices and behaviour that could potentially be improved."
+arch=('any')
+url="https://github.com/willthames/ansible-lint"
+license=('MIT')
+depends=('python2' 'ansible')
+makedepends=('python2-distribute')
+checkdepends=('python-nose')
+source=("https://github.com/willthames/ansible-lint/archive/v${pkgver}.tar.gz")
+sha256sums=('a7a4eac2a3b0f8f8c1954693b1d8307f3c86a1a8dd506ec185b6e452f5069185')
+
+package() {
+    cd "${pkgname}-${pkgver}"
+    python2 setup.py install --root="$pkgdir" --optimize=1
+    install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}

@@ -1,0 +1,21 @@
+pkgbase = etcd-bin
+	pkgdesc = A highly-available key value store for shared configuration and service discovery - binary version
+	pkgver = 3.2.0
+	pkgrel = 1
+	url = https://github.com/coreos/etcd
+	install = etcd.install
+	arch = x86_64
+	license = Apache
+	provides = etcd
+	conflicts = etcd
+	conflicts = etcd-git
+	backup = etc/etcd/etcd.conf.yml
+	source = https://github.com/coreos/etcd/releases/download/v3.2.0/etcd-v3.2.0-linux-amd64.tar.gz
+	source = https://github.com/coreos/etcd/raw/v3.2.0/contrib/systemd/etcd.service
+	source = https://github.com/coreos/etcd/raw/v3.2.0/etcd.conf.yml.sample
+	sha256sums = f2528f5d499720f2fba7a8ff544d73f185316db6d7896ed2b84f0ca3bb84471d
+	sha256sums = 400b28d6e643d1f60d89813e7acdf6b80c9bee42711e650a058101e7746173e9
+	sha256sums = ef251ee7a9e4ba03ec98af5b61ef291a85cf5bf3f216cbc3c876aab1dec3ab8d
+
+pkgname = etcd-bin
+

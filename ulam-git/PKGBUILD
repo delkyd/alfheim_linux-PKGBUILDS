@@ -1,0 +1,58 @@
+# Maintainer: Spencer Harmon <spencer at rsitex dot com>
+
+pkgname="ulam-git"
+pkgver=2.0.13.r259.gdcf5ea4
+pkgrel=3
+epoch=
+pkgdesc="Github version of ulam compiler and MFM simulator"
+arch=('any')
+url="https://github.com/elenasa/ULAM/wiki"
+license=('(L)GPL3')
+groups=()
+depends=('make'
+	'gcc'
+	'binutils'
+	'perl'
+	'sdl'
+	'sdl_image'
+	'sdl_ttf'
+	'perl-crypt-openssl-rsa'
+	'perl-capture-tiny')
+makedepends=('git')
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=('!buildflags' '!makeflags')
+install=
+changelog=
+source=("git://github.com/spencerharmon/MFM"
+        "git://github.com/spencerharmon/ULAM")
+noextract=()
+md5sums=('SKIP' 'SKIP')
+pkgver(){
+	cd $srcdir/ULAM
+	git describe --long | sed 's/v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+prepare() {
+	make -C MFM
+	make -C ULAM
+	perl ULAM/share/perl/extractDistro.pl bin . "$srcdir/ulam" ulam
+	perl ULAM/share/perl/extractDistro.pl src . "$srcdir/ulam" ulam
+}
+
+build() {
+	make -C ulam
+}
+
+package() {
+	make -C "$srcdir/ulam" DESTDIR="$pkgdir/" install
+	mkdir -p "$pkgdir/usr/bin"
+	for f in `ls "$pkgdir/usr/lib/ulam/ULAM/bin"`; \
+		do ln -sf "/usr/lib/ulam/ULAM/bin/$f" "$pkgdir/usr/bin/";done
+	for f in `ls "$pkgdir/usr/lib/ulam/MFM/bin"`; \
+		do ln -sf "/usr/lib/ulam/MFM/bin/$f" "$pkgdir/usr/bin/";done
+}

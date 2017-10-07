@@ -1,0 +1,49 @@
+##################################################################################
+##################################################################################
+### HLIN Public License :: version 2.0 :: 2017 - Current                       ###
+### ========================================================================== ###
+### Terms and Conditions for Copying, Modifying, and Distributing Software,    ###
+### Documentation, and other works.                                            ###
+###                                                                            ###
+### Do what you want in regards to this software (either in source or binary   ###
+### form), any and all documents, and any and all works released under this    ###
+### license.                                                                   ###
+###                                                                            ###
+### In jurisdictions that recognize copyright laws, the author or authors      ###
+### of this software, documentation, and/or works dedicate any and all         ###
+### copyright interest in the software, documentation, or further works to the ###
+### public domain. We make this dedication for the benefit # of the public at  ###
+### large and to the detriment of our heirs and successors. We intend this     ###
+### dedication to be an overt act of relinquishment in perpetuity of all       ###
+### present and future rights to these works under copyright law.              ###
+###                                                                            ###
+### These terms and conditions are not permission to use the names of any      ###
+### project, developer, person that releases their software, documentation or  ###
+### works under this license in marketing, advertisement, or publicity of your ###
+### project, group or self.  Neither does it permit you to make claims that    ###
+### you are associated with or part of said projects, developers, or person at ###
+### any time.  Please respect these projects, developers, and people as they   ###
+### respect you by providing you with these works.                             ###
+###                                                                            ###
+### THESE SOFTWARE, DOCUMENTATION, AND/OR WORKS ARE PROVIDED "AS IS", WITHOUT  ###
+### WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO     ###
+### THEIR WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND  ###
+### NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM,    ###
+### DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR      ###
+### OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE,        ###
+### DOCUMENTATION, AND/OR WORKS OR THE USE OR OTHER DEALINGS IN THE SOFTWARE,  ###
+### DOCUMENTATION, AND/OR WORKS.                                               ###
+##################################################################################
+##################################################################################
+
+Changelog for version 2.0 ::
+
+- Added works to the types covered by this License
+- Added a clause to the license that you may not use the names of projects or
+  developers that release under this license as your own.
+
+Changelog for version 1.0 ::
+
+- Added Documentation to the types covered by this License
+- Added non-Warranty clause to the License
+- Changed the name to the HLIN Public License

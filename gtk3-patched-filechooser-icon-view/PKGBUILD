@@ -1,0 +1,84 @@
+# Maintainer: dudemanguy <random342@airmail.cc>
+# Contributer: Wolfgang Frisch (wfr) <wfrisch@riseup.net>
+# Contributer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Contributor: Ionut Biru <ibiru@archlinux.org>
+
+pkgname=gtk3-patched-filechooser-icon-view
+pkgver=3.22.24
+_patchver=8f94f87eac0fe5a12dbd9ca1834b88f81f5a85be
+pkgrel=1
+pkgdesc="GTK3 patched with dudemanguy's fork of wfr's filechooser-icon-view patch."
+arch=(i686 x86_64)
+url="https://gist.github.com/Dudemanguy911/c172394e30e1e7d0f477ad15c719bc71"
+provides=("gtk3=$pkgver")
+conflicts=("gtk3")
+depends=(atk cairo libxcursor libxinerama libxrandr libxi libepoxy gdk-pixbuf2 dconf
+         libxcomposite libxdamage pango shared-mime-info at-spi2-atk wayland libxkbcommon
+         adwaita-icon-theme json-glib librsvg wayland-protocols desktop-file-utils mesa
+         cantarell-fonts glib2-patched-thumbnailer)
+makedepends=(gobject-introspection libcanberra gtk-doc git colord rest libcups glib2-docs
+             sassc)
+license=(LGPL)
+install=gtk3.install
+_commit=e72d54c8a7bdf5f41feccbcc0b78522a8b50d79e  # tags/3.22.24^0
+source=("git+https://git.gnome.org/browse/gtk+#commit=$_commit"
+        settings.ini
+        gtk-query-immodules-3.0.hook
+        https://gist.githubusercontent.com/Dudemanguy911/c172394e30e1e7d0f477ad15c719bc71/raw/$_patchver/gtk3-filechooser-icon-view.patch)        
+
+sha256sums=('SKIP'
+            '01fc1d81dc82c4a052ac6e25bf9a04e7647267cc3017bc91f9ce3e63e5eb9202'
+            'de46e5514ff39a7a65e01e485e874775ab1c0ad20b8e94ada43f4a6af1370845'
+            'e7db73bda44bd107d8ffa25bbb479a92f64c5197c6e894c6da76ea5960ee80b6')
+
+pkgver() {
+  cd gtk+
+  git describe --tags | sed 's/-/+/g'
+}
+
+prepare() {
+  cd gtk+
+  patch -Np1 -i ../gtk3-filechooser-icon-view.patch
+  NOCONFIGURE=1 ./autogen.sh
+}
+
+build() {
+  cd gtk+
+
+  CXX=/bin/false ./configure --prefix=/usr \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --disable-schemas-compile \
+    --enable-x11-backend \
+    --enable-broadway-backend \
+    --enable-wayland-backend \
+    --enable-gtk-doc
+
+  #https://bugzilla.gnome.org/show_bug.cgi?id=655517
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+  make
+}
+
+package() {
+
+  cd gtk+
+  make DESTDIR="$pkgdir" install
+
+  install -Dm644 ../settings.ini "$pkgdir/usr/share/gtk-3.0/settings.ini"
+  install -Dm644 ../gtk-query-immodules-3.0.hook "$pkgdir/usr/share/libalpm/hooks/gtk-query-immodules-3.0.hook"
+
+  # split these out to avoid file conflicts with gtk-update-icon-cache and gtk3-print-backends
+  rm "$pkgdir/usr/bin/gtk-update-icon-cache"
+
+  cd "$pkgdir"
+  for _f in usr/lib/*/*/printbackends/*; do
+    case $_f in
+      *-file.so|*-lpr.so) continue ;;
+    esac
+
+    mkdir -p "$srcdir/print-backends/${_f%/*}"
+    mv "$_f" "$srcdir/print-backends/$_f"
+  done
+}
+

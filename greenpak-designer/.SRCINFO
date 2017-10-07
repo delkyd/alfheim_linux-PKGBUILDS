@@ -1,0 +1,28 @@
+pkgbase = greenpak-designer
+	pkgdesc = GreenPAK1-5 Designer
+	pkgver = 6.07.002
+	pkgrel = 1
+	url = http://www.silego.com/softdoc/software.html
+	install = greenpak-designer.install
+	arch = i686
+	arch = x86_64
+	license = custom
+	makedepends = patchelf
+	depends = desktop-file-utils
+	depends = graphviz
+	depends = gtk-update-icon-cache
+	depends = libusb
+	depends = qt5-svg
+	depends = qt5-webview
+	depends = qwt
+	depends = shared-mime-info
+	conflicts = greenpak-designer-dev
+	replaces = greenpak-designer-dev
+	options = !strip
+	source_i686 = http://www.silego.com/uploads/resources/gpd_LNX/GP1-5_Designer_v6.07.002_Debian8_i386_Setup.deb
+	sha256sums_i686 = ee3e2e7ea73ce2e1019dc85da7534b5dfea7995c978282470915601c06419ba3
+	source_x86_64 = http://www.silego.com/uploads/resources/gpd_LNX/GP1-5_Designer_v6.07.002_Debian8_amd64_Setup.deb
+	sha256sums_x86_64 = 85522a9743768c9bfad1f6c9f0484b26bcedc90a9da73aa508e5fac5914df216
+
+pkgname = greenpak-designer
+

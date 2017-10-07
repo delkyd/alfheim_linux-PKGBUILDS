@@ -1,0 +1,20 @@
+pkgbase = sword-svn
+	pkgdesc = Libraries for Bible programs - svn-version
+	pkgver = 3496
+	pkgrel = 1
+	url = http://www.crosswire.org/sword/
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = subversion
+	depends = curl
+	depends = clucene
+	depends = xapian-core
+	provides = sword
+	conflicts = sword
+	options = !makeflags
+	source = sword::svn+https://www.crosswire.org/svn/sword/trunk/
+	sha256sums = SKIP
+
+pkgname = sword-svn
+

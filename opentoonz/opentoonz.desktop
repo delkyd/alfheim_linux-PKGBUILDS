@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Icon=opentoonz.png
+Categories=Graphics;
+TryExec=/usr/bin/opentoonz
+Exec=opentoonz %f
+Name=OpenToonz
+GenericName=2D Animation Software

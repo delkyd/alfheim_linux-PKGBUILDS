@@ -1,0 +1,6 @@
+#! /bin/sh
+
+exec java \
+    -cp "/opt/plantuml/*" \
+    net.sourceforge.plantuml.Run \
+    "$@"

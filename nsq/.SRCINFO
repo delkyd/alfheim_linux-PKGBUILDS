@@ -1,0 +1,17 @@
+pkgbase = nsq
+	pkgdesc = A realtime distributed messaging platform
+	pkgver = 1.0.0compat
+	pkgrel = 1
+	url = http://nsq.io/
+	arch = i686
+	arch = x86_64
+	license = MIT
+	makedepends = go-gpm
+	makedepends = git
+	makedepends = go
+	options = !strip
+	source = nsq-1.0.0-compat.tar.gz::https://github.com/bitly/nsq/archive/v1.0.0-compat.tar.gz
+	sha256sums = c279d339eceb84cad09e2c2bc21e069e37988d0f6b7343d77238374081c9fd29
+
+pkgname = nsq
+

@@ -1,0 +1,22 @@
+pkgbase = lximage-qt-git
+	pkgdesc = The LXQt image viewer
+	pkgver = 0.5.1.23.g88eef99
+	pkgrel = 1
+	url = http://lxqt.org
+	install = lximage-qt.install
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	makedepends = git
+	makedepends = cmake
+	makedepends = qt5-tools
+	depends = pcmanfm-qt
+	depends = libfm-qt
+	depends = qt5-x11extras
+	provides = lximage-qt
+	conflicts = lximage-qt
+	source = git+https://github.com/lxde/lximage-qt.git
+	sha256sums = SKIP
+
+pkgname = lximage-qt-git
+

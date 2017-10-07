@@ -1,0 +1,30 @@
+pkgbase = vocal-git
+	pkgdesc = Podcast Client for the Modern Desktop
+	pkgver = 2.0.19.r182.18487dd
+	pkgrel = 1
+	url = http://www.vocalproject.net
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = cmake
+	makedepends = git
+	makedepends = vala
+	depends = clutter-gst
+	depends = clutter-gtk
+	depends = dconf
+	depends = desktop-file-utils
+	depends = granite
+	depends = gstreamer
+	depends = gtk-update-icon-cache
+	depends = gtk3
+	depends = libnotify
+	depends = libxml2
+	depends = sqlite
+	depends = webkit2gtk
+	provides = vocal
+	conflicts = vocal
+	source = vocal::git://github.com/vocalapp/vocal.git
+	md5sums = SKIP
+
+pkgname = vocal-git
+

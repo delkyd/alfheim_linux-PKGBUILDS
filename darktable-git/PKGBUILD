@@ -1,0 +1,71 @@
+# Maintainer: Marco44 <cousinmarc at gmail dot com>
+# Contributor: Sarkasper <echo a2FzcGVyLm1lbnRlbkBnbXguY29tCg== | base64 -d>
+# Contributor: Christian Himpel <chressie at gmail dot com>
+# Contributor: Johannes Hanika  <hanatos at gmail dot com>
+# Contributor: Kevin Brubeck Unhammer <unhammer at member dot fsf dot org>
+# Contributor: orbisvicis <orbisvicis at gmail dot com>
+pkgname=darktable-git
+_gitname=darktable
+pkgver=release.2.3.0.r54.gc4fc7e36c
+pkgrel=1
+pkgdesc="A virtual lighttable and darkroom for photographers"
+arch=('i686' 'x86_64')
+url=http://www.darktable.org/
+license=('GPL3')
+depends=('exiv2>=0.18' 'intltool>=0.40' 'lcms2' 'lensfun>=0.2.3' 'libglade' 'dbus-glib'
+	 'curl' 'libgnome-keyring' 'libgphoto2' 'libusb-compat' 'openexr' 'sqlite' 'libxslt'
+	 'libsoup' 'osm-gps-map' 'pugixml' 'colord' 'lua52' 'libsecret' 'colord-gtk'
+	 'sdl' 'openjpeg2' 'graphicsmagick' 'glu' )
+makedepends=(git 'intltool>=0.40' 'cmake' 'librsvg' 'flickcurl')
+optdepends=('librsvg' 'flickcurl: flickr upload')
+conflicts=(darktable)
+provides=(darktable)
+install=darktable.install
+options=(!emptydirs !libtool)
+source=('git://github.com/darktable-org/darktable.git')
+md5sums=('SKIP')
+
+pkgver() {
+  cd $_gitname
+#  git clean -dfx > /dev/null 2>&1
+#  git reset --hard > /dev/null 2>&1
+#  if you want a specific commit or branch... just put it here
+#  git checkout 441a3b44df770578240c1774b29d373aa4a08bb8 > /dev/null 2>&1
+  git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+prepare() {
+	local _gitdir=$srcdir/$_gitname
+	cd $_gitdir
+	git submodule update --init
+}
+
+build() {
+  local _gitdir=$srcdir/$_gitname
+  cd $_gitdir
+  [[ ! -d build ]] && mkdir -p build
+  cd build
+  cmake \
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DBINARY_PACKAGE_BUILD=1 \
+      -DUSE_LIBSECRET=On \
+      -DUSE_LUA=On \
+      -DBUILD_USERMANUAL=False \
+      -DUSE_GNOME_KEYRING=Off \
+      -DUSE_COLORD=On \
+      -DCMAKE_INSTALL_LIBDIR=lib \
+      -DCMAKE_C_FLAGS="-Wno-error=deprecated-declarations -Wno-error=unused-result" \
+      ..
+  make
+
+  cd ../tools/basecurve
+  cmake .
+  make
+}
+
+package() {
+  cd $srcdir/$_gitname/build
+  make DESTDIR=$pkgdir install
+  mv "${pkgdir}/usr/share/doc/darktable" "${pkgdir}/usr/share/doc/${pkgname}-${pkgver}"
+}

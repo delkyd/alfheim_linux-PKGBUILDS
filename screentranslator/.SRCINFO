@@ -1,0 +1,17 @@
+pkgbase = screentranslator
+	pkgdesc = Screen capture, OCR and translation tool.
+	pkgver = 2.0.0
+	pkgrel = 1
+	url = https://github.com/OneMoreGres/ScreenTranslator
+	arch = x86_64
+	license = MIT
+	makedepends = git
+	makedepends = make
+	depends = qt5-webkit
+	depends = qt5-x11extras
+	depends = tesseract
+	source = screentranslator::git+https://github.com/OneMoreGres/ScreenTranslator.git#tag=2.0.0
+	md5sums = SKIP
+
+pkgname = screentranslator
+

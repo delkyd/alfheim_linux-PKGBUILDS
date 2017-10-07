@@ -1,0 +1,13 @@
+post_install() {
+    systemd-sysusers nzbhydra.conf
+
+    mkdir -p /var/lib/nzbhydra
+    chown -R nzbhydra: /var/lib/nzbhydra
+
+    mkdir -p /etc/nzbhydra
+    chown -R nzbhydra /etc/nzbhydra
+}
+
+post_upgrade() {
+    chown -R nzbhydra: /var/lib/nzbhydra
+}

@@ -1,0 +1,15 @@
+pkgbase = rcr
+	pkgdesc = Red Crucible®: Reloaded - Free to play online FPS
+	pkgver = 201709040555
+	pkgrel = 1
+	url = http://www.rocketeergames.com/site/rcr/
+	arch = i686
+	arch = x86_64
+	license = LLC
+	source = http://cdn.rocketeergames.com/rcreloaded/redcrucible_lin.zip
+	source = rcr.desktop
+	md5sums = SKIP
+	md5sums = b03e6aadb89d013092b10666bfbb9460
+
+pkgname = rcr
+

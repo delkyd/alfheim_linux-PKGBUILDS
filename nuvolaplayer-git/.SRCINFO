@@ -1,0 +1,21 @@
+pkgbase = nuvolaplayer-git
+	pkgdesc = Cloud music integration for your Linux desktop
+	pkgver = r1020.78b0333
+	pkgrel = 1
+	url = https://tiliado.eu/nuvolaplayer
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = git
+	makedepends = python
+	makedepends = vala
+	depends = diorite-git
+	depends = webkit2gtk
+	depends = libarchive
+	provides = nuvolaplayer
+	conflicts = nuvolaplayer
+	source = nuvolaplayer-git::git+https://github.com/tiliado/nuvolaplayer.git
+	md5sums = SKIP
+
+pkgname = nuvolaplayer-git
+

@@ -1,0 +1,41 @@
+# Maintainer: Cyrus Anakin <cyrus dot anakin at tutanota dot de>
+
+pkgname=screentranslator
+pkgver=2.0.0
+pkgrel=1
+pkgdesc='Screen capture, OCR and translation tool.'
+arch=('x86_64')
+url='https://github.com/OneMoreGres/ScreenTranslator'
+license=('MIT')
+depends=('qt5-webkit' 'qt5-x11extras' 'tesseract')
+makedepends=('git' 'make')
+source=("${pkgname}::git+https://github.com/OneMoreGres/ScreenTranslator.git#tag=${pkgver}")
+md5sums=('SKIP')
+
+prepare() {
+  sed -i "s:/usr/share/tesseract-ocr/:/usr/share/:g" "${srcdir}/${pkgname}/Settings.h"
+}
+
+build() {
+  _build_dir="${srcdir}/${pkgname}/build"
+  mkdir -p "$_build_dir" &&
+  cd "$_build_dir" &&
+  lrelease ../ScreenTranslator.pro &&
+  qmake CONFIG-=debug_and_release CONFIG+=release .. &&
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}"
+  install -Dm644 images/STIconBlue.png "${pkgdir}/usr/share/pixmaps/ScreenTranslator.png"
+  install -Dm644 distr/deb/usr/share/applications/ScreenTranslator.desktop "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+  install -Dm644 LICENSE.md "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+  install -dm755 "${pkgdir}/opt/${pkgname}/translators"
+  install -Dm644 translators/* "${pkgdir}/opt/${pkgname}/translators"
+
+  install -Dm755 build/ScreenTranslator "${pkgdir}/opt/${pkgname}/${pkgname}"
+
+  install -dm755 "${pkgdir}/usr/bin"
+  ln -s "/opt/${pkgname}/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+}

@@ -1,0 +1,28 @@
+pkgbase = komorebi
+	pkgdesc = Parallax backgrounds manager
+	pkgver = 2.0
+	pkgrel = 1
+	url = https://github.com/iabem97/komorebi
+	arch = x86_64
+	arch = i686
+	license = GPL
+	makedepends = git
+	makedepends = cmake
+	makedepends = vala
+	makedepends = gendesk
+	depends = desktop-file-utils
+	depends = glib2>=2.38
+	depends = gtk3>=3.14
+	depends = hicolor-icon-theme
+	depends = libgtop
+	depends = libgee
+	depends = libwnck
+	depends = clutter
+	depends = clutter-gtk
+	depends = clutter-gst
+	provides = komorebi
+	source = https://github.com/iabem97/komorebi/archive/v2.0.tar.gz
+	md5sums = 0c72498a4c0c10b00c50fad1ef2f6195
+
+pkgname = komorebi
+

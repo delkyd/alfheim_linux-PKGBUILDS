@@ -1,0 +1,19 @@
+pkgbase = thebeat
+	pkgdesc = Audio Player based on Phonon
+	pkgver = 1.0
+	pkgrel = 0
+	url = https://github.com/vicr123/thebeat
+	arch = x86_64
+	license = GPL3
+	makedepends = git
+	depends = libmusicbrainz5
+	depends = xdg-utils
+	depends = phonon-qt5
+	depends = qt5-base
+	depends = taglib
+	depends = the-libs
+	source = thebeat-1.0::git+https://github.com/vicr123/thebeat.git
+	md5sums = SKIP
+
+pkgname = thebeat
+

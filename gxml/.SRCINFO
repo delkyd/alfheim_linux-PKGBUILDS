@@ -1,0 +1,18 @@
+pkgbase = gxml
+	pkgdesc = GObject XML and Serialization API
+	pkgver = 0.14.3
+	pkgrel = 1
+	url = https://wiki.gnome.org/GXml
+	arch = x86_64
+	license = LGPL
+	makedepends = gobject-introspection
+	makedepends = vala
+	makedepends = intltool
+	depends = glib2
+	depends = libgee
+	depends = libxml2
+	source = http://ftp.gnome.org/pub/gnome/sources/gxml/0.14/gxml-0.14.3.tar.xz
+	sha256sums = b4f9739f924fefc90dd5d54da7680a50377bfba1342bd16436ab387c631e3b41
+
+pkgname = gxml
+

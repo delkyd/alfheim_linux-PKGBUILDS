@@ -1,0 +1,28 @@
+pkgbase = cura-aleph-bin
+	pkgdesc = A full 3D printing solution aimed at RepRaps and the Ultimaker. This is the Aleph Objects fork, specialized for the Lulzbot series of 3D printers.
+	pkgver = 21.08
+	pkgrel = 1
+	url = https://www.lulzbot.com/cura
+	arch = i686
+	arch = x86_64
+	license = AGPL3
+	depends = bash
+	depends = python2
+	depends = wxpython
+	depends = python2-opengl
+	depends = python2-pyserial
+	depends = python2-numpy
+	depends = python2-power-git
+	provides = cura
+	conflicts = cura
+	conflicts = cura-bin
+	conflicts = cura-git
+	conflicts = cura-old
+	conflicts = cura-not-so-old
+	source = http://download.alephobjects.com/ao/aodeb/dists/jessie/main/binary-amd64/cura_21.08-f2748_amd64.deb
+	source = arch_aleph_patch.diff
+	sha1sums = 9fcb09122d1eb0f5b596f6208c0ad0b8486bbee3
+	sha1sums = a6010f8e88b7d02900b5a2eb7f9f9fa2c50f7d57
+
+pkgname = cura-aleph-bin
+

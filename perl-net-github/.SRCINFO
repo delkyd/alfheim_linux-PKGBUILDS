@@ -1,0 +1,23 @@
+pkgbase = perl-net-github
+	pkgdesc = Perl Interface for github.com
+	pkgver = 0.82
+	pkgrel = 1
+	url = https://metacpan.org/release/Net-GitHub
+	arch = any
+	license = PerlArtistic
+	license = GPL
+	depends = perl-cache-lru
+	depends = perl-http-message
+	depends = perl-json-maybexs
+	depends = perl-lwp-protocol-https
+	depends = perl-moo
+	depends = perl-type-tiny
+	depends = perl-uri
+	depends = perl-libwww
+	options = !emptydirs
+	source = http://search.cpan.org/CPAN/authors/id/F/FA/FAYLAND/Net-GitHub-0.82.tar.gz
+	md5sums = e9f36d2432ca8ee4f71eb9032e31172d
+	sha512sums = 38212fd11971007fedb3621538b7779f50305c94e54bb1ba2ac207350682bba2f60f1b0ecc80914e597d84bffdf6368b1f7723bda2344b986b1e26700ddb88fd
+
+pkgname = perl-net-github
+

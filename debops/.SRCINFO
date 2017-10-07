@@ -1,0 +1,22 @@
+pkgbase = debops
+	pkgdesc = A collection of Ansible playbooks, scalable from one container to an entire data center.
+	pkgver = 0.5.0
+	pkgrel = 1
+	url = http://debops.org/
+	arch = any
+	license = GPL3
+	makedepends = python2-setuptools
+	depends = python2
+	depends = ansible
+	depends = python2-netaddr
+	depends = python2-ldap
+	depends = python2-passlib
+	depends = util-linux
+	depends = encfs
+	depends = gnupg
+	conflicts = depops-git
+	source = https://github.com/debops/debops-tools/archive/v0.5.0.tar.gz
+	sha256sums = ab84d9e0851a5cc35eadbe48a16f26a5c8812d84f13fa622664fe376e1a23f64
+
+pkgname = debops
+

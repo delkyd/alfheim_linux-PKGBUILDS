@@ -1,0 +1,35 @@
+# Maintainer: Parker Reed <parker.l.reed@gmail.com>
+
+pkgname=vfs495-daemon
+pkgver=4.5
+pkgrel=118.00
+pkgdesc="Userspace driver for VFS495 fingerprint readers"
+arch=('x86_64')
+url=""
+license=('unknown')
+depends=('openssl098' 'libusb-compat')
+makedepends=('rpmextract')
+install='vfs495-daemon.install'
+provides=('vfs495-daemon')
+source=('https://github.com/parkerlreed/vfs495-files/raw/master/Validity-Sensor-Setup-4.5-118.00.x86_64.rpm'
+	'vfs495-daemon.service')
+noextract=()
+md5sums=('b31117a84f8cb0561648b39957ba5393'
+         '8e959fb897cb2e8c134541abdbeeaee9')
+
+build() {
+  cd "${srcdir}/"
+
+  rpmextract.sh Validity-Sensor-Setup-4.5-118.00.x86_64.rpm
+  rm -rf usr/lib64/
+  mv usr/sbin/* usr/bin/
+  rmdir usr/sbin/
+}
+
+package() {
+  cd "${srcdir}/"
+
+  cp -R usr/ "${pkgdir}/"
+  mkdir -p "${pkgdir}/etc/systemd/system"
+  cp vfs495-daemon.service "${pkgdir}/etc/systemd/system"
+}

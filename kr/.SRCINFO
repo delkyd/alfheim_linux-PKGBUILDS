@@ -1,0 +1,20 @@
+pkgbase = kr
+	pkgdesc = SSH using a key stored in Kryptonite
+	pkgver = 2.2.7
+	pkgrel = 1
+	url = https://github.com/kryptco/kr
+	install = kr.install
+	arch = i686
+	arch = x86_64
+	license = custom
+	makedepends = rust
+	makedepends = cargo
+	makedepends = go
+	depends = gcc-libs-multilib
+	provides = kr
+	conflicts = kr
+	source = git+https://github.com/kryptco/kr#tag=2.2.7
+	md5sums = SKIP
+
+pkgname = kr
+

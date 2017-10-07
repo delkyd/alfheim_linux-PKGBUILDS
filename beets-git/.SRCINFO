@@ -1,0 +1,27 @@
+pkgbase = beets-git
+	pkgdesc = Flexible music library manager and tagger - git version
+	pkgver = 1.4.3.r29.g70fd6cb7
+	pkgrel = 1
+	url = http://beets.io/
+	arch = any
+	license = MIT
+	makedepends = git
+	depends = python-munkres
+	depends = python-mutagen
+	depends = python-setuptools
+	depends = python-unidecode
+	depends = python-musicbrainzngs
+	depends = python-yaml
+	depends = python-jellyfish
+	depends = python-six
+	optdepends = python-pyacoustid: acoustic fingerprinting
+	optdepends = python-flask: web interface
+	optdepends = python-gobject: BPD audio player plugin
+	optdepends = python-pylast: lastgenre plugin
+	provides = beets
+	conflicts = beets
+	source = git+https://github.com/beetbox/beets.git
+	md5sums = SKIP
+
+pkgname = beets-git
+

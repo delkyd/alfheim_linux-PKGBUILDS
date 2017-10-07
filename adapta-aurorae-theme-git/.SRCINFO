@@ -1,0 +1,17 @@
+pkgbase = adapta-aurorae-theme-git
+	pkgdesc = adapta decorations for Kwin (git version)
+	pkgver = r98.418ab02
+	pkgrel = 1
+	url = https://github.com/PapirusDevelopmentTeam/adapta-kde
+	arch = x86_64
+	license = GPL
+	makedepends = git
+	makedepends = make
+	depends = kwin
+	conflicts = adapta-kde
+	conflicts = adapta-kde-git
+	source = git+https://github.com/PapirusDevelopmentTeam/adapta-kde.git
+	sha256sums = SKIP
+
+pkgname = adapta-aurorae-theme-git
+

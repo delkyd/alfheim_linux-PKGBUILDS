@@ -1,0 +1,14 @@
+pkgbase = obs-service-format_spec_file
+	pkgdesc = An OBS source service: reformats a spec file to SUSE standard
+	pkgver = 20160929
+	pkgrel = 1
+	url = https://build.opensuse.org/package/show/openSUSE:Factory/obs-service-format_spec_file
+	arch = any
+	license = GPL2
+	depends = obs-service-source_validator
+	depends = perl-date-parse
+	source = http://download.opensuse.org/source/factory/repo/oss/suse/src/obs-service-format_spec_file-20160929-1.1.src.rpm
+	sha256sums = 01ceb354e15aff0784bee976859a0072cee1029efaad6ed3cf6b55b8526c8511
+
+pkgname = obs-service-format_spec_file
+

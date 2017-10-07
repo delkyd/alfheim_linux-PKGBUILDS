@@ -1,0 +1,17 @@
+pkgbase = vim-easytags
+	pkgdesc = Automatically create a global tags file with ctags and keep it up-to-date as you edit files in Vim.
+	pkgver = 3.11
+	pkgrel = 1
+	url = https://github.com/xolox/vim-easytags
+	arch = any
+	groups = vim-plugins
+	license = MIT
+	depends = vim
+	depends = ctags
+	depends = vim-misc-xolox
+	depends = python
+	source = vim-easytags-3.11.tar.gz::https://github.com/xolox/vim-easytags/tarball/3.11
+	sha256sums = 8661ee2260164630be9746194f5e323dc78202b331e765764f4974981831c5f2
+
+pkgname = vim-easytags
+

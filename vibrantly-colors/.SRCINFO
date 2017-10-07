@@ -1,0 +1,17 @@
+pkgbase = vibrantly-colors
+	pkgdesc = A flat icon theme composed from many open source icon projects
+	pkgver = 1.2.2
+	pkgrel = 1
+	url = http://www.ravefinity.com/p/vibrantly-simple-gtk-icon-theme.html
+	install = update-icon-cache.install
+	arch = any
+	license = CC
+	options = !strip
+	options = !zipman
+	options = libtool
+	options = staticlibs
+	source = vibrantly-colors-1.2.2.tar.gz::https://googledrive.com/host/0B7iDWdwgu9QAcEpheTFBWVBDd3c
+	md5sums = 88a6d980b8142d9aefaed506ea55b244
+
+pkgname = vibrantly-colors
+

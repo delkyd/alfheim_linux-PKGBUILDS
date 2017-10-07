@@ -1,0 +1,9 @@
+hexen_demo_wad_1.1.tgz
+
+/*.tar.gz
+/*.tar.bz2
+/*.tar.xz
+/*.zip
+/*.7z
+/pkg/
+/src/

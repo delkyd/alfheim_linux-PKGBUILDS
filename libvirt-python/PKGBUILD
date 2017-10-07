@@ -1,0 +1,36 @@
+# $Id: PKGBUILD 101980 2013-12-03 09:48:38Z spupykin $
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Jonathan Wiersma <archaur at jonw dot org>
+
+pkgbase=libvirt-python
+pkgname=(libvirt-python2 libvirt-python)
+pkgver=3.8.0
+pkgrel=1
+pkgdesc="libvirt python binding"
+arch=('i686' 'x86_64')
+url="https://pypi.python.org/pypi/libvirt-python"
+license=('LGPL')
+makedepends=('python' 'python2' 'libvirt')
+options=('emptydirs')
+install="libvirt-python.install"
+validpgpkeys=('C74415BA7C9C7F78F02E1DC34606B8A5DE95BC1F')
+source=("http://libvirt.org/sources/python/libvirt-python-$pkgver.tar.gz")
+sha256sums=('5fcba9ca645b01a8d970da84f7f95d54b0e8e915739d06b5e6d86ae626ea570b')
+
+package_libvirt-python2() {
+  depends=('python2' 'libvirt')
+  replaces=('libvirt-python<=3.2.0-1')
+  conflicts=('libvirt-python<=3.2.0-1')
+
+  cd "$srcdir/$pkgbase-$pkgver"
+  python2 setup.py clean
+  python2 setup.py install --root="$pkgdir"
+}
+
+package_libvirt-python() {
+  depends=('python' 'libvirt')
+
+  cd "$srcdir/$pkgbase-$pkgver"
+  python setup.py clean
+  python setup.py install --root="$pkgdir"
+}

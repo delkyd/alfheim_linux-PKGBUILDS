@@ -1,0 +1,8 @@
+*
+!.gitignore
+!.SRCINFO
+!PKGBUILD
+!chromium-dev.install
+!chromium-dev.svg
+!chromium-widevine-r1.patch
+!chromium-blink-gcc7-r2.patch

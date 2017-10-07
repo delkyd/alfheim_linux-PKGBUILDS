@@ -1,0 +1,18 @@
+pkgbase = ocaml-zip
+	pkgdesc = ZIP and gzip library for OCaml
+	pkgver = 1.06
+	pkgrel = 1
+	url = http://cristal.inria.fr/~xleroy/software.html#camlzip
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = ocaml-findlib
+	depends = ocaml
+	depends = zlib
+	options = !strip
+	options = staticlibs
+	source = http://forge.ocamlcore.org/frs/download.php/1616/camlzip-1.06.tar.gz
+	sha512sums = 5ef0172927106589620678897f12f054533503a5cf13df71bf4deda43f223d0cd6acce118977e87bce53afe289f367b851f192a8e693274c2bd13549121019dd
+
+pkgname = ocaml-zip
+

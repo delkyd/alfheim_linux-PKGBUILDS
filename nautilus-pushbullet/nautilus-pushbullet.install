@@ -1,0 +1,18 @@
+# nautilus-pushbullet.install
+
+post_install() {
+	update-desktop-database -q
+    echo
+    echo "Updating Icon-Cache"
+	gtk-update-icon-cache -q -t -f usr/share/icons/Humanity
+}
+
+post_upgrade() {
+	gtk-update-icon-cache -q -t -f usr/share/icons/Humanity
+}
+
+post_remove() {
+	post_install $1
+}
+
+# vim:set ts=4 sw=2 ft=sh et:

@@ -1,0 +1,13 @@
+pkgbase = boxes
+	pkgdesc = Text mode box and comment drawing filter
+	pkgver = 1.2
+	pkgrel = 1
+	url = http://boxes.thomasjensen.com/
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	source = https://github.com/ascii-boxes/boxes/archive/v1.2.zip
+	md5sums = 7bfe3449bc52d72f3d6f2cc24a70645b
+
+pkgname = boxes
+

@@ -1,0 +1,55 @@
+# $Id$
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgbase=python-mox3
+pkgname=('python-mox3' 'python2-mox3')
+pkgver=0.23.0
+pkgrel=1
+arch=('any')
+pkgdesc='Mock object framework for Python'
+url='http://docs.openstack.org/developer/mox3'
+license=('Apache')
+makedepends=('python-setuptools' 'python2-setuptools' 'python-pbr' 'python2-pbr'
+             'python-fixtures' 'python2-fixtures')
+checkdepends=('python-testrepository' 'python2-testrepository')
+source=("$pkgbase-$pkgver.tar.gz::https://github.com/openstack/mox3/archive/$pkgver.tar.gz")
+sha512sums=('d688fbb20ddacacf48249e9520de21264c176def8902f8ff20655ab8515688e69f050580a4c91a530331daea38998801b39c105503f557c066eb2f9992d23be9')
+
+prepare() {
+  # Python 3.6 fixes
+  sed -i 's/, flags=4//' mox3-$pkgver/mox3/tests/test_mox.py
+
+  cp -a mox3-$pkgver{,-py2}
+
+  export PBR_VERSION=$pkgver
+}
+
+build() {
+  cd "$srcdir"/mox3-$pkgver
+  python setup.py build
+
+  cd "$srcdir"/mox3-$pkgver-py2
+  python2 setup.py build
+}
+
+check() {
+  cd "$srcdir"/mox3-$pkgver
+  python setup.py testr
+
+  cd "$srcdir"/mox3-$pkgver-py2
+  PYTHON=python2 python2 setup.py testr
+}
+
+package_python-mox3() {
+  depends=('python-pbr' 'python-fixtures')
+
+  cd mox3-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+}
+
+package_python2-mox3() {
+  depends=('python2-pbr' 'python2-fixtures')
+
+  cd mox3-$pkgver-py2
+  python2 setup.py install --root="$pkgdir" --optimize=1
+}

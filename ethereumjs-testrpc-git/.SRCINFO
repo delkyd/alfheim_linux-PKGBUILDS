@@ -1,0 +1,15 @@
+pkgbase = ethereumjs-testrpc-git
+	pkgdesc = Fast Ethereum RPC client for testing and development
+	pkgver = 4.0.0
+	pkgrel = 0
+	url = https://github.com/ethereumjs/testrpc
+	arch = any
+	license = MIT
+	makedepends = npm
+	depends = nodejs
+	provides = testrpc
+	source = testrpc::git+https://github.com/ethereumjs/testrpc.git
+	sha256sums = SKIP
+
+pkgname = ethereumjs-testrpc-git
+

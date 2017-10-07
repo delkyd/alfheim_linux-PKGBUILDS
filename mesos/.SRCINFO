@@ -1,0 +1,28 @@
+pkgbase = mesos
+	pkgdesc = A cluster manager that simplifies the complexity of running applications on a shared pool of servers
+	pkgver = 1.2.0
+	pkgrel = 1
+	url = http://mesos.apache.org/
+	arch = i686
+	arch = x86_64
+	groups = science
+	license = Apache
+	makedepends = maven
+	makedepends = python2-setuptools
+	depends = python2
+	depends = zlib
+	depends = curl
+	depends = java-environment
+	depends = apr
+	depends = subversion
+	depends = cyrus-sasl
+	depends = libnl>=3.2.28
+	source = http://www.apache.org/dist/mesos/1.2.0/mesos-1.2.0.tar.gz
+	source = mesos-master.service
+	source = mesos-slave.service
+	md5sums = 3585de784da66bb4c6df04a1e6bcb439
+	md5sums = 42e6bb21d7682b8a8f036c23532e4fe9
+	md5sums = 55cc5e556bb0622f5f913a1999f17766
+
+pkgname = mesos
+

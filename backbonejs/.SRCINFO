@@ -1,0 +1,14 @@
+pkgbase = backbonejs
+	pkgdesc = Backbone is a JavaScript library with a RESTful JSON interface, and is based on the model-view-presenter (MVP) application design paradigm.
+	pkgver = 1.3.3
+	pkgrel = 1
+	url = http://backbonejs.org
+	arch = any
+	license = MIT
+	source = http://backbonejs.org/backbone.js
+	source = http://backbonejs.org/backbone-min.js
+	md5sums = 8a8d829617513f36185a0ab055d088ec
+	md5sums = 1f542a03bb9e6203b95cc9d0c39e0af7
+
+pkgname = backbonejs
+

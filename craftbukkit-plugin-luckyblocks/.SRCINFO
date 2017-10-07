@@ -1,0 +1,14 @@
+pkgbase = craftbukkit-plugin-luckyblocks
+	pkgdesc = Create LuckyBlocks! You can get the block in the creative inventory or by the custom crafting recipe!
+	pkgver = 10.0
+	pkgrel = 1
+	url = http://dev.bukkit.org/bukkit-plugins/luckyblocks
+	arch = any
+	license = All Rights Reserved
+	depends = craftbukkit
+	noextract = LuckyBlocks_10.0.jar
+	source = http://dev.bukkit.org/media/files/891/310/LuckyBlocks_10.0.jar
+	sha256sums = 6f27a3638a40533f42f997e636ea123b89b5a1776f555c11affb787add80ec56
+
+pkgname = craftbukkit-plugin-luckyblocks
+

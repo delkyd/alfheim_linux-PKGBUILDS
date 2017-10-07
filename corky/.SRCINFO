@@ -1,0 +1,15 @@
+pkgbase = corky
+	pkgdesc = Some Lua modules for the system monitor Conky.
+	pkgver = 2017033001
+	pkgrel = 2
+	url = https://gitlab.com/goeb/Corky/
+	install = corky.install
+	arch = any
+	license = GPL3
+	depends = conky-cairo
+	depends = lua-lpeg
+	source = corky::git+https://gitlab.com/goeb/Corky.git#tag=2017033001
+	sha256sums = SKIP
+
+pkgname = corky
+

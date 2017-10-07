@@ -1,0 +1,35 @@
+pkgbase = sdl2-rbp-bin
+	pkgdesc = A library for portable low-level access to video, audio and input (debian binary)
+	pkgver = 2.0.5+5rpi
+	pkgrel = 1
+	url = http://www.libsdl.org
+	arch = arm
+	arch = armv6h
+	arch = armv7h
+	license = ZLIB
+	makedepends = deb2targz
+	depends = raspberrypi-firmware-tools
+	depends = alsa-lib
+	depends = glibc
+	depends = libx11
+	depends = libxext
+	depends = libxcursor
+	depends = libxinerama
+	depends = libxi
+	depends = libxrandr
+	depends = libxss
+	depends = libxxf86vm
+	depends = libxcb
+	depends = libxrender
+	depends = libxfixes
+	depends = libxau
+	depends = libxdmcp
+	provides = sdl2
+	conflicts = sdl2
+	source = http://files.retropie.org.uk/binaries/jessie/rpi2/libsdl2-2.0-0_2.0.5+5rpi_armhf.deb
+	source = http://files.retropie.org.uk/binaries/jessie/rpi2/libsdl2-dev_2.0.5+5rpi_armhf.deb
+	md5sums = ba1c3a13aaebd40275cf0842e398c411
+	md5sums = dfa5d7e8bfad625d9f96a33067ffbfdb
+
+pkgname = sdl2-rbp-bin
+

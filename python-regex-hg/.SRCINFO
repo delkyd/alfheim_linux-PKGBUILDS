@@ -1,0 +1,17 @@
+pkgbase = python-regex-hg
+	pkgdesc = Alternative regular expression module, to replace re.
+	pkgver = 182.7dd7e9a48804
+	pkgrel = 1
+	url = https://bitbucket.org/mrabarnett/mrab-regex
+	arch = i686
+	arch = x86_64
+	license = custom
+	makedepends = mercurial
+	depends = python
+	provides = python-regex
+	conflicts = python-regex
+	source = hg+https://bitbucket.org/mrabarnett/mrab-regex
+	md5sums = SKIP
+
+pkgname = python-regex-hg
+

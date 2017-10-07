@@ -1,0 +1,22 @@
+pkgbase = reddit-placebot
+	pkgdesc = Automatically place pixels on reddit.com/r/place
+	pkgver = r26.a30c034
+	pkgrel = 1
+	url = https://github.com/wijagels/reddit-placebot
+	install = reddit-placebot.install
+	arch = any
+	license = MIT
+	makedepends = git
+	makedepends = npm
+	depends = nodejs
+	provides = reddit-placebot-git
+	conflicts = reddit-placebot-git
+	source = git+https://github.com/wijagels/reddit-placebot
+	source = reddit-placebot.service
+	source = reddit-placebot.install
+	sha256sums = SKIP
+	sha256sums = 7bff9b9bab1fa52e9919f3f258588375ad4369cdc0fb6cf2f738a01f957ab082
+	sha256sums = fb30bb661eba94a9d50a6212c4e8469492c1427cb0182265367bc75587c2c0ff
+
+pkgname = reddit-placebot
+

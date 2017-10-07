@@ -1,0 +1,27 @@
+pkgbase = certmonger
+	pkgdesc = Certificate status monitor and PKI enrollment client
+	pkgver = 0.79.3
+	pkgrel = 1
+	url = https://fedorahosted.org/certmonger/
+	install = certmonger.install
+	arch = i686
+	arch = x86_64
+	license = GPL
+	checkdepends = diffutils
+	checkdepends = dos2unix
+	checkdepends = expect
+	depends = nss
+	depends = tevent
+	depends = xmlrpc-c
+	depends = popt
+	depends = libdbus
+	backup = etc/certmonger/certmonger.conf
+	backup = etc/tmpfiles.d/certmonger.conf
+	source = https://releases.pagure.org/certmonger/certmonger-0.79.3.tar.gz
+	source = https://releases.pagure.org/certmonger/certmonger-0.79.3.tar.gz.sig
+	validpgpkeys = 1AD3D57B7B070952A0405FDA020B9DB9E54F6897
+	sha512sums = 9e59fb289b006cd787e06eb1b624cef1051adfed20f31c6cffb818ae49fccd6c5d5f1b3835590b962990b2376963717a5e9e71d1ff25939afba60cb4b3cfeeed
+	sha512sums = SKIP
+
+pkgname = certmonger
+

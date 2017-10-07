@@ -1,0 +1,6 @@
+pkg/
+src/
+subsonic-*.tar.gz
+subsonic-beta-*.pkg.tar.xz
+subsonic-beta-*.pkg.tar.xz.sig
+*.tar.gz.sig

@@ -1,0 +1,27 @@
+# $Id$
+# Maintainer: Christian Hesse <mail@eworm.de>
+# Contributor: Karol Babioch <karol@babioch.de>
+
+pkgname='yubikey-manager'
+pkgver=0.4.5
+pkgrel=1
+pkgdesc='Python library and command line tool for configuring a YubiKey'
+arch=('any')
+url='https://developers.yubico.com/yubikey-manager/'
+license=('BSD')
+depends=('python' 'python-pyusb' 'python-pyscard' 'python-click'
+         'python-cryptography' 'python-pyopenssl' 'libu2f-host' 'yubikey-personalization')
+makedepends=('python-setuptools')
+validpgpkeys=('8D0B4EBA9345254BCEC0E843514F078FF4AB24C3') # Dag Heyman <dag@yubico.com>
+source=("https://developers.yubico.com/$pkgname/Releases/yubikey-manager-$pkgver.tar.gz"{,.sig})
+sha256sums=('d91f5b549b23bfc6c04d9446b9ced6c6f80aac702b26a1fa4d1b8df5eb9a36d8'
+            'SKIP')
+
+package() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+
+	python setup.py install --root="${pkgdir}/" --optimize=1
+
+	install -D -m0644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
+}
+

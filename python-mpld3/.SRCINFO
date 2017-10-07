@@ -1,0 +1,22 @@
+pkgbase = python-mpld3
+	pkgdesc = D3 Viewer for Matplotlib
+	pkgver = 0.3
+	pkgrel = 2
+	url = http://mpld3.github.io/
+	arch = any
+	license = BSD 3-clause
+	makedepends = python-setuptools
+	makedepends = python2-setuptools
+	source = https://files.pythonhosted.org/packages/source/m/mpld3/mpld3-0.3.tar.gz
+	md5sums = 088251ed3182b2932268f9986cdc2778
+
+pkgname = python-mpld3
+	depends = python
+	depends = python-matplotlib
+	depends = python-jinja
+
+pkgname = python2-mpld3
+	depends = python2
+	depends = python2-matplotlib
+	depends = python2-jinja
+

@@ -1,0 +1,78 @@
+# Maintainer: Leonidas Spyropoulos (artafinde at gmail dot com)
+# Contributor: scrawler@gmail.com
+
+pkgname=freeplane-git
+_NEXT_VERSION=1.6.x
+pkgver=1.6.x.864d54537
+pkgrel=1
+pkgdesc="A Java mindmapping tool"
+arch=('any')
+url="https://github.com/freeplane/freeplane.git"
+license=('GPL')
+makedepends=('git' 'gradle')
+conflicts=('freeplane')
+provides=('freeplane')
+depends=('java-environment' 'desktop-file-utils')
+source=('git+https://github.com/freeplane/freeplane.git#branch=1.6.x' 'freeplane.desktop' 'freeplane.run')
+sha256sums=('SKIP'
+            'cae931ab1e7747e1b090a13d11c4cc0e0cb5ae62ab342f997c885973df24e4e7'
+            '56ac3b9c1711a05f2d04f5587a27a9e05c5c06885d14027363e6c00d2614bc78')
+
+pkgver() {
+	cd "${pkgname%-*}"
+	# Use branch and last commit
+	local commit="$(git rev-parse --short HEAD)"
+	printf "%s" "${_NEXT_VERSION}.${commit}"
+}
+
+build() {
+	cd "${pkgname%-*}"
+	gradle -Dorg.gradle.daemon=false build 
+}
+
+package() {
+  cd ${srcdir}/${pkgname%-*}/BIN
+  find plugins -type f | while read file; do
+    install -Dm644 ${file} ${pkgdir}/usr/share/freeplane/${file}
+  done
+  
+  install -Dm644 framework.jar ${pkgdir}/usr/share/freeplane/framework.jar
+  install -Dm644 freeplane.l4j.ini ${pkgdir}/usr/share/freeplane/freeplane.l4j.ini
+  install -Dm644 freeplane.png ${pkgdir}/usr/share/freeplane/freeplane.png
+  install -Dm644 freeplane.policy ${pkgdir}/usr/share/freeplane/freeplane.policy
+  install -Dm755 freeplane.sh ${pkgdir}/usr/share/freeplane/freeplane.sh
+  install -Dm644 freeplane.svg ${pkgdir}/usr/share/freeplane/freeplane.svg
+  install -Dm644 freeplaneConsole.l4j.ini ${pkgdir}/usr/share/freeplane/freeplaneConsole.l4j.ini
+  install -Dm644 freeplaneIcons.dll ${pkgdir}/usr/share/freeplane/freeplaneIcons.dll
+  install -Dm644 freeplanelauncher.jar ${pkgdir}/usr/share/freeplane/freeplanelauncher.jar
+  install -Dm644 gitinfo.txt ${pkgdir}/usr/share/freeplane/gitinfo.txt
+  install -Dm644 init.xargs ${pkgdir}/usr/share/freeplane/init.xargs
+  install -Dm644 props.xargs ${pkgdir}/usr/share/freeplane/props.xargs
+
+  # Where's the licence?
+  #install -Dm644 license.txt ${pkgdir}/usr/share/freeplane/licence.txt
+
+  mkdir -p ${pkgdir}/usr/share/freeplane/core/org.freeplane.core/META-INF
+  mkdir -p ${pkgdir}/usr/share/freeplane/core/org.freeplane.core/lib
+  mkdir -p ${pkgdir}/usr/share/freeplane/resources/ortho
+  mkdir -p ${pkgdir}/usr/share/freeplane/resources/templates
+  mkdir -p ${pkgdir}/usr/share/freeplane/resources/xslt
+  mkdir -p ${pkgdir}/usr/share/freeplane/resources/xml
+  mkdir -p ${pkgdir}/usr/share/freeplane/fwdir/perms
+  mkdir -p ${pkgdir}/usr/share/freeplane/fwdir/condperm
+  mkdir -p ${pkgdir}/usr/share/freeplane/scripts
+
+  install -Dm644 core/org.freeplane.core/META-INF/* ${pkgdir}/usr/share/freeplane/core/org.freeplane.core/META-INF/
+  install -Dm644 core/org.freeplane.core/lib/* ${pkgdir}/usr/share/freeplane/core/org.freeplane.core/lib
+  install -Dm644 resources/ortho/* ${pkgdir}/usr/share/freeplane/resources/ortho/
+  install -Dm644 resources/templates/* ${pkgdir}/usr/share/freeplane/resources/templates/
+  install -Dm644 resources/xslt/* ${pkgdir}/usr/share/freeplane/resources/xslt/
+  install -Dm644 resources/xml/* ${pkgdir}/usr/share/freeplane/resources/xml/
+  install -Dm644 resources/gitinfo.properties ${pkgdir}/usr/share/freeplane/resources/gitinfo.properties
+  install -Dm644 scripts/* ${pkgdir}/usr/share/freeplane/scripts/
+  install -Dm644 doc/freeplane.mm ${pkgdir}/usr/share/freeplane/doc/freeplane.mm
+  
+  install -Dm644 ${srcdir}/freeplane.desktop ${pkgdir}/usr/share/applications/freeplane.desktop
+  install -Dm755 ${srcdir}/freeplane.run ${pkgdir}/usr/bin/freeplane
+  install -Dm644 freeplane.svg ${pkgdir}/usr/share/pixmaps/freeplane.svg
+}

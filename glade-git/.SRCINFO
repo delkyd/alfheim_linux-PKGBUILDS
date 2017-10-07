@@ -1,0 +1,29 @@
+pkgbase = glade-git
+	pkgdesc = User interface builder for GTK+ and GNOME.
+	pkgver = 3.20.0.r217.g7f336d4
+	pkgrel = 1
+	url = http://glade.gnome.org/
+	arch = i686
+	arch = x86_64
+	license = GPL
+	license = LGPL
+	makedepends = intltool
+	makedepends = gtk-doc
+	makedepends = gobject-introspection
+	makedepends = python2-gobject
+	makedepends = itstool
+	makedepends = docbook-xsl
+	makedepends = gnome-common
+	depends = gtk3
+	depends = libxml2
+	depends = desktop-file-utils
+	depends = hicolor-icon-theme
+	optdepends = python2: Python widgets support
+	optdepends = devhelp: help browser
+	provides = glade
+	conflicts = glade
+	source = git://git.gnome.org/glade
+	sha256sums = SKIP
+
+pkgname = glade-git
+

@@ -1,0 +1,21 @@
+pkgbase = go-bin
+	pkgdesc = Compiler and tools for the Go programming language from Google
+	pkgver = 1.5rc1
+	pkgrel = 1
+	url = http://golang.org/
+	arch = x86_64
+	arch = i686
+	license = BSD
+	makedepends = git
+	makedepends = go
+	provides = go
+	conflicts = go
+	options = !strip
+	options = staticlibs
+	source_x86_64 = https://storage.googleapis.com/golang/go1.5rc1.linux-amd64.tar.gz
+	sha1sums_x86_64 = 2abf55effd93f5c2dcef306eaf14d3e7f614a407
+	source_i686 = https://storage.googleapis.com/golang/go1.5rc1.linux-386.tar.gz
+	sha1sums_i686 = 97ae55622479bbffaed893d72f699b32437acc8d
+
+pkgname = go-bin
+

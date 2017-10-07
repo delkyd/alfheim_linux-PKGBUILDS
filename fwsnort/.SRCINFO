@@ -1,0 +1,21 @@
+pkgbase = fwsnort
+	pkgdesc = application layer IDS/IPS by translating snort rules into iptables
+	pkgver = 1.6.3
+	pkgrel = 3
+	url = http://www.cipherdyne.org/fwsnort/
+	arch = any
+	license = GPL
+	makedepends = wget
+	depends = perl
+	depends = perl-netaddr-ip
+	depends = perl-iptables-parse
+	depends = iptables
+	depends = net-tools
+	options = emptydirs
+	source = http://www.cipherdyne.org/fwsnort/download/fwsnort-1.6.3.tar.bz2
+	source = install_pl.patch
+	md5sums = 3e7501e4587a3e33615b604935c75e4e
+	md5sums = d7925e3f869ec8decb0e8336801350d6
+
+pkgname = fwsnort
+

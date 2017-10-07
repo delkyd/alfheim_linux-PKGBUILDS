@@ -1,0 +1,22 @@
+pkgbase = python-nodeenv
+	pkgdesc = Node.js virtual environment builder
+	pkgver = 1.1.4
+	pkgrel = 0
+	url = https://github.com/ekalinin/nodeenv
+	arch = any
+	license = BSD
+	makedepends = python
+	makedepends = python2
+	makedepends = python-setuptools
+	makedepends = python2-setuptools
+	source = https://pypi.python.org/packages/f9/7e/499dc78da542865f9f3d91e8b660883eb6a55fb40a10aa9407af0be66242/nodeenv-1.1.4.tar.gz
+	sha256sums = 1c3f83a794dcb35df357104c1c87310e24f9a73d45a6518fd932c30f27a8f163
+
+pkgname = python-nodeenv
+	depends = python
+	conflicts = python2-nodeenv
+
+pkgname = python2-nodeenv
+	depends = python2
+	conflicts = python-nodeenv
+

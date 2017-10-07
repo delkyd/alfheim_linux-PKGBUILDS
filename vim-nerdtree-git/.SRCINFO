@@ -1,0 +1,17 @@
+pkgbase = vim-nerdtree-git
+	pkgdesc = Tree explorer plugin for navigating the filesystem
+	pkgver = 5.0.0.973.5782b22
+	pkgrel = 1
+	url = https://github.com/scrooloose/nerdtree
+	arch = any
+	groups = vim-plugins
+	license = custom:WTFPL
+	makedepends = git
+	depends = vim
+	provides = vim-nerdtree
+	conflicts = vim-nerdtree
+	source = git+https://github.com/scrooloose/nerdtree
+	sha512sums = SKIP
+
+pkgname = vim-nerdtree-git
+

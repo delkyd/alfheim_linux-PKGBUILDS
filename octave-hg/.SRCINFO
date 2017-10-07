@@ -1,0 +1,45 @@
+pkgbase = octave-hg
+	pkgdesc = A high-level language, primarily intended for numerical computations.
+	pkgver = 4.3.0+24122.813b1385f85d
+	pkgrel = 1
+	url = http://www.octave.org
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = pcre
+	makedepends = mercurial
+	makedepends = gcc-fortran
+	makedepends = gperf
+	makedepends = rsync
+	makedepends = gettext
+	makedepends = transfig
+	makedepends = epstool
+	makedepends = texlive-core
+	makedepends = icoutils
+	depends = fftw>=3.2.2
+	depends = curl
+	depends = fltk
+	depends = hdf5
+	depends = glpk
+	depends = arpack
+	depends = openmp
+	depends = gl2ps
+	depends = qt4
+	depends = qhull
+	depends = graphicsmagick
+	depends = portaudio
+	depends = mesa
+	depends = suitesparse
+	depends = java-environment
+	depends = qscintilla-qt4
+	optdepends = texinfo: for help-support in octave
+	optdepends = gnuplot: alternative plotting
+	provides = octave=4.2.0
+	conflicts = octave
+	options = !emptydirs
+	options = !makeflags
+	source = git://git.sv.gnu.org/gnulib
+	md5sums = SKIP
+
+pkgname = octave-hg
+

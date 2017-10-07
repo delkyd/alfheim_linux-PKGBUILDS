@@ -1,0 +1,32 @@
+pkgbase = clarcharr-theme
+	pkgdesc = Clar's theme configuration.
+	pkgver = 0.4.1
+	pkgrel = 1
+	url = https://github.com/clarcharr/config-theme
+	install = clarcharr-theme.install
+	arch = any
+	groups = clarcharr-config
+	license = CC0
+	depends = arc-gtk-theme
+	depends = arc-icon-theme
+	depends = arc-kde-git
+	depends = dapper
+	depends = dmenu
+	depends = elementary-icon-theme
+	depends = firefox
+	depends = i3status
+	depends = kvantum-qt5
+	depends = sway
+	depends = qt5ct
+	depends = qterminal
+	depends = uim
+	depends = clarcharr-fontconfig
+	depends = clarcharr-shell
+	source = git+https://github.com/clarcharr/config-theme#
+	source = clarcharr-theme.install
+	validpgpkeys = 4BDA23A98EE4E049CBC3BA6C69DA5B388573EE35
+	sha256sums = SKIP
+	sha256sums = 35ef3dd99f11e42f6b31a8e9b15db6f08885ee0c7e1ba3bc9a7d98dfabb4437a
+
+pkgname = clarcharr-theme
+

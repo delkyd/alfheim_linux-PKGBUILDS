@@ -1,0 +1,4 @@
+# Set the default settings for your Coolmaster Dominator keyboard
+
+#Default setting for LED backlight. Options are either "on" or "off"
+BACKLIGHT=on

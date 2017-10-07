@@ -1,0 +1,19 @@
+pkgbase = libgaminggear
+	pkgdesc = Provides functionality for gaming input devices
+	pkgver = 0.15.1
+	pkgrel = 1
+	url = http://sourceforge.net/projects/libgaminggear/
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = cmake>=3.0
+	makedepends = doxygen
+	depends = libnotify
+	depends = libcanberra
+	depends = gtk2
+	depends = sqlite3>=3.7
+	source = http://downloads.sourceforge.net/project/libgaminggear/libgaminggear-0.15.1.tar.bz2
+	sha256sums = ffbd59c62e3107b09ec99f1e5147529c61931987abc7f86a140449b46388c549
+
+pkgname = libgaminggear
+

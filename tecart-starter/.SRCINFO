@@ -1,0 +1,16 @@
+pkgbase = tecart-starter
+	pkgdesc = Desktop app to enable easier use of the TecArt Business Software
+	pkgver = 4.6.030
+	pkgrel = 1
+	url = http://www.tecart.de/
+	arch = x86_64
+	license = custom
+	depends = qt5-webkit
+	depends = qtkeychain
+	provides = tecart-starter
+	options = !strip
+	source = https://repo.tecart.de/apt/ubuntu/pool/main/t/tecart-starter/tecart-starter_4.6.030-43_amd64.deb
+	md5sums = 5a4333ee44fdb0d0a586611a84a564e8
+
+pkgname = tecart-starter
+

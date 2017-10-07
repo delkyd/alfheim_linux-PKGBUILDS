@@ -1,0 +1,60 @@
+pkgbase = nikola-git
+	pkgdesc = A modular, fast, simple, static website generator. (git version)
+	pkgver = 7.8.8.r175.g8367f952
+	pkgrel = 1
+	url = https://getnikola.com/
+	arch = any
+	license = MIT
+	makedepends = git
+	depends = python
+	depends = python-doit
+	depends = python-pygments
+	depends = python-pillow
+	depends = python-docutils
+	depends = python-mako
+	depends = python-unidecode
+	depends = python-lxml
+	depends = python-yapsy>=1.11.223
+	depends = python-pyrss2gen
+	depends = python-dateutil
+	depends = python-logbook
+	depends = python-blinker
+	depends = python-natsort
+	depends = python-setuptools
+	depends = python-requests
+	depends = python-husl
+	depends = python-piexif
+	depends = python-markdown
+	optdepends = python-jinja: for Jinja2 themes
+	optdepends = python-pyphen>=0.9.1: for hyphenation
+	optdepends = python-pygal=1.7.0: for SVG graph plotting
+	optdepends = python-typogrify>=2.0.4: for typographical enhancements
+	optdepends = python-webassets: for bundling assets
+	optdepends = ipython-notebook: for ipynb support
+	optdepends = ipython: for ipynb support
+	optdepends = python-ghp-import>=0.4.1: for uploading to GitHub Pages
+	optdepends = python-micawber: for embedding media in posts
+	optdepends = python-phpserialize: for WordPress imports
+	optdepends = python-ws4py: for nikola auto
+	optdepends = python-watchdog: for nikola auto
+	conflicts = python-nikola
+	conflicts = python2-nikola
+	conflicts = python-nikola-git
+	conflicts = python2-nikola-git
+	conflicts = nikola
+	replaces = python-nikola-git
+	replaces = python2-nikola-git
+	options = !emptydirs
+	source = git+https://github.com/getnikola/nikola.git
+	source = make_tab_completion.py
+	md5sums = SKIP
+	md5sums = 0c5b36c239ac465da024dac76e4892e7
+
+pkgname = nikola-git
+
+pkgname = python-nikola-doc-git
+	pkgdesc = (deprecated -- merged into 'nikola-git')
+	install = python-nikola-doc-git.install
+	depends = nikola-git
+	optdepends = 
+

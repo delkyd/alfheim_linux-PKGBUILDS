@@ -1,0 +1,39 @@
+IF YOU ARE IN A HURRY
+=====================
+
+From a directory that contains a PKGBUILD, run:
+
+	arch.build i686
+
+This will build the package for the given architecture. You may also append a
+list of repositories to use on top of [core], [extra], and [community], for
+instance:
+
+	arch.build x86_64 testing multilib-testing multilib
+
+
+FOR BETTER PERFORMANCE
+======================
+
+Enable hardware virtualization.
+
+Make /tmp a tmpfs. (This is where the copy-on-write drive is stored.)
+
+Make the host and guest share their pacman package cache using the proxy.cgi
+script:
+- install any HTTP server on the host
+- make this sript run as CGI when called as http://10.0.2.2/proxy.cgi
+- make /var/cache/pacman/pkg writeable by this CGI instance
+
+
+REQUIREMENTS FOR ARCH.INSTALL
+=============================
+
+The arch.install script creates an Arch Linux disk image which:
+- has [base] and [base-devel] installed
+- has a "user" user able to sudo at will
+- boots unattended with networking enabled
+- runs an SSH daemon accepting the host user's keys
+
+Once created, this disk image is read-only most of the time: the virtual
+machines created in arch.build use copy-on-write on top of it.

@@ -1,0 +1,8 @@
+pkg
+src
+*.xz
+*.bz2
+*.tar
+*.gz
+*.asc
+SHA512SUMS*

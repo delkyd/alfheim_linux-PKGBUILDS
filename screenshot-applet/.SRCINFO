@@ -1,0 +1,27 @@
+pkgbase = screenshot-applet
+	pkgdesc = A Budgie applet for taking and uploading screenshots to Imgur and Imagebin.
+	pkgver = 0.4.2
+	pkgrel = 0.1
+	url = https://github.com/cybre/screenshot-applet
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	makedepends = unzip
+	makedepends = gnome-common
+	makedepends = gobject-introspection
+	makedepends = intltool
+	makedepends = meson
+	makedepends = ninja
+	makedepends = itstool
+	makedepends = vala
+	makedepends = yelp-tools
+	depends = libpeas
+	depends = budgie-desktop
+	depends = json-glib
+	depends = rest
+	depends = gnome-screenshot
+	source = https://github.com/cybre/screenshot-applet/archive/0.4.2.zip
+	md5sums = 8e6f97a5a4c37e81f2076328e6f84820
+
+pkgname = screenshot-applet
+

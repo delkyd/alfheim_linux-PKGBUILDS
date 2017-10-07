@@ -1,0 +1,16 @@
+pkgbase = loadcat
+	pkgdesc = Nginx configurator for easy load balancer setup
+	pkgver = 0.1_alpha.1
+	pkgrel = 1
+	url = https://github.com/hjr265/loadcat
+	arch = x86_64
+	license = BSD-3-Clause
+	makedepends = go
+	backup = etc/loadcat.conf
+	source = loadcat.conf
+	source = loadcat.service
+	md5sums = 9a79f2a4e255324e661151d4fc50cb1e
+	md5sums = 06784876fa4ef371bdce6d9aae998b00
+
+pkgname = loadcat
+

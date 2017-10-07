@@ -1,0 +1,16 @@
+brick() {
+echo ""
+echo "aparapi was installed in /opt/AMDAPP/aparapi"
+echo ""
+
+}
+
+post_install() {
+. etc/profile.d/aparapi.sh
+brick
+}
+
+post_upgrade() {
+. etc/profile.d/aparapi.sh
+brick
+} 

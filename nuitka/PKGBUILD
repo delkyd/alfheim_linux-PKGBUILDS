@@ -1,0 +1,27 @@
+# $Id$
+# Maintainer: Alexander F Rødseth <xyproto@archlinux.org>
+# Contributor: Panagiotis Mavrogiorgos <pmav99@gmail.com>
+
+pkgname=nuitka
+pkgver=0.5.27.0
+pkgrel=1
+pkgdesc='Python to native compiler'
+arch=('any')
+url='https://nuitka.net/'
+license=('APACHE')
+depends=('python')
+options=('!emptydirs')
+optdepends=('chrpath: for building standalone executables')
+source=("https://nuitka.net/releases/Nuitka-${pkgver%.0}.tar.gz"{,.sig})
+sha256sums=('9f0e613dbd6fa197917d67ada43b9cb90fc57a43d49d295f1ee1b8ab7d952def'
+            'SKIP')
+validpgpkeys=('D96ADCA1377F1CEB6B5103F11BFC33752912B99C') # Kay Hayen
+
+package() {
+  cd "Nuitka-${pkgver%.0}"
+
+  python setup.py install --root="$pkgdir" --optimize=1
+}
+
+# getver: nuitka.net/pages/download.html
+# vim: sw=2 ts=2 et:

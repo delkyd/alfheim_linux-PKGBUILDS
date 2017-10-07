@@ -1,0 +1,16 @@
+post_install() {
+	[ ! -f /srv/http/index.html ] && echo "<html><body><h2>Server online.</h2></body></html>" >/srv/http/index.html
+	[ ! -f /srv/http/index.php ] && echo "<?php phpinfo(); ?>" >/srv/http/index.php
+	echo
+	echo "*** USAGE ***"
+	echo
+	echo "'systemctl start bozohttpd.service' starts the web server."
+	echo "Web server root is /srv/http. CGI dir is /usr/lib/cgi-bin."
+	echo "To enable CGI, PHP, Lua and dir indexing, modify"
+	echo "/usr/lib/systemd/system/bozohttpd.service ."
+	echo
+}
+
+post_upgrade() {
+	post_install
+}

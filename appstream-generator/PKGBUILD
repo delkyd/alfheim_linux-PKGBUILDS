@@ -1,0 +1,29 @@
+# $Id$
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+
+pkgname=appstream-generator
+pkgver=0.6.7
+pkgrel=1
+pkgdesc="A fast AppStream metadata generator"
+arch=(x86_64)
+url="https://github.com/ximion/appstream-generator"
+license=(GPL3)
+depends=(appstream libarchive librsvg lmdb optipng)
+makedepends=(dmd meson ninja mustache-d curl gir-to-d gobject-introspection docbook-xsl)
+source=($pkgname-$pkgver.tar.gz::"https://github.com/ximion/appstream-generator/archive/v$pkgver.tar.gz")
+sha256sums=('cc9804002caf0368761be4a1444064e1ad2a12e27543dde52d99be0733780dfc')
+
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  meson ../$pkgname-$pkgver -Ddownload_js=false --prefix=/usr
+  ninja
+}
+
+package() {
+  cd build
+  DESTDIR="$pkgdir" ninja install
+}

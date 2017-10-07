@@ -1,0 +1,21 @@
+pkgbase = fontawesome.sty
+	pkgdesc = FontAwesome bindings for LaTeX
+	pkgver = 4.6.3.2
+	pkgrel = 1
+	url = http://www.ctan.org/pkg/fontawesome
+	install = fontawesome.install
+	arch = any
+	license = LPPL
+	depends = texlive-core
+	depends = otf-font-awesome
+	source = http://mirrors.ctan.org/fonts/fontawesome/tex/fontawesome.sty
+	source = http://mirrors.ctan.org/fonts/fontawesome/tex/fontawesomesymbols-generic.tex
+	source = http://mirrors.ctan.org/fonts/fontawesome/tex/fontawesomesymbols-pdftex.tex
+	source = http://mirrors.ctan.org/fonts/fontawesome/tex/fontawesomesymbols-xeluatex.tex
+	md5sums = ee97743276dc242c78f33fd622e260ea
+	md5sums = 40b369fd6c8364bdcc88401c4c1db5bf
+	md5sums = f7ffa71c62c5257edd5542253d4cea15
+	md5sums = 7166bfdff927bad3f81e302543d76c90
+
+pkgname = fontawesome.sty
+

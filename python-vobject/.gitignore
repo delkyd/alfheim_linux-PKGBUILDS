@@ -1,0 +1,8 @@
+*
+!PKGBUILD
+!*.desktop
+!*.patch
+!.gitignore
+!*.install
+!.SRCINFO
+

@@ -1,0 +1,13 @@
+[Unit]
+Description=Advanced web-based application for MySQL database administration and development
+After=network.target
+
+[Service]
+Environment="DBNINJA_ADDR=127.0.0.1"
+Environment="DBNINJA_PORT=8036"
+User=nobody
+Group=nobody
+ExecStart=/usr/bin/php -n -d extension=mysqli.so -S ${DBNINJA_ADDR}:${DBNINJA_PORT} -t /usr/share/webapps/dbninja
+
+[Install]
+WantedBy=multi-user.target

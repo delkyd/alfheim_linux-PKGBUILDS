@@ -1,0 +1,21 @@
+pkgbase = fityk
+	pkgdesc = A program for nonlinear fitting of analytical functions to data.
+	pkgver = 1.3.1
+	pkgrel = 0
+	url = http://fityk.nieto.pl/
+	install = fityk.install
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = boost
+	makedepends = python2-sphinx
+	makedepends = swig
+	depends = lua
+	depends = wxgtk
+	depends = xylib>=1.4
+	options = !libtool
+	source = https://github.com/wojdyr/fityk/releases/download/v1.3.1/fityk-1.3.1.tar.bz2
+	md5sums = 41c9a2589e2eac4317a480b364ff493a
+
+pkgname = fityk
+

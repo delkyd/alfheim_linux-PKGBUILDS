@@ -1,0 +1,22 @@
+pkgbase = netctl-eduroam
+	pkgdesc = Example netctl profile for eduroam
+	pkgver = 0.5
+	pkgrel = 2
+	url = http://higgsboson.tk/
+	install = install
+	arch = i686
+	arch = x86_64
+	license = MIT
+	depends = ca-certificates
+	depends = netctl
+	source = eduroam
+	source = eduroam-umu
+	md5sums = 08875498a560a2b62c3f08a21f4c5542
+	md5sums = bc3a44f8f58e396423c8b9d1e9657498
+	sha1sums = 4ca924ce03da4d29263e035300e283b958b2b613
+	sha1sums = 9be833ea9e25bc2e159f0c2a3e94d6df4b42910b
+	sha256sums = 41c34b0b38e918d34dd366f1db80e4f314ff1f9b0080a0075523b10b960cd286
+	sha256sums = 36ffbbc8e6b8be3b9e13c4393f2ef23bd76743c0e148bbb23fba5185f6fdac8b
+
+pkgname = netctl-eduroam
+

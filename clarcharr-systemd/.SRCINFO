@@ -1,0 +1,24 @@
+pkgbase = clarcharr-systemd
+	pkgdesc = Clar's systemd configuration.
+	pkgver = 2.1.0
+	pkgrel = 1
+	url = https://github.com/clarcharr/config-systemd
+	install = clarcharr-systemd.install
+	arch = i686
+	arch = x86_64
+	groups = clarcharr-config
+	license = CC0
+	depends = systemd
+	depends = mkinitcpio
+	depends = glibc
+	depends = wine
+	depends = wine_gecko
+	depends = winetricks
+	source = git+https://github.com/clarcharr/config-systemd#
+	source = clarcharr-systemd.install
+	validpgpkeys = 4BDA23A98EE4E049CBC3BA6C69DA5B388573EE35
+	sha256sums = SKIP
+	sha256sums = b42e40f1f9437f563eadc9c78dc1b135a8e21fde070cf358a080281dd372954d
+
+pkgname = clarcharr-systemd
+

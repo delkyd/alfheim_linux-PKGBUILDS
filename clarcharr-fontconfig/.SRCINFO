@@ -1,0 +1,31 @@
+pkgbase = clarcharr-fontconfig
+	pkgdesc = Clar's font configuration.
+	pkgver = 3.1.0
+	pkgrel = 2
+	url = https://github.com/clarcharr/config-fontconfig
+	arch = any
+	groups = clarcharr-config
+	license = CC0
+	depends = fontconfig
+	depends = adobe-source-code-pro-fonts
+	depends = adobe-source-sans-pro-fonts
+	depends = adobe-source-serif-pro-fonts
+	depends = adobe-source-han-sans-cn-fonts
+	depends = adobe-source-han-sans-jp-fonts
+	depends = adobe-source-han-sans-kr-fonts
+	depends = adobe-source-han-sans-otc-fonts
+	depends = adobe-source-han-sans-tw-fonts
+	depends = otf-fira-code
+	depends = otf-fira-mono
+	depends = otf-fira-sans
+	depends = ttf-fira-code
+	depends = ttf-fira-mono
+	depends = ttf-fira-sans
+	depends = ttf-twemoji-color
+	depends = xorg-xrdb
+	source = git+https://github.com/clarcharr/config-fontconfig#
+	validpgpkeys = 4BDA23A98EE4E049CBC3BA6C69DA5B388573EE35
+	sha256sums = SKIP
+
+pkgname = clarcharr-fontconfig
+

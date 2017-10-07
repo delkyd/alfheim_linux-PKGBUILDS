@@ -1,0 +1,20 @@
+pkgbase = python-zerodb
+	pkgdesc = An end-to-end encrypted database protocol client
+	pkgver = 0.99.0b1
+	pkgrel = 1
+	url = http://www.zerodb.io/
+	arch = any
+	license = AGPL
+	source = https://pypi.python.org/packages/25/9e/66ffd73b02ac3ca103a250a0bc0efb310a4a0d5136bcb2b12453c5081293/zerodb-0.99.0b1.tar.gz
+	md5sums = 1dae15ddd452bde0f287f2a06e60d8d1
+
+pkgname = python-zerodb
+	depends = python,
+	depends = python-setuptools
+	depends = python-transaction
+
+pkgname = python2-zerodb
+	depends = python2,
+	depends = python2-setuptools
+	depends = python2-transaction
+

@@ -1,0 +1,17 @@
+pkgbase = flips-git
+	pkgdesc = Patcher for IPS and BPS files
+	pkgver = r24.8357fd9
+	pkgrel = 1
+	url = https://github.com/Alcaro/Flips
+	install = flips.install
+	arch = any
+	license = GPL3
+	makedepends = git
+	optdepends = gtk3: GUI support
+	provides = flips
+	conflicts = flips
+	source = git://github.com/Alcaro/Flips.git
+	md5sums = SKIP
+
+pkgname = flips-git
+

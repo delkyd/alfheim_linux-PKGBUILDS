@@ -1,0 +1,20 @@
+pkgbase = batman-adv
+	pkgdesc = batman kernel module
+	pkgver = 2017.2
+	pkgrel = 2
+	epoch = 1
+	url = https://www.open-mesh.net/
+	install = batman-adv.install
+	arch = i686
+	arch = x86_64
+	arch = armv7h
+	license = GPL
+	makedepends = linux-headers
+	depends = linux
+	source = https://downloads.open-mesh.org/batman/releases/batman-adv-2017.2/batman-adv-2017.2.tar.gz
+	source = batman-adv.install
+	sha256sums = d487974e21cb53d39f139e93a2cf297807df5b7bf63ba6d810bad6d91537394f
+	sha256sums = 347599c02426a905690002885c277f91b82da2b29d3372348e5f02d03c435c37
+
+pkgname = batman-adv
+

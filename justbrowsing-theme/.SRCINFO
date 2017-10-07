@@ -1,0 +1,20 @@
+pkgbase = justbrowsing-theme
+	pkgdesc = Icons, font and wallpapers for JustBrowsing
+	pkgver = 1.0
+	pkgrel = 3
+	url = https://github.com/justbrowsing/justbrowsing-theme
+	arch = any
+	license = GPL2
+	license = CCPL
+	depends = clearlooks-phenix-gtk-theme
+	depends = cantarell-fonts
+	optdepends = justbrowsing-home: Creates user for JustBrowsing
+	optdepends = justbrowsing-adeskbar: Panel for JustBrowsing
+	provides = justbrowsing-theme
+	provides = gnome-themes-standard
+	conflicts = gnome-colors-icon-theme
+	source = https://github.com/justbrowsing/justbrowsing-theme/archive/master.tar.gz
+	md5sums = 2c92ea358489f8f960215b73ea39013a
+
+pkgname = justbrowsing-theme
+

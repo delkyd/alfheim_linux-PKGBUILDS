@@ -1,0 +1,16 @@
+pkgbase = aceget
+	pkgdesc = command-line ACE Stream client
+	pkgver = 1.2
+	pkgrel = 1
+	url = http://acestream.org/
+	arch = any
+	license = GPL
+	depends = expect
+	depends = tcllib
+	depends = curl
+	optdepends = acestream-engine: run the engine locally
+	source = aceget.exp
+	sha256sums = 0f8ffc8699b4874bec7dc1afa02d2cc8f04bbc909eb8ebabbe3e9073cf26a905
+
+pkgname = aceget
+

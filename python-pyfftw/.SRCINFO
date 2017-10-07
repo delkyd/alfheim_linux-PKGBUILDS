@@ -1,0 +1,17 @@
+pkgbase = python-pyfftw
+	pkgdesc = A pythonic wrapper around FFTW.
+	pkgver = 0.10.4
+	pkgrel = 1
+	url = http://hgomersall.github.io/pyFFTW/
+	arch = i686
+	arch = x86_64
+	license = BSD
+	depends = fftw
+	depends = python-numpy
+	source = https://files.pythonhosted.org/packages/source/p/pyFFTW/pyFFTW-0.10.4.tar.gz
+	md5sums = 7fb59450308881bb48d9f178947d950e
+
+pkgname = python-pyfftw
+
+pkgname = python2-pyfftw
+

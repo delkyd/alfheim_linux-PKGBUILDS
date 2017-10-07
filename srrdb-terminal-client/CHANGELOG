@@ -1,0 +1,26 @@
+### v1.1.4
+* Rebuild with Go 1.8.3
+* Rebuild with go-srrdb-API v1.1.0
+* API-Fix: Login works again
+* API-Feature: Use https protocol
+
+### v1.1.3
+* Rebuild with Go 1.7
+
+
+### v1.1.2
+* Fix: panic with upload of too long release names
+* Fix: message layout
+
+### v1.1.1
+* Fix: Don't display dirname after SRR upload when response already starts with dirname.
+
+### v1.1.0
+* Feature: Added ability to upload stored files
+* Feature: Drop short variant for --prunePaths, add short variants for --username (-n) and --password (-p)
+
+### v1.0.1
+* Fix: Removed a debug string.
+
+### v1.0.0
+First release.

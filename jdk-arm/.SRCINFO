@@ -1,0 +1,58 @@
+pkgbase = jdk-arm
+	pkgdesc = Oracle Java Development Kit (v8) for ARMv7, ARMv6 and ARMv8 (64-bit)
+	pkgver = 8u144
+	pkgrel = 1
+	url = http://www.oracle.com/technetwork/java/javase/downloads/index.html
+	install = jdk-arm.install
+	arch = armv6h
+	arch = armv7h
+	arch = aarch64
+	license = custom
+	makedepends = pacman>=4.2.0
+	depends = ca-certificates-java
+	depends = java-environment-common
+	depends = java-runtime-common
+	optdepends = alsa-lib: for basic sound support
+	optdepends = ttf-font: fonts
+	provides = java-runtime=8
+	provides = java-runtime-headless=8
+	provides = java-web-start=8
+	provides = java-environment=8
+	provides = java-runtime-jre=8
+	provides = java-runtime-headless-jre=8
+	provides = java-web-start-jre=8
+	provides = java-environment-jdk=8
+	options = !strip
+	backup = etc/java-jdk8/aarch64/jvm.cfg
+	backup = etc/java-jdk8/images/cursors/cursors.properties
+	backup = etc/java-jdk8/management/jmxremote.access
+	backup = etc/java-jdk8/management/management.properties
+	backup = etc/java-jdk8/security/java.policy
+	backup = etc/java-jdk8/security/java.security
+	backup = etc/java-jdk8/content-types.properties
+	backup = etc/java-jdk8/flavormap.properties
+	backup = etc/java-jdk8/fontconfig.properties.src
+	backup = etc/java-jdk8/logging.properties
+	backup = etc/java-jdk8/net.properties
+	backup = etc/java-jdk8/psfont.properties.ja
+	backup = etc/java-jdk8/psfontj2d.properties
+	backup = etc/java-jdk8/sound.properties
+	source = http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip
+	source = jconsole-jdk8.desktop
+	source = jmc-jdk8.desktop
+	source = jvisualvm-jdk8.desktop
+	source = policytool-jdk8.desktop
+	md5sums = b3c7031bc65c28c2340302065e7d00d3
+	md5sums = b4f0da18e03f7a9623cb073b65dde6c1
+	md5sums = 8f0ebcead2aecad67fbd12ef8ced1503
+	md5sums = a4a21b064ff9f3c3f3fdb95edf5ac6f3
+	md5sums = 98245ddb13914a74f0cc5a028fffddca
+	source_armv6h = http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-arm32-vfp-hflt.tar.gz
+	md5sums_armv6h = bfe5d4474044fdcda0f9c5ddcbd689a4
+	source_armv7h = http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-arm32-vfp-hflt.tar.gz
+	md5sums_armv7h = bfe5d4474044fdcda0f9c5ddcbd689a4
+	source_aarch64 = http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-arm64-vfp-hflt.tar.gz
+	md5sums_aarch64 = 9100a2e7763d6bd118e3662c4a8f66b3
+
+pkgname = jdk-arm
+

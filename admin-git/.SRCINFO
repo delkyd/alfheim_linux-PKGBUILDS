@@ -1,0 +1,17 @@
+pkgbase = admin-git
+	pkgdesc = A cli tool to manage easily an archlinux system
+	pkgver = r48.5f5c372
+	pkgrel = 1
+	url = https://gitlab.com/MaximilienLIX/admin
+	arch = any
+	license = GPL3
+	makedepends = git
+	depends = sudo
+	optdepends = firefox: To manage profile and sqlite data base.
+	optdepends = grub: To edit configuration file system easily.
+	optdepends = syslinux: To edit configuration file system easily.
+	source = git+https://gitlab.com/MaximilienLIX/admin.git
+	md5sums = SKIP
+
+pkgname = admin-git
+

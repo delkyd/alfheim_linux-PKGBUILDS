@@ -1,0 +1,13 @@
+pkgbase = goglus-cursor-theme
+	pkgdesc = X11 Mouse Theme
+	pkgver = 1.0
+	pkgrel = 2
+	url = https://www.kde-look.org/p/999675/
+	arch = any
+	license = GPL
+	depends = xorg-xcursorgen
+	source = https://dl.opendesktop.org/api/files/download/id/1460734670/127487-goglus_cursor.tar.gz
+	md5sums = d21d3f4c23e0a8dc5169a4457cda4b75
+
+pkgname = goglus-cursor-theme
+

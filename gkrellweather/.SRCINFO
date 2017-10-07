@@ -1,0 +1,17 @@
+pkgbase = gkrellweather
+	pkgdesc = A weather monitor plugin for gkrellm2
+	pkgver = 2.0.8
+	pkgrel = 4
+	url = https://sites.google.com/site/makovick/gkrellm-plugins
+	arch = i686
+	arch = x86_64
+	license = GPL
+	depends = gkrellm
+	depends = perl
+	depends = wget
+	depends = gtk2
+	source = gkrellweather-2.0.8.tgz::https://sites.google.com/site/makovick/projects/gkrellweather-2.0.8.tgz?attredirects=0
+	md5sums = b21ed55cc9998eb7307ec53e99f9beea
+
+pkgname = gkrellweather
+

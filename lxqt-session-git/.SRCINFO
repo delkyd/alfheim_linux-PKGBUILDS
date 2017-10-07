@@ -1,0 +1,21 @@
+pkgbase = lxqt-session-git
+	pkgdesc = LXQt session
+	pkgver = 0.10.0.23.g1e7f82c
+	pkgrel = 1
+	url = http://lxqt.org
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	makedepends = git
+	makedepends = cmake
+	makedepends = qt5-tools
+	depends = liblxqt-git
+	depends = xdg-user-dirs
+	optdepends = sddm: The recommended LXQt display manager
+	provides = lxqt-session
+	conflicts = lxqt-session
+	source = git+https://github.com/lxde/lxqt-session.git
+	sha256sums = SKIP
+
+pkgname = lxqt-session-git
+

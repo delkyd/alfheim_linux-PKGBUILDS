@@ -1,0 +1,4 @@
+deluge-git/
+pkg/
+src/
+*.pkg.tar.xz

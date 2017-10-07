@@ -1,0 +1,19 @@
+pkgbase = qgroundcontrol
+	pkgdesc = Ground control for unmanned vehicles.
+	pkgver = 3.2.4
+	pkgrel = 2
+	url = http://qgroundcontrol.org/
+	arch = any
+	license = GPL3
+	depends = espeak
+	depends = qt5-svg
+	depends = qt5-graphicaleffects
+	depends = qt5-webkit
+	depends = phonon-qt4
+	depends = qt5-serialport
+	depends = qt5-quickcontrols
+	source = https://github.com/mavlink/qgroundcontrol/releases/download/v3.2.4/qgroundcontrol.tar.bz2
+	md5sums = 58867938235dd74153d38f9e2f0aeb8f
+
+pkgname = qgroundcontrol
+

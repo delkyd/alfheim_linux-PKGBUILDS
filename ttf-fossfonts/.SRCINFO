@@ -1,0 +1,15 @@
+pkgbase = ttf-fossfonts
+	pkgdesc = A collection of 108 free GPL and Public Domain fonts.
+	pkgver = 0.0.4
+	pkgrel = 2
+	url = http://mirrors.zoelife4u.org/ttf-fossfonts/
+	install = ttf-fossfonts.install
+	arch = any
+	license = GPL
+	provides = ttf-barcodes
+	replaces = ttf-barcodes
+	source = http://mirrors.zoelife4u.org/ttf-fossfonts/ttf-fossfonts-0.0.4-noarch-52.1.tgz
+	md5sums = fc50d41077f58f5edc62769e13092a9a
+
+pkgname = ttf-fossfonts
+

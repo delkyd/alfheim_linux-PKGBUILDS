@@ -1,0 +1,213 @@
+commit 9535ad85e547f437e1fc2ff7ee68a859c144e38d
+Author: Narrat <autumn-wind@web.de>
+Date:   Mon May 8 21:12:37 2017 +0200
+
+    Add support for mimeo
+
+diff --git a/scripts/xdg-email.in b/scripts/xdg-email.in
+index 3614776..046bd39 100644
+--- a/scripts/xdg-email.in
++++ b/scripts/xdg-email.in
+@@ -234,6 +234,18 @@ open_flatpak()
+     fi
+ }
+ 
++open_mimeo()
++{
++    DEBUG 1 "Running mimeo \"$1\""
++    mimeo "$1"
++
++    if [ $? -eq 0 ]; then
++        exit_success
++    else
++        exit_failure_operation_failed
++    fi
++}
++
+ open_generic()
+ {
+     local client
+@@ -484,6 +496,10 @@ case "$DE" in
+     open_flatpak "$url"
+     ;;
+ 
++    mimeo)
++    open_mimeo "${mailto}"
++    ;;
++
+     generic|lxqt|enlightenment)
+     open_generic "${mailto}"
+     ;;
+diff --git a/scripts/xdg-mime.in b/scripts/xdg-mime.in
+index b67581c..04aa038 100644
+--- a/scripts/xdg-mime.in
++++ b/scripts/xdg-mime.in
+@@ -93,6 +93,16 @@ info_gnome()
+     fi
+ }
+ 
++info_mimeo()
++{
++    mimeo -m "$1"
++    if [ $? -eq 0 ]; then
++        exit_success
++    else
++        exit_failure_operation_failed
++    fi
++}
++
+ info_generic()
+ {
+     if mimetype --version >/dev/null 2>&1; then
+@@ -598,6 +608,10 @@ if [ "$action" = "info" ]; then
+         info_gnome "$filename"
+         ;;
+ 
++        mimeo)
++        info_mimeo "$filename"
++        ;;
++
+         *)
+         info_generic "$filename"
+         ;;
+diff --git a/scripts/xdg-open.in b/scripts/xdg-open.in
+index 9817c5f..6c95a11 100644
+--- a/scripts/xdg-open.in
++++ b/scripts/xdg-open.in
+@@ -246,6 +246,17 @@ open_flatpak()
+     fi
+ }
+ 
++open_mimeo()
++{
++    DEBUG 1 "Running mimeo \"$1\""
++    mimeo "$1"
++    if [ $? -eq 0 ]; then
++        exit_success
++    else
++        exit_failure_operation_failed
++    fi
++}
++
+ #-----------------------------------------
+ # Recursively search .desktop file
+ 
+@@ -531,6 +542,10 @@ case "$DE" in
+     open_flatpak "$url"
+     ;;
+ 
++    mimeo)
++    open_mimeo "$url"
++    ;;
++
+     generic)
+     open_generic "$url"
+     ;;
+diff --git a/scripts/xdg-screensaver.in b/scripts/xdg-screensaver.in
+index aecd8e3..c22909d 100644
+--- a/scripts/xdg-screensaver.in
++++ b/scripts/xdg-screensaver.in
+@@ -118,7 +118,7 @@ perform_action()
+       [ -n "$DISPLAY" ] && screensaver_xserver "$1"
+       ;;
+ 
+-    ''|generic)
++    ''|generic|mimeo)
+       [ -n "$DISPLAY" ] && screensaver_xserver "$1"
+       ;;
+   esac
+diff --git a/scripts/xdg-settings.in b/scripts/xdg-settings.in
+index b65e659..304bd94 100644
+--- a/scripts/xdg-settings.in
++++ b/scripts/xdg-settings.in
+@@ -463,6 +463,42 @@ set_browser_xfce()
+ }
+ 
+ # }}} xfce
++# {{{ mimeo
++
++get_browser_mimeo()
++{
++    DEBUG 1 "Running mimeo -d 'http:'"
++    mimeo -d http: | sed -rn '2s/  ([^ ]+) +.*/\1/p'
++    if [ $? -eq 0 ]; then
++        exit_success
++    else
++        exit_failure_operation_failed
++    fi
++}
++
++check_browser_mimeo()
++{
++    browser=`get_browser_mimeo $1`
++    if [ x"$browser" != x"$1" ]; then
++        echo no
++        exit_success
++    fi
++    echo yes
++    exit_success
++}
++
++set_browser_mimeo()
++{
++    DEBUG 1 "Running mimeo --prefer x-scheme-handler/http \"$1\""
++    mimeo --prefer x-scheme-handler/http \"$1\"
++    if [ $? -eq 0 ]; then
++        exit_success
++    else
++        exit_failure_operation_failed
++    fi
++}
++
++# }}} mimeo
+ # {{{ generic
+ 
+ get_browser_generic()
+@@ -698,6 +734,24 @@ set_url_scheme_handler_xfce()
+ }
+ 
+ # }}} xfce
++# {{{ mimeo
++
++get_url_scheme_handler_mimeo()
++{
++    exit_unimplemented_default_handler "$1"
++}
++
++check_url_scheme_handler_mimeo()
++{
++    exit_unimplemented_default_handler "$1"
++}
++
++set_url_scheme_handler_mimeo()
++{
++    exit_unimplemented_default_handler "$1"
++}
++
++# }}} mimeo
+ # {{{ generic
+ 
+ get_url_scheme_handler_generic()
+@@ -852,6 +906,10 @@ case "$DE" in
+     dispatch_specific xfce "$@"
+     ;;
+ 
++    mimeo)
++    dispatch_specific mimeo "$@"
++    ;;
++
+     generic|lxqt|enlightenment)
+     dispatch_specific generic "$@"
+     ;;
+diff --git a/scripts/xdg-utils-common.in b/scripts/xdg-utils-common.in
+index 8b85883..817effe 100644
+--- a/scripts/xdg-utils-common.in
++++ b/scripts/xdg-utils-common.in
+@@ -316,6 +316,7 @@ detectDE()
+       elif xprop -root 2> /dev/null | grep -i '^xfce_desktop_window' >/dev/null 2>&1; then DE=xfce
+       elif echo $DESKTOP | grep -q '^Enlightenment'; then DE=enlightenment;
+       elif [ x"$LXQT_SESSION_CONFIG" != x"" ]; then DE=lxqt;
++      elif which mimeo > /dev/null; then DE=mimeo;
+       fi
+     fi
+ 

@@ -1,0 +1,13 @@
+pkgbase = systemd-emacs-daemon
+	pkgdesc = A per-user emacs daemon service for systemd
+	pkgver = 2
+	pkgrel = 1
+	url = http://www.emacswiki.org/emacs/EmacsAsDaemon#toc8
+	install = install
+	arch = any
+	license = GPL
+	source = emacs.service
+	sha256sums = c63dbb2165efe3a0ca43c8d7ad0f750876a619f53c0d766bf70b71c6ba18a415
+
+pkgname = systemd-emacs-daemon
+

@@ -1,0 +1,16 @@
+pkgbase = vim-qml-git
+	pkgdesc = QML syntax highlighting for VIM
+	pkgver = r17.fba69d1
+	pkgrel = 1
+	url = https://github.com/peterhoeg/vim-qml
+	arch = any
+	groups = vim-plugins
+	license = custom:vim
+	makedepends = git
+	optdepends = vim: to use this plugin
+	provides = vim-qml=r17.fba69d1
+	source = git+https://github.com/peterhoeg/vim-qml.git
+	sha512sums = SKIP
+
+pkgname = vim-qml-git
+

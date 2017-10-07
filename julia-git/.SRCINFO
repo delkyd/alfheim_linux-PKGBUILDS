@@ -1,0 +1,68 @@
+pkgbase = julia-git
+	pkgdesc = High-level, high-performance, dynamic programming language
+	pkgver = 0.7.0.DEV.r37655.gc492a7d762
+	pkgrel = 1
+	url = http://julialang.org
+	arch = i686
+	arch = x86_64
+	license = MIT
+	makedepends = gcc-fortran
+	makedepends = git
+	makedepends = arpack
+	makedepends = blas>=3.5.0
+	makedepends = fftw
+	makedepends = gmp
+	makedepends = lapack>=3.5.0
+	makedepends = libgit2
+	makedepends = libunwind
+	makedepends = llvm39
+	makedepends = mbedtls
+	makedepends = mpfr
+	makedepends = openlibm
+	makedepends = openspecfun
+	makedepends = pcre2
+	makedepends = suitesparse
+	makedepends = patchelf
+	makedepends = hicolor-icon-theme
+	makedepends = xdg-utils
+	makedepends = desktop-file-utils
+	makedepends = gtk-update-icon-cache
+	options = !emptydirs
+	source = git://github.com/JuliaLang/julia.git#branch=master
+	source = Make.user
+	md5sums = SKIP
+	md5sums = 521b7fea33a99adc534eefa04c33578d
+
+pkgname = julia-git
+	depends = arpack
+	depends = blas>=3.5.0
+	depends = fftw
+	depends = gmp
+	depends = lapack>=3.5.0
+	depends = libgit2
+	depends = libunwind
+	depends = llvm39
+	depends = mbedtls
+	depends = mpfr
+	depends = openlibm
+	depends = openspecfun
+	depends = pcre2
+	depends = suitesparse
+	depends = patchelf
+	depends = hicolor-icon-theme
+	depends = xdg-utils
+	depends = desktop-file-utils
+	depends = gtk-update-icon-cache
+	optdepends = openblas-lapack: multithreaded replacement for lapack
+	optdepends = gnuplot: If using the Gaston Package from julia
+	provides = julia
+	conflicts = julia
+	backup = etc/julia/juliarc.jl
+
+pkgname = julia-git-docs
+	pkgdesc = High-level, high-performance, dynamic programming language (Documentation and examples)
+	arch = any
+	provides = julia-docs
+	conflicts = julia-docs
+	conflicts = julia-git-doc
+

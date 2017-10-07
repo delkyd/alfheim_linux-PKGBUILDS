@@ -1,0 +1,32 @@
+diff -aur pristine/opt/brother/Printers/HLL2380DW/cupswrapper/brother_lpdwrapper_HLL2380DW new/opt/brother/Printers/HLL2380DW/cupswrapper/brother_lpdwrapper_HLL2380DW
+--- pristine/opt/brother/Printers/HLL2380DW/cupswrapper/brother_lpdwrapper_HLL2380DW	2016-08-21 00:24:32.495475668 -0400
++++ new/opt/brother/Printers/HLL2380DW/cupswrapper/brother_lpdwrapper_HLL2380DW	2016-08-21 00:26:23.022143362 -0400
+@@ -43,15 +43,7 @@
+ $width=-1;
+ $height=-1;
+ 
+-#my $basedir = Cwd::realpath ($0);
+-my $basedir = `readlink $0`;
+-if ( $basedir eq '' ){
+-    $basedir = `realpath $0`;
+-}
+-chomp($basedir);
+-
+-$basedir =~ s/$PRINTER\/cupswrapper\/.*$/$PRINTER\//g;
+-
++my $basedir = "/usr/share/brother/Printers/HLL2380DW/";
+ 
+ %units = ( pt   => \&pt2dot, 
+ 	   mm   => \&mm2dot, 
+@@ -83,10 +75,7 @@
+     $CUPSINPUT=$ARGV[7];
+ }
+ 
+-
+-$PRINTER =~ s/^\/opt\/.*\/Printers\///g;
+-$PRINTER =~ s/\/cupswrapper//g;
+-$PRINTER =~ s/\///g;
++$PRINTER = "HLL2380DW";
+ 
+ for  (my $i = 0 ; $i < @ARGV ; $i ++){
+     logprint( 0 , "ARG$i      = $ARGV[$i]\n");

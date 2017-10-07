@@ -1,0 +1,16 @@
+pkgbase = anoise-community-extension2
+	pkgdesc = Ambient Noise Community Library. Sounds and icons from the users
+	pkgver = 0.0.4
+	pkgrel = 1
+	url = https://code.launchpad.net/anoise
+	arch = any
+	license = GPL3
+	depends = anoise
+	depends = python-distutils-extra
+	depends = gstreamer0.10
+	depends = gstreamer0.10-python
+	source = https://launchpad.net/~costales/+archive/ubuntu/anoise/+files/anoise-community-extension2_0.0.4_all.deb
+	sha256sums = ae7b05f943856bcc890a843a4c044c5b90d8b2e79a3103f8e0f1a42aa78d9205
+
+pkgname = anoise-community-extension2
+

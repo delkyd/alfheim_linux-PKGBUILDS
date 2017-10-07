@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=6.3.2.3
+Name=XCTU
+Comment=Configuration and Test Utiity
+Icon=xctu.xpm
+Exec=/usr/bin/xctu
+Terminal=false
+Path=/opt/xctu

@@ -1,0 +1,29 @@
+# Maintainer: Clar Charr <clar@charr.xyz>
+_pkgbase=misc
+pkgname=clarcharr-$_pkgbase
+pkgver=0.2.0
+pkgrel=1
+pkgdesc="Clar's miscellaneous configuration."
+depends=(git jq)
+arch=(i686 x86_64)
+url="https://github.com/clarcharr/config-$_pkgbase"
+license=(CC0)
+groups=(clarcharr-config)
+source=(git+https://github.com/clarcharr/config-$_pkgbase#$pgkver
+        clarcharr-misc.install)
+install=clarcharr-misc.install
+sha256sums=(SKIP
+            91e59196425d37cc10433008072b1b0635f6636f93bf205fbddcd37bab52bb1a)
+validpgpkeys=(4BDA23A98EE4E049CBC3BA6C69DA5B388573EE35)
+_dirs=(etc)
+prepare() {
+  cd "config-$_pkgbase" || exit 1
+  git tag --verify $pkgver
+}
+package() {
+  for dir in "${_dirs[@]}"; do
+    cp -R "$srcdir/config-$_pkgbase/$dir" -T "$pkgdir/$dir"
+  done
+  mv "$pkgdir/etc/ssh/"{,clarcharr_}ssh_config
+  mv "$pkgdir/etc/ssh/"{,clarcharr_}sshd_config
+}

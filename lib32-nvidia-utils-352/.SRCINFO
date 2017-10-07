@@ -1,0 +1,37 @@
+pkgbase = lib32-nvidia-utils-352
+	pkgver = 352.79
+	pkgrel = 2
+	url = http://www.nvidia.com/
+	arch = x86_64
+	license = custom
+	options = !strip
+	source = http://download.nvidia.com/XFree86/Linux-x86/352.79/NVIDIA-Linux-x86-352.79.run
+	md5sums = 8f5b2c809490e0ebec17b9074a5a8363
+
+pkgname = lib32-nvidia-utils-352
+	pkgdesc = NVIDIA drivers utilities (32-bit)
+	depends = lib32-zlib
+	depends = lib32-gcc-libs
+	optdepends = lib32-opencl-nvidia-352
+	provides = lib32-nvidia-utils=$pkgver
+	conflicts = lib32-nvidia-utils
+
+pkgname = lib32-nvidia-libgl-352
+	pkgdesc = NVIDIA drivers libraries symlinks (32-bit)
+	depends = lib32-nvidia-utils-352
+	provides = lib32-libgl
+	provides = lib32-nvidia-libgl
+	conflicts = lib32-libgl
+	conflicts = lib32-nvidia-libgl
+	conflicts = lib32-libglvnd
+	replaces = lib32-nvidia-utils<=313.26-1
+
+pkgname = lib32-opencl-nvidia-352
+	pkgdesc = OpenCL implemention for NVIDIA (32-bit)
+	depends = lib32-libcl
+	depends = lib32-zlib
+	depends = lib32-gcc-libs
+	optdepends = opencl-headers: headers necessary for OpenCL development
+	provides = lib32-opencl-nvidia
+	conflicts = lib32-opencl-nvidia
+

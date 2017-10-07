@@ -1,0 +1,18 @@
+pkgbase = linux-firmware-git
+	pkgdesc = Firmware files for Linux
+	pkgver = 20150924.f88e5c2
+	pkgrel = 2
+	url = http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary
+	arch = any
+	license = GPL2
+	license = GPL3
+	license = custom
+	makedepends = git
+	provides = linux-firmware=20150924.f88e5c2
+	conflicts = linux-firmware
+	options = !strip
+	source = linux-firmware-git::git+https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+	md5sums = SKIP
+
+pkgname = linux-firmware-git
+

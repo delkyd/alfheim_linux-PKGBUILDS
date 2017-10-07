@@ -1,0 +1,27 @@
+pkgbase = labplot-kf5
+	pkgdesc = A free software data analysis and visualization application, for two and three-dimensional graphical presentation of data sets and functions.
+	pkgver = 2.4.0
+	pkgrel = 3
+	url = http://labplot.sourceforge.net/
+	install = labplot-kf5.install
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = cmake
+	makedepends = extra-cmake-modules
+	makedepends = kdoctools
+	makedepends = kdesignerplugin
+	makedepends = knewstuff
+	depends = kdebase-runtime
+	depends = gsl
+	depends = kdelibs4support
+	depends = fftw
+	depends = netcdf
+	depends = cfitsio
+	source = http://download.kde.org/stable/labplot/2.4.0/labplot-2.4.0-kf5.tar.xz
+	source = labplot-kf5.install
+	md5sums = fe7cdefc5abfae5321b77973450aaa1d
+	md5sums = 7dd4a598d34b8e21411dec1247752d99
+
+pkgname = labplot-kf5
+

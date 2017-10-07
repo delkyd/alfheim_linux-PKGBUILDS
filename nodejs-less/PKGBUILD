@@ -1,0 +1,24 @@
+# $Id$
+# Maintainer: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
+
+pkgname=nodejs-less
+pkgver=2.7.2
+pkgrel=1
+pkgdesc="A standalone compiler for the LESS CSS language."
+arch=('any')
+url="http://lesscss.org/"
+license=('Apache')
+depends=('nodejs')
+makedepends=('npm')
+conflicts=('lessc')
+provides=("lessc=$pkgver")
+replaces=('lessc')
+source=("https://registry.npmjs.org/less/-/less-$pkgver.tgz")
+
+package() {
+    npm install -g --user root --prefix "$pkgdir"/usr "$srcdir"/less-$pkgver.tgz
+    rm -r "$pkgdir"/usr/etc
+    chmod -R go-w "$pkgdir"/usr
+}
+
+sha256sums=('d57e3f45aa5c7d097728eefbd2fed91b040591b072dece36902a176db777d738')

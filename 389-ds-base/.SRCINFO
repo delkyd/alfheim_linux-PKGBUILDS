@@ -1,0 +1,33 @@
+pkgbase = 389-ds-base
+	pkgdesc = 389 Directory Server (base)
+	pkgver = 1.4.0.0
+	pkgrel = 1
+	url = http://port389.org/
+	install = 389-ds-base.install
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = doxygen
+	depends = cyrus-sasl
+	depends = cyrus-sasl-gssapi
+	depends = icu
+	depends = lm_sensors
+	depends = net-snmp
+	depends = libsystemd
+	depends = openldap
+	depends = perl-netaddr-ip
+	depends = perl-socket
+	depends = svrcore>=4.1.2
+	depends = libevent
+	options = !libtool
+	backup = etc/default/dirsrv
+	backup = etc/default/dirsrv.systemd
+	backup = etc/dirsrv/config/certmap.conf
+	backup = etc/dirsrv/config/ldap-agent.conf
+	backup = etc/dirsrv/config/slapd-collations.conf
+	backup = etc/dirsrv/config/template-initconfig
+	source = https://releases.pagure.org/389-ds-base/389-ds-base-1.4.0.0.tar.bz2
+	sha512sums = bfb64abeae5217b6877eea984b87a4d135078df1c5da667a602e4906b88da0efeba660a83ccaad4cd51e131f475b3acb11d2d9de759279113dc642cedfba1940
+
+pkgname = 389-ds-base
+

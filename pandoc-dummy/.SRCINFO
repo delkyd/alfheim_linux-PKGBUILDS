@@ -1,0 +1,12 @@
+pkgbase = pandoc-dummy
+	pkgdesc = make archlinux believes you have pandoc installed
+	pkgver = 0.0.1
+	pkgrel = 2
+	url = https://github.com/jgm/pandoc
+	arch = any
+	license = GPL
+	provides = pandoc
+	conflicts = pandoc
+
+pkgname = pandoc-dummy
+

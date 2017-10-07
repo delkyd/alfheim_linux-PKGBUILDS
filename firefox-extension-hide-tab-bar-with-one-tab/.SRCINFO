@@ -1,0 +1,18 @@
+pkgbase = firefox-extension-hide-tab-bar-with-one-tab
+	pkgdesc = Hide the tab bar if there is only one tab.
+	pkgver = 1.5.1.signed.1.signed
+	pkgrel = 2
+	url = http://forums.mozillazine.org/viewtopic.php?f=48&t=2141579
+	arch = any
+	license = MPLv2
+	makedepends = unzip
+	makedepends = rasqal
+	depends = firefox
+	noextract = firefox-extension-hide-tab-bar-with-one-tab.zip
+	source = firefox-extension-hide-tab-bar-with-one-tab.zip::https://addons.mozilla.org/firefox/downloads/latest/hide-tab-bar-with-one-tab/platform:2/
+	source = .version::https://services.addons.mozilla.org/firefox/api/1.5/addon/hide-tab-bar-with-one-tab
+	md5sums = 70a2167b49c79ff8785fa26c391a530a
+	md5sums = SKIP
+
+pkgname = firefox-extension-hide-tab-bar-with-one-tab
+

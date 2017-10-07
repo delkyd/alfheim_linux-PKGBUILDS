@@ -1,0 +1,13 @@
+diff --git a/package.json b/package.json
+index ed80ba9..7724d79 100644
+--- a/package.json
++++ b/package.json
+@@ -32,8 +32,6 @@
+   },
+   "homepage": "https://github.com/geeeeeeeeek/wechat-electron/",
+   "dependencies": {
+-    "electron": "^1.4.15",
+-    "electron-packager": "^8.5.1",
+     "nconf": "^0.8.4",
+     "pinyin": "^2.8.0",
+     "emojione": "^2.2.7",

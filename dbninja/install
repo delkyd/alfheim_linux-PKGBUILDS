@@ -1,0 +1,27 @@
+post_install() {
+
+cat <<EOF
+=============================================
+
+For localhost use please start service:
+	systemctl daemon-reload
+	systemctl start dbninja-localhost.service
+
+Open DbNinja in browser http://localhost:8036
+
+After accepting the license agreement, find the code file:
+	ls /var/lib/dbninja/_users
+
+Autostart service:
+	systemctl enable dbninja-localhost.service
+
+==============================================
+EOF
+	
+}
+
+post_upgrade() {
+ cat <<EOF
+	New url for local DbNinja http://localhost:8036
+EOF
+}

@@ -1,0 +1,11 @@
+pkgbase = xclm-dirs
+	pkgdesc = xclm and etc directories for Microchip software
+	pkgver = 1.00
+	pkgrel = 3
+	url = https://aur.archlinux.org/packages.php?ID=57960
+	arch = any
+	license = custom
+	options = emptydirs
+
+pkgname = xclm-dirs
+

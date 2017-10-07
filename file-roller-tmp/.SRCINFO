@@ -1,0 +1,35 @@
+pkgbase = file-roller-tmp
+	pkgdesc = The file-roller with an additional patch to put temporary files in /tmp instead of ~/.cache (and thus to reduce the amount of writes to SSDs).
+	pkgver = 3.24.1
+	pkgrel = 1
+	arch = i686
+	arch = x86_64
+	groups = gnome-extra
+	license = GPL
+	makedepends = intltool
+	makedepends = itstool
+	makedepends = docbook-xsl
+	makedepends = gnome-common
+	makedepends = git
+	makedepends = libnautilus-extension
+	depends = gtk3
+	depends = dconf
+	depends = libarchive
+	depends = file
+	depends = json-glib
+	depends = libnotify
+	depends = zip
+	depends = unzip
+	optdepends = p7zip: 7z, arj, exe and encrypted zip files support
+	optdepends = unrar: better RAR archive support
+	optdepends = unace: ACE archive support
+	optdepends = lrzip: lrzip archive support
+	provides = file-roller
+	conflicts = file-roller
+	source = git+https://git.gnome.org/browse/file-roller#commit=e6ef6fa43a6d5d6e1509f122a206870adc113563
+	source = tmp-as-temp.patch
+	sha256sums = SKIP
+	sha256sums = 753c6ee41772677b115f4178fe6384c21d8aa5d489a6074f659d5305736acf57
+
+pkgname = file-roller-tmp
+

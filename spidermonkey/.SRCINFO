@@ -1,0 +1,14 @@
+pkgbase = spidermonkey
+	pkgdesc = Mozilla's JavaScript engine.
+	pkgver = 45.0.2
+	pkgrel = 1
+	url = http://www.mozilla.org/js/spidermonkey/
+	arch = i686
+	arch = x86_64
+	license = MPL
+	makedepends = gcc
+	source = spidermonkey-45.0.2.tar.bz2::https://people.mozilla.org/~sfink/mozjs-45.0.2.tar.bz2
+	md5sums = 2ca34f998d8b5ea79d8616dd26b5fbab
+
+pkgname = spidermonkey
+

@@ -1,0 +1,32 @@
+pkgbase = python-pyroma-hg
+	pkgdesc = Test your project's packaging friendliness (hg version)
+	pkgver = 192.13d98d664330
+	pkgrel = 1
+	url = https://bitbucket.org/regebro/pyroma
+	arch = any
+	license = MIT
+	makedepends = mercurial
+	makedepends = python
+	makedepends = python2
+	makedepends = python-setuptools
+	makedepends = python2-setuptools
+	makedepends = python-docutils
+	makedepends = python2-docutils
+	options = !emptydirs
+	source = hg+https://bitbucket.org/regebro/pyroma
+	md5sums = SKIP
+
+pkgname = python-pyroma-hg
+	depends = python
+	depends = python-setuptools
+	depends = python-docutils
+	provides = python-pyroma
+	conflicts = python-pyroma
+
+pkgname = python2-pyroma-hg
+	depends = python2
+	depends = python2-setuptools
+	depends = python2-docutils
+	provides = python2-pyroma
+	conflicts = python2-pyroma
+

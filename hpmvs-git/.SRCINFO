@@ -1,0 +1,21 @@
+pkgbase = hpmvs-git
+	pkgdesc = Progressive multiview stero, generate dense surface form sparse 3D model.
+	pkgver = r18.f003e54
+	pkgrel = 2
+	url = https://github.com/alexlocher/hpmvs
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = git
+	makedepends = cmake
+	makedepends = eigen
+	depends = libjpeg
+	depends = google-glog
+	depends = gflags
+	source = hpmvs-git::git+https://github.com/alexlocher/hpmvs.git
+	source = http://www.vision.ee.ethz.ch/~alocher/pdf/locher_cvpr16_progressive_prioritized_mvs.pdf
+	md5sums = SKIP
+	md5sums = d2bb5ce95c7ec1e02bc50922c18ac884
+
+pkgname = hpmvs-git
+

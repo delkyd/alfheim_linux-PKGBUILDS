@@ -1,0 +1,20 @@
+pkgbase = libpoco-basic
+	pkgdesc = C++ class libraries for network-centric, portable applications, basic edition
+	pkgver = 1.7.9
+	pkgrel = 2
+	url = http://www.pocoproject.org
+	arch = i686
+	arch = x86_64
+	license = custom:boost
+	makedepends = gcc
+	makedepends = make
+	depends = pcre
+	depends = expat
+	conflicts = poco
+	conflicts = poco-devel
+	conflicts = poco-git
+	source = http://www.pocoproject.org/releases/poco-1.7.9/poco-1.7.9.tar.gz
+	sha256sums = 1de0052723eef6264a39e68afe7eb622ea881d304acf334664c3f3ad84f93f07
+
+pkgname = libpoco-basic
+

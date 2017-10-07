@@ -1,0 +1,12 @@
+post_install() {
+  echo "See /usr/share/doc/pius/README for documentation."
+  echo "Hint: if you use the new GnuPG key format, put this line"
+  echo "in ~/.pius/piusrc :"
+  echo
+  echo "keyring = ~/.gnupg/pubring.kbx"
+  echo
+}
+
+post_upgrade() {
+  post_install
+}

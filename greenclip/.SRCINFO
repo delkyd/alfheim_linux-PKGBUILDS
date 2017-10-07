@@ -1,0 +1,17 @@
+pkgbase = greenclip
+	pkgdesc = Clipboard manager to use with rofi
+	pkgver = 2.0
+	pkgrel = 0
+	epoch = 0
+	url = https://github.com/erebe/greenclip
+	changelog = changelog
+	arch = x86_64
+	license = GPL
+	depends = rofi
+	provides = greenclip
+	options = !strip
+	source = https://github.com/erebe/greenclip/releases/download/2.0/greenclip
+	sha256sums = 2b67042439c4af86fd8ec0fa37f029c200811017d439cc9acb7125dc599406cf
+
+pkgname = greenclip
+

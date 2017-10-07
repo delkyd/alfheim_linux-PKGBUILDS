@@ -1,0 +1,26 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Artem Vorotnikov <artem@vorotnikov.me>
+
+_gemname=rspec-core
+pkgname=ruby-${_gemname}
+pkgver=3.6.0
+pkgrel=1
+pkgdesc='RSpec runner and formatters'
+url='https://github.com/rspec/rspec-core'
+arch=('any')
+license=('MIT')
+depends=('ruby-rspec-support')
+options=('!emptydirs')
+source=(https://rubygems.org/downloads/${_gemname}-${pkgver}.gem)
+noextract=(${_gemname}-${pkgver}.gem)
+sha512sums=('a2c02421ada8f4dc640056a972f39ea6b4654c5cb3431eaca867d7a9ac304e098b5cffab54812022188a2398feb79a24d60e8a6a5bfe47615097ca2e436fc52f')
+
+package() {
+  local _gemdir="$(gem environment gemdir)"
+  gem install --ignore-dependencies --no-user-install -i "${pkgdir}${_gemdir}" -n "${pkgdir}/usr/bin" ${_gemname}-${pkgver}.gem
+  install -Dm 644 "${pkgdir}${_gemdir}/gems/${_gemname}-${pkgver}/LICENSE.md" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -Dm 644 "${pkgdir}${_gemdir}/gems/${_gemname}-${pkgver}/README.md" "${pkgdir}/usr/share/doc/${pkgname}/README"
+  rm "${pkgdir}/${_gemdir}/cache/${_gemname}-${pkgver}.gem"
+}
+
+# vim: ts=2 sw=2 et:

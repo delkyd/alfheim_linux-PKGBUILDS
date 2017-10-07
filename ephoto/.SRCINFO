@@ -1,0 +1,16 @@
+pkgbase = ephoto
+	pkgdesc = Ephoto: Image viewer based on EFL
+	pkgver = 1.5
+	pkgrel = 1
+	url = https://www.enlightenment.org/
+	arch = i686
+	arch = x86_64
+	license = BSD
+	depends = efl
+	provides = ephoto
+	conflicts = ephoto-git
+	source = http://download.enlightenment.org/rel/apps/ephoto/ephoto-1.5.tar.gz
+	sha256sums = SKIP
+
+pkgname = ephoto
+

@@ -1,0 +1,19 @@
+pkgbase = yalpam-git
+	pkgdesc = Yet another Arch Linux PAckage Manager
+	pkgver = 49.fcd0f4a
+	pkgrel = 1
+	url = https://github.com/drxspace/yalpam
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	depends = xterm
+	depends = yad
+	depends = yaourt
+	provides = yalpam
+	options = strip
+	options = !debug
+	source = git+https://github.com/drxspace/yalpam.git
+	sha1sums = SKIP
+
+pkgname = yalpam-git
+

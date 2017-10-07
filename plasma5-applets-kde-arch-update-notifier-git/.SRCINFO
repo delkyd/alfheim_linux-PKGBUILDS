@@ -1,0 +1,18 @@
+pkgbase = plasma5-applets-kde-arch-update-notifier-git
+	pkgdesc = A KDE plasmoid for your system tray notifying you of available updates
+	pkgver = 2.1
+	pkgrel = 1
+	url = https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid
+	arch = any
+	license = GPL
+	makedepends = make
+	makedepends = cmake
+	makedepends = git
+	makedepends = extra-cmake-modules
+	depends = fakeroot
+	depends = konsole
+	source = git+https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid.git
+	md5sums = SKIP
+
+pkgname = plasma5-applets-kde-arch-update-notifier-git
+

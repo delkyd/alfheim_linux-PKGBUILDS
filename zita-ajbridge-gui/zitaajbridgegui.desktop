@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Zita AJBridge GUI
+Name[en_US]=Zita AJBridge GUI
+GenericName=
+GenericName[en_US]=
+Comment=
+Comment[en_US]=
+Icon=zitaajbridgegui
+Exec=/usr/bin/zitaajbridgegui
+Terminal=false
+TerminalOptions=
+Type=Application
+Categories=AudioVideo;Audio;

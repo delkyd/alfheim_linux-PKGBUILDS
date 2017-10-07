@@ -1,0 +1,26 @@
+pkgbase = sys-journald-bin
+	pkgdesc = view journald logs with electron AppImage.
+	pkgver = 0.1.1
+	pkgrel = 1
+	url = https://github.com/papajoker/sys-journald
+	arch = x86_64
+	license = GPL2
+	makedepends = p7zip
+	depends = gcc-libs
+	depends = gconf
+	depends = alsa-lib
+	depends = nss
+	depends = libxtst
+	depends = gtk2
+	depends = libnotify
+	depends = systemd
+	conflicts = sys-journald-bin
+	noextract = sys-journald-0.1.1-1-x86_64.AppImage
+	options = !strip
+	source = http://test.webstratege.fr/sys-journald-0.1.1-1-x86_64.AppImage
+	source = sys-journald.desktop
+	md5sums = 78f015e845e7c773b2ae266d9fc5ff33
+	md5sums = ea952c0a0b172fca4a35eea90b58e700
+
+pkgname = sys-journald-bin
+

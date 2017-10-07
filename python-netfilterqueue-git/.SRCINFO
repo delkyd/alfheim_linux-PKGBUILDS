@@ -1,0 +1,14 @@
+pkgbase = python-netfilterqueue-git
+	pkgdesc = Python 3.x for libnetfilter_queue.
+	pkgver = r66.3fa8a38
+	pkgrel = 1
+	url = https://github.com/kti/python-netfilterqueue
+	arch = any
+	license = GPL2
+	depends = python
+	depends = libnetfilter_queue
+	source = python-netfilterqueue::git+https://github.com/kti/python-netfilterqueue
+	sha256sums = SKIP
+
+pkgname = python-netfilterqueue-git
+

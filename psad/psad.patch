@@ -1,0 +1,21 @@
+--- a/install.pl	2017-03-29 00:58:58.151686321 +0200
++++ b/install.pl	2017-03-29 01:01:33.861628259 +0200
+@@ -773,6 +773,8 @@
+             $init_file = 'init-scripts/psad-init.redhat';
+         } elsif ($distro eq 'fedora') {
+             $init_file = 'init-scripts/psad-init.fedora';
++        } elsif ($distro eq 'archlinux') {
++            $init_file = 'init-scripts/psad-init.archlinux';
+         } elsif ($distro eq 'gentoo') {
+             $init_file = 'init-scripts/psad-init.gentoo';
+         } else {
+@@ -801,7 +803,8 @@
+     if ($preserve_rv) {
+         &logr("\n[+] psad has been installed (with your original config merged).\n");
+     } else {
+-        &logr("\n[+] psad has been installed.\n");
++        &logr("\n[+] psad has been compiled.\n");
++        &logr("\n[+] use pacman -U to install.\n");
+     }
+     if ($installed_init_script) {
+         if ($init_dir) {

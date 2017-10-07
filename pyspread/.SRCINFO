@@ -1,0 +1,23 @@
+pkgbase = pyspread
+	pkgdesc = A cross-platform Python spreadsheet application. Python 2.7 version
+	pkgver = 1.0.3
+	pkgrel = 1
+	url = https://manns.github.io/pyspread/
+	arch = any
+	license = GPL3
+	depends = python2>=2.7.0
+	depends = python2-numpy>=1.1.0
+	depends = wxpython
+	depends = python2-matplotlib
+	depends = cairo>=1.8.8
+	optdepends = python2-gnupginterface: for opening files without approval
+	optdepends = python2-xlrd: open Excel files
+	optdepends = python2-xlwt: save Excel files
+	optdepends = python2-jedi: TAB autocompletion and context help in the entry line
+	optdepends = python2-basemap: for the weather example
+	options = !emptydirs
+	source = https://pypi.python.org/packages/f9/01/a3b4be117b4ea69d0d2c96fdfff47de9a4c61ba8295ed4f4a6ca5eb60306/pyspread-1.0.3.tar.gz
+	md5sums = b240c8fb57ce7354334982266fae47b5
+
+pkgname = pyspread
+

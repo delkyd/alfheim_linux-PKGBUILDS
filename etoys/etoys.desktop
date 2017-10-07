@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Etoys
+Comment=Media-rich authoring environment
+Exec=etoys
+Terminal=false
+Icon=etoys
+StartupWMClass=squeak
+Categories=Development;

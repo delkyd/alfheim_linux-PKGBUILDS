@@ -1,0 +1,14 @@
+pkgbase = nodejs-hotel
+	pkgdesc = local .dev domains for everyone and more.
+	pkgver = 0.6.1
+	pkgrel = 1
+	url = https://github.com/typicode/hotel
+	arch = any
+	license = MIT
+	depends = nodejs
+	noextract = hotel-0.6.1.tgz
+	source = http://registry.npmjs.org/hotel/-/hotel-0.6.1.tgz
+	sha1sums = b748f64839b7720b30ac6f3ecb203c49eb9ffed3
+
+pkgname = nodejs-hotel
+

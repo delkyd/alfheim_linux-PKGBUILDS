@@ -1,0 +1,18 @@
+pkgbase = hovercraft
+	pkgdesc = A tool to make impress.js presentations from reStructuredText
+	pkgver = 2.0
+	pkgrel = 1
+	url = https://github.com/regebro/hovercraft
+	arch = any
+	license = CCPL
+	depends = python
+	depends = python-lxml
+	depends = python-docutils
+	depends = python-svg.path
+	depends = python-pygments
+	depends = python-watchdog
+	source = http://pypi.python.org/packages/source/h/hovercraft/hovercraft-2.0.tar.gz
+	md5sums = 398d003c4bfaf3b8ce6e3fd8573819e6
+
+pkgname = hovercraft
+

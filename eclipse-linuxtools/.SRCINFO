@@ -1,0 +1,18 @@
+pkgbase = eclipse-linuxtools
+	pkgdesc = Eclipse Linux Tools Project
+	pkgver = 5.2.0
+	pkgrel = 1
+	url = http://www.eclipse.org/linuxtools
+	arch = any
+	license = EPL
+	depends = eclipse
+	optdepends = eclipse-ptp: remote profiling
+	optdepends = eclipse-rse: LTTng and remote profiling
+	optdepends = eclipse-gef: Draw2d and Zest
+	optdepends = eclipse-tcf: legacy LTTng
+	optdepends = eclipse-antlr-runtime: Tracing/LTTng
+	source = http://www.eclipse.org/downloads/download.php?r=1&mirror_id=274&file=/linuxtools/linuxtools-5.2.0.zip
+	md5sums = 48da995a125a44316632a97bdcf7946b
+
+pkgname = eclipse-linuxtools
+

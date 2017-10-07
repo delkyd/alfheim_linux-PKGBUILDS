@@ -1,0 +1,12 @@
+diff --git a/JASP-Engine/JASP-Engine.pro b/JASP-Engine/JASP-Engine.pro
+index 1eb77cdf..438b206d 100644
+--- a/JASP-Engine/JASP-Engine.pro
++++ b/JASP-Engine/JASP-Engine.pro
+@@ -73,6 +73,7 @@ INCLUDEPATH += \
+ 
+ linux:INCLUDEPATH += \
+ 	/usr/share/R/include \
++	/usr/include/R \
+ 	$$_R_HOME/site-library/Rcpp/include
+ 
+ macx:LIBS += \

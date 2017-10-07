@@ -1,0 +1,21 @@
+pkgbase = hplip-minimal
+	pkgdesc = The HP printer drivers, and not much else
+	pkgver = 3.16.11
+	pkgrel = 2
+	url = http://hplipopensource.com
+	arch = i686
+	arch = x86_64
+	arch = armv6h
+	license = GPL
+	makedepends = cups
+	makedepends = libusb
+	depends = ghostscript>=8.64-6
+	optdepends = cups: for printing support
+	optdepends = libusb: for advanced usb support
+	conflicts = hplip
+	options = !docs
+	source = http://downloads.sourceforge.net/hplip/hplip-3.16.11.tar.gz
+	md5sums = 7d187c3142ba323a3021767d333ad9f4
+
+pkgname = hplip-minimal
+

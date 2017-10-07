@@ -1,0 +1,26 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Artem Vorotnikov <artem@vorotnikov.me>
+
+_gemname=rspec-expectations
+pkgname=ruby-${_gemname}
+pkgver=3.6.0
+pkgrel=1
+pkgdesc='Provides a readable API to express expected outcomes of a code example'
+url='https://github.com/rspec/rspec-expectations'
+arch=('any')
+license=('MIT')
+depends=('ruby-rspec-support' 'ruby-diff-lcs')
+options=('!emptydirs')
+source=(https://rubygems.org/downloads/${_gemname}-${pkgver}.gem)
+noextract=(${_gemname}-${pkgver}.gem)
+sha512sums=('8a339d482bbed73aad29a5e3640392ed57ad0cce44852d88f4806f7f6ef81898478321e6d41da3cd22929a80aa72c3339d1f7b793a60c12f57f33020f71c8fc6')
+
+package() {
+  local _gemdir="$(ruby -e'puts Gem.default_dir')"
+  gem install --ignore-dependencies --no-user-install -i "${pkgdir}${_gemdir}" -n "${pkgdir}/usr/bin" ${_gemname}-${pkgver}.gem
+  install -Dm 644 "${pkgdir}${_gemdir}/gems/${_gemname}-${pkgver}/LICENSE.md" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -Dm 644 "${pkgdir}${_gemdir}/gems/${_gemname}-${pkgver}/README.md" "${pkgdir}/usr/share/doc/${pkgname}/README"
+  rm "${pkgdir}/${_gemdir}/cache/${_gemname}-${pkgver}.gem"
+}
+
+# vim: ts=2 sw=2 et:

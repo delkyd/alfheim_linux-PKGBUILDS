@@ -1,0 +1,23 @@
+pkgbase = syncthing-relaysrv-git
+	pkgdesc = Relay Server for Syncthing
+	pkgver = 0.12.0.r17.gba44fe7
+	pkgrel = 1
+	url = http://syncthing.net/
+	install = syncthing-relaysrv.install
+	arch = i686
+	arch = x86_64
+	license = MIT
+	makedepends = git
+	makedepends = go
+	makedepends = godep
+	makedepends = inetutils
+	makedepends = sed
+	depends = glibc
+	provides = syncthing-relaysrv=0.12
+	source = syncthing-relaysrv::git+https://github.com/syncthing/relaysrv.git#branch=master
+	source = syncthing-relaysrv.tmpfiles.d
+	sha256sums = SKIP
+	sha256sums = f899998985f2d374af57f17ef6362c37a305467858195b74d1c1def71d97273f
+
+pkgname = syncthing-relaysrv-git
+

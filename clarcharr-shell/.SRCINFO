@@ -1,0 +1,22 @@
+pkgbase = clarcharr-shell
+	pkgdesc = Clar's shell configuration.
+	pkgver = 0.8.0
+	pkgrel = 1
+	url = https://github.com/clarcharr/config-shell
+	install = clarcharr-shell.install
+	arch = any
+	groups = clarcharr-config
+	license = CC0
+	depends = bash
+	depends = exa
+	depends = fish
+	depends = kmscon
+	depends = ripgrep
+	source = git+https://github.com/clarcharr/config-shell#
+	source = clarcharr-shell.install
+	validpgpkeys = 4BDA23A98EE4E049CBC3BA6C69DA5B388573EE35
+	sha256sums = SKIP
+	sha256sums = c68f3abb85bca0bb739a8311838353f5410b074fc4e353d90b61cdf25156ba90
+
+pkgname = clarcharr-shell
+

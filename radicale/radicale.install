@@ -1,0 +1,33 @@
+post_install() {
+	getent group radicale &>/dev/null || groupadd -r radicale >/dev/null
+	getent passwd radicale &>/dev/null || useradd -r -s /usr/bin/false \
+		-g radicale -G radicale,http -d /var/lib/radicale/ radicale >/dev/null
+
+	install -d -m 755 -o radicale -g radicale /var/lib/radicale/
+
+	chown -R root:radicale /etc/radicale/
+}
+
+pre_upgrade() {
+    # Export to new storage format
+    if [[ $2 == "1."* ]]
+    then
+        radicale --export-storage /tmp/radicale2
+        mv /tmp/radicale2 /var/lib/radicale2
+    fi
+}
+
+post_upgrade() {
+        chown -R root:radicale /etc/radicale/
+        if [[ $2 == "1."* ]]
+        then
+            echo "The upgrade to 2.x.x requires manual intervention: http://radicale.org/1to2/"
+            echo "Your data was exported to /var/lib/radicale2"
+        fi
+}
+ 
+pre_remove() {
+	getent passwd radicale &>/dev/null && userdel radicale >/dev/null
+	getent group radicale &>/dev/null && groupdel radicale >/dev/null
+	true
+}

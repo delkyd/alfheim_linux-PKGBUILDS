@@ -1,0 +1,26 @@
+pkgbase = perl-latexml
+	pkgdesc = LaTeX to XML converter
+	pkgver = 0.8.2
+	pkgrel = 1
+	url = http://dlmf.nist.gov/LaTeXML/
+	arch = i686
+	arch = x86_64
+	license = custom
+	depends = perl
+	depends = perl-parse-recdescent
+	depends = imagemagick
+	depends = perl-xml-libxml
+	depends = perl-xml-libxslt
+	depends = db
+	depends = texlive-core
+	depends = perl-image-size
+	depends = perl-file-which
+	depends = perl-libwww
+	depends = perl-io-string
+	depends = perl-archive-zip
+	options = !emptydirs
+	source = http://dlmf.nist.gov/LaTeXML/releases/LaTeXML-0.8.2.tar.gz
+	sha512sums = 521134f7b3820c2cbf8fbf60778f03f40b8bb6900311d82da986e8dd3ee1a0d518ef9bb4b852bd95a5bac758bb65b159218602f4adf454c77dfbf6280a4bd1a4
+
+pkgname = perl-latexml
+

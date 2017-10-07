@@ -1,0 +1,15 @@
+pkgbase = python2-pywebdav
+	pkgdesc = WebDAV library including a standalone server for python
+	pkgver = 0.9.8
+	pkgrel = 5
+	url = http://code.google.com/p/pywebdav/
+	arch = any
+	license = GPL3
+	depends = python2
+	depends = python2-setuptools
+	provides = PyWebDAV
+	source = https://pypi.python.org/packages/source/P/PyWebDAV/PyWebDAV-0.9.8.tar.gz
+	md5sums = 2fd2aca0074f0d0ac2701c9c0cadb89e
+
+pkgname = python2-pywebdav
+

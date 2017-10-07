@@ -1,0 +1,4 @@
+pkg
+src
+v*.tar.gz
+python2-gdspy-*

@@ -1,0 +1,10 @@
+[Unit]
+Description=Mailcatcher HTTP Activation Socket
+After=network.target
+
+[Socket]
+ListenStream=%I
+Service=mailcatcher-http.service
+
+[Install]
+WantedBy=sockets.target

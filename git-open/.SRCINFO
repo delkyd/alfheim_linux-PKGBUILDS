@@ -1,0 +1,15 @@
+pkgbase = git-open
+	pkgdesc = Open a repo website (GitHub, GitLab, Bitbucket) in your browser
+	pkgver = 1.3.1
+	pkgrel = 1
+	url = https://github.com/paulirish/git-open
+	arch = any
+	license = MIT
+	depends = git
+	depends = xdg-utils
+	conflicts = nodejs-git-open
+	source = https://github.com/paulirish/git-open/archive/v1.3.1.tar.gz
+	sha256sums = 12463f3dc586db703c4612ed12160e2a23336ade0c8fba34798bd741a3cf3a3c
+
+pkgname = git-open
+

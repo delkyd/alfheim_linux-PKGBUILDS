@@ -1,0 +1,22 @@
+pkgbase = glew-git
+	pkgdesc = The OpenGL Extension Wrangler Library
+	pkgver = 2.0.0.r26.g6ee72f2
+	pkgrel = 1
+	url = http://glew.sourceforge.net
+	arch = i686
+	arch = x86_64
+	license = BSD
+	license = MIT
+	license = GPL
+	makedepends = python2
+	depends = libxmu
+	depends = libxi
+	depends = glu
+	provides = glew
+	provides = glew-git
+	conflicts = glew
+	source = git://github.com/nigels-com/glew.git
+	sha1sums = SKIP
+
+pkgname = glew-git
+

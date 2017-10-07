@@ -1,0 +1,17 @@
+pkgbase = blitz
+	pkgdesc = C++ Class library for scientific computing
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://github.com/blitzpp/blitz
+	arch = i686
+	arch = x86_64
+	license = BSD
+	depends = boost
+	conflicts = blitz-cppqed-hg
+	source = git://github.com/blitzpp/blitz.git#commit=9b74367da3b095f141ea19a186fef702dc30fd0c
+	source = blitz-0.10-gcc47.patch
+	md5sums = SKIP
+	md5sums = 3f1d36d804e0de97b8f090cf2826ca61
+
+pkgname = blitz
+

@@ -1,0 +1,18 @@
+pkgbase = glassfish-v4
+	pkgdesc = GlassFish 4 is a Java EE 7 open source application server
+	pkgver = 4.1.2
+	pkgrel = 1
+	url = http://glassfish.java.net/
+	arch = any
+	license = CDDL
+	depends = java-environment>=7
+	provides = glassfish
+	conflicts = glassfish
+	options = !strip
+	source = http://download.java.net/glassfish/4.1.2/release/glassfish-4.1.2.zip
+	source = glassfish.service
+	sha256sums = 68d5c0d95152a07e68e9b00535b11e7b8727646eb8bca05f918abdadebac7266
+	sha256sums = 46f60ff39231a62c39131ff6c04ff1196f147e810a500f02d9505b7327285de8
+
+pkgname = glassfish-v4
+

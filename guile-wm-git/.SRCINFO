@@ -1,0 +1,18 @@
+pkgbase = guile-wm-git
+	pkgdesc = Windowmanagement environment for guile
+	pkgver = 1.0.6.gf3c7b3b
+	pkgrel = 1
+	url = http://www.markwitmer.com/guile-xcb/guile-wm.html
+	arch = any
+	license = GPL
+	makedepends = git
+	depends = guile
+	depends = guile-xcb
+	provides = guile-wm
+	conflicts = guile-wm
+	options = !makeflags
+	source = git+https://github.com/mwitmer/guile-wm.git
+	md5sums = SKIP
+
+pkgname = guile-wm-git
+

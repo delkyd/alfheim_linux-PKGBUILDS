@@ -1,0 +1,19 @@
+pkgbase = guymager
+	pkgdesc = A fast and most user friendly forensic imager.
+	pkgver = 0.8.4
+	pkgrel = 1
+	url = http://guymager.sourceforge.net/
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	depends = qt4
+	depends = gksu
+	depends = hdparm
+	depends = smartmontools
+	depends = parted
+	options = !strip
+	source = https://downloads.sourceforge.net/project/guymager/guymager/guymager-0.8.x/guymager-beta_0.8.4-1_amd64.deb
+	sha256sums = b5b06665406ebdf8e25c23bb8671f60ddcb9751da8280ea9273a430611acd169
+
+pkgname = guymager
+

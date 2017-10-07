@@ -1,0 +1,18 @@
+pkgbase = archey-git
+	pkgdesc = A script that displays the arch logo and some basic information, written in Python.
+	pkgver = r146.b74e40b
+	pkgrel = 1
+	url = https://github.com/Manouchehri/archey
+	arch = any
+	license = GPL
+	makedepends = git
+	depends = python
+	optdepends = scrot: for taking screenshots of the output
+	optdepends = lsb-release
+	provides = archey
+	conflicts = archey
+	source = git://github.com/Manouchehri/archey#branch=master
+	sha512sums = SKIP
+
+pkgname = archey-git
+

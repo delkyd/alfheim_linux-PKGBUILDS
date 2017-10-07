@@ -1,0 +1,28 @@
+pkgbase = corebird-git
+	pkgdesc = Native Gtk+ Twitter Client
+	pkgver = 1.6.r58.gde21b6a9
+	pkgrel = 1
+	epoch = 1
+	url = https://corebird.baedert.org/
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = vala
+	makedepends = git
+	makedepends = automake
+	depends = gtk3
+	depends = rest
+	depends = libgee
+	depends = sqlite3
+	depends = intltool
+	depends = gst-plugins-good
+	depends = gst-plugins-bad
+	depends = gst-libav
+	depends = gspell
+	provides = corebird
+	conflicts = corebird
+	source = corebird-git::git+https://github.com/baedert/corebird
+	sha1sums = SKIP
+
+pkgname = corebird-git
+

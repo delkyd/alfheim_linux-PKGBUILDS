@@ -1,0 +1,10 @@
+[Desktop Entry]
+Value=1.0
+Type=Application
+Categories=Game;
+Name=Bastion
+Comment=Supergiant Games
+GenericName=Action Role-Playing Game
+Icon=bastion
+Exec=bastion
+Terminal=false

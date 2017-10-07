@@ -1,0 +1,15 @@
+pkgbase = coccigrep
+	pkgdesc = coccigrep is a semantic grep for the C language based on coccinelle
+	pkgver = 1.16
+	pkgrel = 3
+	url = http://home.regit.org/software/coccigrep/
+	arch = any
+	license = GPL3
+	makedepends = python-setuptools
+	depends = python-setuptools
+	provides = coccigrep
+	source = coccigrep-1.16.tar.gz::https://github.com/regit/coccigrep/archive/v1.16.tar.gz
+	md5sums = cd8e0ad678ee15d6c8cd1a42a2447412
+
+pkgname = coccigrep
+

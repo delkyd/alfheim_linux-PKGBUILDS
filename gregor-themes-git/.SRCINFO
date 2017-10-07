@@ -1,0 +1,16 @@
+pkgbase = gregor-themes-git
+	pkgdesc = Linux theme based on Windows 10 colors and Mac OS X looks
+	pkgver = 0.1.r4.9719b2d
+	pkgrel = 1
+	url = https://github.com/gregor160300/Theme
+	arch = any
+	license = GPL3
+	makedepends = git
+	depends = gtk-engine-murrine
+	provides = gregor-themes
+	conflicts = gregor-themes
+	source = gregor-themes::git+https://github.com/gregor160300/Theme.git
+	md5sums = SKIP
+
+pkgname = gregor-themes-git
+

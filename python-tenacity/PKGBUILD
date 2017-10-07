@@ -1,0 +1,56 @@
+# $Id$
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgbase=python-tenacity
+pkgname=('python-tenacity' 'python2-tenacity')
+pkgver=4.4.0
+pkgrel=1
+pkgdesc='Retry code until it succeeeds'
+arch=('any')
+license=('Apache')
+url='https://github.com/jd/tenacity'
+makedepends=('python-setuptools' 'python2-setuptools' 'python2-futures' 'python2-monotonic'
+             'python-pbr' 'python2-pbr')
+checkdepends=('python-nose' 'python2-nose')
+source=("$pkgbase-$pkgver.tar.gz::https://github.com/jd/tenacity/archive/$pkgver.tar.gz")
+sha512sums=('d3a223fcd5595b265ccf65afc315353f72efa9fc849dad0b612ac72a38afb20b8062c1fa57ee9f36147953c22f40b5327ef80245a67d71e3f98b5818750c0c97')
+
+prepare() {
+  cp -a tenacity-$pkgver{,-py2}
+  sed -i '/monotonic/d' tenacity-$pkgver/requirements.txt
+  sed -i 's/from monotonic import monotonic/from time import monotonic/' tenacity-$pkgver/tenacity/{__init__,async}.py
+
+  export PBR_VERSION=$pkgver
+}
+
+build() {
+  cd "$srcdir"/tenacity-$pkgver
+  python setup.py build
+
+  cd "$srcdir"/tenacity-$pkgver-py2
+  python2 setup.py build
+}
+
+check() {
+  cd "$srcdir"/tenacity-$pkgver
+  python setup.py nosetests
+
+  cd "$srcdir"/tenacity-$pkgver-py2
+  python2 setup.py nosetests --ignore-files '.*async.py'
+}
+
+package_python-tenacity() {
+  depends=('python-six')
+
+  cd tenacity-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+}
+
+package_python2-tenacity() {
+  depends=('python2-six' 'python2-futures' 'python2-monotonic')
+
+  cd tenacity-$pkgver-py2
+  python2 setup.py install --root="$pkgdir" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

@@ -1,0 +1,38 @@
+pkgbase = apache-spark-git
+	pkgdesc = fast and general engine for large-scale data processing
+	pkgver = 2.1.0.SNAPSHOT.20160917.17622
+	pkgrel = 1
+	url = http://spark.apache.org
+	install = apache-spark.install
+	arch = any
+	license = APACHE
+	makedepends = git
+	depends = java-environment>=6
+	optdepends = python2: python2 support for pyspark
+	optdepends = ipython2: ipython2 support for pyspark
+	optdepends = python: python3 support for pyspark
+	optdepends = ipython: ipython3 support for pyspark
+	optdepends = r: support for sparkR
+	optdepends = rsync: support rsync spark binaries from master
+	optdepends = hadoop: run spark on hadoop
+	conflicts = apache-spark
+	backup = etc/apache-spark/spark-env.sh
+	source = git://git.apache.org/spark.git
+	source = apache-spark-master.service
+	source = apache-spark-slave@.service
+	source = spark-env.sh
+	source = spark-daemon-run.sh
+	source = run-master.sh
+	source = run-slave.sh
+	source = apache-spark.sh
+	md5sums = SKIP
+	md5sums = 9ffe1f9c4bb2ea4e5a75ab6469fe76d4
+	md5sums = 8d34bd4cc946f46625597ca606da8ab6
+	md5sums = 348c1550272ada89c982865c20dad9d6
+	md5sums = 8ff953f0436209b6190add59703a34f0
+	md5sums = 028472b82e9def7d5d409f008d064fe2
+	md5sums = 99115eedc453c9b8ca04cca2e32e4537
+	md5sums = 9b81f0be89236ffcfaeb9dc2c3bddf4a
+
+pkgname = apache-spark-git
+

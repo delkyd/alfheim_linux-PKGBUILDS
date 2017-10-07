@@ -1,0 +1,21 @@
+pkgbase = python-django-filter
+	pkgdesc = Django-filter is a reusable Django application for allowing users to filter querysets dynamically.
+	pkgver = 1.0.4
+	pkgrel = 1
+	url = https://github.com/carltongibson/django-filter
+	arch = any
+	license = BSD
+	makedepends = python-django>=1.8
+	makedepends = python-setuptools
+	makedepends = python2-django>=1.8
+	makedepends = python2-setuptools
+	options = !emptydirs
+	source = https://github.com/carltongibson/django-filter/archive/1.0.4.tar.gz
+	sha256sums = 6a1f900ab8a531629db8c71c9a3f4fcd22d219536ca3e705e05cddded887f0c7
+
+pkgname = python-django-filter
+	depends = python-django>=1.8
+
+pkgname = python2-django-filter
+	depends = python2-django>=1.8
+

@@ -1,0 +1,15 @@
+pkgbase = perl-path-tiny
+	pkgdesc = A small and fast Perl module for working with file paths
+	pkgver = 0.104
+	pkgrel = 1
+	url = https://metacpan.org/release/Path-Tiny
+	arch = any
+	license = PerlArtistic
+	license = GPL
+	depends = perl>=5.17.8
+	options = !emptydirs
+	source = http://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/Path-Tiny-0.104.tar.gz
+	md5sums = 17354181d9794df01be555b25114dd24
+
+pkgname = perl-path-tiny
+

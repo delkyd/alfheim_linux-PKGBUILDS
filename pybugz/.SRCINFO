@@ -1,0 +1,15 @@
+pkgbase = pybugz
+	pkgdesc = Bugzilla CLI interface
+	pkgver = 0.13
+	pkgrel = 1
+	url = https://github.com/williamh/pybugz
+	arch = any
+	license = GPL2
+	makedepends = python-setuptools
+	depends = python
+	options = !emptydirs
+	source = https://github.com/williamh/pybugz/archive/0.13.tar.gz
+	sha256sums = a99309d42b7ed2e52cc0f0f3adc72d1ddc9354e3d944af276f9a7da946665afb
+
+pkgname = pybugz
+

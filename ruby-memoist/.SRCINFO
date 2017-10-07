@@ -1,0 +1,21 @@
+pkgbase = ruby-memoist
+	pkgdesc = memoize methods invocation
+	pkgver = 0.15.0
+	pkgrel = 1
+	url = https://github.com/matthewrudy/memoist
+	arch = any
+	groups = pacgem
+	license = MIT
+	makedepends = ruby
+	makedepends = binutils
+	depends = ruby
+	optdepends = ruby-bundler: The best way to manage your application's dependencies (Development dependency)
+	optdepends = ruby-rake: Rake is a Make-like program implemented in Ruby (Development dependency)
+	optdepends = ruby-minitest: minitest provides a complete suite of testing facilities supporting TDD, BDD, mo... (Development dependency)
+	noextract = memoist-0.15.0.gem
+	options = !emptydirs
+	source = https://rubygems.org/gems/memoist-0.15.0.gem
+	sha256sums = b838329d7fe7e067e0d0717828db529126f44b8c0c527c884d162ebb4ecba379
+
+pkgname = ruby-memoist
+

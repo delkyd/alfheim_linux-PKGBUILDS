@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Netflix
+GenericName=Netflix
+Comment=Netflix Standalone Player
+Categories=Network;AudioVideo;Player;
+Exec=/usr/bin/netflix
+Icon=netflix.svg
+StartupNotify=false
+Terminal=false
+Type=Application
+

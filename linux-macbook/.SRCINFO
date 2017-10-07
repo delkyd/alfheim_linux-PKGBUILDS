@@ -1,0 +1,61 @@
+pkgbase = linux-macbook
+	pkgver = 4.13.4
+	pkgrel = 1
+	url = https://www.kernel.org/
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	makedepends = xmlto
+	makedepends = kmod
+	makedepends = inetutils
+	makedepends = bc
+	makedepends = libelf
+	options = !strip
+	source = https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.13.tar.xz
+	source = https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.13.tar.sign
+	source = https://www.kernel.org/pub/linux/kernel/v4.x/patch-4.13.4.xz
+	source = https://www.kernel.org/pub/linux/kernel/v4.x/patch-4.13.4.sign
+	source = config.i686
+	source = config.x86_64
+	source = 90-linux.hook
+	source = linux.preset
+	source = macbook-wakeup.service
+	source = apple-gmux.patch
+	source = PCI-Work-around-poweroff-suspend-to-RAM-issue-on-Mac.patch
+	source = RFC-PCI-Workaround-to-enable-poweroff-on-Mac-Pro-11.patch
+	source = RFC-v2-PCI-Workaround-to-enable-poweroff-on-Mac-Pro-11.patch
+	source = intel-pstate-backport.patch
+	validpgpkeys = ABAF11C65A2970B130ABE3C479BE3E4300411886
+	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
+	validpgpkeys = A55A1B6C098962D84AE9B57016A33C9959A40DED
+	sha256sums = 2db3d6066c3ad93eb25b973a3d2951e022a7e975ee2fa7cbe5bddf84d9a49a2c
+	sha256sums = SKIP
+	sha256sums = 1e34c35dfbd3b7451a7b3eb93c5e342acc006b5d1906b5e542a8f203723bb8d6
+	sha256sums = SKIP
+	sha256sums = 73278ee56c5d3855e67ff50caa77a7cb47fb29ebd8f9b7ca9ebee4e2d446529c
+	sha256sums = 1b9cbe1c25653d563515344a7c6cc9f79447ac9274fcf4de0007228e979b55dd
+	sha256sums = 834bd254b56ab71d73f59b3221f056c72f559553c04718e350ab2a3e2991afe0
+	sha256sums = ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65
+	sha256sums = c5a714823c3418692bc5c212dd5d094a0e2ae6147d6726822911f1c26e3a1d1b
+	sha256sums = e74dbeaa3fd04dbf93ef4498015234bdb65351857e07c03c00cee69fcfc844b4
+	sha256sums = 43bcb45f99da0242ec5b340631d0777f302a5f356ef3ccec8d1d30de5a3a025a
+	sha256sums = 6c046234fcca75d0334f3f92d245be02b5a5fd202273af9d393602a4140df372
+	sha256sums = 09189eb269a9fd16898cf90a477df23306236fb897791e8d04e5a75d5007bbff
+	sha256sums = 3d9fdbb4bee270efa6eef1d8e40a5ae562a87d5a2edae629e0829cc51714de13
+
+pkgname = linux-macbook
+	pkgdesc = The Linux-macbook kernel and modules
+	install = linux.install
+	depends = coreutils
+	depends = linux-firmware
+	depends = kmod
+	depends = mkinitcpio>=0.7
+	optdepends = crda: to set the correct wireless channels of your country
+	backup = etc/mkinitcpio.d/linux-macbook.preset
+
+pkgname = linux-macbook-headers
+	pkgdesc = Header files and scripts for building modules for Linux-macbook kernel
+
+pkgname = linux-macbook-docs
+	pkgdesc = Kernel hackers manual - HTML documentation that comes with the Linux-macbook kernel
+

@@ -1,0 +1,13 @@
+post_install() {
+	cat <<-EOF
+	---------------------------------------------------
+	Mein CEWE FOTOBUCH ist ein Produkt und Eigentum der
+	CEWE Stiftung & Co. KGaA. Die Nutzungsbedingen sind
+	in /usr/share/licenses/cewe-fotobuch/EULA.txt.
+	WENN SIE DIESE SOFTWARE INSTALLIEREN, ERKLÄREN SIE
+	SICH MIT DEN BEDINGUNGEN DIESES LIZENZABKOMMENS
+	EINVERSTANDEN
+	---------------------------------------------------
+	EOF
+
+}

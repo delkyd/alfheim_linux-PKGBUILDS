@@ -1,0 +1,15 @@
+pkgbase = kpatch-git
+	pkgdesc = dynamic kernel patching tool
+	pkgver = r1095.4e1a596
+	pkgrel = 1
+	url = https://github.com/dynup/kpatch
+	arch = x86_64
+	license = GPL
+	makedepends = gcc
+	makedepends = git
+	depends = elfutils
+	source = git+https://github.com/dynup/kpatch.git
+	md5sums = SKIP
+
+pkgname = kpatch-git
+

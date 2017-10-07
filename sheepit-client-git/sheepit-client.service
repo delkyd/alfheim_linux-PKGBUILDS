@@ -1,0 +1,13 @@
+[Unit]
+Description=Client for the free and distributed render farm SheepIt
+Documentation=https://www.sheepit-renderfarm.com/
+After=network.target
+
+[Service]
+User=sheepit-client
+ExecStart=/usr/bin/sheepit-client -config /etc/conf.d/sheepit-client -ui text
+RestartSec=60
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

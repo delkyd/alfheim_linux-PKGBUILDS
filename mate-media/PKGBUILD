@@ -1,0 +1,31 @@
+# Contributor: Martin Wimpress <code@flexion.org>
+
+pkgname=mate-media
+pkgver=1.18.1
+pkgrel=1
+url="http://mate-desktop.org"
+pkgdesc="MATE Media Tools"
+arch=('i686' 'x86_64')
+license=('GPL')
+depends=('libcanberra' 'libmatemixer' 'mate-desktop')
+makedepends=('intltool')
+source=("http://pub.mate-desktop.org/releases/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz")
+groups=('mate-extra')
+conflicts=('mate-media-gtk3')
+replaces=('mate-media-gtk3')
+sha1sums=('3de4b0cfad7ac1bbf4b46363a8db78637e8fade6')
+
+build() {
+    cd ${pkgname}-${pkgver}
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --libexecdir=/usr/lib/${pkgname} \
+        --localstatedir=/var
+    make
+}
+
+package() {
+    cd ${pkgname}-${pkgver}
+    make DESTDIR="${pkgdir}" install
+}

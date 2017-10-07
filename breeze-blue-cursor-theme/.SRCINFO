@@ -1,0 +1,13 @@
+pkgbase = breeze-blue-cursor-theme
+	pkgdesc = Breeze Blue cursor theme.
+	pkgver = 1.0
+	pkgrel = 3
+	url = https://kver.wordpress.com/2015/01/09/curses-i-mean-cursors/
+	arch = any
+	license = GPL
+	makedepends = unzip
+	source = https://code.jpope.org/jpope/breeze_cursor_sources/raw/master/breeze-blue-cursor-theme.zip
+	sha256sums = 76fd9fbde97601227419d5a3b678ea20866e114bfb96e56e142a49670e8fac7b
+
+pkgname = breeze-blue-cursor-theme
+

@@ -1,0 +1,12 @@
+pkgbase = jupyter-completion
+	pkgdesc = ZSH completion for several jupyter commands
+	pkgver = 4.3.0
+	pkgrel = 1
+	url = https://github.com/jupyter/jupyter_core/tree/master/examples
+	arch = any
+	license = BSD
+	source = https://files.pythonhosted.org/packages/source/j/jupyter_core/jupyter_core-4.3.0.tar.gz
+	md5sums = 18819511a809afdeed9a995a9c27bcfb
+
+pkgname = jupyter-completion
+

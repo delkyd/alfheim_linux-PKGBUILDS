@@ -1,0 +1,19 @@
+pkgbase = projectx-cvs
+	pkgdesc = DVB demux tool for repairing and analyzing different stream types
+	pkgver = 0.91.0.10.r20110331
+	pkgrel = 2
+	url = http://sourceforge.net/projects/project-x
+	arch = any
+	license = GPL
+	makedepends = cvs
+	makedepends = java-environment
+	depends = java-environment
+	depends = bash
+	provides = projectx
+	conflicts = projectx
+	options = !makeflags
+	source = projectx
+	md5sums = d2c2582e21fae4a7c99ce26589800eab
+
+pkgname = projectx-cvs
+

@@ -1,0 +1,28 @@
+# Maintainer: Clar Charr <clar@charr.xyz>
+_pkgbase=fontconfig
+pkgname=clarcharr-$_pkgbase
+pkgver=3.1.0
+pkgrel=2
+pkgdesc="Clar's font configuration."
+arch=(any)
+url="https://github.com/clarcharr/config-$_pkgbase"
+license=(CC0)
+depends=(fontconfig
+         adobe-source-{{code,sans,serif}-pro,han-sans-{cn,jp,kr,otc,tw}}-fonts
+         {otf,ttf}-fira-{code,mono,sans}
+         ttf-twemoji-color
+         xorg-xrdb)
+groups=(clarcharr-config)
+source=(git+https://github.com/clarcharr/config-$_pkgbase#$pgkver)
+sha256sums=(SKIP)
+validpgpkeys=(4BDA23A98EE4E049CBC3BA6C69DA5B388573EE35)
+_dirs=(etc)
+prepare() {
+  cd "config-$_pkgbase" || exit 1
+  git tag --verify $pkgver
+}
+package() {
+  for dir in "${_dirs[@]}"; do
+    cp -R "$srcdir/config-$_pkgbase/$dir" -T "$pkgdir/$dir"
+  done
+}

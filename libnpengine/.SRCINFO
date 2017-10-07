@@ -1,0 +1,23 @@
+pkgbase = libnpengine
+	pkgdesc = Free implementation of Nitroplus Visual Novel game engine
+	pkgver = 0.5.1
+	pkgrel = 1
+	url = http://dev.pulsir.eu/krofna/
+	arch = i686
+	arch = x86_64
+	license = LGPL3
+	makedepends = cmake
+	makedepends = boost
+	depends = libnpa=0.5.1
+	depends = boost-libs
+	depends = sdl2
+	depends = glew
+	depends = libjpeg-turbo
+	depends = libpng
+	depends = gst-plugins-base-libs
+	depends = pango
+	source = libnpengine-0.5.1.tar.gz::https://github.com/FGRE/libnpengine-new/archive/v0.5.1.tar.gz
+	sha256sums = 11041427c5156da235a47fbdc03868653422b10557c77ef717b51e23e1e8a4a5
+
+pkgname = libnpengine
+

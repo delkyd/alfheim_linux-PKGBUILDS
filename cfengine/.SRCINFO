@@ -1,0 +1,36 @@
+pkgbase = cfengine
+	pkgdesc = Automated suite of programs for configuring and maintaining Unix-like computers.
+	pkgver = 3.10.1
+	pkgrel = 2
+	url = http://www.cfengine.org
+	install = cfengine.install
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = which
+	depends = lmdb
+	depends = pcre
+	depends = libxml2
+	depends = pam
+	depends = libyaml
+	depends = curl
+	depends = openssl-1.0
+	optdepends = libvirt
+	optdepends = postgresql-libs
+	optdepends = libmariadbclient
+	optdepends = acl
+	source = cfengine-3.10.1.tar.gz::https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-3.10.1.tar.gz
+	source = cfengine-masterfiles-3.10.1.tar.gz::https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-masterfiles-3.10.1.tar.gz
+	source = cf-execd.service
+	source = cf-monitord.service
+	source = cf-serverd.service
+	source = cfengine3.service
+	md5sums = ae7e2dc8b20faa89089002c9b9fd4e0a
+	md5sums = 7773662b93fd19a80caf9520faafeb22
+	md5sums = 6edac71eaac0a19fc5b8129f17d82bb2
+	md5sums = 199a7867b60a3e4013da4ac42343e22e
+	md5sums = f8783637895f6f3dd19a6ba689181d41
+	md5sums = 4b89518da032b45073e46a993fd7fe26
+
+pkgname = cfengine
+

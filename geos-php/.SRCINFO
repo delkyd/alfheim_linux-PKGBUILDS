@@ -1,0 +1,15 @@
+pkgbase = geos-php
+	pkgdesc = PHP bindings for geos
+	pkgver = 3.5.0
+	pkgrel = 1
+	url = http://trac.osgeo.org/geos/
+	arch = i686
+	arch = x86_64
+	license = LGPL
+	makedepends = php
+	depends = geos
+	source = http://download.osgeo.org/geos/geos-3.5.0.tar.bz2
+	sha256sums = 49982b23bcfa64a53333dab136b82e25354edeb806e5a2e2f5b8aa98b1d0ae02
+
+pkgname = geos-php
+

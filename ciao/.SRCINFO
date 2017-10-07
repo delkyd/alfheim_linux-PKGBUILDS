@@ -1,0 +1,20 @@
+pkgbase = ciao
+	pkgdesc = Ciao - Cloud Integrated Advanced Orchestrator
+	pkgver = 82
+	pkgrel = 3
+	url = https://github.com/01org/ciao
+	arch = x86_64
+	arch = i686
+	license = Apache
+	makedepends = git
+	makedepends = go
+	depends = ceph
+	depends = qemu
+	depends = libisoburn
+	depends = psmisc
+	depends = docker
+	options = !strip
+	options = !emptydirs
+
+pkgname = ciao
+

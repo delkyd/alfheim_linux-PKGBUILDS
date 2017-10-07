@@ -1,0 +1,15 @@
+pkgbase = dt-bin
+	pkgdesc = DNS tool that displays information about your domain
+	pkgver = 0.0.9
+	pkgrel = 1
+	url = https://github.com/42wim/dt
+	arch = i686
+	arch = x86_64
+	license = Apache
+	source_i686 = https://github.com/42wim/dt/releases/download/v0.0.9/dt-linux32
+	sha512sums_i686 = 8648bddeda25d8b1b16fa8fd0691b2621b6371154f237fabf986d0800fcc45fdb798088260fd95c2638b62ad472eea963305fa8f83aee6732ccf8581b21af8d5
+	source_x86_64 = https://github.com/42wim/dt/releases/download/v0.0.9/dt-linux64
+	sha512sums_x86_64 = e927069377a3f8f6eee3639aaabcbbc3778251dd7300bccbcbf8d7faa1dff0b48d7e8ae4c0a56ffea5b4fb5d04853a6649ec3e1bb35cbc6edab86e915320d4a4
+
+pkgname = dt-bin
+

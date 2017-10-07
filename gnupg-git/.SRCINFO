@@ -1,0 +1,35 @@
+pkgbase = gnupg-git
+	pkgdesc = Complete and free implementation of the OpenPGP standard - development
+	pkgver = 2.2.0+12+g9f5e50e7c
+	pkgrel = 2
+	url = http://www.gnupg.org/
+	install = gnupg-git.install
+	arch = i686
+	arch = x86_64
+	license = GPL
+	checkdepends = openssh
+	makedepends = git
+	makedepends = libldap
+	makedepends = libusb-compat
+	depends = npth-git
+	depends = libgpg-error
+	depends = libgcrypt-git
+	depends = libksba
+	depends = libassuan-git
+	depends = pinentry
+	depends = bzip2
+	depends = readline
+	depends = gnutls
+	depends = sqlite
+	optdepends = libldap: gpg2keys_ldap
+	optdepends = libusb-compat: scdaemon
+	provides = gnupg=2.2.0+12+g9f5e50e7c
+	provides = dirmngr
+	conflicts = gnupg2
+	conflicts = gnupg
+	conflicts = dirmngr
+	source = git://git.gnupg.org/gnupg.git
+	sha1sums = SKIP
+
+pkgname = gnupg-git
+

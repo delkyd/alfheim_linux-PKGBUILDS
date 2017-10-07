@@ -1,0 +1,16 @@
+PACKAGE_NAME=@PKGNAME@
+PACKAGE_VERSION=@PKGVER@
+MAKE[0]="make KVERSION=$kernelver MODULEBUILDDIR=$dkms_tree/$PACKAGE_NAME/$PACKAGE_VERSION/build"
+CLEAN[0]="make clean"
+
+BUILT_MODULE_NAME[0]="vmblock"
+BUILT_MODULE_NAME[1]="vmci"
+BUILT_MODULE_NAME[2]="vmmon"
+BUILT_MODULE_NAME[3]="vmnet"
+BUILT_MODULE_NAME[4]="vsock"
+DEST_MODULE_LOCATION[0]="/kernel/fs/vmblock"
+DEST_MODULE_LOCATION[1]="/kernel/drivers/misc"
+DEST_MODULE_LOCATION[2]="/kernel/drivers/misc"
+DEST_MODULE_LOCATION[3]="/kernel/drivers/net"
+DEST_MODULE_LOCATION[4]="/kernel/net/vmw_vsock"
+AUTOINSTALL="YES"

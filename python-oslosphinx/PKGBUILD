@@ -1,0 +1,46 @@
+# $Id$
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgbase=python-oslosphinx
+pkgname=(python-oslosphinx python2-oslosphinx)
+pkgver=4.17.0
+pkgrel=1
+pkgdesc="OpenStack Sphinx Extensions and Theme"
+arch=('any')
+url="https://github.com/openstack/oslosphinx"
+license=('Apache')
+makedepends=('python-setuptools' 'python2-setuptools' 'python-pbr' 'python2-pbr'
+             'python-requests' 'python2-requests' 'python-six' 'python2-six')
+checkdepends=('python-sphinx' 'python2-sphinx')
+source=("$pkgbase-$pkgver.tar.gz::https://github.com/openstack/oslosphinx/archive/$pkgver.tar.gz")
+sha512sums=('1bae6b91b3d7af90b4629e682cd89507cee1ceb34ae71277e1e1b25868e35903f4fef42f2b7adb09ffd259beb30c408fc9f1f2db1d5946e0a4ea4c479c18c257')
+
+prepare() {
+  cp -a oslosphinx-$pkgver{,-py2}
+
+  export PBR_VERSION=$pkgver
+}
+
+build() {
+  cd "$srcdir"/oslosphinx-$pkgver
+  python setup.py build
+
+  cd "$srcdir"/oslosphinx-$pkgver-py2
+  python2 setup.py build
+}
+
+package_python-oslosphinx() {
+  depends=('python-six' 'python-requests')
+
+  cd "$srcdir"/oslosphinx-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+}
+
+package_python2-oslosphinx() {
+  depends=('python2-six' 'python2-requests')
+
+  cd "$srcdir"/oslosphinx-$pkgver-py2
+  python2 setup.py install --root="$pkgdir" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

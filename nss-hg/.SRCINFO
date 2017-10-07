@@ -1,0 +1,29 @@
+pkgbase = nss-hg
+	pkgdesc = Mozilla Network Security Services
+	pkgver = r13546.fff2c933097d
+	pkgrel = 1
+	url = https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS
+	arch = i686
+	arch = x86_64
+	license = MPL
+	license = GPL
+	makedepends = gyp
+	makedepends = perl
+	makedepends = python
+	makedepends = ninja
+	makedepends = mercurial
+	depends = nspr>=4.15
+	depends = sqlite
+	depends = zlib
+	depends = sh
+	depends = p11-kit
+	provides = nss
+	conflicts = nss
+	options = !strip
+	options = !makeflags
+	options = staticlibs
+	source = hg+https://hg.mozilla.org/projects/nss
+	sha256sums = SKIP
+
+pkgname = nss-hg
+

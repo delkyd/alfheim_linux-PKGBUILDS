@@ -1,0 +1,36 @@
+pkgbase = defcon
+	pkgdesc = Global Thermonuclear War game
+	pkgver = 1.60
+	pkgrel = 2
+	url = http://www.introversion.co.uk/defcon/
+	install = defcon.install
+	arch = i686
+	arch = x86_64
+	license = custom
+	depends = glu
+	depends = mesa
+	depends = sdl
+	depends = alsa-plugins
+	depends = libpulse
+	depends = desktop-file-utils
+	depends = gtk-update-icon-cache
+	depends = hicolor-icon-theme
+	depends = xdg-utils
+	noextract = defcon-1.60.sh
+	source = defcon-1.60.sh::http://www.introversion.co.uk/defcon/downloads/defcon.sh
+	source = defcon-16.png
+	source = defcon-32.png
+	source = defcon-48.png
+	source = defcon-64.png
+	source = defcon-128.png
+	source = defcon.desktop
+	sha256sums = 1259314c58ec99a6e83cb540f40008d209d1cbb34339fb25f0d66c0107d69a76
+	sha256sums = 07ef73da65038dd161e2b3364f216b96548ad74b1f8d5aeb0cd0f3171a3d8d5a
+	sha256sums = 8d050bb639082c337cc440d396972e5c24a92b054b58b09bf38adfa99437214a
+	sha256sums = 226643a2b02468773337b2f98d4201698e98870c4a939915b9a8646b9d7eae5d
+	sha256sums = 604feca6e953c0e028ea9585874abfa06409b5ce1a64310737678dd32e83c0bd
+	sha256sums = bf94e634f6b7cc2727af8a11111fa1741a01a553dee3973f225e1158727cece7
+	sha256sums = 90a8f19391f25580c40c4c7b3fe073e4caa1f3232c912e1b81da32ba95e1eaed
+
+pkgname = defcon
+

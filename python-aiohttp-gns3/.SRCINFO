@@ -1,0 +1,21 @@
+pkgbase = python-aiohttp-gns3
+	pkgdesc = http client/server for asyncio (GNS3)
+	pkgver = 2.2.0
+	pkgrel = 2
+	url = https://aiohttp.readthedocs.io/
+	arch = any
+	groups = gns3
+	license = Apache
+	makedepends = python-setuptools
+	depends = python
+	depends = python-yarl
+	depends = python-chardet
+	depends = python-multidict-gns3
+	depends = python-async-timeout>=1.1.0
+	provides = python-aiohttp
+	conflicts = python-aiohttp
+	source = https://files.pythonhosted.org/packages/source/a/aiohttp/aiohttp-2.2.0.tar.gz
+	md5sums = e50ea3d70f2d821b7e40442fb470e8ef
+
+pkgname = python-aiohttp-gns3
+

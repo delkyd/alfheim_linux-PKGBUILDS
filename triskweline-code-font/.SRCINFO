@@ -1,0 +1,17 @@
+pkgbase = triskweline-code-font
+	pkgdesc = A monospaced bitmap font, modified from Triskweline for better code readability.
+	pkgver = 7.ee35ac6
+	pkgrel = 1
+	url = https://github.com/ideasman42/triskweline-code-font
+	install = triskweline-code-font.install
+	arch = any
+	license = CC0
+	makedepends = xorg-bdftopcf
+	depends = fontconfig
+	depends = xorg-fonts-encodings
+	depends = xorg-font-utils
+	source = git://github.com/ideasman42/triskweline-code-font.git
+	md5sums = SKIP
+
+pkgname = triskweline-code-font
+

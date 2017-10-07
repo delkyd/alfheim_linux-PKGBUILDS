@@ -1,0 +1,18 @@
+pkgbase = pup-git
+	pkgdesc = Parsing HTML at the command line
+	pkgver = r97.b058f91
+	pkgrel = 1
+	epoch = 1
+	url = https://github.com/EricChiang/pup
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	makedepends = git
+	makedepends = go
+	provides = pup
+	conflicts = pup
+	source = git://github.com/EricChiang/pup.git
+	md5sums = SKIP
+
+pkgname = pup-git
+

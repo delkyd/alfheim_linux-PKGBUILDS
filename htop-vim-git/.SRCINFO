@@ -1,0 +1,24 @@
+pkgbase = htop-vim-git
+	pkgdesc = Interactive text-mode process viewer. Patched for vim keybindings
+	pkgver = 981.e3f65c8
+	pkgrel = 1
+	url = https://github.com/hishamhm/htop
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = git
+	makedepends = python2
+	depends = ncurses
+	optdepends = lsof: list open files for running process
+	optdepends = strace: attach to running process
+	provides = htop
+	conflicts = htop
+	conflicts = htop-git
+	options = !emptydirs
+	source = git+https://github.com/hishamhm/htop.git
+	source = vim-keybindings.patch
+	sha256sums = SKIP
+	sha256sums = 1fb8e8bfa0575b99a50e49f1f853e921bba457598b22942a1898f5be772e0c91
+
+pkgname = htop-vim-git
+

@@ -1,0 +1,73 @@
+diff -Naur package.pristine/bin/packages/build.sh package.new/bin/packages/build.sh
+--- package.pristine/bin/packages/build.sh	2017-07-27 22:03:27.000000000 +0200
++++ package.new/bin/packages/build.sh	2017-07-29 01:42:41.079439969 +0200
+@@ -168,28 +168,28 @@
+     cd ../
+ fi
+ 
+-if [[ $RADIUM_QT_VERSION == 5 ]]
+-then
+-
+-    rm -fr xcb-proto-1.12/
+-    tar xvjf xcb-proto-1.12.tar.bz2
+-    cd xcb-proto-1.12/
+-    mkdir install
+-    ./configure --prefix=`pwd`/install PYTHON=`which python2`
+-    make
+-    make install
+-    cd ..
+-    
+-    rm -fr libxcb-1.12
+-    tar xvjf libxcb-1.12.tar.bz2 
+-    cd libxcb-1.12
+-    patch -p1 <../libxcb-1.12.patch
+-    export PKG_CONFIG_PATH=`pwd`/../xcb-proto-1.12/install/lib/pkgconfig:$PKG_CONFIG_PATH
+-    CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" CPPFLAGS="$CXXFLAGS" ./configure PYTHON=`which python2`
+-    CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" CPPFLAGS="$CXXFLAGS" make
+-    cd ..
+-    
+-fi
++# if [[ $RADIUM_QT_VERSION == 5 ]]
++# then
++# 
++#     rm -fr xcb-proto-1.12/
++#     tar xvjf xcb-proto-1.12.tar.bz2
++#     cd xcb-proto-1.12/
++#     mkdir install
++#     ./configure --prefix=`pwd`/install PYTHON=`which python2`
++#     make
++#     make install
++#     cd ..
++#     
++#     rm -fr libxcb-1.12
++#     tar xvjf libxcb-1.12.tar.bz2 
++#     cd libxcb-1.12
++#     patch -p1 <../libxcb-1.12.patch
++#     export PKG_CONFIG_PATH=`pwd`/../xcb-proto-1.12/install/lib/pkgconfig:$PKG_CONFIG_PATH
++#     CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" CPPFLAGS="$CXXFLAGS" ./configure PYTHON=`which python2`
++#     CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" CPPFLAGS="$CXXFLAGS" make
++#     cd ..
++#     
++# fi
+ 
+ 
+ # Build faust last since we reset the build flags.
+diff -Naur package.pristine/Qt/Qt_Main.cpp package.new/Qt/Qt_Main.cpp
+--- package.pristine/Qt/Qt_Main.cpp	2017-07-27 22:03:27.000000000 +0200
++++ package.new/Qt/Qt_Main.cpp	2017-07-29 01:41:16.904955284 +0200
+@@ -3039,6 +3039,7 @@
+   
+ #endif // !defined(RELEASE)
+ 
++/*
+ #if defined(FOR_LINUX)
+   {
+     QString name(dlpi_name);
+@@ -3050,6 +3051,7 @@
+     }
+   }
+ #endif
++*/
+  
+  
+ 

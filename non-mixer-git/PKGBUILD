@@ -1,0 +1,31 @@
+# Maintainer: darkfeline@felesatra.moe
+
+pkgname=non-mixer-git
+pkgver=1.1.0.r709.g1ef382f
+pkgrel=1
+pkgdesc="Jack audio mixer from the NON DAW"
+arch=('x86_64' 'i686')
+url="http://non.tuxfamily.org/"
+license=('GPL2')
+provides=('non-mixer')
+conflicts=('non-mixer')
+depends=('ntk-git' 'jack' 'liblo' 'ladspa' 'liblrdf')
+makedepends=('git')
+source=($pkgname'::git+git://git.tuxfamily.org/gitroot/non/non.git')
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$pkgname"
+  git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/^non-daw-v//;s/-/./g'
+}
+
+build() {
+  cd "$srcdir/$pkgname"
+  ./waf configure --prefix=/usr --project=mixer
+  ./waf
+}
+
+package() {
+  cd "$srcdir/$pkgname"
+  ./waf install --destdir="$pkgdir"
+}

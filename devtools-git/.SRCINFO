@@ -1,0 +1,22 @@
+pkgbase = devtools-git
+	pkgdesc = Tools for Arch Linux package maintainers
+	pkgver = 20170914
+	pkgrel = 2
+	url = https://git.archlinux.org/devtools.git/
+	arch = any
+	license = GPL
+	depends = namcap
+	depends = openssh
+	depends = subversion
+	depends = rsync
+	depends = arch-install-scripts
+	depends = git
+	depends = bzr
+	depends = mercurial
+	provides = devtools=20170914
+	conflicts = devtools
+	source = devtools-git::git+https://git.archlinux.org/devtools.git
+	md5sums = SKIP
+
+pkgname = devtools-git
+

@@ -1,0 +1,11 @@
+--- Makefile.old	2017-04-12 15:20:45.296682169 -0600
++++ Makefile	2017-04-12 15:20:52.366768324 -0600
+@@ -52,7 +52,7 @@
+ 	MMNAME	= mmx64
+ 	FBNAME	= fbx64
+ 	SHIMNAME= shimx64
+-	EFI_PATH:=/usr/lib64/gnuefi
++	EFI_PATH:=/usr/lib64
+ 	LIB_PATH:=/usr/lib64
+ 
+ endif

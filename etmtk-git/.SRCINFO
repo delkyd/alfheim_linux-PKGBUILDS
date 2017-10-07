@@ -1,0 +1,17 @@
+pkgbase = etmtk-git
+	pkgdesc = Manage events and tasks using simple text files.
+	pkgver = r1095.15ede9e
+	pkgrel = 1
+	url = http://people.duke.edu/~dgraham/etmtk/
+	arch = any
+	license = GPL
+	makedepends = python-setuptools
+	depends = tk
+	depends = python-dateutil
+	depends = python-yaml
+	optdepends = python-icalendar: iCalendar support
+	source = git+https://github.com/dagraham/etm-tk.git
+	md5sums = SKIP
+
+pkgname = etmtk-git
+

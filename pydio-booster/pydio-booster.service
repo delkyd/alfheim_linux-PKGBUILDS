@@ -1,0 +1,16 @@
+[Unit]
+Description=Pydio Booster
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+User=http
+Group=http
+#WorkingDirectory=/srv/gogs/
+ExecStart=/usr/share/pydio/pydio-booster -conf /etc/pydio/pydio.conf
+Restart=always
+#Environment=USER=http HOME=/
+
+[Install]
+WantedBy=multi-user.target

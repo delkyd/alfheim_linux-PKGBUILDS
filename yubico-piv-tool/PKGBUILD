@@ -1,0 +1,24 @@
+# Maintainer: travisghansen <travisghansen@yahoo.com>
+
+pkgname=yubico-piv-tool
+pkgver=1.4.3
+pkgrel=1
+pkgdesc="Tool to interact with the PIV applet on a YubiKey NEO"
+arch=('i686' 'x86_64')
+license=('GPL3')
+depends=('pcsclite' 'openssl-1.0')
+url=https://developers.yubico.com/yubico-piv-tool/
+source=("${pkgname}-${pkgver}.tar.gz::https://developers.yubico.com/yubico-piv-tool/Releases/${pkgname}-${pkgver}.tar.gz")
+md5sums=('b40773342c7927e211fd8221d99f299d')
+options=(!libtool)
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+  DESTDIR="${pkgdir}" make install
+}

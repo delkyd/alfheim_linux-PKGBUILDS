@@ -1,0 +1,16 @@
+pkgbase = rpcemu
+	pkgdesc = Emulator of the Acorn Archimedes and RiscPC computers.
+	pkgver = 0.8.15
+	pkgrel = 2
+	url = http://www.marutan.net/rpcemu/
+	install = rpcemu.install
+	changelog = rpcemu.changelog
+	arch = x86_64
+	arch = i686
+	license = GPL2
+	depends = allegro4
+	source = http://www.marutan.net/rpcemu/cgi/download.php?sFName=0.8.15/rpcemu-0.8.15.tar.gz
+	md5sums = bffb5bbb81391c14f210facccd0f40b6
+
+pkgname = rpcemu
+

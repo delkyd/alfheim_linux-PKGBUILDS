@@ -1,0 +1,18 @@
+pkgbase = fraqtive
+	pkgdesc = Program for drawing Mandelbrot and Julia fractals
+	pkgver = 0.4.8
+	pkgrel = 1
+	url = http://fraqtive.mimec.org/
+	install = fraqtive.install
+	arch = i686
+	arch = x86_64
+	license = GPL
+	depends = hicolor-icon-theme
+	depends = qt4
+	depends = glu
+	depends = xdg-utils
+	source = http://downloads.sourceforge.net/fraqtive/fraqtive-0.4.8.tar.bz2
+	sha256sums = dbb21b5e6305cbf02c27aaedb12c5125ac873600bce10d12e88b2305a2083cd7
+
+pkgname = fraqtive
+

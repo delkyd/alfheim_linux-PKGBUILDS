@@ -1,0 +1,18 @@
+pkgbase = md2pdf
+	pkgdesc = A Python Markdown to PDF Converter
+	pkgver = v0.0.3.r0.gac9bce4
+	pkgrel = 1
+	url = https://github.com/walwe/md2pdf
+	arch = any
+	license = MIT
+	makedepends = python
+	makedepends = python-setuptools
+	makedepends = git
+	depends = python-click
+	depends = wkhtmltopdf
+	depends = python-markdown2
+	source = git+https://github.com/walwe/md2pdf
+	sha1sums = SKIP
+
+pkgname = md2pdf
+

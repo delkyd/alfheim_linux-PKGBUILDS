@@ -1,0 +1,21 @@
+pkgbase = thefile
+	pkgdesc = Simple File Manager
+	pkgver = 3.1
+	pkgrel = 0
+	url = https://github.com/vicr123/thefile
+	arch = x86_64
+	license = GPL2
+	makedepends = git
+	makedepends = clang
+	depends = kwidgetsaddons
+	depends = xdg-utils
+	depends = qt5-base
+	optdepends = jmtpfs: for MTP support
+	optdepends = ifuse: for iOS support
+	optdepends = usbmuxd: for iOS support
+	optdepends = libplist: for iOS support
+	source = thefile-3.1::git+https://github.com/vicr123/thefile#branch=master
+	md5sums = SKIP
+
+pkgname = thefile
+

@@ -1,0 +1,20 @@
+pkgbase = wine-pixi2
+	pkgdesc = Digipen Sophomore Game - Final Version
+	pkgver = 2.0
+	pkgrel = 3
+	url = http://games.digipen.edu/games/pixi
+	arch = any
+	license = Free to use and share
+	depends = wine
+	depends = lib32-openal
+	source = http://acidhub.click/downloads/pixi-2.zip
+	source = pixi2.desktop
+	source = pixi2.sh
+	source = LICENSE
+	sha256sums = 0af3adebfa8d905414681da4167156cab476017f7e7eecd6bef076fac7804bfc
+	sha256sums = 1df73c58999fbf4902b8ef280f8f622fa700c5a4ab8631b378392bd617a3379a
+	sha256sums = ee187f4cac804123afa902d38d27399b6d3dc0e2e28882c18c25d618e11b8e3b
+	sha256sums = 27635d4ed7740d185172f475ef14891c888127640a0f6bd73356bc4e2062ce03
+
+pkgname = wine-pixi2
+

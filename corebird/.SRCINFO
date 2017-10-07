@@ -1,0 +1,31 @@
+pkgbase = corebird
+	pkgdesc = Native Gtk+ Twitter Client
+	pkgver = 1.6
+	pkgrel = 1
+	url = https://corebird.baedert.org/
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = vala>=0.28
+	makedepends = automake
+	depends = gtk3>=3.20
+	depends = gettext>=0.19.7
+	depends = glib2>=2.44
+	depends = sqlite3
+	depends = libtool
+	depends = libsoup>=2.4
+	depends = json-glib
+	depends = intltool>=0.40
+	depends = gstreamer>=1.6
+	depends = gst-plugins-base
+	depends = gst-plugins-good
+	depends = gst-plugins-bad
+	depends = gst-libav
+	depends = gspell>=1.0
+	depends = librsvg
+	conflicts = corebird-git
+	source = https://github.com/baedert/corebird/archive/1.6.tar.gz
+	sha1sums = fd6423581764f9ec0e8949906f9d4537f03b6490
+
+pkgname = corebird
+

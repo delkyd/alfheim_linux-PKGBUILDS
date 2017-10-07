@@ -1,0 +1,16 @@
+pkgbase = readosm
+	pkgdesc = Library to extract valid data from within an Open Street Map input file
+	pkgver = 1.0.0e
+	pkgrel = 1
+	url = https://www.gaia-gis.it/fossil/readosm/index
+	arch = i686
+	arch = x86_64
+	license = MPL
+	depends = expat
+	depends = zlib
+	options = !libtool
+	source = http://www.gaia-gis.it/gaia-sins/readosm-sources/readosm-1.0.0e.tar.gz
+	sha256sums = 1fd839e05b411db6ba1ca6199bf3334ab9425550a58e129c07ad3c6d39299acf
+
+pkgname = readosm
+

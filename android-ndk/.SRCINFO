@@ -1,0 +1,23 @@
+pkgbase = android-ndk
+	pkgdesc = Android C/C++ developer kit
+	pkgver = r15.c
+	pkgrel = 2
+	url = https://developer.android.com/ndk/
+	install = android-ndk.install
+	arch = x86_64
+	license = GPL
+	license = LGPL
+	license = custom
+	depends = ncurses5-compat-libs
+	provides = android-ndk
+	replaces = android-ndk64
+	options = !strip
+	options = staticlibs
+	backup = etc/profile.d/android-ndk.sh
+	source = android-ndk.sh
+	source = https://dl.google.com/android/repository/android-ndk-r15c-linux-x86_64.zip
+	sha1sums = 234f2814d10de08499032fd6772d701d9160433a
+	sha1sums = 0bf02d4e8b85fd770fd7b9b2cdec57f9441f27a2
+
+pkgname = android-ndk
+

@@ -1,0 +1,61 @@
+pkgbase = bin32-jdk6
+	pkgdesc = Oracle Java 6 Development Kit (32-bit) (public release - end of support)
+	pkgver = 6u45
+	pkgrel = 5
+	url = https://www.java.com/en/download/faq/java_6.xml
+	install = bin32-jdk6.install
+	arch = x86_64
+	license = custom
+	depends = ca-certificates-java
+	depends = hicolor-icon-theme
+	depends = java32-environment-common
+	depends = java32-runtime-common
+	depends = lib32-gcc-libs
+	depends = lib32-libxrender
+	depends = lib32-libxtst
+	depends = lib32-nss
+	depends = xdg-utils
+	optdepends = eclipse: "Oracle Java Mission Control" plugins for Eclipse
+	optdepends = lib32-alsa-lib: for basic sound support
+	optdepends = lib32-gtk2: for Gtk+ look and feel (desktop)
+	provides = java32-runtime=6
+	provides = java32-runtime-headless=6
+	provides = java32-web-start=6
+	provides = java32-environment=6
+	provides = java32-runtime-jre=6
+	provides = java32-runtime-headless-jre=6
+	provides = java32-web-start-jre=6
+	provides = java32-environment-jdk=6
+	options = !strip
+	backup = etc/java32-jdk6/i386/jvm.cfg
+	backup = etc/java32-jdk6/images/cursors/cursors.properties
+	backup = etc/java32-jdk6/management/jmxremote.access
+	backup = etc/java32-jdk6/management/management.properties
+	backup = etc/java32-jdk6/security/java.policy
+	backup = etc/java32-jdk6/security/java.security
+	backup = etc/java32-jdk6/security/javaws.policy
+	backup = etc/java32-jdk6/content-types.properties
+	backup = etc/java32-jdk6/flavormap.properties
+	backup = etc/java32-jdk6/fontconfig.properties.src
+	backup = etc/java32-jdk6/logging.properties
+	backup = etc/java32-jdk6/net.properties
+	backup = etc/java32-jdk6/psfont.properties.ja
+	backup = etc/java32-jdk6/psfontj2d.properties
+	backup = etc/java32-jdk6/sound.properties
+	source = https://www.dropbox.com/s/a6jvq5acpm8xk3b/jdk-6u45-linux-i586.bin
+	source = http://download.oracle.com/otn-pub/java/jce_policy/6/jce_policy-6.zip
+	source = jconsole32-jdk6.desktop
+	source = jmc32-jdk6.desktop
+	source = jvisualvm32-jdk6.desktop
+	source = policytool32-jdk6.desktop
+	source = javaws-launcher
+	md5sums = 3269370b7c34e6cbfed8785d3d0c5cbd
+	md5sums = b20f9d6ed14e55d73a5ed204bca01e7a
+	md5sums = 8e3fb5f39a1c24945fdb9315f9743263
+	md5sums = be4ebc20e7acd60e195231c36db4a8cf
+	md5sums = eaaf5c10579336af3474ccb23dce2911
+	md5sums = 3adcb5783ffaa18c3480ddfa0569dce2
+	md5sums = 45c15a6b4767288f2f745598455ea2bf
+
+pkgname = bin32-jdk6
+

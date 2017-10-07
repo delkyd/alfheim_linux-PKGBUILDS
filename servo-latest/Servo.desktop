@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Servo
+Comment=A modern, high-performance browser engine being developed for application and embedded use
+Exec=servo-latest
+Icon=Servo
+Terminal=false
+StartupNotify=false
+Categories=Application;Network;

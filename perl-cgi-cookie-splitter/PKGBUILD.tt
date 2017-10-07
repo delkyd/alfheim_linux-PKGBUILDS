@@ -1,0 +1,34 @@
+# CPAN Name  : CGI::Cookie::Splitter
+# Contributor: [% packager %]
+# Generator  : CPANPLUS::Dist::Arch [% version %]
+
+pkgname=[% pkgname %]
+pkgver=[% pkgver %]
+pkgrel=[% pkgrel %]
+pkgdesc='Perl package to split big cookies into smaller ones'
+arch=('any')
+url='[% url %]'
+license=('PerlArtistic' 'GPL')
+depends=('perl' 'perl-cgi-simple')
+checkdepends=('perl-test-use-ok')
+makedepends=('perl-module-build-tiny>=0.034')
+source=([% source %])
+options=(!emptydirs)
+md5sums=('[% md5sums %]')
+
+build() {
+	cd [% distdir %]
+	PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+	make
+}
+
+check() {
+	cd [% distdir %]
+	make test
+}
+
+package() {
+	cd [% distdir %]
+	make install DESTDIR="$pkgdir"
+	find "$pkgdir" -name .packlist -o -name perllocal.pod -delete
+}

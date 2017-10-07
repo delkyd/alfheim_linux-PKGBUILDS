@@ -1,0 +1,39 @@
+# $Id: PKGBUILD 140196 2011-10-09 08:27:16Z angvp $
+# Maintainer: Angel Velasquez <angvp@archlinux.org> 
+# Contributor: Sergej Pupykin <sergej@aur.archlinux.org>
+# Contributor: William Rea <sillywilly@gmail.com>
+
+pkgname=python2-m2crypto
+pkgver=0.26.0
+pkgrel=2
+pkgdesc="A crypto and SSL toolkit for Python"
+arch=('i686' 'x86_64')
+url="https://pypi.python.org/pypi/M2Crypto"
+license=('BSD')
+depends=('python2' 'openssl-1.0' 'python2-typing')
+makedepends=('swig' 'python2-setuptools')
+source=("https://pypi.python.org/packages/11/29/0b075f51c38df4649a24ecff9ead1ffc57b164710821048e3d997f1363b9/M2Crypto-$pkgver.tar.gz"
+        "openssl-1.1.0-force.patch"
+	"LICENSE")
+sha256sums=('05d94fd9b2dae2fb8e072819a795f0e05d3611b09ea185f68e1630530ec09ae8'
+            '459143ec4ceb5dfccfb5603d7543122886e6cee08f92047a3a2675b6fa145e64'
+            '4eca478396f4b2b020729a111fce3f096456d74500bfd8f2b0388c3c69f997c0')
+
+prepare() {
+  cd "${srcdir}/M2Crypto-${pkgver}"
+  patch -Np1 -i $srcdir/openssl-1.1.0-force.patch
+}
+
+build() {
+  cd "${srcdir}/M2Crypto-${pkgver}"
+  export CFLAGS="$CFLASG -I/usr/include/openssl-1.0"
+  export LDFLAGS="$LDFLAGS -L/usr/lib/openssl-1.0 -lssl -lcrypto"
+
+  python2 setup.py build
+}
+
+package() {
+  cd "${srcdir}/M2Crypto-${pkgver}"
+  python2 setup.py install --root="${pkgdir}/" --optimize=1
+  install -D -m644 "$srcdir"/LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

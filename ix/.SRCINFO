@@ -1,0 +1,13 @@
+pkgbase = ix
+	pkgdesc = A command line pastebin - shell
+	pkgver = 1.0
+	pkgrel = 1
+	url = http://ix.io
+	arch = any
+	license = unknown
+	depends = curl
+	source = http://ix.io/client
+	sha256sums = a7f8ff373eedccb255ec7814c15b22c0dd56c42c783e8afe1f24601534d18275
+
+pkgname = ix
+

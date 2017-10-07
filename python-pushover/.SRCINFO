@@ -1,0 +1,20 @@
+pkgbase = python-pushover
+	pkgdesc = Python library for Pushover notification service.
+	pkgver = 0.3
+	pkgrel = 1
+	url = http://pythonhosted.org/python-pushover/
+	arch = any
+	license = GPL
+	makedepends = python-distribute
+	makedepends = python2-distribute
+	source = https://github.com/Thibauth/python-pushover/archive/v0.3.tar.gz
+	sha256sums = cdfaec28c5cf7816697e4fbe5da4e4b6550d2e9520e6651cf36b32acab3440bf
+
+pkgname = python-pushover
+	pkgdesc = Python library for Pushover notification service. (python3 version)
+	depends = python-requests
+
+pkgname = python2-pushover
+	pkgdesc = Python library for Pushover notification service. (python2 version)
+	depends = python2-requests
+

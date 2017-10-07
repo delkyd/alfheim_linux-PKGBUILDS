@@ -1,0 +1,32 @@
+pkgbase = mopidy-git
+	pkgdesc = An extensible music server written in Python
+	pkgver = 2.1.0.r38.g33856830
+	pkgrel = 1
+	url = http://www.mopidy.com
+	arch = any
+	license = APACHE
+	makedepends = git
+	depends = python2
+	depends = python2-pykka
+	depends = python2-requests
+	depends = python2-setuptools
+	depends = python2-tornado
+	depends = gst-python2
+	depends = gst-plugins-base
+	depends = gst-plugins-good
+	depends = gst-plugins-ugly
+	optdepends = gst-libav: AAC+ and WMA support
+	optdepends = mopidy-spotify: Spotify backend
+	optdepends = mopidy-scrobbler: Last.FM scrobbler
+	optdepends = mopidy-MPRIS: MPRIS frontend
+	provides = mopidy=2.1.0.r38.g33856830-1
+	conflicts = mopidy
+	source = git+https://github.com/mopidy/mopidy.git
+	source = mopidy@.service
+	source = mopidy-user.service
+	md5sums = SKIP
+	md5sums = cdda1474b91b1e35a909e93fc8305599
+	md5sums = 81de34714bf80d638df34fc3469bd3f5
+
+pkgname = mopidy-git
+

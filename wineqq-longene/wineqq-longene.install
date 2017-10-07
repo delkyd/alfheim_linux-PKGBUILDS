@@ -1,0 +1,10 @@
+post_install() {
+    ln -s /opt/longene/qq/qq.sh /usr/bin/qq
+    chmod +x /usr/bin/qq
+    chmod +x /opt/longene/qq/firstrun
+}
+
+post_remove() {
+	rm -f /usr/bin/qq
+	rm -rf /opt/longene
+}

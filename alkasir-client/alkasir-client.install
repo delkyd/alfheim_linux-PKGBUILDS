@@ -1,0 +1,12 @@
+post_install() {
+    post_upgrade
+    echo ">>> Run the daemon as your user as follows:"
+    echo ">>>   systemctl --user daemon-reload"
+    echo ">>>   systemctl start --user alkasir-client"
+    echo ">>>   journalctl --user -u alkasir-client"
+}
+
+post_upgrade() {
+    chown -R root:root /opt/alkasir-client-linux-amd64 &> /dev/null 2>&1 || true
+    chown -R root:root /opt/alkasir-client-linux-386 &> /dev/null 2>&1 || true
+}

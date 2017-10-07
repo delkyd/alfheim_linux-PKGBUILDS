@@ -1,0 +1,19 @@
+whisperer(){
+    echo "----------------------------------------------------------------" 
+    echo "lib32-catalyst-utils works with [multilib] repository"
+    echo "----------------------------------------------------------------"
+    echo "-------------------------- SPLIT -------------------------------"
+    echo "lib32-catalyst-utils is splitted into:"
+    echo "lib32-catalyst-utils"
+    echo "lib32-catalyst-libgl"
+    echo "lib32-opencl-catalyst"
+    echo "----------------------------------------------------------------"
+}
+
+post_install() {
+    whisperer
+}
+
+post_upgrade() {
+    whisperer
+}

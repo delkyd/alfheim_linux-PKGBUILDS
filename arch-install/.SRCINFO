@@ -1,0 +1,32 @@
+pkgbase = arch-install
+	pkgdesc = automate your installation process
+	pkgver = 1.0.11
+	pkgrel = 17
+	url = http://torben.website/archInstall
+	arch = any
+	license = CC-BY-3.0
+	depends = bash
+	depends = util-linux
+	depends = coreutils
+	depends = sed
+	depends = wget
+	depends = xz
+	depends = tar
+	depends = grep
+	depends = which
+	optdepends = pacman: if not provided a simple lite pacman version will be used to retrieve pacman first
+	optdepends = efibootmgr: to autoconfigure first efi based boot
+	optdepends = gptfdisk: for automatic partition creation
+	optdepends = btrfs-progs: to automatically format btrfs as filesystem
+	optdepends = dosfstools: for proper labeling boot partition
+	optdepends = arch-install-scripts: to avoid using own implementation of "arch-chroot"
+	optdepends = fakeroot: to support install into a folder without root access
+	optdepends = fakechroot: to support install into a folder without root access
+	optdepends = os-prober: for automatic boot option creation for other found distributions
+	optdepends = iproute2: for automatic network configuration
+	provides = arch-install
+	source = archInstall.sh
+	md5sums = SKIP
+
+pkgname = arch-install
+

@@ -1,0 +1,17 @@
+pkgbase = xonsh
+	pkgdesc = A Python-ish, BASHwards-compatible shell
+	pkgver = 0.5.12
+	pkgrel = 2
+	url = http://xon.sh/
+	install = xonsh.install
+	arch = any
+	license = FreeBSD
+	makedepends = python-setuptools
+	depends = python
+	depends = python-ply
+	optdepends = python-prompt_toolkit: support for SHELL_TYPE=prompt_toolkit
+	source = https://github.com/scopatz/xonsh/archive/0.5.12.zip
+	sha256sums = 5726d67bb40ec0d22ad37630127a54b866c75d537618dcf77101f1c19d54a7e5
+
+pkgname = xonsh
+

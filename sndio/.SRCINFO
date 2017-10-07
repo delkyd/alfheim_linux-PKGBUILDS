@@ -1,0 +1,22 @@
+pkgbase = sndio
+	pkgdesc = Small audio and MIDI framework part of the OpenBSD project
+	pkgver = 20161106
+	pkgrel = 2
+	url = http://www.sndio.org/
+	install = sndio.install
+	arch = i686
+	arch = x86_64
+	arch = armv6h
+	arch = armv7h
+	license = MIT
+	depends = alsa-lib
+	backup = etc/conf.d/sndiod
+	source = http://www.sndio.org/sndio.tar.gz
+	source = sndiod.conf
+	source = sndiod.service
+	md5sums = 41278f54f26ad17d4b28228fa6f7b74f
+	md5sums = e319eee0a3ccb4d60dd24b7ed1ea34b3
+	md5sums = 3767e4066491b2ade46b37179285fd80
+
+pkgname = sndio
+

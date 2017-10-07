@@ -1,0 +1,23 @@
+pkgbase = dcmtk
+	pkgdesc = A collection of libraries and applications implementing large parts the DICOM standard
+	pkgver = 3.6.2
+	pkgrel = 0
+	url = http://dicom.offis.de/dcmtk
+	arch = i686
+	arch = x86_64
+	license = other
+	makedepends = cmake
+	makedepends = make
+	depends = zlib
+	depends = libpng
+	depends = libtiff
+	depends = libxml2
+	depends = openssl
+	depends = charls
+	depends = libssh
+	options = !buildflags
+	source = ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk362/dcmtk-3.6.2.tar.gz
+	sha512sums = a3190287b068ae17984909dd9e8d920ddea3b590fc3888c42fc33fca4a3cdcf7dcc9bd64d994620303eef7c7ab7b4184ac21ebd1167ae2c17e4a88f641d7ef94
+
+pkgname = dcmtk
+

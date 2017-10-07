@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Fiji
+Comment=Scientific Image Analysis
+Icon=fiji
+X-GNOME-FullName=Fiji Is Just ImageJ
+Exec='ImageJ-linux %f'
+Terminal=false
+MimeType=image/*;
+Categories=Graphics;Science;ImageProcessing;
+StartupNotify=true
+StartupWMClass=fiji-Main

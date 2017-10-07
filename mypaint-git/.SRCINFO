@@ -1,0 +1,32 @@
+pkgbase = mypaint-git
+	pkgdesc = Simple drawing & painting program that works well with graphics tablets (git).
+	pkgver = 1.3.0.alpha.r4857.a654615e
+	pkgrel = 1
+	url = http://mypaint.org/
+	install = mypaint-git.install
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	makedepends = git
+	makedepends = swig
+	makedepends = pygobject-devel
+	makedepends = python2
+	makedepends = python2-setuptools
+	depends = desktop-file-utils
+	depends = gtk3
+	depends = json-c
+	depends = lcms2
+	depends = librsvg
+	depends = python2-cairo
+	depends = python2-gobject
+	depends = python2-numpy
+	depends = libmypaint-git
+	provides = mypaint=1.3.0-alpha
+	conflicts = mypaint
+	source = git+https://github.com/mypaint/mypaint.git
+	source = mypaint-git.install
+	sha256sums = SKIP
+	sha256sums = 34dec9df2e005de9fae6c6352f49835a1d41e515c6131ed1df8c9e27ee3c9d1d
+
+pkgname = mypaint-git
+

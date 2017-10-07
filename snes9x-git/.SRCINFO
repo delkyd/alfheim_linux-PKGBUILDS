@@ -1,0 +1,44 @@
+pkgbase = snes9x-git
+	pkgdesc = Port of the Snes9x emulator (git version). Includes Gtk version.
+	pkgver = 1.53.r451.ge8da19d
+	pkgrel = 1
+	url = http://www.snes9x.com/
+	arch = i686
+	arch = x86_64
+	license = LGPL
+	makedepends = git
+	makedepends = intltool
+	makedepends = nasm
+	makedepends = mesa
+	makedepends = libpulse
+	makedepends = libpng
+	makedepends = sdl
+	makedepends = gtk2
+	makedepends = libxv
+	makedepends = adwaita-icon-theme
+	makedepends = autogen
+	makedepends = minizip
+	depends = minizip
+	source = snes9x-git::git://github.com/snes9xgit/snes9x.git
+	sha1sums = SKIP
+
+pkgname = snes9x-git
+	pkgdesc = A portable Emulator for the Super Nintendo Entertainment System
+	depends = libpng
+	depends = libxext
+	depends = libsm
+	provides = snesx
+	conflicts = snes9x
+
+pkgname = snes9x-gtk-git
+	pkgdesc = A portable Emulator for the Super Nintendo Entertainment System - GTK version
+	license = custom
+	license = LGPL
+	depends = sdl
+	depends = libpulse
+	depends = gtk2
+	depends = libxv
+	depends = adwaita-icon-theme
+	provides = snes9x-gtk
+	conflicts = snes9x-gtk
+

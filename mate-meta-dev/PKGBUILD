@@ -1,0 +1,17 @@
+# Maintainer:   Νικόλαος Κυριάκος Φυτίλης <n-fit@live.com>
+_ver=1.19
+_pkgbase=mate-meta
+pkgname="${_pkgbase}-dev"
+pkgver=${_ver}.0
+pkgrel=4
+pkgdesc="Meta package for MATE. This installs all MATE gtk3 packages - through dependencies"
+arch=(any)
+url="http://mate-desktop.org"
+license=('GPL')
+depends=(
+atril-dev caja-dev engrampa-dev eom-dev libmatekbd-dev libmateweather-dev marco-dev mate-applets-dev mate-control-center-dev mate-desktop-dev mate-media-dev mate-meta-dev mate-notification-daemon-dev mate-panel-dev mate-screensaver-dev mate-session-manager-dev mate-settings-daemon-dev mate-utils-dev pluma-dev
+)
+
+package(){
+  /bin/true
+}

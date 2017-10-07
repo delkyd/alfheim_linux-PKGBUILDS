@@ -1,0 +1,23 @@
+pkgbase = ttf-adf
+	pkgdesc = True Type Fonts released by Arkandis Digital Foundry
+	pkgver = 20110731
+	pkgrel = 3
+	url = http://arkandis.tuxfamily.org/adffonts.html
+	install = ttf.install
+	arch = any
+	groups = adf-fonts
+	license = custom:GPL with font exception
+	depends = fontconfig
+	depends = xorg-mkfontdir
+	depends = xorg-mkfontscale
+	source = http://arkandis.tuxfamily.org/fonts/Irianis-Std-20100729.zip
+	source = http://arkandis.tuxfamily.org/fonts/Romande-Collection-20110730.zip
+	source = http://arkandis.tuxfamily.org/fonts/OrnementsADF.zip
+	source = http://arkandis.tuxfamily.org/fonts/SymbolADF.zip
+	sha256sums = 5a252bf7fbfca67aa421798f2fbe48c2f5d46208330633499553b308ef6d3bf2
+	sha256sums = 724a625e30f4317af5dc7b3e99a5de8128c23e025f83bd48977fa4dcb03ad35c
+	sha256sums = 97a4a5f71db57e80fa5edb73c27d736c9b5c4de972b5bc072bba5854d27fa571
+	sha256sums = 4d8b7e7af9e3fa8149398f515d564200161fa3ca33423dee3b1e6b90d030e780
+
+pkgname = ttf-adf
+

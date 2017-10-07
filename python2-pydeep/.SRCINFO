@@ -1,0 +1,15 @@
+pkgbase = python2-pydeep
+	pkgdesc = bindings for ssdeep
+	pkgver = 0.2
+	pkgrel = 2
+	url = https://github.com/kbandla/pydeep/
+	arch = i686
+	arch = x86_64
+	license = BSD
+	makedepends = python2
+	depends = ssdeep
+	source = pydeep-0.2.tar.gz::https://github.com/kbandla/pydeep/archive/0.2.tar.gz
+	sha512sums = debdf24fd62143c1a3a780fcfd36824e3e18e95f110ba3ca298cb3a0f6a761d71c4c6394283d5da7ddf0fa5943ffe4d7b23c7097f46e806d9eb7724b2ad2406f
+
+pkgname = python2-pydeep
+

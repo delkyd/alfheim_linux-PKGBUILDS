@@ -1,0 +1,10 @@
+post_install() {
+	echo "Please run \"andrei-desktop-install.sh\" in order to update configuration files."
+	echo
+	echo "Type \"andrei-desktop-install.sh -h\" for usage details."
+	echo
+}
+
+post_upgrade() {
+	post_install $1
+}

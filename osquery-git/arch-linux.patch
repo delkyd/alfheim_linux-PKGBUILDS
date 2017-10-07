@@ -1,0 +1,100 @@
+diff --git a/tools/provision.sh b/tools/provision.sh
+index c363196..31019ff 100755
+--- a/tools/provision.sh
++++ b/tools/provision.sh
+@@ -83,6 +83,8 @@ function main() {
+     log "your $OS does not use a provision script"
+   fi
+
++  exit
++
+   # The dependency directory (DEPS_DIR) will contain our legacy runtime glibc
+   # and various compilers/library dependencies.
+   if [[ ! -d "$DEPS_DIR" ]]; then
+diff --git a/specs/windows/services.table b/specs/windows/services.table
+index 3acf0c5..bd7612b 100644
+--- a/specs/windows/services.table
++++ b/specs/windows/services.table
+@@ -12,7 +12,7 @@ schema([
+     Column("path", TEXT, "Path to Service Executable"),
+     Column("module_path", TEXT, "Path to ServiceDll"),
+     Column("description", TEXT, "Service Description"),
+-    Column("user_account", TEXT, "The name of the account that the service process will be logged on as when it runs. This name can be of the form Domain\UserName. If the account belongs to the built-in domain, the name can be of the form .\UserName."),
++    Column("user_account", TEXT, "The name of the account that the service process will be logged on as when it runs. This name can be of the form Domain\\UserName. If the account belongs to the built-in domain, the name can be of the form .\\UserName."),
+ ])
+ implementation("system/windows/services@genServices")
+ examples([
+diff --git a/include/osquery/core.h b/include/osquery/core.h
+index a367f913..c522d558 100644
+--- a/include/osquery/core.h
++++ b/include/osquery/core.h
+@@ -15,8 +15,9 @@
+ #include <string>
+ #include <vector>
+
+-#if defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__linux__)
+ #include <boost/thread/shared_mutex.hpp>
++#include <boost/thread/recursive_mutex.hpp>
+ #else
+ #include <shared_mutex>
+ #endif
+@@ -182,7 +183,7 @@ inline bool isPlatform(PlatformType a, const PlatformType& t = kPlatformType) {
+   return (static_cast<int>(t) & static_cast<int>(a)) != 0;
+ }
+
+-#if defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__linux__)
+ #define MUTEX_IMPL boost
+ #else
+ #define MUTEX_IMPL std
+@@ -198,8 +199,8 @@ using WriteLock = MUTEX_IMPL::unique_lock<Mutex>;
+ using ReadLock = MUTEX_IMPL::shared_lock<Mutex>;
+
+ /// Helper alias for defining recursive mutexes.
+-using RecursiveMutex = std::recursive_mutex;
++using RecursiveMutex = MUTEX_IMPL::recursive_mutex;
+
+ /// Helper alias for write locking a recursive mutex.
+-using RecursiveLock = std::lock_guard<std::recursive_mutex>;
++using RecursiveLock = MUTEX_IMPL::lock_guard<MUTEX_IMPL::recursive_mutex>;
+ }
+diff --git a/Makefile b/Makefile
+index 2e2bd13c..c5ae915a 100644
+--- a/Makefile
++++ b/Makefile
+@@ -32,7 +32,7 @@ endif
+ PATH_SET := PATH="$(DEPS_DIR)/bin:/usr/local/bin:$(PATH)"
+ CMAKE := $(PATH_SET) CXXFLAGS="-L$(DEPS_DIR)/lib" cmake ../../
+ CTEST := $(PATH_SET) ctest ../../
+-FORMAT_COMMAND := python tools/formatting/git-clang-format.py \
++FORMAT_COMMAND := python2 tools/formatting/git-clang-format.py \
+        "--commit" "master" "-f" "--style=file"
+
+ ANALYSIS := ${SOURCE_DIR}/tools/analysis
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 4444a9a2..b9c2640d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -393,6 +393,8 @@ endif()
+
+ if(APPLE)
+   LOG_PLATFORM("OS X")
++elseif(OSQUERY_BUILD_PLATFORM STREQUAL "arch")
++  LOG_PLATFORM("Arch Linux")
+ elseif(OSQUERY_BUILD_PLATFORM STREQUAL "debian")
+   LOG_PLATFORM("Debian")
+ elseif(OSQUERY_BUILD_PLATFORM STREQUAL "ubuntu")
+diff --git a/osquery/tables/CMakeLists.txt b/osquery/tables/CMakeLists.txt
+index 99477c69..d07730e2 100644
+--- a/osquery/tables/CMakeLists.txt
++++ b/osquery/tables/CMakeLists.txt
+@@ -67,7 +67,7 @@ if(LINUX)
+   set(TABLE_PLATFORM "linux")
+
+   ADD_OSQUERY_LINK_ADDITIONAL("libresolv.so")
+-  ADD_OSQUERY_LINK_ADDITIONAL("cryptsetup devmapper lvm2app lvm-internal daemonclient")
++  ADD_OSQUERY_LINK_ADDITIONAL("cryptsetup devmapper lvm2app")
+   ADD_OSQUERY_LINK_ADDITIONAL("gcrypt gpg-error")
+   ADD_OSQUERY_LINK_ADDITIONAL("blkid")
+   ADD_OSQUERY_LINK_ADDITIONAL("ip4tc")

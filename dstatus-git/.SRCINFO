@@ -1,0 +1,17 @@
+pkgbase = dstatus-git
+	pkgdesc = status bar for dwc
+	pkgver = 40.3ee959b
+	pkgrel = 1
+	url = https://github.com/ametisf/dstatus
+	arch = i686
+	arch = x86_64
+	license = MIT
+	makedepends = tup
+	depends = swc
+	depends = dwc-git
+	optdepends = terminus-font: bitmap font for nicer rendering
+	source = git+https://github.com/ametisf/dstatus.git
+	md5sums = SKIP
+
+pkgname = dstatus-git
+

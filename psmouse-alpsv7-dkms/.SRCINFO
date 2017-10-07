@@ -1,0 +1,20 @@
+pkgbase = psmouse-alpsv7-dkms
+	pkgdesc = psmouse kernel module with support for alpsv7 touchpad
+	pkgver = r33.24a4ac5
+	pkgrel = 1
+	url = https://github.com/he1per/psmouse-dkms-alpsv7
+	arch = any
+	license = GPL2
+	depends = dkms
+	optdepends = linux-headers: build modules against the Arch kernel
+	optdepends = linux-lts-headers: build modules against the LTS kernel
+	optdepends = linux-zen-headers: build modules against the ZEN kernel
+	optdepends = linux-grsec-headers: build modules against the GRSEC kernel
+	optdepends = linux-rt-headers: build modules against the RealTime kernel
+	source = psmouse-alpsv7-dkms::git://github.com/he1per/psmouse-dkms-alpsv7.git
+	source = kernel-4.patch::https://github.com/hyslion/psmouse-dkms-alpsv7/commit/f81f0ec2af851a78cd5a2b778c0d51a10fa01999.patch
+	md5sums = SKIP
+	md5sums = c573b665d5432da4738f7d96a7593608
+
+pkgname = psmouse-alpsv7-dkms
+

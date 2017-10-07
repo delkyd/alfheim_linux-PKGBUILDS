@@ -1,0 +1,22 @@
+pkgbase = exmplayer-git
+	pkgdesc = MPlayer GUI front-end with 3D/2D video playback support and with audio converter, media cutter and audio extractor tools
+	pkgver = 5.0.1.r2.g1ccb1ac
+	pkgrel = 2
+	url = http://exmplayer.sourceforge.net/
+	install = exmplayer-git.install
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = git
+	depends = desktop-file-utils
+	depends = ffmpeg
+	depends = mplayer
+	depends = qt4
+	optdepends = youtube-dl: download video/audio
+	provides = exmplayer
+	conflicts = exmplayer
+	source = exmplayer-git::git+https://github.com/rupeshs/ExMplayer.git
+	md5sums = SKIP
+
+pkgname = exmplayer-git
+

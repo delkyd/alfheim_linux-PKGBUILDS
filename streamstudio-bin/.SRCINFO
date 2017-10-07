@@ -1,0 +1,30 @@
+pkgbase = streamstudio-bin
+	pkgdesc = Provide a popcorntime clone for streaming movies directly from T411, Cpasbien, Songza, Twitch, Piratebay, Youtube and Dailymotion
+	pkgver = 3.9.5
+	pkgrel = 1
+	url = https://www.streamstudio.cc/
+	install = streamstudio.install
+	arch = x86_64
+	arch = i686
+	license = GPL3
+	depends = libnotify
+	depends = desktop-file-utils
+	depends = ttf-font
+	depends = gconf
+	depends = nss
+	depends = libxtst
+	depends = gtk2
+	depends = alsa-lib
+	optdepends = ttf-liberation: open source ttf fonts
+	provides = streamstudio
+	conflicts = streamstudio
+	options = !strip
+	source = https://download.streamstudio.cc/streamstudio-64.zip
+	source = streamstudio.desktop
+	source = streamstudio.install
+	sha256sums = 605afebe5fc99bfbb6ec62300a51956eaa6841c495ad8035571a8e7e35ea79ab
+	sha256sums = b082d39935fd289695ad9a10c9adc3cbe9963555cd410d1d83ceb9055463275b
+	sha256sums = 4dc8715a81bfd1297f99b3e5f41f9f50936bbf7779b9bc4ef9231261053b76ea
+
+pkgname = streamstudio-bin
+

@@ -1,0 +1,32 @@
+pkgbase = subsurface-git
+	pkgdesc = Divelog program
+	pkgver = 20171003.52445ec8f
+	pkgrel = 1
+	url = https://subsurface-divelog.org/
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	makedepends = git
+	makedepends = cmake
+	makedepends = asciidoc
+	makedepends = qt5-tools
+	depends = libzip
+	depends = libxml2
+	depends = libxslt
+	depends = sqlite
+	depends = libusb
+	depends = libgit2
+	depends = subsurface-libdc-git
+	depends = qt5-svg
+	depends = qt5-location
+	depends = qt5-connectivity
+	depends = qt5-webkit
+	depends = grantlee
+	depends = googlemaps
+	provides = subsurface
+	conflicts = subsurface
+	source = git+https://github.com/Subsurface-divelog/subsurface
+	sha256sums = SKIP
+
+pkgname = subsurface-git
+

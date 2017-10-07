@@ -1,0 +1,388 @@
+2017-07-10 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.3.2.0-2:
+    package: solved a bug in systemd-sysusers by removing an empty line
+2017-06-23 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.3.2.0-1:
+    Added !stats command.
+    Added Steam Summer Sale 2017 badge with appID of 639900 to global blacklist.
+    Added workaround for possible ASF-Service crash (ref: #573).
+    Fixed small regression introduced in V2.3.1.7 that could make bot ignore valid commands if user didn't have access on that specific bot (proxy scenarios).
+    Misc code improvements, optimizations and bugfixes.
+  * 2.3.1.8:
+    ASF will now follow common *nix convention and ignore config files starting with a dot (ref: #554).
+    ASF will now respect permissions when distributing/forwarding keys and won't send keys to bots that given user doesn't have access to.
+    ASF will now try to avoid using HandleOfflineMessages if it can be sure that there is no offline message from any user permitted to use ASF commands, potentially making it possible to use for primary accounts.
+    !pause command will now properly deactivate also GamesPlayedWhileIdle.
+    Improved ShutdownOnFarmingFinished that previously didn't work properly with 0 IdleFarmingPeriod (ref: #557).
+    Improved Steam message splitting logic that should now always arrive in proper order when Bot is forced to split the message because of its size.
+    Fixed ASF attempting to start broken (config/database) bots.
+    Further fixed WCF maximum message length (ref: #484).
+    Usual code improvements, optimizations and bugfixes.
+  * 2.3.1.4:
+    Added workaround for recent Steam bug that could result in commands response duplication when using HandleOfflineMessages.
+2017-05-05 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.3.1.3-1:
+    Fixed a small regression introduced in version 2.3.0.9 that could cause !redeem failures to be always displayed as Fail.
+    Improved !redeem statuses by adding extra internal Steam network result on top of existing purchase result. OK/NoDetail looks much better than NoDetail alone 🙂.
+2017-04-30 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.3.1.2-1:
+    [!] ASF now requires Mono in version 4.8 or higher (Linux / OS X, ref: #529).
+    Added !bl, !bladd and !blrm commands (ref: #515).
+    !owns and !nickname commands in given bots versions can now make use of space character in query string.
+    Fixed !pause command not working when user had "only" Owner permission (ref: #512).
+    Fixed Steam wallet code redeem error that resulted in Timeout instead of resulting in proper error status.
+    Fixed potential STM logic exploit that could result in accepting non-neutral+ trades (ref: 4e1a032).
+    Lowered required permission for accepting a friend invite, from Operator to FamilySharing.
+    Improved compatibility of configs auto-reload with text editors that delete a file prior to writing to it (ref: #520).
+    Improved concurrent inventory calls (ref: 8c0a100).
+    Highly optimized function responsible for getting trade offers (ref: a6c4483).
+    Improved translation of various TimeSpan parts in many languages, which now is translated dynamically based on culture and resulting number.
+    Major code improvements, optimizations and bugfixes.
+2017-03-29 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.3.0.5-1:
+    [!] Reworked permissions, this is a breaking change [1].
+    [!] Changed behaviour of !api command, this is a breaking change [2].
+    Added !api <Bots> command (ref: #485).
+    Added !nickname command.
+    Added extra workaround for invalidating old trades [3].
+    Fixed ASF compilation on OS X, also added OS X as a test platform to our Travis CI.
+    Fixed ASF being able to trigger a rare Steam glitch that could lead to change of bot's nickname to [unassigned] when FarmOffline is set to false.
+    Fixed recent Steam breaking change introduced by Valve that broke discovering of keys being redeemed in all ASF versions prior to 2.3.0.4 (ref: #508).
+    ASF release is now compiled with latest Visual Studio 2017 by our AppVeyor CI (previously: VS15) [4].
+    Major code improvements, optimizations and bugfixes.
+2017-03-04 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.2.3.2-1:
+    [!] ASF is now smart enough to automatically choose proper appID for "Series" (video) apps with trading cards in them. Previously it'd be stuck farming wrong game (ref: #473).
+    From now on running ASF will prevent Windows OS from going to sleep (ref: #457) [1].
+    Added extra logic for handling locked/disabled accounts (ref: #469).
+    Added KeepMissingGames to RedeemingPreferences bot config property (ref: #470).
+    Added back metadata publishing to all WCF bindings (ref: #448).
+    Added !input command (ref: #476).
+    DismissInventoryNotifications is now false by default.
+    AcceptDonations can now be used together with DontAcceptBotTrades in TradingPreferences.
+    Fixed ASF crash on invalid IdentitySecret/SharedSecret in ASF 2FA.
+    Fixed SendTradePeriod not working properly.
+    Fixed NLog issue that could lead to ASF crash when run via Mono in systemd environment without custom NLog.config (ref: #292).
+    Fixed WCF refusing to handle too large !api responses.
+    Updated statistics and privacy policy (ref: #450) [2].
+    Updated internal SteamKit2 code, this results in some misc changes of !redeem statuses. I took the opportunity and documented them in the FAQ while I was at it.
+    Further unified ASF commands by adding bot identifier to all of them (ref: #468).
+    Removed AcceptConfirmationsPeriod [3].
+    Removed default entries in Blacklist global config property, since they're defined in hardcoded ASF GlobalBlacklist already.
+    ASF will no longer accept SteamTradeMatcher trades without MatchEverything, if we can't fetch our inventory during parsing the trade.
+    Major code improvements, optimizations and bugfixes.
+2017-02-05 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.2.2.4-1:
+    Added back overall ASF status to !status ASF (it was accidentally removed during rewrite).
+    Added support for bot1..bot9 syntax when using multiple-target commands.
+    Added !oa and !sa command aliases.
+    ASF keyword in multiple-target commands is now case-insensitive.
+    Added WCFBinding global config property.
+    Added DontAcceptBotTrades option to TradingPreferences bot config property.
+    Changed default value of TradingPreferences from AcceptDonations to None.
+    Fixed possible ASF exit/crash on invalid Steam network responses.
+    Fixed too early ASF crash by postponing services init until runtime check.
+    Misc code improvements, optimizations and bugfixes.
+2017-02-01 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.2.2.1-1:
+    [!] Fixed network instability introduced in ASF V2.1.1.2. Coincidentally, this has nothing to do with network enhancements that arrived in V2.1.1.6. Huge thanks to Budgie and other folks helping me with their debug logs.
+    Added OptimizationMode global config property.
+    Added multiple bot targets for commands.
+    Unified the format of ASF responses for easier strings manipulation. All responses should start with a newline now.
+    Added SteamTarget NLog logging target, available with custom logging configs.
+    Removed !*all commands, such as: !lootall, !statusall, !startall and !ownsall. Use newly-introduced multiple bot targets, such as !status ASF for previous !statusall.
+    Fixed writing debug log for multiple bots at once.
+    Misc code improvements, optimizations and bugfixes.
+2017-01-30 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.2.1.6-1:
+    [!] Added localization support for ASF.
+    [!] Reworked ASF heartbeats.
+    [!] ASF is now smart enough to automatically skip farming games that weren't released yet.
+    Added CurrentCulture global config property for overriding default language.
+    Added unused keys response to !redeem.
+    Removed SteamApiKey, API key is now automatically fetched by ASF during runtime. Big thanks to @il-marc for initial implementation!
+    Renamed HttpTimeout to ConnectionTimeout. New property is also responsible for several other types of timeouts, such as Steam network and heartbeats.
+    Fixed potential exploit allowing attacker to trigger ASF error message.
+    Fixed !addlicense and other store-based functionality not working properly for accounts restricted with SteamParentalPIN.
+    Major code improvements, optimizations and bugfixes.
+2017-01-04 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.2.0.5-1:
+    [!] Removed ForwardKeysToOtherBots and DistributeKeys - it's unified under new RedeemingPreferences bot config property.
+    [!] Added new LootableTypes bot config property.
+    [!] IsBotAccount no longer controls looting foil cards, the responsibility now lies in newly introduced LootableTypes.
+    Added rough approximation of expected farming time, to !status and alike (also API).
+    Fixed statistics reporting not working on older versions of Mono.
+    Fixed rare issue that could lead to ASF not connecting to Steam Network.
+    Fixed ASF not parsing command-line arguments when running as a service.
+    Removed ForceHttp global config property. For reasoning, see commit.
+    Usual code improvements, optimizations and bugfixes.
+    package: systemd-sysusers handles the user & group creation
+2016-12-18 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.7.9-1:
+    Switched Statistics STM listing to new protocol version (old one won't work anymore)
+2016-12-16 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.7.8-1:
+    Fixed issue that could lead to increased network instability in very rare case
+  * 2.1.7.7:
+    Fixed cross-OS WCF incompatibility between Mono and Windows
+    Corrected WCFHost in ConfigGenerator
+2016-12-16 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.7.6-1:
+    [!] Enhanced Statistics by new features. Please review changes to our privacy policy.
+    There is now public ASF-STM listing located here. You can read more about it in link above.
+    WCFHostname has been renamed to WCFHost. Please review Configuration as default value was also changed to "127.0.0.1".
+    ASF will now accept trade offers also from SteamOwnerID.
+    ASF will now reject group invites when IsBotAccount.
+    Added IsLimitedUser info to both !status and API.
+    Added Steam Winter Sale 2016 to global and local blacklist.
+    Fixed offline messages from family sharing users being ignored when in FarmOffline mode.
+    Fixed making it impossible for family sharing users to play when GamesPlayedWhileIdle is being used.
+    Fixed GamesPlayedWhileIdle with Paused CardsFarmer.
+    Fixed very rare issue of ASF not detecting some games available for farming due to Steam fuckup.
+    Major code improvements, optimizations and bugfixes.
+2016-11-18 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.6.8-1:
+    !addlicense can now also request free licenses from steam store (in addition to steam network).
+    Fixed GamesPlayedWhileIdle for limited accounts.
+    Usual code improvements, optimizations and bugfixes.
+2016-11-13 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.6.7-1:
+    [!] ASF will no longer attempt to farm limited accounts, as Valve put hard cards restriction on them recently.
+    Added a few command aliases for !redeem variants.
+    Added !pause^ command (sticky pause). This is how !pause worked before steam family sharing improvements introduced recently.
+    Paused bot config property now works as sticky pause (like previously).
+    Improved logging module in various ways - if you're using custom logging config, you might want to check it out. There are many internal improvements, but nothing visible for people using ASF default built-in config.
+    ASF now includes new program icon, thanks to @stackia
+    Usual code improvements, optimizations and bugfixes.
+2016-10-31 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.6.4-1:
+    Fixed ASF not restarting itself on !restart and likewise
+    Other misc bugfixes
+2016-10-28 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.6.3-1:
+    Fixed ASF not shutting down when last Bot gets stopped.
+    Fixed a possible race condition in callback handler function that could lead to some ASF exceptions.
+    Fixed ASF not accepting trades from SteamMasterID when no TradingPreferences were chosen. Also added optional logic of accepting donation trades from ASF bots regardless of AcceptDonations enabled or not.
+  * 2.1.6.2:
+    [!] Added long-awaited support for Steam family sharing.
+    [!] Added support for auto-reload of modified configs.
+    [!] Improved trading module by replacing SteamTradeMatcher bot config property with TradingPreferences.
+    Added !redeem& command.
+    Added Paused bot config property.
+    Added support for Steam wallet codes (through !redeem and likewise).
+    Fixed logging in with SteamPassword containing non-ASCII characters.
+    Major code improvements, optimizations and bugfixes.
+2016-10-12 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.5.4-1:
+    Fixed regression of LoginLimiterDelay being falsely ignored on non-ASF 2FA accounts.
+    Misc code improvements, optimizations and bugfixes.
+  * 2.1.5.3:
+    Added !redeem^ command.
+    Improved AcceptGifts - ASF now redeems gifts via request to Steam network (and not Steam community like previously).
+    Fixed ultra-rare issue of ASF causing official steam client disconnection due to broken LoginID calculation done by Steam on some Linux OSes.
+    Fixed HandleOfflineMessages not working with non-precise system clock (ASF will now allow up to 1 hour of difference between system time and Steam time, previously it was 1 minute).
+    Fixed a possible ASF crash in !ownsall when one or more of the bots were not connected.
+    Hopefully fixed ultra-rare ASF network deadlock as reported in #318.
+    General code improvements, optimizations and bugfixes.
+2016-08-29 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.4.5-1:
+    Added !ownsall command.
+    Improved SendOnFarmingFinished - ASF will now also initiate !loot on receiving new items (when not farming), and trades (always).
+    ASF will now !loot foil trading cards only on IsBotAccount accounts.
+    Further improved overall network stability by implementing heartbeat functions.
+    Fixed ASF not recognizing games with more than 255 card drops remaining as available for farming.
+    Fixed ASF not following smart redeeming when first account hits OnCooldown.
+    Usual code improvements, optimizations and bugfixes.
+    [ConfigGenerator] Properties are now being categorized for easier modifications.
+2016-08-05 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.3.9-1:
+    [!] Important ForwardKeysToOtherBots enhancements [1].
+    [!] CardDropsRestricted is now true by default.
+    Added new FarmingOrder bot config property, thanks to @stackia in #312 . Visit wiki for more info.
+    WCF now supports metadata publishing, thanks to @stackia in #309
+    ASF is now a little more verbose in various places.
+    ASF will now restart farming (if needed) also when new games are added outside of ASF process, e.g. when you redeem a key through Steam Client.
+    ASF will now always use alphabetical order when dealing with ForwardKeysToOtherBots or DistributeKeys.
+    ASF will now warn you if you're using incompatible runtime.
+    Major code improvements, optimizations and bugfixes.
+  * 2.1.3.1-3:
+    package & services : fix various bugs pertaining to --path
+  * 2.1.3.1-2:
+    package: config folder moved to /var/lib/asf
+    service: rename ReadWriteDirectories to ReadWritePaths
+    service: soft dependency on network.target
+    service: add user service file
+2016-07-24 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.3.1-1:
+    It's now possible to use CustomGamePlayedWhileIdle and GamesPlayedWhileIdle at the same time, to play specific appIDs while showing custom status in Steam Network. Please note that the order of display is not guaranteed in this case.
+    Added new CustomGamePlayedWhileFarming bot config property, which is possible thanks to above change. Visit Configuration for more info.
+    Added support for --path command-line argument. Visit wiki for more info.
+    Greatly improved efficiency of handling multiple 2FA confirmations by adapting newly introduced multi-confirm method introduced by Valve. Thanks to that, ASF can send just one request for accepting all confirmations, instead of accepting them one-by-one.
+    Slightly improved internal cd-key validator to be case-insensitive and more precise.
+    Slightly improved network throughput on Windows machines.
+    Major portion of code improvements, optimizations and bugfixes.
+2016-07-24 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.2.5-2:
+    Updated source archive to solve a false-positive (see https://github.com/JustArchi/ArchiSteamFarm/issues/127#issuecomment-234313478)
+2016-07-12 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.2.5-1:
+    Fixed ASF crash related to being unable to execute WMI queries on machines previously affected by HackIgnoreMachineID.
+    Removed old ASF 2FA V2.0 -> V2.1 converter, as stated in previous release.
+  * 2.1.2.4:
+    [!] Next ASF version will come without ASF 2FA converter capable of converting V2.0 formats into V2.1. If you didn't update your old ASF V2.0 yet, it's wise to do so.
+    [!] Implemented new smart and persistent CMs list - ASF will no longer need to ask Steam network for list of CMs at startup, significantly improving startup time. The list is saved in ASF.db.
+    [!] ASF logging module has been rewritten and is now based on NLog project. New module supports standard built-in ASF rules, as well as custom NLog configuration, in which you can define your own loggers, targets, rules and formats. Check out Logging section in the wiki to learn more.
+    Removed LogToFile global config property, which is now always true unless ASF is running as a service. The file logging is now customizable through NLog and described in Logging section in the wiki.
+    Updated internal SteamKit2 ASF library to version 1.8, improving stability and compatibility with Steam network.
+    Removed HackIgnoreMachineID global config property. New SK2 version should solve the issue for all affected people that had to keep this property at true previously.
+    ASF service is now available as ASF-Service.exe extra binary due to incompatibility with new repacking method. There is also new article on the wiki explaining how to run ASF as a service.
+    ASF can now log it's messages also to event log, which is enabled by default when ASF is run as a service. You can override this through custom NLog config if you want to.
+    Misc portion of code improvements, optimizations and bugfixes.
+2016-07-08 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.1.8-2:
+    Disable update notifications.
+2016-07-03 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.1.8-1:
+    Changed repack tool used by ASF (ILRepack -> LibZ) which should hopefully fix remaining AV false-positives.
+2016-07-02 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.1.7-1:
+    [!] ASF now supports SteamPassword also in encrypted form. Visit configuration for info about new PasswordFormat bot config property, as well as security for further explanation.
+    Added GiftsLimiterDelay and MaxTradeHoldDuration global config properties. Visit configuration for more info.
+    Added !lootall and !password commands.
+    ASF can now become installed and run as a Windows service, thanks to @justin-gerhardt
+    Commands are now case-insensitive (but bot names remain case-sensitive).
+    Fixed rare Steam issue that could lead to ASF trying to redeem the same gift twice (thanks GabeN).
+    Fixed rare Steam issue that could lead to ASF crash due to failure to log in, after successfully logging in (yes, you read it right - thanks GabeN).
+    Fixed rare ASF issue that could lead to program crash during !redeem command when one or more bots had broken database.
+    [ConfigGenerator] Added version check, CG will now ensure that it's running only with compatible version of ASF.
+    Massive portion of code improvements, optimizations and bugfixes.
+2016-06-24 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.0.7-1:
+    Added !api command. More can be found on the wiki.
+    Increased default value of LoginLimiterDelay from 7 to 10. It seems to solve some recent more aggressive Steam rate-limiting.
+    Fixed incorrect calculation of same-type dupe values which could lead into accepting potentially non-neutral+ trades.
+    Misc code improvements, optimizations and bugfixes.
+2016-06-20 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.0.6-1:
+    Fixed !2faok confirming only one confirmation at a time (2.1.0.5 regression)
+    Divided !pause command into !pause and !resume
+2016-06-20 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.1.0.5-1:
+    [!] Incompatibility with previous versions of ASF - Bot's database will be converted from old V1 into new V2 format, which means that newly generated Bot's database will not run correctly with previous versions of ASF.
+    [!] Removed support for linking new authenticator and delinking existing ones, effectively removing UseAsfAsMobileAuthenticator Bot config property and !2faoff command.
+    Added support for SteamParental in 2FA sessions. New ASF 2FA uses existing ASF mechanism of SteamParentalPIN to unlock and operate on such accounts, no action is needed.
+    Improved security of ASF 2FA - 2FA module will now only accept confirmations ASF directly creates, and not all of them. !2faok command is not affected and still accepts everything.
+    Many internal optimizations, bugfixes, improvements and general code review of ASF 2FA.
+    [!] Fixed a Steam issue that could lead to ASF not detecting that all cards were dropped already.
+    ASF will now state current status of card drops (aka "X card drops remaining") when farming in solo mode.
+    Massive portion of code improvements, optimizations and bugfixes.
+2016-06-11 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.0.5.6-1:
+    Added workaround for Mono bug 41701 affecting Mono runtimes 4.4+.
+    Misc code improvements, optimizations and bugfixes.
+2016-06-10 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.0.5.5-1:
+    Hopefully fixed another Windows false-positive introduced in 2.0.5.4.
+2016-06-09 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.0.5.4-1:
+    [!] Added Steam Summer Sale 2016 with appID of 480730 to Blacklist and built-in GlobalBlacklist.
+    [!] Implemented brand new event-based cards farming module.
+    Changed default value of FarmingDelay from 5 to 15.
+    Improved logic of restarting cards farming module on newly added games.
+    Misc code improvements, optimizations and bugfixes.
+2016-06-06 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.0.5.2-1:
+    Added IsBotAccount bot config property.
+    Added !version command.
+    Fixed ASF not always resetting games played when farming got interrupted (e.g. with !pause command).
+    Misc code improvements, optimizations and bugfixes.
+2016-06-03 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.0.5.1-1:
+    Fixed harmless error when account was not using SteamApiKey, introduced in 2.0.5.0.
+  * 2.0.5.0-1:
+    [!] Greatly improved primary accounts support and removed AccountPlayingDelay global config property.
+    ASF will now ignore initial OnFarmingFinished() event when ShutdownOnFarmingFinished is set, and you've just !started this bot instance, allowing you to issue commands without much hassle. Every next event (including the one fired after IdleFarmingPeriod) will be honored.
+    !update command will now ignore (override) AutoUpdates setting, allowing you to force ASF update while still being able to skip automatic ones (on program startup and every 24 hours).
+    Fixed valid trades potentially being ignored in SteamTradeMatcher when user was overpaying with cards from the same game.
+    Fixed wrong dupes calculation when Steam is talking crap and responding with NULL instanceID of items (thanks GabeN).
+    Fixed ASF accidentally dismissing notifications related to profile comments.
+    Massive portion of code improvements, optimizations and bugfixes.
+2016-05-12 Gilrain <gilrain+libre.arch A_T castelmo DOT_ re>
+  * 2.0.4.4-1:
+    ASF now allows only one trade to be sent in SendOnFarmingFinished when account did not farm anything - this cuts spam related to sending trade every IdleFarmingPeriod, while still sending initial trade after connect.
+    ASF now allows overpaying when SteamTradeMatcher is enabled.
+    ASF no longer replies to given bot commands when bot instance could not be found and user is not SteamOwnerID.
+    Slightly improved logic of selecting optimal Steam CM server to minimize network latency and improve network communication.
+    Fixed ASF crash when trying to add new ASF 2FA authenticator with null SteamPassword.
+    Minor code improvements, optimizations and bugfixes.
+  * 2.0.4.1-1:
+    ASF 2FA is now more resistant to steam quirks by implementing the same logic of try-retry as usual requests.
+    Enhanced !status command which now also shows when bot is running in manual mode (such as !pause or !play).
+    Enhanced !owns command which is now able to work also with private profiles, as long as you use SteamApiKey for given account.
+    [ConfigGenerator] Graphical config generator now uses asterisks for hiding SteamPassword property.
+    Major portion of code improvements, optimizations and bugfixes.
+  * 2.0.4.0-1:
+    Added new bot config property called SteamTradeMatcher with default value of false. As always, you can find more information in the wiki.
+    Improved keys-detecting algorithm, which should greatly decrease amount of false-positives causing bot to redeem invalid cd-keys.
+    Improved logic of !loot. ASF will now loot only trading cards (including foils) and boosters, instead of all steam community items (such as emoticons or backgrounds).
+    When SendOnFarmingFinished is enabled, ASF will now also send trades when bot has nothing to farm.
+    Code improvements, optimizations and bugfixes.
+  * 2.0.3.4-1:
+    Slightly modified logic of DistributeKeys, according to #199
+    Added new global config property called AutoRestart with default value of true. As always, you can find more information in the wiki.
+    Minor code improvements, optimizations and bugfixes.
+  * 2.0.3.3-1:
+    Fixed bot not respecting !stop command when initiated during AccountPlayingDelay or InvalidPassword waiting period.
+    Fixed very rare bug which could lead to infinite loop (and 100% CPU usage) when bot would get disconnected from steam shortly after we told him to !redeem key and DistributeKeys was disabled (so that bot instance would try to redeem key in infinite loop).
+  * 2.0.3.2-1:
+    Removed experimental GUI app until it's ready to ship. I don't need people reporting issues for non-finished program.
+    Small amount of code improvements, optimizations and bugfixes.
+  * 2.0.3.1-1:
+    [!] ASF Config Generator is now named ASF-ConfigGenerator.exe.
+    [!] Added new, experimental GUI wrapper for ASF, which is named ASF-GUI.exe. Majority of the work has been done by @KlappPc, which made it possible. You're free to give it a try, but please keep in mind that it's not yet stable.
+    Added Headless ASF config property. Check wiki for more info.
+    Added proper support for handling very long steam responses (over 2048 characters). Bot will now split those messages and send in parts.
+    Enhanced !owns command, it now accepts multiple appIDs and gameNames, you can also use mixed queries containing both. Visit wiki for more info.
+    Fixed ASF not triggering shutdown with ShutdownOnFarmingFinished when account didn't have any games to farm right after starting.
+    Fixed a very rare crash that could happen when refreshing a steam session.
+    Fixed rare problem related to removing old binary after auto update.
+    [ConfigGenerator] Fixed config save not being triggered when editing collections (such as GamesPlayedWhileIdle).
+    Major portion of code improvements, optimizations and bugfixes.
+    ASF now features rewritten internal WebBrowser based on latest ArchiBoT changes. New WebBrowser includes e.g. native support for automatic compression/decompression of web traffic, which greatly helps reading very long steam badge pages.
+  * 2.0.2.4-1:
+    Bots can now redeem multiple keys also via !redeem command. Visit wiki for more info.
+    Added !2fano command, visit wiki for more info.
+    Fixed misc bug related to redeeming of keys on offline bot instances.
+  * 2.0.2.3-1:
+    [!] ASF no longer includes support for converting old V1.0 XML bot configs into new V2.0 JSON format. If you still need to perform a conversion, then you should do that with previous stable ASF V2.0.1.9, or start making configs from scratch.
+    ASF can now accept and redeem steam gifts, through new AcceptGifts bot config property. Visit wiki for more info.
+    ASF now logs time spent on farming given appID in human-readable (hh-1:mm) form. You can use that info for deciding whether your account requires CardDropsRestricted.
+    Added !help and !pause commands, visit wiki for more info.
+    Greatly improved handling of session refreshes for primary accounts. ASF no longer requires a restart of steam client to handle session refresh (which also does not require interrupting of farming)
+    Fixed very rare ASF crash caused by malformed bot databases.
+    Fixed !exit and !restart commands throwing exceptions when executed via WCF.
+    Major portion of code improvements, optimizations and bugfixes.
+  * 2.0.1.9-1:
+    [!] ASF now comes with graphical config generator - ASF-GUI.exe, which can be used for generating and managing ASF configs. The app also offers tutorial for new users, which should make ASF more user-friendly. Using the GUI app is totally optional and ASF does not require it in order to run properly.
+    [!] ASF will now refuse to load standard example.json and minimal.json config files. You're supposed to make a copy of those files, not edit them. ASF Config Generator will also hide and ignore those files by default.
+    Greatly improved efficiency of Complex algorithm by reading hours data directly from fetched badge pages (instead of checking every app page)
+    AccountPlayingDelay can now be set to value of 0 which will shutdown bot instance when account is being used for playing elsewhere.
+    WCFHostname can now be set to value of null, which will make ASF to ask you about the hostname on each startup.
+    ASF will now automatically fix non-valid values, such as setting WCFPort to 0.
+    Fixed !farm command being able to execute also on non-connected bot instances, it will now fail when given bot instance is not connected.
+    Fixed ASF not exiting itself when done executing a command in WCF client mode.
+    Fixed rare issue which made it possible for CardsFarmer module to restart already stopped bot instance
+    Fixed !farm command not returning Done! output, which was especially problematic when used in WCF
+    Debug mode now logs extra info about failed requests.
+    Several code improvements, optimizations and bugfixes
+  * 2.0.1.5-1:
+    Added support for importing WinAuth to ASF 2FA. Check wiki for more info
+    Added ForceHttp, LogToFile, SteamProtocol and SteamOwnerID global config properties. Check wiki for more info
+    Increased default value of HttpTimeout from 30 to 60. If you need that change in your old ASF.json config, you'll need to do it yourself (ASF never edits configs)
+    Added HackIgnoreMachineID global config property, which solves ASF being stuck after connecting to steam for some people. Check wiki for more info
+    Improved ASF 2FA security - AcceptConfirmations() ASF 2FA requests executed by trading functions now accept only trading confirmations. !2faok and SendTradePeriod are still accepting all of them
+    Added !owns command. Check wiki for more info
+    Debug global config property in addition to debugging network traffic, also debugs SK2 module now.
+    Fixed rare issue with ASF not disconnecting an account when asked to Stop()
+    ASF logger now catches also unobserved (deep) exceptions, which should make debugging easier
+    Several code improvements, optimizations and bugfixes. Logging in is much faster now

@@ -1,0 +1,56 @@
+--- a/qasm2pdf
++++ b/qasm2pdf
+@@ -1,25 +1,40 @@
+-#!/bin/csh
++#!/bin/bash
+ #
+ # File:   qasm2pdf
+ # Date:   23-Mar-04
+ # Author: I. Chuang <ichuang@mit.edu>
+ #
++# Date:   14-Jun-16
++# Edited: J. Sovetkin <e.sovetkin@gmail.com>
++#
+ # Shell script to convert qasm files to pdf, using the qasm2tex python script
+ #
+-# Usage:  qasm2pdf foo.qasm
++# Usage:  qasm2pdf foo.qasm (or several files)
+ #
+ # Produces: foo.pdf  (and also foo.tex, foo.epsf)
+ 
+-foreach i ($*)
++src_dir="$(pwd)"
++
++for file in "$@"
++do
++    filename="$(basename ${file})"
++    filename="${filename%.*}"
+ 
+-        set t = `echo $i | sed "s/.qasm//"`
++    mkdir -p /tmp/qasm2pdf
++    cd /tmp/qasm2pdf
+ 
+-	python qasm2tex.py $i >! $t.tex
+-	if (-z $t.tex) then
+-	    echo "error in qasm2tex on $t.tex! aborting."
+-	else
+-	    latex $t
+-	    dvips -D2400 -E -o $t.eps $t
+-	    epstopdf $t.eps
+-	endif
+-end
++    cp /usr/share/qasm2circ/xyqcirc.tex .
++    cp /usr/share/qasm2circ/meter.epsf .
++    
++    qasm2tex "${src_dir}/${file}" > "${filename}.tex"
++    
++    if [[ $? -ne 0 ]]
++    then
++        echo "error in qasm2tex on ${filename}.tex! aborting."
++    else
++	      latex "${filename}.tex"
++	      dvips -D2400 -E -o "${filename}.eps" "${filename}"
++	      epstopdf "${filename}.eps"
++        mv "${filename}.pdf" "${src_dir}/."
++    fi
++done

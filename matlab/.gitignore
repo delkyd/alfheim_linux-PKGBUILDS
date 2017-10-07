@@ -1,0 +1,10 @@
+*.tar.gz
+*.tar.xz
+*.tar
+*.zip
+*.fik
+*.lic
+*.dat
+src/
+pkg/
+ml/

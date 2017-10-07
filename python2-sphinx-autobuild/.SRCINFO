@@ -1,0 +1,23 @@
+pkgbase = python2-sphinx-autobuild
+	pkgdesc = Watch a Sphinx directory and rebuild the documentation when a change is detected. Also includes a livereload enabled web server.
+	pkgver = 0.6.0
+	pkgrel = 1
+	url = https://github.com/GaretJax/sphinx-autobuild
+	arch = any
+	license = MIT
+	makedepends = python2
+	depends = python2-sphinx
+	depends = python2-watchdog>=0.7.1
+	depends = python2-argh>=0.24.1
+	depends = python2-pathtools>=0.1.2
+	depends = python2-yaml>=3.10
+	depends = python2-tornado>=3.2
+	depends = python2-livereload>=2.3.0
+	options = !emptydirs
+	source = https://pypi.python.org/packages/source/s/sphinx-autobuild/sphinx-autobuild-0.6.0.tar.gz
+	source = https://pypi.python.org/packages/2.7/s/sphinx-autobuild/sphinx_autobuild-0.6.0-py2-none-any.whl
+	md5sums = 7331bb8e14b537b871ab8e6e09ff4713
+	md5sums = d5a708f79fc3999642c2637cb8ab1d3d
+
+pkgname = python2-sphinx-autobuild
+

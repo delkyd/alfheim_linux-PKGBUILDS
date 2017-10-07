@@ -1,0 +1,17 @@
+pkgbase = python-pyphen
+	pkgdesc = Pyphen is a pure Python module to hyphenate text using existing Hunspell hyphenation dictionaries.
+	pkgver = 0.9.4
+	pkgrel = 1
+	url = http://pyphen.org/
+	arch = any
+	license = GPL2
+	license = LGPL2.1
+	license = MPL
+	depends = python>=3.1
+	provides = python-pyphen
+	conflicts = python-pyphen
+	source = https://github.com/Kozea/Pyphen/archive/0.9.4.tar.gz
+	md5sums = 5b27217dde553bc0fdd3f7d3878e85a4
+
+pkgname = python-pyphen
+

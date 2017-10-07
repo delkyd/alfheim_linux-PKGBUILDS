@@ -1,0 +1,24 @@
+pkgbase = moneymanagerex-git
+	pkgdesc = An easy-to-use personal finance suite
+	pkgver = 1.4.0.alpha.1.r61.e6adf480
+	pkgrel = 1
+	url = http://www.moneymanagerex.org/
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = cmake
+	makedepends = git
+	makedepends = boost
+	makedepends = gettext
+	makedepends = lsb-release
+	depends = wxgtk3
+	depends = webkit2gtk
+	optdepends = cups: for printing support
+	provides = moneymanagerex
+	conflicts = moneymanagerex
+	replaces = mmex
+	source = git+https://github.com/moneymanagerex/moneymanagerex.git
+	sha256sums = SKIP
+
+pkgname = moneymanagerex-git
+

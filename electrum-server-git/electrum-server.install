@@ -1,0 +1,92 @@
+_es_user=electrum-server
+_es_group=electrum-server
+
+post_install() {
+  _mkuser
+  chown -R $_es_user:$_es_group /etc/electrum-server        \
+                                /etc/electrum-server.conf   \
+                                /etc/electrum-server.banner \
+                                /usr/share/electrum-server  \
+                                /var/log/electrum-server
+  printf "%b\n" "$ecdsa"
+}
+
+post_upgrade() {
+  _mkuser
+  chown -R $_es_user:$_es_group /etc/electrum-server        \
+                                /etc/electrum-server.conf   \
+                                /etc/electrum-server.banner \
+                                /usr/share/electrum-server  \
+                                /var/log/electrum-server
+  printf "%b\n" "$ecdsa"
+}
+
+post_remove() {
+  _rmuser
+}
+
+_mkuser() {
+  getent passwd $_es_user &>/dev/null || {
+    echo -n "Creating electrum-server user... "
+    grep -E "^$_es_group:" /etc/group >/dev/null || groupadd $_es_group
+    useradd -m -d /etc/electrum-server -g $_es_group -s /usr/bin/nologin $_es_user
+    echo "done"
+  }
+}
+
+_rmuser() {
+  echo -n "Removing electrum-server user... "
+  userdel -rf $_es_user 2>/dev/null
+  echo "done"
+}
+
+read -d '' ecdsa <<'EOF'
+########################################################################
+########################################################################
+##                                                                    ##
+##  Electrum Server                                                   ##
+##  _______________                                                   ##
+##                                                                    ##
+##  Usage:                                                            ##
+##                                                                    ##
+##      systemctl start electrum-server                               ##
+##      electrum-server getinfo|peers|numpeers|sessions|numsessions   ##
+##                                                                    ##
+##                                                                    ##
+##                         ';,;:.                                     ##
+##                       'o'   .;d.                                   ##
+##                       K.      :l                                   ##
+##                       cl     .O,                                   ##
+##                        .c:cclc.                                    ##
+##              .;::;.     .;ko,.     ':::'     .',,,.                ##
+##            .OMMMMMWo  ,d,.  .oo  cXMMMMMX:  do.  .:d.              ##
+##           x MMMMMMMMxlX.      kdoMMMMMMMMMoxl      '0              ##
+##            oMMMMMMMN;'K,     .Oc;NMMMMMMMX,ld      ;k              ##
+##             :0WMMNk.  .cl;,;cl,  'kWMMMWx.  :o:,';cc               ##
+##                ..        .'.       .oWc.      .''.                 ##
+##                                  'oc;,;lo.                         ##
+##                                 ,O.     .0.                        ##
+##                                 :k      .0.                        ##
+##                                  cl,...:o,                         ##
+##                                    .,,,.                           ##
+##                                                                    ##
+##                                                                    ##
+##                                                                    ##
+##  Say hi to the dev crew, other server operators and fans on        ##
+##  irc.freenode.net #electrum and we'll try to congratulate you      ##
+##  on supporting the community by running an Electrum node.          ##
+##                                                                    ##
+##  If you're operating a public Electrum server please subscribe     ##
+##  to or regularly check the following thread:                       ##
+##                                                                    ##
+##  https://bitcointalk.org/index.php?topic=85475.0                   ##
+##                                                                    ##
+##  It'll contain announcements about important updates to Electrum   ##
+##  server required for a smooth user experience.                     ##
+##                                                                    ##
+##  Please see /usr/share/doc/electrum-server/HOWTO.md for detailed   ##
+##  information.                                                      ##
+##                                                                    ##
+########################################################################
+########################################################################
+EOF

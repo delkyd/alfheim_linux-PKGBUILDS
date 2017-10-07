@@ -1,0 +1,18 @@
+pkgbase = xde-menu
+	pkgdesc = XDG compliant menu generator
+	pkgver = 0.4
+	pkgrel = 1
+	url = https://github.com/bbidulock/xde-menu
+	arch = i686
+	arch = x86_64
+	license = GPL
+	depends = libunique
+	depends = libwnck
+	depends = libsm
+	depends = gnome-menus
+	depends = gtk2
+	source = https://github.com/bbidulock/xde-menu/releases/download/0.4/xde-menu-0.4.tar.xz
+	md5sums = ccb244fb86c0a90fa51e64c01cbd629f
+
+pkgname = xde-menu
+

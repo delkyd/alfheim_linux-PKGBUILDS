@@ -1,0 +1,15 @@
+pkgbase = python-sphinxcontrib-bibtex
+	pkgdesc = A Sphinx extension for BibTeX style citations
+	pkgver = 0.3.4
+	pkgrel = 1
+	url = http://sphinxcontrib-bibtex.readthedocs.org
+	arch = any
+	license = BSD
+	makedepends = git
+	depends = python-sphinx
+	depends = python-pybtex
+	source = https://pypi.io/packages/source/s/sphinxcontrib-bibtex/sphinxcontrib-bibtex-0.3.4.tar.gz
+	sha256sums = 8eea947b55cf70937e7d2b4fcb425f116cab85eaf2909c991797e66cc1cf0168
+
+pkgname = python-sphinxcontrib-bibtex
+

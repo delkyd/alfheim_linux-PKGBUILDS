@@ -1,0 +1,12 @@
+pkgbase = angular-cli
+	pkgdesc = CLI tool for Angular
+	pkgver = 1.4.1
+	pkgrel = 1
+	url = https://github.com/angular/angular-cli
+	arch = any
+	depends = nodejs
+	depends = npm
+	options = !strip
+
+pkgname = angular-cli
+

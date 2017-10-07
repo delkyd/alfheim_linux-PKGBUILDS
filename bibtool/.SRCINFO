@@ -1,0 +1,16 @@
+pkgbase = bibtool
+	pkgdesc = Command line manipulation of BibTeX files.
+	pkgver = 2.67
+	pkgrel = 1
+	url = http://www.gerd-neugebauer.de/software/TeX/BibTool/en/
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = tar
+	depends = texlive-bin
+	noextract = BibTool-2.67.tar.gz
+	source = http://www.gerd-neugebauer.de/software/TeX/BibTool/BibTool-2.67.tar.gz
+	md5sums = c14d5a162a0e28cc6d69fc4333b59713
+
+pkgname = bibtool
+

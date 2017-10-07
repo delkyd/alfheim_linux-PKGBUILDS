@@ -1,0 +1,31 @@
+# $Id$
+# Maintainer: Dan McGee <dan@archlinux.org>
+
+pkgname=pacman-mirrorlist
+pkgver=20170907
+pkgrel=1
+pkgdesc="Arch Linux mirror list for use by pacman"
+arch=('any')
+url="https://www.archlinux.org/mirrorlist/"
+license=('GPL')
+backup=(etc/pacman.d/mirrorlist)
+source=(mirrorlist)
+
+# NOTE on building this package:
+# * Go to the trunk/ directory
+# * Run bash -c ". PKGBUILD; updatelist"
+# * Update the checksums, update pkgver
+# * Build the package
+
+updatelist() {
+  rm -f mirrorlist
+  curl -o mirrorlist https://www.archlinux.org/mirrorlist/all/
+}
+
+package() {
+  mkdir -p $pkgdir/etc/pacman.d
+  install -m644 $srcdir/mirrorlist $pkgdir/etc/pacman.d/
+}
+
+md5sums=('1d5767a932e1707bd37bd22ca3ad6bf9')
+sha256sums=('f0877fdeb5782ac27b5eb03ed42ba51c3d94569f5fb805c718570bb0ea6b4f00')

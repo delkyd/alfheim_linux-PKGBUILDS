@@ -1,0 +1,30 @@
+pkgbase = mozilla-extension-gnome-keyring
+	pkgdesc = Mozilla extension to store passwords and form logins in gnome-keyring.
+	pkgver = 0.12
+	pkgrel = 2
+	url = https://addons.mozilla.org/mozilla/addon/mozilla-gnome-keyring/
+	arch = any
+	license = GPLv3
+	makedepends = unzip
+	makedepends = rasqal
+	depends = libgnome-keyring
+	noextract = mozilla-extension-gnome-keyring.zip
+	source = mozilla-extension-gnome-keyring.zip::https://addons.mozilla.org/firefox/downloads/latest/mozilla-gnome-keyring/platform:2/
+	source = .version::https://services.addons.mozilla.org/firefox/api/1.5/addon/mozilla-gnome-keyring
+	md5sums = c165720bf25e4fdc55677e0dc1a3c791
+	md5sums = SKIP
+
+pkgname = mozilla-extension-gnome-keyring
+
+pkgname = firefox-extension-gnome-keyring
+	depends = mozilla-extension-gnome-keyring=0.12
+	depends = firefox
+	provides = 
+	conflicts = 
+
+pkgname = thunderbird-extension-gnome-keyring
+	depends = mozilla-extension-gnome-keyring=0.12
+	depends = thunderbird
+	provides = 
+	conflicts = 
+

@@ -1,0 +1,36 @@
+pkgbase = python-blivet
+	pkgdesc = a python module for management of a system storage configuration
+	pkgver = 1.13
+	pkgrel = 3
+	url = http://fedoraproject.org/wiki/Blivet
+	arch = any
+	license = LGPL2.1
+	source = python-blivet-1.13.tar.gz::https://github.com/rhinstaller/blivet/archive/blivet-1.13.tar.gz
+	sha256sums = c3700ef547e435c26accacca8b88bea1c171118251aeff41a5471e953d784d04
+
+pkgname = python-blivet
+	pkgdesc = a python module for management of a system storage configuration - python 3.x pkg
+	depends = multipath-tools
+	depends = mpathconf
+	depends = mdadm
+	depends = libblockdev
+	depends = libselinux
+	depends = python-six
+	depends = python-pyudev
+	depends = hawkey
+	depends = python-pyparted
+	depends = python-pykickstart
+
+pkgname = python2-blivet
+	pkgdesc = a python module for management of a system storage configuration - python 2.x pkg
+	depends = multipath-tools
+	depends = mpathconf
+	depends = mdadm
+	depends = libblockdev
+	depends = libselinux
+	depends = python2-six
+	depends = python2-pyudev
+	depends = hawkey
+	depends = python2-pyparted
+	depends = python2-pykickstart
+

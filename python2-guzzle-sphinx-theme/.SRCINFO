@@ -1,0 +1,16 @@
+pkgbase = python2-guzzle-sphinx-theme
+	pkgdesc = Sphinx theme used by Guzzle
+	pkgver = 0.7.11
+	pkgrel = 1
+	url = https://github.com/guzzle/guzzle_sphinx_theme
+	arch = any
+	license = custom
+	makedepends = python2
+	makedepends = python2-distribute
+	source = guzzle-sphinx-theme-0.7.11.tar.gz::https://github.com/guzzle/guzzle_sphinx_theme/archive/0.7.11.tar.gz
+	sha256sums = be264736cfb0b19c00289e2ea4e5487a01df28ef8bf47df5dacd273d9d43412c
+
+pkgname = python2-guzzle-sphinx-theme
+	depends = python2
+	depends = python2-sphinx>=1.1.3
+

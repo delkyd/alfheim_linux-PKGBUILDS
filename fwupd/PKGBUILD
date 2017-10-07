@@ -1,0 +1,44 @@
+# $Id$
+# Maintainer: Bruno Pagani (a.k.a. ArchangeGabriel) <archange@archlinux.org>
+# Contributor: Mirco Tischler <mt-ml at gmx dot de>
+
+pkgname=fwupd
+pkgver=0.9.7
+pkgrel=1
+pkgdesc='A simple daemon to allow session software to update firmware'
+arch=('i686' 'x86_64')
+url='https://github.com/hughsie/fwupd'
+license=('GPL2')
+depends=('appstream-glib' 'fwupdate' 'colord' 'python')
+makedepends=('meson' 'valgrind' 'docbook-utils' 'docbook-sgml' 'perl-sgmls'
+             'gobject-introspection' 'gtk-doc' 'python-pillow' 'python-cairo'
+             'ttf-dejavu' 'adobe-source-han-sans-cn-fonts' 'python-gobject')
+checkdepends=('umockdev')
+source=(${pkgname}-${pkgver}.tar.gz::"${url}/archive/${pkgver}.tar.gz")
+sha256sums=('2e70742ec4be933d1e31c489bc6f00c4f326cd4ef3adade4ae6579c747f78742')
+
+build() {
+    cd ${pkgname}-${pkgver}
+
+    meson --prefix=/usr \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        --libexecdir=/usr/lib \
+        --buildtype=release \
+        ../build
+
+    ninja -v -C ../build
+}
+
+check() {
+    cd build
+    mesontest
+}
+
+package() {
+    DESTDIR="${pkgdir}" ninja -C build install
+    # Fixup mode to match polkit
+    install -d -o root -g 102 -m 750 "${pkgdir}/usr/share/polkit-1/rules.d"
+    # Remove the tests
+    rm -r ${pkgdir}/usr/share/installed-tests/
+}

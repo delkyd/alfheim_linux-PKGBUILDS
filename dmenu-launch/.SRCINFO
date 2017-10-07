@@ -1,0 +1,14 @@
+pkgbase = dmenu-launch
+	pkgdesc = A dmenu-based app launcher for X and terminals. Launches binaries and XDG shortcuts.
+	pkgver = 0.5.11
+	pkgrel = 1
+	url = https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch
+	arch = any
+	license = GPL
+	depends = dmenu
+	depends = lsx
+	source = https://raw.githubusercontent.com/Wintervenom/Scripts/master/file/launch/dmenu-launch
+	sha1sums = d8059d7fda695bb90152ca341d88ab04a2eeeefa
+
+pkgname = dmenu-launch
+

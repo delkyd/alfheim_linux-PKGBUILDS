@@ -1,0 +1,3 @@
+post_remove() {
+  echo "=> If you will not play Lost Labyrinth in the future, remove the directory '/usr/share/lostlabyrinth'."
+}

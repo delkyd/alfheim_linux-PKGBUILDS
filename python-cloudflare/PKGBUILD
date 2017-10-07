@@ -1,0 +1,60 @@
+# $Id$
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgbase=python-cloudflare
+pkgname=('python-cloudflare' 'python2-cloudflare')
+pkgver=1.8.0
+pkgrel=1
+pkgdesc='Python wrapper for the Cloudflare v4 API'
+arch=('any')
+license=('MIT')
+url='https://github.com/cloudflare/python-cloudflare'
+makedepends=('python-setuptools' 'python2-setuptools' 'python-requests' 'python2-requests'
+             'python-future' 'python2-future' 'python-yaml' 'python2-yaml')
+checkdepends=('python-pytest' 'python2-pytest')
+source=("$pkgbase-$pkgver.tar.gz::https://github.com/cloudflare/python-cloudflare/archive/$pkgver.tar.gz")
+sha512sums=('20b31654a14ffe4026451661e74690e0d09187527db66ea04df5f2e803aa0fb189b7a6e89809c58d0d5b711353e81a737440677ef56dc7f9148c978e0eed832c')
+
+prepare() {
+  cp -a python-cloudflare-$pkgver{,-py2}
+}
+
+build() {
+  cd "$srcdir"/python-cloudflare-$pkgver
+  python setup.py build
+
+  cd "$srcdir"/python-cloudflare-$pkgver-py2
+  python2 setup.py build
+}
+
+check() {
+  cd "$srcdir"/python-cloudflare-$pkgver
+  PYTHONPATH="$PWD/build/lib" pytest tests/test1.py
+
+  cd "$srcdir"/python-cloudflare-$pkgver-py2
+  PYTHONPATH="$PWD/build/lib" pytest2 tests/test1.py
+}
+
+package_python-cloudflare() {
+  depends=('python-requests' 'python-future' 'python-yaml')
+
+  cd python-cloudflare-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -D -m644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+
+  rm -r "$pkgdir"/usr/lib/python3.6/site-packages/examples
+}
+
+package_python2-cloudflare() {
+  depends=('python2-requests' 'python2-future' 'python2-yaml')
+
+  cd python-cloudflare-$pkgver-py2
+  python2 setup.py install --root="$pkgdir" --optimize=1
+  install -D -m644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+
+  mv "$pkgdir"/usr/bin/cli4{,-python2}
+
+  rm -r "$pkgdir"/usr/lib/python2.7/site-packages/examples
+}
+
+# vim:set ts=2 sw=2 et:

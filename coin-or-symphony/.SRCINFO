@@ -1,0 +1,15 @@
+pkgbase = coin-or-symphony
+	pkgdesc = COIN-OR solver for mixed-integer linear programs(MILPs)
+	pkgver = 5.6.16
+	pkgrel = 1
+	url = https://projects.coin-or.org/SYMPHONY
+	arch = i686
+	arch = x86_64
+	groups = coin-or
+	license = EPL
+	depends = coin-or-cgl
+	source = http://www.coin-or.org/download/source/SYMPHONY/SYMPHONY-5.6.16.tgz
+	md5sums = 55345811e8943e43effae06082e052b6
+
+pkgname = coin-or-symphony
+

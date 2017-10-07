@@ -1,0 +1,24 @@
+pkgbase = bzr-gtk-bzr
+	pkgdesc = Plugin for Bazaar that aims to provide GTK+ interfaces to most Bazaar operations.
+	pkgver = r796
+	pkgrel = 2
+	url = http://bazaar-vcs.org/bzr-gtk
+	install = bzr-gtk.install
+	arch = any
+	license = GPL
+	depends = python2-gobject2
+	depends = bzr
+	depends = desktop-file-utils
+	depends = gtk-update-icon-cache
+	optdepends = python2-cairo: Graphs in the visualisation tool
+	optdepends = pytgtksourceview2: Syntax-highlighted diffs
+	optdepends = python2-nautilus: Nautilus integration
+	provides = bzr-gtk
+	conflicts = bzr-gtk
+	source = bzr-gtk::bzr+http://bazaar.launchpad.net/~bzr-gtk/bzr-gtk/gtk3/
+	source = no_credits.patch
+	sha256sums = SKIP
+	sha256sums = de6273817a433d3c2e64ed0f8339c7a3cdc60fec60772a6d57b4c14f94cb2cdf
+
+pkgname = bzr-gtk-bzr
+

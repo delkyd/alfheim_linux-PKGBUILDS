@@ -1,0 +1,24 @@
+pkgbase = perl-travel-status-de-deutschebahn
+	pkgdesc = Interface to the DeutscheBahn online departure monitor
+	pkgver = 2.01
+	pkgrel = 1
+	url = http://finalrewind.org/projects/Travel-Status-DE-DeutscheBahn/
+	arch = any
+	license = PerlArtistic
+	makedepends = perl-module-build
+	makedepends = perl-file-slurp
+	makedepends = perl-json
+	makedepends = perl-list-moreutils
+	makedepends = perl-test-compile
+	makedepends = perl-test-pod
+	depends = perl-class-accessor
+	depends = perl-libwww
+	depends = perl-xml-libxml
+	options = !emptydirs
+	source = http://finalrewind.org/projects/Travel-Status-DE-DeutscheBahn/Travel-Status-DE-DeutscheBahn-2.01.tar.gz
+	source = http://finalrewind.org/projects/Travel-Status-DE-DeutscheBahn/Travel-Status-DE-DeutscheBahn-2.01.tar.gz.asc
+	md5sums = 6bed5bb9003ff2a3ead29c9fa8e74bc7
+	md5sums = 6b60da93dae79b57401353760ff28be2
+
+pkgname = perl-travel-status-de-deutschebahn
+

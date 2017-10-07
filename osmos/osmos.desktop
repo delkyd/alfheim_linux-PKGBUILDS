@@ -1,0 +1,10 @@
+[Desktop Entry]
+Value=1.0
+Type=Application
+Categories=Game;
+Name=Osmos
+Comment=Hemisphere Games
+GenericName=Physics-based Ambient Game
+Icon=osmos
+Exec=osmos
+Terminal=false

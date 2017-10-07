@@ -1,0 +1,71 @@
+pkgbase = efl-git
+	pkgdesc = Enlightenment Foundation Libraries - Development version
+	pkgver = 1.20.99.55194.gc51f35d42a
+	pkgrel = 1
+	url = http://www.enlightenment.org
+	arch = i686
+	arch = x86_64
+	license = BSD
+	license = LGPL2.1
+	license = GPL2
+	license = MIT
+	license = custom
+	makedepends = git
+	makedepends = python2
+	depends = avahi
+	depends = bullet
+	depends = curl
+	depends = fontconfig
+	depends = fribidi
+	depends = gst-plugins-base-libs
+	depends = luajit
+	depends = libexif
+	depends = libgl
+	depends = libinput
+	depends = libpulse
+	depends = libspectre
+	depends = libraw
+	depends = librsvg
+	depends = libwebp
+	depends = libxcomposite
+	depends = libxcursor
+	depends = libxinerama
+	depends = libxkbcommon
+	depends = libxp
+	depends = libxrandr
+	depends = libxss
+	depends = libunwind
+	depends = mesa
+	depends = openjpeg2
+	depends = poppler
+	depends = wayland
+	depends = shared-mime-info
+	depends = ttf-font
+	depends = scim
+	depends = libibus
+	depends = glib2
+	optdepends = geoclue: For elocation
+	optdepends = gst-plugins-base: Video and thumbnail codecs
+	optdepends = gst-plugins-good: Video and thumbnail codecs
+	optdepends = gst-plugins-bad: Video and thumbnail codecs
+	optdepends = gst-plugins-ugly: Video and thumbnail codecs
+	optdepends = gst-libav: Video and thumbnails with ffmpeg/libav
+	optdepends = libreoffice: Office document thumbnails
+	optdepends = python2: Compare Eina benchmarks
+	provides = efl=1.20.99.55194.gc51f35d42a
+	provides = elementary=1.20.99.55194.gc51f35d42a
+	provides = elementary-git=1.20.99.55194.gc51f35d42a
+	provides = evas_generic_loaders=1.20.99.55194.gc51f35d42a
+	conflicts = efl
+	conflicts = elementary
+	conflicts = elementary-git
+	conflicts = elementary_test
+	conflicts = elementary_test-git
+	conflicts = evas_generic_loaders
+	conflicts = evas_generic_loaders-git
+	options = debug
+	source = git+https://git.enlightenment.org/core/efl.git
+	sha256sums = SKIP
+
+pkgname = efl-git
+

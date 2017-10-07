@@ -1,0 +1,20 @@
+pkgbase = bertini_real
+	pkgdesc = Numerical decomposition of real algebraic sets, based on the Bertini homotopy continuation solver
+	pkgver = 1.0.0
+	pkgrel = 2
+	url = http://www.bertinireal.com/
+	arch = i686
+	arch = x86_64
+	license = custom: Bertini license
+	depends = bertini
+	depends = boost
+	depends = gmp
+	depends = mpfr
+	optdepends = openmpi
+	source = http://www.bertinireal.com/resources/bertini_real-1.0.0.tar.gz
+	source = http://bertini.nd.edu/Bertini_License
+	md5sums = 5be3953d6fab005626f6ce81e03893be
+	md5sums = SKIP
+
+pkgname = bertini_real
+

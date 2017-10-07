@@ -1,0 +1,15 @@
+pkgbase = albert-python-evaluate
+	pkgdesc = Albert extension for easily evaluating python expressions
+	pkgver = r17.d755a27
+	pkgrel = 2
+	url = https://github.com/Tyilo/albert-extensions
+	arch = any
+	license = GPL
+	depends = albert
+	depends = python
+	optdepends = xclip
+	source = git+https://github.com/Tyilo/albert-extensions
+	md5sums = SKIP
+
+pkgname = albert-python-evaluate
+

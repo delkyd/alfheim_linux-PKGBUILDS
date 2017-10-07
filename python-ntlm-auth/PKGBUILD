@@ -1,0 +1,39 @@
+# Maintainer: Sven-Hendrik Haase <sh@lutzhaase.com>
+# Contributor: Christoph W <c w e g e n e r at gmail dot com>
+
+pkgbase=('python-ntlm-auth')
+pkgname=('python-ntlm-auth' 'python2-ntlm-auth')
+_module='ntlm-auth'
+pkgver=1.0.5
+pkgrel=1
+pkgdesc="Creates NTLM authentication structures"
+url="https://github.com/jborean93/ntlm-auth"
+makedepends=('python-setuptools' 'python2-setuptools')
+license=('LGPL-3.0')
+arch=('any')
+source=("https://github.com/jborean93/ntlm-auth/archive/v${pkgver}.tar.gz")
+sha512sums=('8c30172e7fd3b4f96ea0605002de3fa33626043f9571bc451e47374311c9533021346fd04a43be6b22d909a5beed92f74eb926a67da069b7f45bab9d3e2f8871')
+
+prepare() {
+    cp -a "${srcdir}/${_module}-${pkgver}"{,-python2}
+}
+
+build() {
+    cd "${srcdir}/${_module}-${pkgver}"
+    python setup.py build
+
+    cd "${srcdir}/${_module}-${pkgver}-python2"
+    python2 setup.py build
+}
+
+package_python-ntlm-auth() {
+    depends+=('python' 'python-six')
+    cd "${srcdir}/${_module}-${pkgver}"
+    python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+}
+
+package_python2-ntlm-auth() {
+    depends+=('python2' 'python2-six' 'python2-ordereddict')
+    cd "${srcdir}/${_module}-${pkgver}-python2"
+    python2 setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+}

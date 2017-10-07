@@ -1,0 +1,21 @@
+pkgbase = pdfbeads
+	pkgdesc = A small utility written in Ruby which takes scanned page images and converts them into a single PDF file
+	pkgver = 1.1.1
+	pkgrel = 4
+	url = http://rubygems.org/gems/pdfbeads
+	arch = any
+	license = GPL
+	makedepends = rubygems
+	depends = ruby
+	depends = ruby-iconv
+	depends = jbig2enc-git
+	depends = ruby-nokogiri>=1.5.10
+	depends = ruby-pdf-reader>=1.0.0
+	depends = ruby-rmagick>=2.13.0
+	depends = openjpeg2
+	noextract = pdfbeads-1.1.1.gem
+	source = http://rubygems.org/downloads/pdfbeads-1.1.1.gem
+	md5sums = 5aa0a7c57e6ce683a5bd4eb1a5d9eb76
+
+pkgname = pdfbeads
+

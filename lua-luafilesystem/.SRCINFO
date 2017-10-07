@@ -1,0 +1,20 @@
+pkgbase = lua-luafilesystem
+	pkgdesc = A lua library to access the underlying directory structure and file attributes
+	pkgver = 1.6.3
+	pkgrel = 2
+	url = http://keplerproject.github.io/luafilesystem/
+	arch = i686
+	arch = x86_64
+	license = MIT
+	makedepends = make
+	makedepends = gcc
+	depends = lua
+	source = luafilesystem-v_1_6_3.tar.gz::https://github.com/keplerproject/luafilesystem/archive/v_1_6_3.tar.gz
+	md5sums = d0552c7e5a082f5bb2865af63fb9dc95
+
+pkgname = lua-luafilesystem
+
+pkgname = lua52-luafilesystem
+
+pkgname = lua51-luafilesystem
+

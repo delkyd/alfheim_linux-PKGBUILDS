@@ -1,0 +1,20 @@
+pkgbase = perl-protocol-socketio
+	pkgdesc = Socket.IO protocol implementation
+	pkgver = 0.06
+	pkgrel = 1
+	url = http://search.cpan.org/dist/Protocol-SocketIO/
+	arch = any
+	license = PerlArtistic
+	license = GPL
+	makedepends = perl-module-build>=0.38
+	depends = perl
+	depends = perl-json
+	provides = Protocol::SocketIO=0.06
+	provides = perl-protocol-socketio=0.06
+	options = !emptydirs
+	options = purge
+	source = http://search.cpan.org/CPAN/authors/id/V/VT/VTI/Protocol-SocketIO-0.06.tar.gz
+	sha512sums = 8e144981b7ed7f9afacb31a2311a20afaab06ad1e53a099d23e27e861751e1c9389f5e6fb84b0b9bcd653b28e937ea7dfb11c88fe055840836a8a34f3a688942
+
+pkgname = perl-protocol-socketio
+

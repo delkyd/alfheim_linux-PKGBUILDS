@@ -1,0 +1,16 @@
+pkgbase = treeify
+	pkgdesc = converts the output of a command that lists files into a tree representation similar to the output of the command tree
+	pkgver = 0.1.4
+	pkgrel = 1
+	url = https://github.com/dzamlo/treeify
+	arch = i686
+	arch = x86_64
+	license = MIT
+	license = Apache
+	makedepends = cargo
+	depends = gcc-libs
+	source = https://github.com/dzamlo/treeify/archive/treeify-0.1.4.tar.gz
+	sha256sums = e5e112f958c78a590db12e67f1d2d3b84236e1315bb6e058b3112985c01cbc4a
+
+pkgname = treeify
+

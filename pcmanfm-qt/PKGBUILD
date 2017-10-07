@@ -1,0 +1,45 @@
+# $Id$
+# Maintainer: Jerome Leclanche <jerome@leclan.ch>
+
+pkgname=pcmanfm-qt
+pkgver=0.11.3
+pkgrel=2
+pkgdesc="The LXQt file manager, Qt port of PCManFM"
+arch=("i686" "x86_64")
+groups=("lxqt")
+url="http://lxqt.org"
+license=("GPL2")
+depends=("desktop-file-utils" "libfm-qt" "lxmenu-data")
+makedepends=("lxqt-build-tools")
+optdepends=(
+	"gvfs: for trash support, mounting with udisks and remote filesystems"
+	"xarchiver: archive management"
+)
+source=(
+	"https://github.com/lxde/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"
+	"https://github.com/lxde/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz.asc"
+)
+sha256sums=(
+	"d0273344d6fc578e05f832997dffe8d5ba6c3369a1077aa3e8ee23c6aa5b2f7f"
+	"SKIP"
+)
+validpgpkeys=(
+	"169704C6FB490C6892C7F23C37E0AF1FDA48F373"  # Jerome Leclanche <jerome@leclan.ch>
+	"7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3"  # Alf Gaida <agaida@siduction.org>
+)
+
+
+build() {
+	mkdir -p build
+	cd build
+
+	cmake "$srcdir/$pkgname-$pkgver" \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	make
+}
+
+package() {
+	cd build
+	make DESTDIR="$pkgdir" install
+}

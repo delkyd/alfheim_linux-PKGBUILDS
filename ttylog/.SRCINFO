@@ -1,0 +1,15 @@
+pkgbase = ttylog
+	pkgdesc = A serial port logger
+	pkgver = 0.29
+	pkgrel = 1
+	url = http://ttylog.sourceforge.net/
+	arch = x86_64
+	license = GPL2
+	makedepends = cmake
+	source = https://downloads.sourceforge.net/project/ttylog/ttylog/0.29/ttylog-0.29.tar.gz
+	source = bindir.patch
+	md5sums = 1cefb8acc85b9d7daf211e2cf08ecc04
+	md5sums = b7316a7afe36d858cf4d6c47f05b0d2a
+
+pkgname = ttylog
+

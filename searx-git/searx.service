@@ -1,0 +1,19 @@
+[Unit]
+Description=Searx server
+After=network.target
+
+[Service]
+PrivateTmp=true
+PrivateDevices=true
+# Prevent access to /home, /root, and /run/user
+ProtectHome=true
+# Prevent writes to /usr, /boot, and /etc
+ProtectSystem=full
+Environment=SEARX_SETTINGS_PATH=/etc/searx/settings.yml
+Type=simple
+User=searx
+ExecStart=/usr/bin/searx-run
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target

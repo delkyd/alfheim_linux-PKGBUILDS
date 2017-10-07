@@ -1,0 +1,15 @@
+pkgbase = perl-autobox-core
+	pkgdesc = Provide core functions to autoboxed scalars, arrays and hashes.
+	pkgver = 1.29
+	pkgrel = 1
+	url = http://search.cpan.org/dist/autobox-Core
+	arch = any
+	license = PerlArtistic
+	license = GPL
+	depends = perl-autobox>=2.71
+	options = !emptydirs
+	source = http://search.cpan.org/CPAN/authors/id/X/XE/XENU/autobox-Core-1.29.tar.gz
+	md5sums = 10b0f4c908542e034a2a423a358ab420
+
+pkgname = perl-autobox-core
+

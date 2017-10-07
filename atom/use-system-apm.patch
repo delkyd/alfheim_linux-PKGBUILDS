@@ -1,0 +1,31 @@
+--- a/script/lib/run-apm-install.js
++++ b/script/lib/run-apm-install.js
+@@ -8,11 +8,8 @@
+   const installEnv = Object.assign({}, process.env)
+   // Set resource path so that apm can load metadata related to Atom.
+   installEnv.ATOM_RESOURCE_PATH = CONFIG.repositoryRootPath
+-  // Set our target (Electron) version so that node-pre-gyp can download the
+-  // proper binaries.
+-  installEnv.npm_config_target = CONFIG.appMetadata.electronVersion
+   childProcess.execFileSync(
+-    CONFIG.getApmBinPath(),
++    'apm',
+     ['--loglevel=error', 'install'],
+     {env: installEnv, cwd: packagePath, stdio: 'inherit'}
+   )
+--- a/src/package-manager.coffee
++++ b/src/package-manager.coffee
+@@ -147,12 +147,7 @@
+     return configPath if configPath
+     return @apmPath if @apmPath?
+ 
+-    commandName = 'apm'
+-    commandName += '.cmd' if process.platform is 'win32'
+-    apmRoot = path.join(process.resourcesPath, 'app', 'apm')
+-    @apmPath = path.join(apmRoot, 'bin', commandName)
+-    unless fs.isFileSync(@apmPath)
+-      @apmPath = path.join(apmRoot, 'node_modules', 'atom-package-manager', 'bin', commandName)
++    @apmPath = '/usr/lib/node_modules/atom-package-manager/bin/apm'
+     @apmPath
+ 
+   # Public: Get the paths being used to look for packages.

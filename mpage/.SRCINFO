@@ -1,0 +1,14 @@
+pkgbase = mpage
+	pkgdesc = Print several pages on a single sheet of paper.
+	pkgver = 2.5.7
+	pkgrel = 2
+	url = http://www.mesa.nl/download.html
+	arch = i686
+	arch = x86_64
+	license = GPL
+	depends = glibc
+	source = http://www.mesa.nl/pub/mpage/mpage-2.5.7.tgz
+	md5sums = 8d94338445345a554fd3bc664d48525a
+
+pkgname = mpage
+

@@ -1,0 +1,20 @@
+pkgbase = xde-menu-git
+	pkgdesc = XDG compliant menu generator
+	pkgver = 0.4.0.ge883506
+	pkgrel = 1
+	url = https://github.com/bbidulock/xde-menu
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = git
+	depends = libwnck
+	depends = libsm
+	depends = gnome-menus
+	depends = gtk2
+	provides = xde-menu
+	conflicts = xde-menu
+	source = xde-menu-git::git+https://github.com/bbidulock/xde-menu.git
+	md5sums = SKIP
+
+pkgname = xde-menu-git
+

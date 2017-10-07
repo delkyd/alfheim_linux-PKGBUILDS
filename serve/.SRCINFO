@@ -1,0 +1,12 @@
+pkgbase = serve
+	pkgdesc = Serve static files by one simple command
+	pkgver = 0.1
+	pkgrel = 1
+	url = https://github.com/ItsJimi/serve
+	arch = any
+	license = MIT
+	makedepends = go
+	makedepends = git
+
+pkgname = serve
+

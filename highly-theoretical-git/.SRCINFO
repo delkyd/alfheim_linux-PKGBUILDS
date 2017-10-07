@@ -1,0 +1,16 @@
+pkgbase = highly-theoretical-git
+	pkgdesc = Highly Theoretical Sega Saturn and Dreamcast Sound Format (SSF and DSF) emulator library
+	pkgver = r59.e3b2b32
+	pkgrel = 1
+	url = https://gitlab.kode54.net/kode54/Highly_Theoretical
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = git
+	makedepends = qt5-base
+	depends = glibc
+	source = highly-theoretical-git::git+https://gitlab.kode54.net/kode54/Highly_Theoretical.git
+	sha256sums = SKIP
+
+pkgname = highly-theoretical-git
+

@@ -1,0 +1,26 @@
+pkgbase = lxtask-git
+	pkgdesc = Lightweight X11 task manager and system monitor for LXDE
+	pkgver = 0.1.8.r411.20170815
+	pkgrel = 1
+	url = http://lxde.org/
+	arch = i686
+	arch = x86_64
+	groups = lxde-git
+	license = GPL2
+	makedepends = autoconf
+	makedepends = automake
+	makedepends = gcc
+	makedepends = libtool
+	makedepends = make
+	makedepends = pkgconfig
+	makedepends = git
+	makedepends = intltool
+	depends = gtk2
+	provides = lxtask
+	conflicts = lxtask
+	replaces = lxtask
+	source = lxtask-git::git+https://github.com/OpenHelios/lxtask.git
+	sha256sums = SKIP
+
+pkgname = lxtask-git
+

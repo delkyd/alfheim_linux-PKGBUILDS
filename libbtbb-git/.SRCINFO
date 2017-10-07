@@ -1,0 +1,15 @@
+pkgbase = libbtbb-git
+	pkgdesc = Bluetooth baseband decoding library
+	pkgver = 2017.03.R2
+	pkgrel = 1
+	url = https://github.com/greatscottgadgets/libbtbb
+	arch = x86_64
+	arch = i686
+	license = GPL2
+	makedepends = cmake
+	depends = python
+	source = https://github.com/greatscottgadgets/libbtbb/archive/master.zip
+	sha1sums = SKIP
+
+pkgname = libbtbb-git
+

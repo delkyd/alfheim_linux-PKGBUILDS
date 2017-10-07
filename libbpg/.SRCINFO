@@ -1,0 +1,23 @@
+pkgbase = libbpg
+	pkgdesc = BPG Image Encoder and Decoder
+	pkgver = 0.9.7
+	pkgrel = 1
+	url = http://bellard.org/bpg/
+	arch = x86_64
+	arch = i686
+	license = BSD
+	license = LGPL
+	depends = libpng
+	depends = libjpeg-turbo
+	depends = sdl_image
+	depends = yasm
+	options = staticlibs
+	source = http://bellard.org/bpg/libbpg-0.9.7.tar.gz
+	source = ratecontrol.cpp.patch
+	source = param.cpp.patch
+	md5sums = c3498fecc0f51b650202f3daf466f738
+	md5sums = 4e56b96db90b94db98071ff8eeaaf811
+	md5sums = e491bcfd0a6290a83021cda0f97ada4f
+
+pkgname = libbpg
+

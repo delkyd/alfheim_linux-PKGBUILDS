@@ -1,0 +1,15 @@
+pkgbase = java-commons-collections
+	pkgdesc = Implementations of common collections
+	pkgver = 4.1
+	pkgrel = 1
+	url = http://commons.apache.org/collections/
+	arch = any
+	license = APACHE
+	makedepends = apache-ant
+	makedepends = junit
+	depends = java-runtime
+	source = http://www.apache.org/dist/commons/collections/source/commons-collections4-4.1-src.tar.gz
+	sha512sums = c5666f41b68c9fdba3731730595616b16f98579c077cf047f421a46729b5a65476a8707125a2c0b0c6c024ca94df8c2633123bd99e705149fcb1afadcd3bf68b
+
+pkgname = java-commons-collections
+

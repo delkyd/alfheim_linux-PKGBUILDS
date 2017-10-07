@@ -1,0 +1,9 @@
+[Unit]
+Description=A modern IRC server written in Go
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/oragono run --conf /etc/oragono.conf
+
+[Install]
+WantedBy=multi-user.target

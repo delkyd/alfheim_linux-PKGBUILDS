@@ -1,0 +1,9 @@
+src/
+pkg/
+efitools/
+*.pkg.tar*
+*.tar.xz
+*.tar.gz
+*.zip
+*.sig
+*.log*

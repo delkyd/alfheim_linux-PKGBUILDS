@@ -1,0 +1,18 @@
+pkgbase = sai-git
+	pkgdesc = simple arch installer (sai)
+	pkgver = 42.a168840
+	pkgrel = 1
+	url = http://github.com/taylorchu/sai
+	arch = any
+	license = GPL2
+	makedepends = git
+	depends = syslinux
+	depends = gptfdisk
+	depends = util-linux
+	depends = bash
+	depends = curl
+	source = git://github.com/taylorchu/sai.git
+	md5sums = SKIP
+
+pkgname = sai-git
+

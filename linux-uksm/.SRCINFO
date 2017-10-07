@@ -1,0 +1,53 @@
+pkgbase = linux-uksm
+	pkgver = 4.13.5
+	pkgrel = 2
+	url = https://github.com/dolohow/uksm
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	makedepends = kmod
+	makedepends = inetutils
+	makedepends = bc
+	makedepends = libelf
+	options = !strip
+	source = https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.13.tar.xz
+	source = https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.13.tar.sign
+	source = https://www.kernel.org/pub/linux/kernel/v4.x/patch-4.13.5.xz
+	source = https://www.kernel.org/pub/linux/kernel/v4.x/patch-4.13.5.sign
+	source = https://raw.githubusercontent.com/sirlucjan/kernel_gcc_patch/master/enable_additional_cpu_optimizations_for_gcc_v4.9+_kernel_v4.13+.patch
+	source = https://raw.githubusercontent.com/dolohow/uksm/master/uksm-4.13.patch
+	source = config.i686
+	source = config.x86_64
+	source = 90-linux.hook
+	source = linux.preset
+	validpgpkeys = ABAF11C65A2970B130ABE3C479BE3E4300411886
+	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
+	sha512sums = a557c2f0303ae618910b7106ff63d9978afddf470f03cb72aa748213e099a0ecd5f3119aea6cbd7b61df30ca6ef3ec57044d524b7babbaabddf8b08b8bafa7d2
+	sha512sums = SKIP
+	sha512sums = de55b07e52e88e3bc5af54c619933a81f535393f20712f38000bffa77ded22c7a16e70e43c28daf576bcc6cd3ad39387b8e1f430e3d22222f572113d2345df48
+	sha512sums = SKIP
+	sha512sums = 5ca7ae20245a54caa71fb570d971d6872d4e888f35c6123b93fbca16baf9a0e2500d6ec931f3906e4faecaaca9cad0d593694d9cab617efd0cb7b5fc09c0fa48
+	sha512sums = 632c37449c088141dbed4e745c252849396a305a03a86349080a58fb14d7fcd3488f306b890a082a334dab878e179889dfaae0423dfe3d125f48804847abbb39
+	sha512sums = 07fa49442e01a135f48b0b5b766b53cb0898b92dedb0da6da8ffbccfe9a3eef2c79a09dd6019602c8af6bfe78a439585a32ba6c67aee142ed8fa349b4d13e04a
+	sha512sums = 7cf551700114746fc6326297a2f14a9895ab578397ce41225483034549dea811ba30b8846a8b1cc18aa704d3bff95859498d51ebb4de26e8589ade9618f344a4
+	sha512sums = d6faa67f3ef40052152254ae43fee031365d0b1524aa0718b659eb75afc21a3f79ea8d62d66ea311a800109bed545bc8f79e8752319cd378eef2cbd3a09aba22
+	sha512sums = 2dc6b0ba8f7dbf19d2446c5c5f1823587de89f4e28e9595937dd51a87755099656f2acec50e3e2546ea633ad1bfd1c722e0c2b91eef1d609103d8abdc0a7cbaf
+
+pkgname = linux-uksm
+	pkgdesc = Linux Kernel and modules with the UKSM.
+	install = linux.install
+	depends = coreutils
+	depends = linux-firmware
+	depends = mkinitcpio>=0.7
+	optdepends = crda: to set the correct wireless channels of your country
+	optdepends = modprobed-db: Keeps track of EVERY kernel module that has ever been probed - useful for those of us who make localmodconfig
+	backup = etc/mkinitcpio.d/linux-uksm.preset
+
+pkgname = linux-uksm-headers
+	pkgdesc = Header files and scripts to build modules for linux-uksm
+	depends = linux-uksm
+
+pkgname = linux-uksm-docs
+	pkgdesc = Kernel hackers manual - HTML documentation that comes with the linux-uksm.
+	depends = linux-uksm
+

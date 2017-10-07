@@ -1,0 +1,22 @@
+pkgbase = sonerezh-devel-git
+	pkgdesc = A self-hosted, web-based application for stream your music, everywhere. Git development branch
+	pkgver = r245.75b1ff6
+	pkgrel = 1
+	url = https://www.sonerezh.bzh
+	arch = any
+	license = GPL3
+	depends = php
+	depends = php-gd
+	optdepends = mariadb: Database backend
+	optdepends = libav-git-no-libs: Music transcoding
+	optdepends = ffmpeg: Music transcoding
+	provides = sonerezh-git
+	conflicts = sonerezh-git
+	options = !strip
+	source = git+https://github.com/Sonerezh/sonerezh.git#branch=development
+	source = example_nginx_vhost.conf
+	sha512sums = SKIP
+	sha512sums = 806f9aca27da55cd33b814b283bf3e33c32687858258755a43eb2d4b18f62b4ccf81e82dbc8e78c0923e5b48281adb2b33ec7db9850b79fb1ba63b611bbe9ee0
+
+pkgname = sonerezh-devel-git
+

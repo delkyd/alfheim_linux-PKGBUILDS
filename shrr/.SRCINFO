@@ -1,0 +1,21 @@
+pkgbase = shrr
+	pkgdesc = Share files via HTTP
+	pkgver = 0.1.3_dev
+	pkgrel = 1
+	url = https://gitlab.com/madflow/shrr
+	arch = any
+	license = MIT
+	makedepends = python-setuptools
+	makedepends = python-pip
+	makedepends = nodejs
+	makedepends = yarn
+	depends = python>=3.3
+	depends = python-flask
+	depends = python-netifaces
+	depends = python-colorama
+	depends = python-qrcode
+	source = https://gitlab.com/madflow/shrr/repository/52fb65d80110496a86512f0932818954f7bfe5d1/archive.tar.gz
+	md5sums = 8b4065b281093068516cf87ec695d420
+
+pkgname = shrr
+

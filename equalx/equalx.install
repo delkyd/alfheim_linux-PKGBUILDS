@@ -1,0 +1,3 @@
+post_upgrade() {
+  echo "If EqualX segfaults / crashes when starting you might have to delete ~/.config/equalx/settings.conf"
+}

@@ -1,0 +1,9 @@
+*.pkg.tar
+*.pkg.tar.xz
+*.tar.xz
+*.zip
+*.part
+*.xml
+albion-online-setup
+pkg/
+src/

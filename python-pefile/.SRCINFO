@@ -1,0 +1,22 @@
+pkgbase = python-pefile
+	pkgdesc = Python PE parsing module
+	pkgver = 2016.3.28
+	pkgrel = 4
+	url = https://github.com/erocarrera/pefile
+	arch = any
+	license = MIT
+	makedepends = python
+	makedepends = python2
+	makedepends = python-future
+	makedepends = python2-future
+	source = python-pefile-2016.3.28.tar.gz::https://github.com/erocarrera/pefile/archive/v2016.3.28.tar.gz
+	sha512sums = f14693753f74d427591224ca6e0360087fb1961bbbd22ad3a99182ab5153a9845c400bcd1e0a267b930edab8ac36640e2bd97484700ce9bb36a046b2ec4f122e
+
+pkgname = python-pefile
+	depends = python
+	depends = python-future
+
+pkgname = python2-pefile
+	depends = python2
+	depends = python2-future
+

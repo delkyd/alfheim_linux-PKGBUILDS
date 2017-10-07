@@ -1,0 +1,7 @@
+*
+!build
+!.gitignore
+!.SRCINFO
+!PKGBUILD
+!*.install
+!*.service

@@ -1,0 +1,28 @@
+# $Id$
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: James Spencer <james.s.spencer@gmail.com>
+
+pkgname=jmol
+pkgver=14.20.8
+pkgrel=1
+pkgdesc="a Java 3D viewer for chemical structures"
+arch=(any)
+url="https://jmol.sourceforge.net"
+license=(LGPL)
+depends=(java-runtime)
+makedepends=(unzip)
+source=("https://sourceforge.net/projects/jmol/files/Jmol/Version%20${pkgver%.*}/Jmol%20$pkgver/Jmol-$pkgver-binary.tar.gz")
+sha256sums=('cb5543d6bb33eee07e923361c00ff37c6955f3de41916d694dafe5544c0eb780')
+
+package() {
+  cd $pkgname-$pkgver
+
+  mkdir -p "$pkgdir"/usr/share/$pkgname
+  mkdir -p "$pkgdir"/usr/bin
+
+  unzip jsmol.zip -d "$pkgdir"/usr/share/
+  rm jsmol.zip
+
+  cp *.jar jmol.sh "$pkgdir"/usr/share/$pkgname
+  ln -s /usr/share/$pkgname/$pkgname.sh "$pkgdir"/usr/bin/$pkgname
+}

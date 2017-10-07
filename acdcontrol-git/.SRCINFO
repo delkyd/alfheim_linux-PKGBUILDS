@@ -1,0 +1,14 @@
+pkgbase = acdcontrol-git
+	pkgdesc = Apple Cinema Display Control Utility for Linux
+	pkgver = 13.ee9f85a
+	pkgrel = 2
+	url = https://github.com/jenrik/acdcontrol.git
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = git
+	source = acdcontrol::git+https://github.com/jenrik/acdcontrol.git
+	sha256sums = SKIP
+
+pkgname = acdcontrol-git
+

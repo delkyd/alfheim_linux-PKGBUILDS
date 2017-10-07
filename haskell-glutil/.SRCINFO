@@ -1,0 +1,21 @@
+pkgbase = haskell-glutil
+	pkgdesc = Helpers for working with shaders, buffer objects, and textures in OpenGL.
+	pkgver = 0.8.6
+	pkgrel = 1
+	url = http://hackage.haskell.org/package/GLUtil
+	install = haskell-glutil.install
+	arch = any
+	license = BSD3
+	depends = ghc
+	depends = haskell-juicypixels>=3
+	depends = haskell-linear>=1.1.3
+	depends = haskell-opengl>=2.9.2
+	depends = haskell-opengl<2.13
+	depends = haskell-openglraw>=1.1
+	depends = haskell-vector>=0.7
+	options = strip
+	source = http://hackage.haskell.org/packages/archive/GLUtil/0.8.6/GLUtil-0.8.6.tar.gz
+	sha512sums = 8d2be003aa6a624dd0d56214d25a230494b57707af0d5ddd1a1e9cfb3b91303a8f195ef8e81980bc4cfa014e0fa828ad550217ca555c6c53ad4731a008059601
+
+pkgname = haskell-glutil
+

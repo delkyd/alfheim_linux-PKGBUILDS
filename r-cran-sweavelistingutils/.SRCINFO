@@ -1,0 +1,14 @@
+pkgbase = r-cran-sweavelistingutils
+	pkgdesc = Utilities for Sweave together with TeX listings package
+	pkgver = 0.7.5
+	pkgrel = 1
+	url = http://cran.r-project.org/web/packages/SweaveListingUtils/index.html
+	arch = any
+	license = LGPL3
+	depends = r
+	depends = r-cran-startupmsg
+	source = http://cran.r-project.org/src/contrib/SweaveListingUtils_0.7.5.tar.gz
+	md5sums = 90f10b21be0d15727f81f0be2e69a31b
+
+pkgname = r-cran-sweavelistingutils
+

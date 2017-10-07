@@ -1,0 +1,35 @@
+pkgbase = python-dask
+	pkgdesc = Minimal task scheduling abstraction
+	pkgver = 0.15.3
+	pkgrel = 1
+	url = https://github.com/dask/dask
+	arch = any
+	license = BSD
+	checkdepends = ipython
+	checkdepends = python-bcolz
+	checkdepends = python-cachey
+	checkdepends = python-graphviz
+	checkdepends = python-sparse
+	checkdepends = python-pytest
+	makedepends = python-setuptools
+	depends = python
+	depends = python-numpy
+	depends = python-scipy
+	depends = python-pandas
+	depends = python-toolz
+	depends = python-cloudpickle
+	depends = python-partd>=0.3.8
+	optdepends = python-bcolz
+	optdepends = python-bokeh
+	optdepends = python-cachey
+	optdepends = python-cityhash: faster hashing
+	optdepends = python-fastparquet: Parquet support
+	optdepends = python-graphviz
+	optdepends = python-psutil
+	optdepends = python-sparse: sparse data support
+	optdepends = python-s3fs: S3 support
+	source = https://github.com/dask/dask/archive/0.15.3.tar.gz
+	sha256sums = fda2f293f7bac1d699d47313244fd01ca21a5378fc3a434a356f20739093aef0
+
+pkgname = python-dask
+

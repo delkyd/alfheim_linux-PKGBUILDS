@@ -1,0 +1,5 @@
+pkg/
+src/
+cnijfilter-source-*.tar.gz
+*.pkg.tar.xz
+*~

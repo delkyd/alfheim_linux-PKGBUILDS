@@ -1,0 +1,19 @@
+pkgbase = moeditor-bin
+	pkgdesc = All-purpose markdown editor based on Electrum
+	pkgver = 0.2.0_beta
+	pkgrel = 1
+	url = https://github.com/Moeditor/Moeditor
+	arch = x86_64
+	license = GPL3
+	depends = gtk2
+	depends = libxss
+	depends = libxtst
+	depends = alsa-lib
+	depends = nss
+	depends = gconf
+	source = https://github.com/Moeditor/Moeditor/releases/download/v0.2.0-beta/moeditor_0.2.0-1_amd64.deb
+	md5sums = 4db4405fd7516ce758e6a62aa2461d56
+	sha512sums = ce438ed54e98493e2443c7e432800196b06a4987415b1c9ee8a395f25af62f61d0a4f897744eebdc106e6652258250524303a914d0792406e782bba27e315ce1
+
+pkgname = moeditor-bin
+

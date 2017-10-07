@@ -1,0 +1,5 @@
+*.xz
+*.otf
+pkg/
+src/
+*.zip

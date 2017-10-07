@@ -1,0 +1,14 @@
+pkgbase = shitpost
+	pkgdesc = A tool to create memes using CLI
+	pkgver = 1
+	pkgrel = 1
+	url = https://redd.it/5ezk1f
+	arch = i686
+	arch = x86_64
+	license = unknown
+	depends = imagemagick
+	depends = ttf-ms-fonts
+	noextract = shitpost
+
+pkgname = shitpost
+

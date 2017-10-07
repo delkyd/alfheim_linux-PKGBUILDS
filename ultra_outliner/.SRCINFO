@@ -1,0 +1,17 @@
+pkgbase = ultra_outliner
+	pkgdesc = Card-based outlining software for screenwriters, novelists and all story writers.
+	pkgver = 0.9.8b
+	pkgrel = 2
+	url = http://ultraoutliner.com/
+	arch = x86_64
+	license = LGPL3
+	makedepends = gendesk
+	depends = libgl
+	depends = libutil-linux
+	depends = libxi
+	noextract = ultra_outliner.ubuntu64.tar.gz
+	source = http://www.ultraoutliner.com/info/download_build?build=80&locale=en/ultra_outliner.ubuntu64.tar.gz
+	md5sums = 3ca1f6bae7c06e1597baa12806f780b2
+
+pkgname = ultra_outliner
+

@@ -1,0 +1,17 @@
+pkgbase = xdsgui
+	pkgdesc = Graphical user interface for X-ray Detector Software.
+	pkgver = 20170125
+	pkgrel = 1
+	url = http://strucbio.biologie.uni-konstanz.de/xdswiki/index.php/XDSGUI/
+	arch = x86_64
+	license = CCPL:cc-by-nc-nd-3.0
+	makedepends = wget
+	depends = qt4
+	depends = xds
+	depends = xds-viewer
+	optdepends = xdsstat
+	source = ftp://turn5.biologie.uni-konstanz.de/pub/xdsgui.rhel6.64
+	md5sums = 72c6794a6d6fa428249faf42ee1c0032
+
+pkgname = xdsgui
+

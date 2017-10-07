@@ -1,0 +1,16 @@
+pkgbase = ruby-travis-yaml
+	pkgdesc = Tool that parses, normalizes, validates and serializes your .travis.yml.
+	pkgver = 0.2.0
+	pkgrel = 1
+	url = https://github.com/travis-ci/travis-yaml
+	arch = any
+	license = MIT
+	depends = ruby
+	noextract = travis-yaml-0.2.0.gem
+	options = !emptydirs
+	source = https://rubygems.org/downloads/travis-yaml-0.2.0.gem
+	sha1sums = 3e72ca731003425a1150c1058356d9adc006e2bb
+	sha256sums = 8e710a4b0bf83d7ddf0a94c07e8ec0e52c07bdd188a286cf29098f3282f9014e
+
+pkgname = ruby-travis-yaml
+

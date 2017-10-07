@@ -1,0 +1,13 @@
+pkgbase = python2-oletools
+	pkgdesc = Python tools to analyze security characteristics of MS Office and OLE files
+	pkgver = 0.51
+	pkgrel = 1
+	url = https://github.com/decalage2/oletools
+	arch = any
+	license = BSD
+	depends = python2
+	source = oletools-0.51.tar.gz::https://github.com/decalage2/oletools/archive/v0.51.tar.gz
+	sha512sums = 030da6195af1554ca8725eb41f7c0974aa26028340d296d165f7797179bc6b076e31a5cc061addc6b357115ed62976bcf7fe9369c67d7b6629baa17ff12f535d
+
+pkgname = python2-oletools
+

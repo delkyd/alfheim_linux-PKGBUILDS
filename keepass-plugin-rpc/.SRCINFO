@@ -1,0 +1,15 @@
+pkgbase = keepass-plugin-rpc
+	pkgdesc = RPC plugin for Keepass (used by the KeeFox addon for Firefox)
+	pkgver = 1.7.2
+	pkgrel = 1
+	epoch = 1
+	url = http://keefox.org/
+	install = keepass-plugin-rpc.install
+	arch = any
+	license = GPL
+	depends = keepass
+	source = https://addons.mozilla.org/firefox/downloads/file/715252/keefox-1.7.2-fx+tb-linux.xpi?src=api
+	sha384sums = 2addcc7894502e63814a986e7bc5f07533f88164a16b58e2cd7b2bc2fb4dac529420eb7653d7d4170bf2fcf2d6fc028d
+
+pkgname = keepass-plugin-rpc
+

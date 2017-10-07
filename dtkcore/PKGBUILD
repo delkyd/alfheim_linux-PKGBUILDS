@@ -1,0 +1,30 @@
+# $Id$
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Josip Ponjavic <josipponjavic at gmail dot com>
+# Contributor: Xu Fasheng <fasheng.xu[AT]gmail.com>
+
+pkgname=dtkcore
+pkgver=2.0.0
+pkgrel=2
+epoch=1
+pkgdesc='DTK core modules'
+arch=('i686' 'x86_64')
+url="https://github.com/linuxdeepin/dtkcore"
+license=('GPL3')
+depends=('qt5-base')
+makedepends=('qt5-tools')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/linuxdeepin/dtkcore/archive/$pkgver.tar.gz")
+sha512sums=('92569e3bbea2244f7a4bb7f76f1134e55249bbe04d257f528fd6cedfd13de1b62436cbae93b66fdf7b83c25162c46c0fd6a5b25a10cbee07f0de8f56ed672948')
+
+build() {
+  cd dtkcore-$pkgver
+  qmake-qt5 PREFIX=/usr
+  make
+}
+
+package() {
+  cd dtkcore-$pkgver
+  make INSTALL_ROOT="$pkgdir" install
+
+  rm -r "$pkgdir"/usr/tests
+}

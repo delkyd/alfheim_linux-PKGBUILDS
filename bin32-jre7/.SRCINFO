@@ -1,0 +1,49 @@
+pkgbase = bin32-jre7
+	pkgdesc = Oracle Java 7 Runtime Environment (32-bit) (public release - end of support)
+	pkgver = 7u80
+	pkgrel = 1
+	url = http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html
+	install = bin32-jre7.install
+	arch = x86_64
+	license = custom
+	depends = ca-certificates-java
+	depends = hicolor-icon-theme
+	depends = java32-runtime-common
+	depends = lib32-gcc-libs
+	depends = lib32-libxrender
+	depends = lib32-libxtst
+	depends = lib32-nss
+	depends = xdg-utils
+	optdepends = lib32-alsa-lib: for basic sound support
+	optdepends = lib32-gtk2: for Gtk+ look and feel (desktop)
+	provides = java32-runtime=7
+	provides = java32-runtime-headless=7
+	provides = java32-web-start=7
+	provides = java32-runtime-jre=7
+	provides = java32-runtime-headless-jre=7
+	provides = java32-web-start-jre=7
+	provides = java32-openjfx=7
+	backup = etc/java32-jre7/i386/jvm.cfg
+	backup = etc/java32-jre7/images/cursors/cursors.properties
+	backup = etc/java32-jre7/management/jmxremote.access
+	backup = etc/java32-jre7/management/management.properties
+	backup = etc/java32-jre7/security/java.policy
+	backup = etc/java32-jre7/security/java.security
+	backup = etc/java32-jre7/security/javaws.policy
+	backup = etc/java32-jre7/content-types.properties
+	backup = etc/java32-jre7/flavormap.properties
+	backup = etc/java32-jre7/fontconfig.properties.src
+	backup = etc/java32-jre7/logging.properties
+	backup = etc/java32-jre7/net.properties
+	backup = etc/java32-jre7/psfont.properties.ja
+	backup = etc/java32-jre7/psfontj2d.properties
+	backup = etc/java32-jre7/sound.properties
+	source = https://www.dropbox.com/s/omxrvt66z0calk6/jre-7u80-linux-i586.tar.gz
+	source = http://download.oracle.com/otn-pub/java/jce/7/UnlimitedJCEPolicyJDK7.zip
+	source = policytool32-jre7.desktop
+	md5sums = ff0f6847e51b6be5c241615a73043005
+	md5sums = c47e997b90ddfd0d813a37ccc97fb933
+	md5sums = ab6a5ad84bfdcfb949651e7bb83b682e
+
+pkgname = bin32-jre7
+

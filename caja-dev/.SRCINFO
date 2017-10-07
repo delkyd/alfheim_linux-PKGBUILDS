@@ -1,0 +1,36 @@
+pkgbase = caja-dev
+	pkgdesc = File manager for the MATE desktop
+	pkgver = 1.19.1
+	pkgrel = 5
+	url = http://mate-desktop.org
+	arch = i686
+	arch = x86_64
+	groups = mate
+	license = GPL
+	makedepends = gobject-introspection
+	makedepends = mate-common>=1.19
+	depends = dbus
+	depends = desktop-file-utils
+	depends = exempi
+	depends = glib2
+	depends = gtk3
+	depends = gtk-update-icon-cache
+	depends = gvfs
+	depends = libexif
+	depends = libunique3
+	depends = libxt
+	depends = mate-desktop>=1.19
+	depends = shared-mime-info
+	depends = startup-notification
+	optdepends = gstreamer: automatic media playback when mouseover
+	optdepends = gvfs-smb: To connect to Samba/Windows shares
+	provides = caja
+	provides = caja-gtk3
+	conflicts = caja
+	conflicts = caja-gtk3
+	source = http://pub.mate-desktop.org/releases/1.19/caja-1.19.1.tar.xz
+	sha1sums = 6326a57f2c1674056fc3695550aecb9a6fde2247
+
+pkgname = caja-dev
+	pkgdesc = File manager for the MATE desktop (GTK3 version)
+

@@ -1,0 +1,22 @@
+pkgbase = etcd-git
+	pkgdesc = A highly-available key value store for shared configuration and service discovery.
+	pkgver = r10599.d2716fc5a
+	pkgrel = 1
+	url = https://github.com/coreos/etcd
+	install = etcd.install
+	arch = x86_64
+	arch = i686
+	arch = armv6h
+	arch = armv7h
+	license = Apache
+	makedepends = go
+	provides = etcd
+	conflicts = etcd
+	replaces = etcd
+	backup = etc/etcd.conf.yml
+	backup = usr/lib/systemd/system/etcd.service
+	source = etcd-git::git+https://github.com/coreos/etcd.git
+	md5sums = SKIP
+
+pkgname = etcd-git
+

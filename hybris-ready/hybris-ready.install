@@ -1,0 +1,12 @@
+
+post_install(){
+	printf '===> Android Hardware: \n'
+	printf '    please install an hybris-device that matching your hardware\n'
+	printf '===> Android initialization : \n'
+	printf '    systemctl enable hybris-ready.service\n\n'
+}
+
+post_upgrade(){
+	post_install
+}
+

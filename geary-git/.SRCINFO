@@ -1,0 +1,29 @@
+pkgbase = geary-git
+	pkgdesc = A new lightweight, easy-to-use, feature-rich email client (beta version)
+	pkgver = r3094.6154e2ea
+	pkgrel = 1
+	url = https://wiki.gnome.org/Apps/Geary
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = cmake
+	makedepends = vala
+	makedepends = git
+	makedepends = intltool
+	makedepends = gnome-doc-utils
+	depends = libcanberra
+	depends = gmime
+	depends = webkit2gtk
+	depends = libgnome-keyring
+	depends = libnotify
+	depends = libgee
+	depends = hicolor-icon-theme
+	depends = desktop-file-utils
+	depends = gobject-introspection
+	provides = geary
+	conflicts = geary
+	source = git://git.gnome.org/geary
+	md5sums = SKIP
+
+pkgname = geary-git
+

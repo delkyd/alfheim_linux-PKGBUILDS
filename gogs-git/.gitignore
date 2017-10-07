@@ -1,0 +1,5 @@
+pkg/
+src/
+gogs/
+go-bindata/
+*.pkg.tar.*

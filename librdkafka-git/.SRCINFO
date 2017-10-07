@@ -1,0 +1,21 @@
+pkgbase = librdkafka-git
+	pkgdesc = Apache Kafka C driver library
+	pkgver = r2092.4d2aea3
+	pkgrel = 1
+	url = https://github.com/edenhill/librdkafka
+	arch = i686
+	arch = x86_64
+	arch = armv7h
+	license = BSD
+	makedepends = git
+	makedepends = python
+	depends = glibc
+	depends = zlib
+	optdepends = openssl
+	optdepends = libsasl
+	optdepends = lz4
+	source = git+https://github.com/edenhill/librdkafka
+	sha256sums = SKIP
+
+pkgname = librdkafka-git
+

@@ -1,0 +1,61 @@
+# $Id$
+# Maintainer: Sven-Hendrik Haase <sh@lutzhaase.com>
+# Contributor: Alexander Rødseth <rodseth@gmail.com>
+# Contributor: Thomas Dziedzic < gostrc at gmail >
+# Contributor: Dan Serban
+# Contributor: Richard Murri
+
+pkgname=('python-werkzeug' 'python2-werkzeug')
+pkgver=0.12.2
+pkgrel=1
+pkgdesc='Swiss Army knife of Python web development'
+url='http://werkzeug.pocoo.org/'
+arch=('any')
+license=('custom:BSD')
+makedepends=('python-setuptools' 'python2-setuptools' 'python-pytest' 'python2-pytest' 'python-requests' 'python2-requests')
+source=("https://github.com/pallets/werkzeug/archive/${pkgver}.tar.gz")
+sha512sums=('e0a27fb37599bd93c9e3e282e1f7f8e2bc9c2be30cce32d1b8a9788cbf998c3337061ade1cbe76858a64da0ebc89112b905567d561354af1b7d86cbd9a56c27d')
+
+prepare() {
+  cp -r "werkzeug-$pkgver" "python-werkzeug-$pkgver"
+  cp -r "werkzeug-$pkgver" "python2-werkzeug-$pkgver"
+}
+
+build_python-werkzeug() {
+  cd "$pkgname-$pkgver"
+
+  python setup.py build
+}
+
+build_python2-werkzeug() {
+  cd "$pkgname-$pkgver"
+
+  python2 setup.py build
+}
+
+#check() {
+#  cd "python-werkzeug-$pkgver"
+#  python setup.py test
+#
+#  cd "python-werkzeug-$pkgver"
+#  p3ython2 setup.py test
+#}
+
+package_python-werkzeug() {
+  depends+=('python')
+  cd "$pkgname-$pkgver"
+
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
+
+package_python2-werkzeug() {
+  depends+=('python2')
+  cd "$pkgname-$pkgver"
+
+  python2 setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
+
+# getver: https://github.com/mitsuhiko/werkzeug
+# vim:set ts=2 sw=2 et:

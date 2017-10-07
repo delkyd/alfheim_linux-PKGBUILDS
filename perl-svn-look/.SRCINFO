@@ -1,0 +1,23 @@
+pkgbase = perl-svn-look
+	pkgdesc = svnlook perl bindings
+	pkgver = 0.41
+	pkgrel = 1
+	url = http://search.cpan.org/dist/SVN-Look/
+	arch = i686
+	arch = x86_64
+	license = GPL
+	license = PerlArtistic
+	depends = perl
+	depends = perl-extutils-makemaker
+	depends = perl-carp
+	depends = perl-uri
+	depends = perl-file-temp
+	depends = perl-file-path
+	depends = perl-list-moreutils
+	depends = subversion
+	options = !emptydirs
+	source = http://search.cpan.org/CPAN/authors/id/G/GN/GNUSTAVO/SVN-Look-0.41.tar.gz
+	md5sums = 2b51270445a774c30ba5a94086201809
+
+pkgname = perl-svn-look
+

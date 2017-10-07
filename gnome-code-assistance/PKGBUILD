@@ -1,0 +1,37 @@
+# $Id$
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+
+pkgname=gnome-code-assistance
+pkgver=3.16.1
+pkgrel=1
+pkgdesc="Code assistance services for GNOME"
+arch=(i686 x86_64)
+url="https://wiki.gnome.org/Projects/CodeAssistance"
+license=(GPL3)
+depends=(python-dbus python-gobject)
+makedepends=(intltool gobject-introspection llvm clang ruby-dbus gjs vala libgee go gnome-common)
+optdepends=('clang: Assistance for C and C++'
+            'ruby-dbus: Assistance for Ruby and CSS'
+            'gjs: Assistance for JavaScript'
+            'vala: Assistance for Vala'
+            'libgee: Assistance for Vala'
+            'go: Assistance for Go')
+groups=(gnome-extra)
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('f6b7aae10afe150587c00d3db9e4d7503a489ca618930b9b6e3f81b5dafed353')
+
+prepare() {
+  cd $pkgname-$pkgver
+}
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
+    --libexecdir=/usr/lib
+  make
+}
+
+package(){
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

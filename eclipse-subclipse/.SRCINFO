@@ -1,0 +1,14 @@
+pkgbase = eclipse-subclipse
+	pkgdesc = Subversion integration for the Eclipse platform
+	pkgver = 4.2.2
+	pkgrel = 1
+	url = https://github.com/subclipse/subclipse
+	arch = any
+	license = EPL
+	depends = eclipse
+	depends = subversion
+	source = https://dl.bintray.com/subclipse/releases/subclipse/subclipse-4.2.2.zip
+	md5sums = ebbc91a86b898c466dbde43dc499dfa1
+
+pkgname = eclipse-subclipse
+

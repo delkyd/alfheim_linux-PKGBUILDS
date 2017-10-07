@@ -1,0 +1,21 @@
+pkgbase = nautilus-image-tools
+	pkgdesc = An extension for Nautilus to manipulate image files.
+	pkgver = 0.0.3
+	pkgrel = 2
+	url = http://www.atareao.es/apps/nautilus-image-tools-o-como-modificar-imagenes-desde-nautilus/
+	install = nautilus-image-tools.install
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = python2-distutils-extra
+	depends = python2-beautifulsoup4
+	depends = python2-exiv2
+	depends = python2-nautilus
+	depends = python2-polib
+	depends = python2-pillow
+	provides = nautilus-image-tools
+	source = https://launchpad.net/~atareao/+archive/ubuntu/nautilus-extensions/+files/nautilus-image-tools_0.0.3-0extras15.10.6.tar.xz
+	sha256sums = 9018a8988597638e51f20b4a4f1c69b0b315593c728e02dd57b04dbf82fb9282
+
+pkgname = nautilus-image-tools
+

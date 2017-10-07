@@ -1,0 +1,15 @@
+pkgbase = connman-nmcompat
+	pkgdesc = Transition package. Connman network manager with NetworkManager compatibility for all NetworkManager aware applications
+	pkgver = 1.33
+	pkgrel = 2
+	url = https://01.org/connman
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	depends = connman
+	source = connman-nmcompat.install
+	md5sums = 6b4e71ea46e1d65eea4f9c2185295d55
+
+pkgname = connman-nmcompat
+	install = connman-nmcompat.install
+

@@ -1,0 +1,9 @@
+*.tar.xz
+src
+pkg
+tdesktop
+*.webp
+*.webp_*
+GSL
+variant
+libtgvoip

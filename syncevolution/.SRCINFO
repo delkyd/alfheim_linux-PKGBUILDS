@@ -1,0 +1,33 @@
+pkgbase = syncevolution
+	pkgdesc = Synchronize PIM data via various protocols
+	pkgver = 1.5.2
+	pkgrel = 3
+	url = https://syncevolution.org/
+	arch = i686
+	arch = x86_64
+	license = LGPL
+	makedepends = intltool
+	makedepends = boost
+	depends = evolution-data-server
+	depends = libgnome-keyring
+	depends = neon
+	depends = openobex
+	depends = python2
+	depends = libunique
+	source = https://download.01.org/syncevolution/syncevolution/sources/syncevolution-1.5.2.tar.gz
+	source = syncevolution-1.5.2-python2.patch
+	sha256sums = 8b692bd549a63d2259ed7519afb74fc9cab5be10c7a6f51868b66fc98fb48128
+	sha256sums = f3cf917615d82512a7720d52c2486a1abd90bbf671debb92c70127b4ee28ce69
+
+pkgname = syncevolution
+
+pkgname = syncevolution-http
+	pkgdesc = Synchronize PIM data via various protocols (HTTP server)
+	arch = any
+	depends = syncevolution
+	depends = python2-dbus
+	depends = python2-twisted
+	depends = python2-gobject2
+	depends = python2-pyopenssl
+	depends = python2-service-identity
+

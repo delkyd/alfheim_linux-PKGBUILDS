@@ -1,0 +1,5 @@
+*.rpm
+*.tar.xz
+pkg
+src
+publish.sh

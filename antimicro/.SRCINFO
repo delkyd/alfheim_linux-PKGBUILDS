@@ -1,0 +1,23 @@
+pkgbase = antimicro
+	pkgdesc = Graphical program used to map keyboard keys and mouse controls to gamepad buttons
+	pkgver = 2.23
+	pkgrel = 1
+	url = https://github.com/AntiMicro/antimicro
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = cmake
+	makedepends = gettext
+	makedepends = itstool
+	makedepends = qt5-tools
+	depends = libxkbcommon-x11
+	depends = libxtst
+	depends = qt5-base
+	depends = sdl2
+	depends = shared-mime-info
+	depends = desktop-file-utils
+	source = antimicro-2.23.tar.gz::https://github.com/AntiMicro/antimicro/archive/2.23.tar.gz
+	sha1sums = 8656ce94a1eac2a0934e62db42e386bc481708bb
+
+pkgname = antimicro
+

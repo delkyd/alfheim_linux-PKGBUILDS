@@ -1,0 +1,17 @@
+pkgbase = dianara
+	pkgdesc = A Qt pump.io client
+	pkgver = 1.4.0
+	pkgrel = 1
+	url = http://dianara.nongnu.org/
+	arch = i686
+	arch = x86_64
+	license = GPL
+	depends = hicolor-icon-theme
+	depends = file
+	depends = qt5-base
+	depends = qoauth
+	source = http://download-mirror.savannah.gnu.org/releases/dianara/dianara-v1.4.0.tar.gz
+	sha256sums = f3decebf8e40eae413d7f3fcd4563521ae836710e256f24f26b090a655cefd1d
+
+pkgname = dianara
+

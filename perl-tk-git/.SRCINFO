@@ -1,0 +1,27 @@
+pkgbase = perl-tk-git
+	pkgdesc = A graphical user interface toolkit for Perl
+	pkgver = 804.034.r0.g806e6b3f
+	pkgrel = 1
+	url = http://search.cpan.org/dist/Tk
+	arch = i686
+	arch = x86_64
+	license = PerlArtistic
+	license = GPL
+	license = custom
+	checkdepends = xorg-server-xvfb
+	checkdepends = perl-devel-leak
+	checkdepends = perl-test-pod
+	makedepends = git
+	depends = libpng
+	depends = libjpeg
+	depends = tk
+	depends = perl
+	provides = perl-tk
+	conflicts = perl-tk
+	options = !emptydirs
+	options = !strip
+	source = perl-tk-git::git+https://github.com/eserte/perl-tk.git
+	md5sums = SKIP
+
+pkgname = perl-tk-git
+

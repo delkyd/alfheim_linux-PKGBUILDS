@@ -1,0 +1,10 @@
+[Unit]
+Description=Loadcat
+Requires=nginx.service
+
+[Service]
+ExecStart=/usr/bin/loadcatd -config=/etc/loadcat.conf
+WorkingDirectory=/var/lib/loadcat
+
+[Install]
+WantedBy=multi-user.target

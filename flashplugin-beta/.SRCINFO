@@ -1,0 +1,29 @@
+pkgbase = flashplugin-beta
+	pkgdesc = Adobe Flash Player Beta
+	pkgver = 25
+	pkgrel = 1
+	url = http://labs.adobe.com/downloads/flashplayer.html
+	install = flashplugin.install
+	arch = i686
+	arch = x86_64
+	license = custom
+	depends = mozilla-common
+	depends = libxt
+	depends = gtk2
+	depends = nss
+	depends = hicolor-icon-theme
+	optdepends = libvdpau: GPU acceleration on Nvidia card
+	provides = flashplayer
+	provides = flashplugin
+	conflicts = flashplugin
+	options = !strip
+	backup = etc/adobe/mms.cfg
+	source = mms.cfg
+	md5sums = f34aae6279b40e0bd2abfb0d9963d7b8
+	source_i686 = flash_player_npapi_linux_25_i386.tar.gz::https://fpdownload.macromedia.com/pub/labs/flashruntimes/flashplayer/linux32/flash_player_npapi_linux.i386.tar.gz
+	md5sums_i686 = dfd3088dc0a4f75b8f2e4fc155cbeba9
+	source_x86_64 = flash_player_npapi_linux_25_x86_64.tar.gz::https://fpdownload.macromedia.com/pub/labs/flashruntimes/flashplayer/linux64/flash_player_npapi_linux.x86_64.tar.gz
+	md5sums_x86_64 = 039bfbce80409056e6c1980fc35b33e7
+
+pkgname = flashplugin-beta
+

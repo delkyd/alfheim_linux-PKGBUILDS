@@ -1,0 +1,14 @@
+pkgbase = perl-text-levenshtein
+	pkgdesc = Text::Levenshtein - An implementation of the Levenshtein edit distance
+	pkgver = 0.13
+	pkgrel = 1
+	url = http://search.cpan.org/dist/Text-Levenshtein
+	arch = any
+	license = unknown
+	depends = perl>=5.10.0
+	options = !emptydirs
+	source = http://www.cpan.org/modules/by-module/Text/Text-Levenshtein-0.13.tar.gz
+	sha256sums = 3a7cbf0bb79fca33d92618f6d8c2ae4b5e2ee5b43729142a9b8ad9d8a678d11f
+
+pkgname = perl-text-levenshtein
+

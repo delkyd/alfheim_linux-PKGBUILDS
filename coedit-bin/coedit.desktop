@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=Application;IDE;Development;
+Exec=coedit %f
+GenericName=coedit
+Icon=coedit
+Keywords=editor;Dlang;IDE;dmd;
+Name=coedit
+StartupNotify=true
+Terminal=false
+Type=Application

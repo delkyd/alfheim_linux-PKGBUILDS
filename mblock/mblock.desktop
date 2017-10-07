@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=mBlock
+Comment=mblock 4.0
+Exec=/opt/mblock/mblock
+Icon=/usr/share/icons/mblock/48x48.png
+Terminal=false
+Type=Application

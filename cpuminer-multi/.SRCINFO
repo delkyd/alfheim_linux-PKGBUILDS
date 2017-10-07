@@ -1,0 +1,15 @@
+pkgbase = cpuminer-multi
+	pkgdesc = Multi-algo CPUMiner & Reference Cryptonote Miner (JSON-RPC 2.0)
+	pkgver = 1.2
+	pkgrel = 1
+	url = https://github.com/tpruvot/cpuminer-multi
+	arch = i686
+	arch = x86_64
+	license = GPL
+	depends = curl
+	depends = jansson
+	source = cpuminer-multi-1.2.zip::https://github.com/tpruvot/cpuminer-multi/archive/v1.2-multi.zip
+	md5sums = 177b5f125636befa47db77d2d61e1bd6
+
+pkgname = cpuminer-multi
+

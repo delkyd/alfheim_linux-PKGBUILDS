@@ -1,0 +1,16 @@
+pkgbase = rbenv
+	pkgdesc = Simple Ruby version manager
+	pkgver = 1.1.1
+	pkgrel = 1
+	url = https://github.com/rbenv/rbenv
+	install = rbenv.install
+	arch = any
+	license = MIT
+	optdepends = ruby-build
+	conflicts = rbenv-git
+	noextract = v1.1.1
+	source = https://github.com/rbenv/rbenv/tarball/v1.1.1
+	md5sums = c95109ee20e70bf2955cf1cfffbcde75
+
+pkgname = rbenv
+

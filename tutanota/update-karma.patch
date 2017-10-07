@@ -1,0 +1,11 @@
+--- tutanota-tutanota-release-2.14.6/package.json	2017-09-13 03:22:21.000000000 -0400
++++ tutanota-tutanota-release-2.14.6/package.json	2017-09-18 10:31:28.143452676 -0400
+@@ -30,7 +30,7 @@
+     "gulp-sort": "1.0.1",
+     "gulp-sourcemaps": "~1.1.0",
+     "gulp-uglify": "~0.3.1",
+-    "karma": "~0.12.16",
++    "karma": "^1.0",
+     "karma-chai": "~0.1.0",
+     "karma-chai-plugins": "^0.2.3",
+     "karma-chrome-launcher": "~0.1.4",

@@ -1,0 +1,62 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Chris Andrews <christophersimonandrews [at] gmail [dot] com>
+# Contributor: FadeMind <fademind@gmail.com>
+# Contributor: Serge Victor <arch@random.re>
+# Contributor: Krzysztof Wloch <wloszekk [at] gmail [dot] com>
+# Contributor: Luke McCarthy <luke@iogopro.co.uk>
+
+pkgname=fasm
+pkgver=1.71.64
+pkgrel=1
+pkgdesc='Fast and efficient self-assembling x86 assembler for DOS, Windows and Linux operating systems'
+url='https://flatassembler.net/'
+arch=('i686' 'x86_64')
+license=('custom')
+depends_i686=('glibc')
+depends_x86_64=('lib32-glibc')
+source=(${pkgname}-${pkgver}.tgz::https://flatassembler.net/${pkgname}-${pkgver}.tgz)
+sha256sums=('df236d7bb141eff2e2e4d22fe03da08e279033e22f90235f058c21f2dabda6ee')
+sha512sums=('6255d959b93d306f2f003f61becefbea9b8c6ff43e22622278b0c19bd241c8a3f2c8f31a48af69b817c5212851b73d180b81ba16514aaab2ea5c846531095d70')
+
+build() {
+  cd ${pkgname}
+
+  if [ "${CARCH}" == "x86_64" ]; then
+    SRCDIR=Linux/x64
+    ./fasm.x64 source/${SRCDIR}/fasm.asm
+  elif [ "${CARCH}" == "i686" ]; then
+    SRCDIR=Linux
+    ./fasm source/${SRCDIR}/fasm.asm
+  fi
+  mv source/${SRCDIR}/fasm ./fasm
+
+  # tools
+  local s
+  for s in listing prepsrc symbols; do
+    ./fasm tools/libc/${s}.asm ${s}.o
+    gcc -m32 ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -o ${s} ${s}.o
+  done
+}
+
+package() {
+  cd ${pkgname}
+
+  install -Dm 755 fasm -t "${pkgdir}/usr/bin"
+  # tools
+  local s
+  for s in listing prepsrc symbols; do
+    install -Dm 755 ${s} "${pkgdir}/usr/bin/fasm-${s}"
+  done
+
+  # docs
+  install -Dm 644 ${pkgname}.txt whatsnew.txt -t "${pkgdir}/usr/share/doc/${pkgname}"
+  install -Dm 644 examples/elfexe/*.asm -t "${pkgdir}/usr/share/doc/${pkgname}/examples/elfexe"
+  install -Dm 644 examples/elfexe/dynamic/*.asm -t "${pkgdir}/usr/share/doc/${pkgname}/examples/elfexe/dynamic"
+  install -Dm 644 examples/elfexe/dynamic/*.inc -t "${pkgdir}/usr/share/doc/${pkgname}/examples/elfexe/dynamic"
+  install -Dm 644 examples/elfobj/*.asm -t "${pkgdir}/usr/share/doc/${pkgname}/examples/elfobj"
+  install -Dm 644 examples/libcdemo/*.asm -t "${pkgdir}/usr/share/doc/${pkgname}/examples/libcdemo"
+  install -Dm 644 examples/libcdemo/*.inc -t "${pkgdir}/usr/share/doc/${pkgname}/examples/libcdemo"
+  install -Dm 644 license.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
+
+# vim: ts=2 sw=2 et:

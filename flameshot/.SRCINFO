@@ -1,0 +1,16 @@
+pkgbase = flameshot
+	pkgdesc = Powerful yet simple to use screenshot software
+	pkgver = 0.4.2
+	pkgrel = 1
+	url = https://github.com/lupoDharkael/flameshot
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = make
+	depends = qt5-base
+	provides = flameshot
+	source = https://github.com/lupoDharkael/flameshot/archive/v0.4.2.tar.gz
+	sha256sums = bbc67bcf56305de824058e59f654024231b458a1d73412db75abc574c783a7dd
+
+pkgname = flameshot
+

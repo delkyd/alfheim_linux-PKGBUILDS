@@ -1,0 +1,8 @@
+post_install() {
+	systemctl restart libvirtd.service libvirt-guests.service
+	holodev setup
+}
+
+post_upgrade() {
+	post_install 
+}

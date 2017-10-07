@@ -1,0 +1,15 @@
+pkgbase = monochroma-demo
+	pkgdesc = very atmospheric platform jump game based on unity player - demo version
+	pkgver = 0.11
+	pkgrel = 1
+	url = http://monochromagame.com/
+	arch = x86_64
+	arch = i686
+	license = unknown
+	depends = mesa
+	depends = gcc-libs-multilib
+	source = dlfrom://Monochroma_Kickstarter_Linux_Demo_v0.11.zip
+	md5sums = 4f33f384cd293c2ce448412a7eb52ca4
+
+pkgname = monochroma-demo
+

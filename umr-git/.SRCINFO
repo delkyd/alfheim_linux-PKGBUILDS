@@ -1,0 +1,18 @@
+pkgbase = umr-git
+	pkgdesc = userspace debugging and diagnostic tool for AMD GPUs using the AMDGPU kernel driver
+	pkgver = r19.ccd0ec4
+	pkgrel = 1
+	epoch = 1
+	url = https://lists.freedesktop.org/archives/amd-gfx/2017-February/005122.html
+	arch = i686
+	arch = x86_64
+	license = MIT
+	makedepends = git
+	makedepends = cmake
+	provides = umr
+	conflicts = umr
+	source = git://anongit.freedesktop.org/amd/umr
+	sha256sums = SKIP
+
+pkgname = umr-git
+

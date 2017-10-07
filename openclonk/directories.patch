@@ -1,0 +1,30 @@
+diff -aur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2016-01-15 21:56:57.000000000 +0100
++++ b/CMakeLists.txt	2016-01-17 20:48:52.194153030 +0100
+@@ -100,7 +100,7 @@
+ 	# Don't put this into CMAKE_CXX_FLAGS because otherwise it is cached,
+ 	# and when the path is changed both the old and new definition appears
+ 	# in the list of flags.
+-	add_definitions("-DOC_SYSTEM_DATA_DIR=\"${CMAKE_INSTALL_PREFIX}/share/games/openclonk\"")
++	add_definitions("-DOC_SYSTEM_DATA_DIR=\"${CMAKE_INSTALL_PREFIX}/share/openclonk\"")
+ endif()
+ 
+ if(APPLE)
+@@ -1461,7 +1461,7 @@
+ 			DEPENDS "${native_c4group}"
+ 			VERBATIM
+ 		)
+-		install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${group} DESTINATION share/games/openclonk)
++		install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${group} DESTINATION share/openclonk)
+ 	endif()
+ endforeach()
+ 
+@@ -1475,7 +1475,7 @@
+ 	install(CODE "execute_process(COMMAND update-desktop-database)")
+ 
+ 	# Install binaries
+-	install(TARGETS openclonk DESTINATION games)
++	install(TARGETS openclonk DESTINATION bin)
+ 	install(TARGETS c4group DESTINATION bin)
+ else()
+ 	install(TARGETS openclonk

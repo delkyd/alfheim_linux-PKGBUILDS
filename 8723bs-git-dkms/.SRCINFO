@@ -1,0 +1,20 @@
+pkgbase = 8723bs-git-dkms
+	pkgdesc = RTL8723BS WIFI driver working on baytrail tablets DKMS version
+	pkgver = 9ea0240
+	pkgrel = 1
+	url = http://www.realtek.com.tw/
+	install = 8723bs-git-dkms.install
+	arch = any
+	license = GPL
+	depends = dkms
+	provides = 8723bs
+	conflicts = 8723bs-git
+	source = git+https://github.com/muhviehstah/rtl8723bs
+	source = dkms.conf
+	source = blacklist-r8723bs.conf
+	sha256sums = SKIP
+	sha256sums = 5d64a8a038c12cdd055d07fcc0f7cf324a36a39d676ea2a49f3913328d8c3b6c
+	sha256sums = 7b269bda4c697037ff71647ada8591c887184d51c247f7a5d00cfacf787319d6
+
+pkgname = 8723bs-git-dkms
+

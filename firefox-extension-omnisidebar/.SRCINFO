@@ -1,0 +1,19 @@
+pkgbase = firefox-extension-omnisidebar
+	pkgdesc = A firefox add-on designed to provide more control over the behavior of the sidebar.
+	pkgver = 1.6.15
+	pkgrel = 2
+	url = https://addons.mozilla.org/firefox/addon/omnisidebar/
+	install = discontinuation-notice.install
+	arch = any
+	license = MPLv2
+	makedepends = unzip
+	makedepends = rasqal
+	depends = firefox
+	noextract = firefox-extension-omnisidebar.zip
+	source = firefox-extension-omnisidebar.zip::https://addons.mozilla.org/firefox/downloads/latest/omnisidebar/platform:2/
+	source = .version::https://services.addons.mozilla.org/firefox/api/1.5/addon/omnisidebar
+	md5sums = fb26a5c64c6ccdf3cee77fb01b6cbe1c
+	md5sums = SKIP
+
+pkgname = firefox-extension-omnisidebar
+

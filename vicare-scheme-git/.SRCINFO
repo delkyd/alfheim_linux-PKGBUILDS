@@ -1,0 +1,19 @@
+pkgbase = vicare-scheme-git
+	pkgdesc = R6RS scheme implementation, from github's master branch
+	pkgver = 20170911.f17d190e
+	pkgrel = 1
+	url = http://marcomaggi.github.io/vicare.html
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = git
+	depends = gmp
+	depends = readline
+	provides = vicare-scheme
+	conflicts = vicare-scheme
+	options = !makeflags
+	source = vicare-scheme::git+https://github.com/marcomaggi/vicare.git
+	md5sums = SKIP
+
+pkgname = vicare-scheme-git
+

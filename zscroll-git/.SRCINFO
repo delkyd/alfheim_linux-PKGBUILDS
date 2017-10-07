@@ -1,0 +1,15 @@
+pkgbase = zscroll-git
+	pkgdesc = A text scroller for use with panels
+	pkgver = 0.1.r5.gd42dc2c
+	pkgrel = 1
+	url = https://github.com/noctuid/zscroll
+	arch = any
+	license = Simplified BSD
+	makedepends = git
+	depends = python
+	provides = zscroll
+	source = git://github.com/noctuid/zscroll.git
+	md5sums = SKIP
+
+pkgname = zscroll-git
+

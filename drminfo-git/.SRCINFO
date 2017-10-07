@@ -1,0 +1,22 @@
+pkgbase = drminfo-git
+	pkgdesc = print drm device information
+	pkgver = 5.1+1.gbf13f4a
+	pkgrel = 1
+	url = https://www.kraxel.org/cgit/drminfo/
+	arch = i686
+	arch = x86_64
+	license = GPLv2
+	makedepends = meson
+	depends = libdrm
+	depends = mesa
+	depends = libepoxy
+	depends = cairo
+	depends = pixman
+	depends = gtk3
+	provides = drminfo=5.1
+	conflicts = drminfo
+	source = git://git.kraxel.org/drminfo
+	sha256sums = SKIP
+
+pkgname = drminfo-git
+

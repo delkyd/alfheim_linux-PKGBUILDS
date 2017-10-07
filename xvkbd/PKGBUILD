@@ -1,0 +1,33 @@
+# $Id$
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Benjamin Andresen <benny@klapmuetz.org>
+# Contributor: Mikko Seppдlд <t-r-a-y@mbnet.fi>
+
+pkgname=xvkbd
+pkgver=3.7
+pkgrel=1
+pkgdesc="virtual (graphical) keyboard program for X Window System"
+arch=('i686' 'x86_64')
+url="http://t-sato.in.coocan.jp/xvkbd/"
+license=('GPL')
+depends=('libxmu' 'xaw3d' 'glibc' 'libxt' 'libxtst' 'libxp' 'libxpm')
+makedepends=('imake')
+source=(http://t-sato.in.coocan.jp/xvkbd/xvkbd-$pkgver.tar.gz)
+sha256sums=('10b6551387ef011abde847fb64df96578988e8158615801aefa4f90b5a6bca64')
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  xmkmf
+  sed -i 's|#include <X11/Xaw/|#include <X11/Xaw3d/|' xvkbd.c
+  make
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make DESTDIR="$pkgdir" install
+  # fix
+  rm -f "$pkgdir"/usr/lib/X11/app-defaults
+  mkdir -p "$pkgdir"/usr/lib/X11
+  mv "$pkgdir"/etc/X11/app-defaults "$pkgdir"/usr/lib/X11/
+  rm -rf "$pkgdir"/etc/
+}

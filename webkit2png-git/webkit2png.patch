@@ -1,0 +1,8 @@
+--- webkit2png/scripts.py
++++ webkit2png/scripts.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # webkit2png.py
+ #

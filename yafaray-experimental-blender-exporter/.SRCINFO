@@ -1,0 +1,17 @@
+pkgbase = yafaray-experimental-blender-exporter
+	pkgdesc = Yafaray exporter plugin for blender
+	pkgver = 3.1.1
+	pkgrel = 1
+	url = http://yafaray.org
+	arch = any
+	license = GPL
+	depends = blender
+	optdepends = yafaray-experimental: for the actual rendering part.
+	provides = yafaray-blender-exporter
+	conflicts = yafaray-blender-exporter
+	conflicts = yafaray-blender-exporter-git
+	source = https://github.com/DavidBluecame/Blender-Exporter/archive/v3.1.1-beta.tar.gz
+	md5sums = fc8e1ff2bb408867465f74bfc2344357
+
+pkgname = yafaray-experimental-blender-exporter
+

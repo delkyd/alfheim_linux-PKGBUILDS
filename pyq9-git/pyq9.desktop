@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=PyQ9
+Terminal=false
+Exec=/bin/bash -c "xauth generate $DISPLAY . trusted && /opt/PyQ9/pyq9"
+Hidden=false
+Icon=/opt/PyQ9/icon.png
+

@@ -1,0 +1,8 @@
+post_install() {
+ln -sf '/opt/ELEET Desktop/eleet' '/usr/local/bin/eleet'
+}
+
+post_remove() {
+rm -f '/usr/local/bin/eleet'
+rm -rf ~/.config/'ELEET Desktop'
+}

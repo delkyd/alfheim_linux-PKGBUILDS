@@ -1,0 +1,21 @@
+pkgbase = game-dev-tycoon
+	pkgdesc = a business simulation game where you start a video game development company
+	pkgver = 1.4.5
+	pkgrel = 1
+	url = http://www.greenheartgames.com/app/game-dev-tycoon/
+	arch = i686
+	arch = x86_64
+	license = commercial
+	makedepends = unzip
+	depends = mesa
+	depends = node-webkit
+	depends = alsa-lib
+	conflicts = game-dev-tycoon-demo
+	options = !strip
+	source = game-dev-tycoon
+	source = game-dev-tycoon.desktop
+	md5sums = ae28f2cd5480964f05cf5699f3f1693c
+	md5sums = 29e0fcaa10380835931bedc56530caac
+
+pkgname = game-dev-tycoon
+

@@ -1,0 +1,13 @@
+pkgbase = x3dna-dssr
+	pkgdesc = DSSR, an integrated software tool for Dissecting the Spatial Structure of RNA. Please see: http://forum.x3dna.org/site-announcements/download-instructions/
+	pkgver = 1.6.9_20170809
+	pkgrel = 1
+	url = http://x3dna.org/
+	arch = x86_64
+	license = custom
+	depends = glibc
+	source = x3dna-dssr.md5
+	md5sums = b7bc05c4ca620f28955a6ebe41ea3dba
+
+pkgname = x3dna-dssr
+

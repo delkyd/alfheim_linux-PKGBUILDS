@@ -1,0 +1,22 @@
+post_install() {
+cat <<EOF
+::	If you do not have a custom configuration files finish the setup:
+		1) systemctl start gogs.service
+		2) open the installation page http://localhost:3000
+	otherwise:
+		place your custom configuration files in /var/lib/gogs/custom
+EOF
+}
+
+post_upgrade() {
+	if [ $(vercmp 2:0.9.140 $2) -gt 0 ]; then
+		echo ":: Gogs configuration now placed in /var/lib/gogs/custom/conf"
+
+		if  [ ! -f /var/lib/gogs/custom/conf/app.ini ] && [ -f /srv/gogs/conf/app.ini ]; then
+			echo ":: Gogs app.ini copied to new place"
+			install -d    -o gogs -g gogs    /var/lib/gogs/custom
+			install -d    -o gogs -g gogs    /var/lib/gogs/custom/conf
+			install -m644 -o gogs -g gogs -t /var/lib/gogs/custom/conf /srv/gogs/conf/app.ini
+		fi
+	fi
+}

@@ -1,0 +1,5 @@
+gitcheck
+pkg
+src
+*.pkg.tar.xz
+*.src.tar.gz

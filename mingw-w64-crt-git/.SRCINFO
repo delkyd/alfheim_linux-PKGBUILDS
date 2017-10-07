@@ -1,0 +1,24 @@
+pkgbase = mingw-w64-crt-git
+	pkgdesc = MinGW-w64 CRT for Windows
+	pkgver = 5.0.rc2.r126.gb48e3ac
+	pkgrel = 1
+	url = http://mingw-w64.sourceforge.net
+	arch = any
+	groups = mingw-w64-toolchain
+	groups = mingw-w64
+	license = custom
+	makedepends = git
+	makedepends = mingw-w64-gcc
+	makedepends = mingw-w64-binutils
+	makedepends = mingw-w64-headers-git
+	provides = mingw-w64-crt
+	conflicts = mingw-w64-crt
+	options = !strip
+	options = !buildflags
+	options = staticlibs
+	options = !emptydirs
+	source = git://git.code.sf.net/p/mingw-w64/mingw-w64
+	md5sums = SKIP
+
+pkgname = mingw-w64-crt-git
+

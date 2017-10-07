@@ -1,0 +1,33 @@
+post_install(){
+
+cat << EOF
+
+=========
+As of PKGREL phing-2.11.0-2, this PKGBUILD downloads the PHAR build of
+phing.
+
+Stand-alone Phing works well, but the recommended means of using it is
+to install the package on a per-project basis via Composer
+(http://getcomposer.org).
+=========
+
+EOF
+
+}
+
+post_upgrade(){
+
+cat << EOF
+
+=========
+As of PKGREL phing-2.11.0-2, this PKGBUILD downloads the PHAR build of
+phing.
+
+Stand-alone Phing works well, but the recommended means of using it is
+to install the package on a per-project basis via Composer
+(http://getcomposer.org).
+=========
+
+EOF
+
+}

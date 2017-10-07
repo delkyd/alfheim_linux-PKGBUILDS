@@ -1,0 +1,20 @@
+# $Id$
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Jens Adam <jra@byte.cx>
+
+pkgname=fpc-src
+pkgver=3.0.2
+pkgrel=2
+pkgdesc='Sources for the FreePascal compiler (required by the Lazarus IDE)'
+url='http://www.freepascal.org/'
+license=('GPL')
+arch=('any')
+options=('!strip' 'staticlibs')
+source=(ftp://ftp.freepascal.org/pub/fpc/dist/$pkgver/source/fpcbuild-$pkgver.tar.gz)
+sha256sums=('f261ed0a361f190169fff428d65b707df1507df317fc0ed101b0e63596541b75')
+
+package() {
+  cd "$srcdir"/fpcbuild-$pkgver/fpcsrc
+  mkdir -p "$pkgdir"/usr/lib/fpc/src
+  cp -R . "$pkgdir"/usr/lib/fpc/src
+}

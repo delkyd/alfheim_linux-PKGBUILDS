@@ -1,0 +1,58 @@
+# $Id$
+# Maintainer: Alexander F Rødseth <xyproto@archlinux.org>
+# Contributor: Daichi Shinozaki <dsdseg@gmail.com>
+# Contributor: Andy Li <andy@onthewings.net>
+# Contributor: Kyle Brady  <kyle at spark-gap dot com>
+# Contributor: Patrick Hof <courts@offensivethinking.org>
+# Contributor: Michael Fellinger <mf@rubyists.com>
+
+pkgname=haxe
+pkgver=3.4.3
+pkgrel=1
+pkgdesc='Cross-platform toolkit and programming language'
+arch=('x86_64' 'i686')
+url='http://haxe.org/'
+license=('GPL' 'MIT' 'LGPL')
+groups=('devel')
+depends=('neko')
+optdepends=('python' 'php' 'java-environment' 'mono')
+makedepends=('git' 'ocaml' 'camlp4' 'zlib' 'neko')
+provides=('haxe' 'haxelib')
+options=('!strip' '!makeflags')
+source=("$pkgname-$pkgver::git+https://github.com/HaxeFoundation/haxe.git#commit=e24c990d58f2ccff5e5add8369602bb729bcdfab"
+  'git+https://github.com/HaxeFoundation/haxelib.git#commit=36caef7b611cbe9d8b5c650307778e346bb267df'
+  'git+https://github.com/HaxeFoundation/ocamllibs.git#commit=ba1679cb1ed1e74ccd5068755642dc1353780ded'
+  'haxe.sh'
+)
+md5sums=('SKIP'
+         'SKIP'
+         'SKIP'
+         '977476c8fc1dfc0acbb05bd22f9136b0')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+
+  git submodule init
+  git config submodule.extra/haxelib_src.url "$srcdir/haxelib"
+  git config submodule.libs.url "$srcdir/ocamllibs"
+  git submodule update
+}
+
+build() {
+  make -C "$pkgname-$pkgver" all tools
+}
+
+check() {
+  "$pkgname-$pkgver/haxe" -version && "$pkgname-$pkgver/haxelib" version
+}
+
+package() {
+  install -d "$pkgdir/usr/"{bin/,share/haxe/}
+  install -m 755 "$srcdir/$pkgname-$pkgver"/{haxe,haxelib} "$pkgdir"/usr/bin/
+  cp -rf "$srcdir/$pkgname-$pkgver/std" "$pkgdir/usr/share/$pkgname/"
+  install -Dm 644 "$srcdir/$pkgname-$pkgver"/extra/LICENSE.txt \
+    "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.txt
+  install -Dm 644 "$srcdir/haxe.sh" "$pkgdir/etc/profile.d/haxe.sh"
+}
+
+# vim:ts=2 sw=2 et:

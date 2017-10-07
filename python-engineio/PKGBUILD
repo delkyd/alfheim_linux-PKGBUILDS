@@ -1,0 +1,73 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+
+pkgbase=python-engineio
+pkgname=('python-engineio' 'python2-engineio')
+pkgver=1.7.0
+pkgrel=1
+pkgdesc='Python implementation of the Engine.IO realtime server'
+url='https://github.com/miguelgrinberg/python-engineio'
+arch=('any')
+license=('MIT')
+makedepends=('python-setuptools' 'python-sphinx' 'python-six'
+             'python2-setuptools' 'python2-sphinx' 'python2-six')
+checkdepends=('python-mock' 'python-eventlet' 'python-pytest' 'python-aiohttp'
+              'python2-mock' 'python2-eventlet' 'python2-pytest')
+options=('!makeflags')
+source=(${pkgbase}-${pkgver}.tar.gz::https://github.com/miguelgrinberg/python-engineio/archive/v${pkgver}.tar.gz)
+sha256sums=('9b5a58c3c14e56f266f32169ee32b01beddf38115d6bbba3ef86731799c014b7')
+sha512sums=('e470efbc5a384cd05eec247a14a710ca7fae034b1e0edda77a2f2749e82fc29a75e6f9a7cb1cb0d684f7827e2d0660b0bd3a5b02ccbfc1d67e8efcda373dd7b3')
+
+prepare() {
+  cp -ra ${pkgbase}-${pkgver}{,-py2}
+}
+
+build() {
+  (cd ${pkgbase}-${pkgver}
+    python setup.py build
+    make -C docs man text SPHINXBUILD=sphinx-build
+  )
+  (cd ${pkgbase}-${pkgver}-py2
+    python2 setup.py build
+    make -C docs man text SPHINXBUILD=sphinx-build2
+  )
+}
+
+check() {
+  (cd ${pkgbase}-${pkgver}
+    py.test
+  )
+  (cd ${pkgbase}-${pkgver}-py2
+    py.test2
+  )
+}
+
+package_python-engineio() {
+  depends=('python-six')
+  optdepends=(
+    'python-eventlet: eventlet support'
+    'python-aiohttp: aiohttp support'
+  )
+
+  cd ${pkgbase}-${pkgver}
+  python setup.py install -O1 --root="${pkgdir}" --skip-build
+  install -Dm 644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -Dm 644 README.rst "${pkgdir}/usr/share/doc/${pkgname}/README"
+  install -Dm 644 docs/_build/text/index.txt "${pkgdir}/usr/share/doc/${pkgname}/DOCUMENTATION"
+  install -Dm 644 docs/_build/man/engineio.1 "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+}
+
+package_python2-engineio() {
+  depends=('python2-six')
+  optdepends=(
+    'python2-eventlet: eventlet support'
+  )
+
+  cd ${pkgbase}-${pkgver}-py2
+  python2 setup.py install -O1 --root="${pkgdir}" --skip-build
+  install -Dm 644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -Dm 644 README.rst "${pkgdir}/usr/share/doc/${pkgname}/README"
+  install -Dm 644 docs/_build/text/index.txt "${pkgdir}/usr/share/doc/${pkgname}/DOCUMENTATION"
+  install -Dm 644 docs/_build/man/engineio.1 "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+}
+
+# vim: ts=2 sw=2 et:

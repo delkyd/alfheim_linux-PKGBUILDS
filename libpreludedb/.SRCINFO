@@ -1,0 +1,24 @@
+pkgbase = libpreludedb
+	pkgdesc = Framework to easy access to the Prelude database
+	pkgver = 4.0.0
+	pkgrel = 1
+	url = https://www.prelude-siem.org
+	arch = i686
+	arch = x86_64
+	license = GPLv2
+	makedepends = libmariadbclient
+	makedepends = postgresql-libs
+	makedepends = sqlite
+	depends = gnutls
+	depends = python2
+	depends = python3
+	depends = gtk-doc
+	depends = libprelude
+	optdepends = sqlite: SQLite support
+	optdepends = mariadb: MariaDB support
+	optdepends = postgresql: PostgreSQL support
+	source = https://www.prelude-siem.org/pkg/src/4.0.0/libpreludedb-4.0.0.tar.gz
+	md5sums = 62a9b05baaf46d84aee2d04114d746a2
+
+pkgname = libpreludedb
+

@@ -1,0 +1,19 @@
+pkgbase = python-iptables-git
+	pkgdesc = Python bindings for iptables
+	pkgver = r486.d1de82d
+	pkgrel = 1
+	url = https://github.com/ldx/python-iptables
+	arch = x86_64
+	arch = i686
+	license = Apache
+	makedepends = python-setuptools
+	depends = python
+	depends = iptables
+	provides = python-iptables
+	conflicts = python-iptables
+	options = !emptydirs
+	source = python-iptables-git::git+https://github.com/ldx/python-iptables.git
+	sha256sums = SKIP
+
+pkgname = python-iptables-git
+

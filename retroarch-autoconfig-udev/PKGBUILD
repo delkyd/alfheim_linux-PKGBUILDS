@@ -1,0 +1,31 @@
+# $Id$
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+
+pkgname=retroarch-autoconfig-udev
+pkgver=1224
+pkgrel=1
+pkgdesc='udev joypad autoconfig for RetroArch'
+arch=('any')
+url='http://www.libretro.com/'
+license=('GPL')
+groups=('libretro')
+depends=('retroarch')
+makedepends=('git')
+_commit='a6fb2f092148a6087c3d7d6af0ee3b28000530fd'
+source=("git+https://github.com/libretro/retroarch-joypad-autoconfig.git#commit=${_commit}")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd retroarch-joypad-autoconfig
+
+  git rev-list --count HEAD
+}
+
+package() {
+  cd retroarch-joypad-autoconfig
+
+  install -dm 755 "${pkgdir}"/usr/share/retroarch/autoconfig
+  cp -dr --no-preserve='ownership' udev "${pkgdir}"/usr/share/retroarch/autoconfig/
+}
+
+# vim: ts=2 sw=2 et:

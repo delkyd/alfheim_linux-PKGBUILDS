@@ -1,0 +1,17 @@
+pkgbase = python-nevow
+	pkgdesc = Web application construction kit and templating engine written in python.
+	pkgver = 0.11.1
+	pkgrel = 1
+	url = https://github.com/twisted/nevow
+	arch = any
+	license = custom
+	makedepends = python2-twisted
+	makedepends = python2-setuptools
+	depends = python2
+	optdepends = python2-twisted: to use all the advanced features of nevow, such as LivePage
+	options = !emptydirs
+	source = http://pypi.python.org/packages/source/N/Nevow/Nevow-0.11.1.tar.gz
+	md5sums = acc5d23bd94a5399752065baae6117f6
+
+pkgname = python-nevow
+

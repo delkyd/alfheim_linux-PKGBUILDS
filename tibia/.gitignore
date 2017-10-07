@@ -1,0 +1,5 @@
+pkg/
+src/
+agreement.php
+tibia*
+!*.patch

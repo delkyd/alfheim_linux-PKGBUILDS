@@ -1,0 +1,14 @@
+pkgbase = mpv-scripts
+	pkgdesc = Scripts for the mpv media player officially maintained by the mpv authors
+	pkgver = 0.27.0
+	pkgrel = 1
+	url = https://github.com/mpv-player/mpv/tree/master/TOOLS/lua
+	install = mpv-scripts.install
+	arch = any
+	license = GPL
+	depends = mpv
+	source = mpv-0.27.0.tar.gz::https://github.com/mpv-player/mpv/archive/v0.27.0.tar.gz
+	sha512sums = 22738f907d84d362095773972f685e3b03ab4c8172a22ddede290fc221a83ab9135b96f8b18191dabe842b2963f68983929cf065097287fc1a054a7d5f1d0ae4
+
+pkgname = mpv-scripts
+

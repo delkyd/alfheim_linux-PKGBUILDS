@@ -1,0 +1,17 @@
+pkgbase = boot
+	pkgdesc = A Clojure build framework and ad-hoc Clojure script evaluator
+	pkgver = 2.5.2
+	pkgrel = 1
+	epoch = 1
+	url = http://boot-clj.com
+	install = boot.install
+	arch = any
+	license = EPL
+	depends = java-environment
+	depends = bash
+	noextract = boot.sh
+	source = https://github.com/boot-clj/boot-bin/releases/download/2.5.2/boot.sh
+	sha1sums = d9cbefc6cbf043361a58b416e6d62fc80e5ead32
+
+pkgname = boot
+

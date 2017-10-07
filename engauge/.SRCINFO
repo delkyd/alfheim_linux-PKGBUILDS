@@ -1,0 +1,36 @@
+pkgbase = engauge
+	pkgver = 10.2
+	pkgrel = 1
+	url = http://markummitchell.github.io/engauge-digitizer/
+	install = engauge.install
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = qt5-tools
+	makedepends = fftw
+	makedepends = log4cpp
+	makedepends = libjpeg-turbo
+	makedepends = libpng
+	makedepends = openjpeg2
+	makedepends = poppler-qt5
+	source = engauge-10.2.tar.gz::https://github.com/markummitchell/engauge-digitizer/archive/v10.2.tar.gz
+	source = engauge.sh
+	source = engauge.desktop
+	md5sums = dc1fb57151051ce60df29d8602198e27
+	md5sums = baa6e2963962785d145b63510ba4ee51
+	md5sums = 95398291d4e0bb4adc1fec22a16625b9
+
+pkgname = engauge
+	pkgdesc = Extracts data points from images of graphs
+	depends = qt5-tools
+	depends = fftw
+	depends = log4cpp
+	depends = libpng
+	depends = libjpeg-turbo
+	depends = openjpeg2
+	depends = poppler-qt5
+
+pkgname = engauge-samples
+	pkgdesc = sample image files for engauge copied into the doc subdirectory
+	arch = any
+

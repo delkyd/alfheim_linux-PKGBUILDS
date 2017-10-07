@@ -1,0 +1,21 @@
+pkgbase = fs-uae-launcher-devel
+	pkgdesc = Launcher and configuration program for FS-UAE (development version).
+	pkgver = 2.9.6dev
+	pkgrel = 1
+	url = http://fs-uae.net/download-devel
+	arch = any
+	license = GPL2
+	depends = fs-uae-devel
+	depends = python-pyqt5
+	depends = python-setuptools
+	depends = python-opengl>=3.1.0
+	depends = python-lhafile
+	depends = hicolor-icon-theme
+	optdepends = p7zip: for .7z zip support
+	provides = fs-uae-launcher
+	conflicts = fs-uae-launcher
+	source = http://fs-uae.net/devel/2.9.6dev/fs-uae-launcher-2.9.6dev.tar.gz
+	sha256sums = 0b05819004de8be63d276d3e0d287da6928b9556d27ed576a4c53af2405689d4
+
+pkgname = fs-uae-launcher-devel
+

@@ -1,0 +1,32 @@
+# $Id$
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+
+pkgname=man-pages-de
+pkgver=2.0
+pkgrel=2
+pkgdesc="German Linux man pages"
+arch=('any')
+url="https://alioth.debian.org/projects/manpages-de/"
+license=('GPL3')
+depends=('man-db')
+makedepends=('po4a')
+changelog=$pkgname.changelog
+options=('!emptydirs')
+source=(http://manpages-de.alioth.debian.org/downloads/manpages-de-$pkgver.tar.xz)
+sha256sums=('74f05e7245b889315d4691f3d4996551231e8bbbb9ed952f11592e175df39add')
+
+build() {
+  cd "${srcdir}"/manpages-de-$pkgver
+
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd "${srcdir}"/manpages-de-$pkgver
+
+  make DESTDIR="${pkgdir}" install
+
+#duplicates
+rm "${pkgdir}"/usr/share/man/de/man1/groups.1.gz #shadow
+}

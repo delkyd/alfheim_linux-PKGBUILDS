@@ -1,0 +1,16 @@
+pkgbase = statsd
+	pkgdesc = A network daemon for aggregating statistics
+	pkgver = 0.8.0
+	pkgrel = 1
+	url = https://github.com/etsy/statsd
+	install = statsd.install
+	arch = any
+	license = MIT
+	depends = nodejs
+	source = https://github.com/etsy/statsd/archive/v0.8.0.tar.gz
+	source = statsd.service
+	sha256sums = ba2c8dcd4f7d863beb26405dd946ac6370a9b012a72c5e575c65c064fa4b4077
+	sha256sums = 6ff6e9c3cb5d30c69cd42ace66c37cce015a4bca2f869c36f2640ee3ec879c30
+
+pkgname = statsd
+

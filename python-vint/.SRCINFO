@@ -1,0 +1,18 @@
+pkgbase = python-vint
+	pkgdesc = VimL Linter
+	pkgver = 0.3.14
+	pkgrel = 0
+	url = https://github.com/Kuniwak/vint/
+	arch = any
+	license = MIT
+	makedepends = python-setuptools
+	depends = python-yaml
+	depends = python-ansicolor=0.2.4
+	depends = python-chardet
+	depends = python-typing
+	options = !emptydirs
+	source = https://github.com/Kuniwak/vint/archive/0.3.14.tar.gz
+	md5sums = 98226d4c4727cc963ad8bdb6b1f807e3
+
+pkgname = python-vint
+

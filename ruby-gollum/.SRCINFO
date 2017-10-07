@@ -1,0 +1,20 @@
+pkgbase = ruby-gollum
+	pkgdesc = A simple, Git-powered wiki.
+	pkgver = 4.1.2
+	pkgrel = 1
+	url = http://github.com/gollum/gollum
+	arch = any
+	license = MIT
+	depends = ruby
+	depends = ruby-gollum-lib
+	depends = ruby-kramdown
+	depends = ruby-sinatra
+	depends = ruby-mustache
+	depends = ruby-useragent
+	noextract = gollum-4.1.2.gem
+	options = !emptydirs
+	source = https://rubygems.org/downloads/gollum-4.1.2.gem
+	sha256sums = aa4c33e72fb2eefd3851ccd0ca792c89919e0022581de431c35135509ca83714
+
+pkgname = ruby-gollum
+

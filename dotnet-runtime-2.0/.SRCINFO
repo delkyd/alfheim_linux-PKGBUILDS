@@ -1,0 +1,22 @@
+pkgbase = dotnet-runtime-2.0
+	pkgdesc = The .NET Core runtime, called CoreCLR, and the base library, called mscorlib. It includes the garbage collector, JIT compiler, base .NET data types and many low-level classes.
+	pkgver = 2.0.0
+	pkgrel = 3
+	epoch = 1
+	url = https://www.microsoft.com/net/core
+	arch = x86_64
+	license = MIT
+	depends = lldb
+	depends = libunwind
+	depends = icu
+	depends = lttng-ust
+	depends = dotnet-host
+	depends = curl
+	depends = openssl-1.0
+	conflicts = dotnet-lts
+	options = staticlibs
+	source = https://download.microsoft.com/download/5/F/0/5F0362BD-7D0A-4A9D-9BF9-022C6B15B04D/dotnet-runtime-2.0.0-linux-x64.tar.gz
+	sha256sums = 69ecad24bce4f2132e0db616b49e2c35487d13e3c379dabc3ec860662467b714
+
+pkgname = dotnet-runtime-2.0
+

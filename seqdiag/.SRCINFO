@@ -1,0 +1,14 @@
+pkgbase = seqdiag
+	pkgdesc = simple sequence-diagram image generator
+	pkgver = 0.9.5
+	pkgrel = 3
+	url = http://blockdiag.com/en/seqdiag/index.html
+	arch = any
+	license = apache
+	depends = python
+	depends = blockdiag
+	source = https://bitbucket.org/blockdiag/seqdiag/get/0.9.5.tar.gz
+	md5sums = f63560275d4c267cc4a32b1d248d7146
+
+pkgname = seqdiag
+

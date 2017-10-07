@@ -1,0 +1,8 @@
+*
+!.gitignore
+!.SRCINFO
+!PKGBUILD
+!megasync-git.install
+!mega.svg
+!megasync.conf
+!megasyncd.service

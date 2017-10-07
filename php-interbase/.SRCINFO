@@ -1,0 +1,16 @@
+pkgbase = php-interbase
+	pkgdesc = Interbase PHP extension
+	pkgver = 7.0.14
+	pkgrel = 1
+	url = http://www.php.net
+	arch = i686
+	arch = x86_64
+	license = PHP
+	depends = php
+	depends = libfbclient
+	source = http://www.php.net/distributions/php-7.0.14.tar.bz2
+	source = interbase.ini
+	md5sums = 903ff1fd199201d7e69dc0963797072b
+	md5sums = 1294b282b70e9c1bf4f267b74f491baa
+
+pkgname = php-interbase

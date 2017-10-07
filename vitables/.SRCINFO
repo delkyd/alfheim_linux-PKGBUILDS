@@ -1,0 +1,15 @@
+pkgbase = vitables
+	pkgdesc = A GUI browser and editor for PyTables/HDF5 files
+	pkgver = 2.1
+	pkgrel = 1
+	url = http://vitables.org
+	arch = any
+	license = GPL3
+	makedepends = python2-sphinx
+	depends = python2-pyqt4
+	depends = python2-pytables
+	source = https://downloads.sourceforge.net/vitables/ViTables-2.1.tar.gz
+	sha256sums = f0413fa725617fbb3f0be03cb1f41b5b841c6946098a629f3fcb8a99fb9be14a
+
+pkgname = vitables
+

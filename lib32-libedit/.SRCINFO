@@ -1,0 +1,16 @@
+pkgbase = lib32-libedit
+	pkgdesc = Command line editor library providing generic line editing, history, and tokenization functions (32-bit)
+	pkgver = 20160903_3.1
+	pkgrel = 1
+	url = http://www.thrysoee.dk/editline/
+	arch = x86_64
+	license = BSD
+	makedepends = gcc-multilib
+	depends = lib32-glibc
+	depends = lib32-ncurses
+	depends = libedit
+	source = http://www.thrysoee.dk/editline/libedit-20160903-3.1.tar.gz
+	sha256sums = 0ccbd2e7d46097f136fcb1aaa0d5bc24e23bb73f57d25bee5a852a683eaa7567
+
+pkgname = lib32-libedit
+

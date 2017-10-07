@@ -1,0 +1,15 @@
+pkgbase = systemc
+	pkgdesc = Set of C++ classes and macros which provide an event-driven simulation interface for modeling and describing complex hardware systems.
+	pkgver = 2.3.1a
+	pkgrel = 1
+	url = http://www.accellera.org/downloads/standards/systemc
+	arch = x86_64
+	arch = i686
+	license = custom:SystemC Open Source License
+	provides = systemc
+	conflicts = systemc
+	source = http://accellera.org/images/downloads/standards/systemc/systemc-2.3.1a.tar.gz
+	md5sums = 5cbfcb4fda0009a5015093733bd4f833
+
+pkgname = systemc
+

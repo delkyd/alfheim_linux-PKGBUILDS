@@ -1,0 +1,31 @@
+pkgbase = domoticz-latest
+	pkgdesc = Web based home automation
+	pkgver = 3.8153
+	pkgrel = 3
+	url = http://www.domoticz.com
+	install = domoticz.install
+	arch = x86_64
+	arch = arm
+	arch = armv6h
+	arch = armv7h
+	license = GPL
+	depends = openzwave-git
+	depends = libusb-compat
+	depends = curl
+	depends = sqlite
+	depends = boost-libs
+	depends = libcurl-compat
+	depends = openssl-1.0
+	conflicts = domoticz-svn
+	conflicts = domoticz-git
+	conflicts = domoticz-beta
+	conflicts = domoticz
+	source = https://releases.domoticz.com/releases/release/domoticz_linux_x86_64.tgz
+	source = https://releases.domoticz.com/releases/release/history_linux_x86_64.txt
+	source = domoticz.service
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = 10f8c51d5ee4c2e42510e877ae891cb1290d14e601d0cb6c59fdf1dbb0538249
+
+pkgname = domoticz-latest
+

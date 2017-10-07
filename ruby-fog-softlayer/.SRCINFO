@@ -1,0 +1,17 @@
+pkgbase = ruby-fog-softlayer
+	pkgdesc = Module for the fog gem to support SoftLayer Cloud
+	pkgver = 1.0.2
+	pkgrel = 1
+	url = https://github.com/fog/fog-softlayer
+	arch = any
+	license = MIT
+	depends = ruby
+	depends = ruby-fog-core
+	depends = ruby-fog-json
+	noextract = fog-softlayer-1.0.2.gem
+	options = !emptydirs
+	source = https://rubygems.org/downloads/fog-softlayer-1.0.2.gem
+	sha512sums = e08f8587aca95260444689d79fd65bddf473c2451e1ed59725092a9755859e867a8ac8784953953047df397c4ee1d41f7d9795893f56925a820fd09788493dd1
+
+pkgname = ruby-fog-softlayer
+

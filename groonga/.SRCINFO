@@ -1,0 +1,29 @@
+pkgbase = groonga
+	pkgdesc = An opensource fulltext search engine.
+	pkgver = 7.0.7
+	pkgrel = 1
+	url = http://groonga.org/
+	arch = i686
+	arch = x86_64
+	arch = armv7h
+	license = LGPL2
+	depends = zlib
+	depends = lz4
+	depends = glib2
+	depends = libedit
+	depends = zeromq
+	depends = libevent
+	depends = mecab
+	depends = mecab-ipadic
+	optdepends = cutter-test_framework
+	optdepends = ruby
+	optdepends = mercurial
+	optdepends = kytea
+	optdepends = snowball-c
+	source = http://packages.groonga.org/source/groonga/groonga-7.0.7.tar.gz
+	source = groonga-httpd.service
+	sha1sums = 7f2fc98dac71d87bd125baea7212bcd62bf84c23
+	sha1sums = 56b68b5ebfc6785f08ce101b263d6f56acd74d8a
+
+pkgname = groonga
+

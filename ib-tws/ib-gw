@@ -1,0 +1,4 @@
+#!/bin/bash
+cd /usr/share/ib-tws/jars
+/usr/share/ib-tws/jre/bin/java -cp \* -Xmx512M -Dsun.java2d.noddraw=true ibgateway.GWClient $HOME/.ib-tws
+

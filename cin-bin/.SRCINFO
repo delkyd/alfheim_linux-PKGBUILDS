@@ -1,0 +1,35 @@
+pkgbase = cin-bin
+	pkgdesc = Cinelerra (5.1) (20174)
+	pkgver = 5.1
+	pkgrel = 20174
+	url = https://github.com/triceratops1/Arch-cinelerra
+	arch = x86_64
+	license = GPL
+	makedepends = yasm
+	makedepends = nasm
+	makedepends = cmake
+	makedepends = libxml2
+	makedepends = perl-xml-libxml
+	makedepends = perl-xml-parser
+	makedepends = python2
+	depends = xorg-server
+	depends = xorg-server-utils
+	depends = libpng
+	depends = libxv
+	depends = libva
+	depends = libxft
+	depends = freetype2
+	depends = alsa-lib
+	depends = inkscape
+	depends = dvdauthor
+	depends = libvpx
+	conflicts = cinelerra-cv
+	conflicts = cinelerra-heroine
+	conflicts = cin
+	source = https://cinelerra-cv.org/five/pkgs/arch/cin-5.1-20170329-arch-x86_64.pkg.tar.xz
+	sha256sums = 5759f873f998c847a21b4f4c4fd501f76d65d8dd948b2d63507c0f566cfad10e
+	sha384sums = ab4819b004ca52d04b1d1b821af18a122f64d61aa53791b00377e83b829f6c5ec9373fd2abe2f70489b27d8aaf3ee66c
+	sha512sums = ad55476b68d30127dfb7bd2bd231595d32a5740f27af921b51c57e32791ef7100f2826951d8676b7d623c80aa77ab6e1f0d9ef88eb58a45d1a76564adbf8bcd6
+
+pkgname = cin-bin
+

@@ -1,0 +1,6 @@
+good
+*.pkg.tar.xz
+pkg
+src
+zen-config
+zen-kernel

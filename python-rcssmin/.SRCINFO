@@ -1,0 +1,16 @@
+pkgbase = python-rcssmin
+	pkgdesc = rCSSmin is a CSS minifier written in python.
+	pkgver = 1.0.6
+	pkgrel = 1
+	url = https://github.com/ndparker/rcssmin
+	arch = i686
+	arch = x86_64
+	license = APACHE
+	depends = python>=3.1
+	provides = python-rcssmin
+	conflicts = python-rcssmin
+	source = https://github.com/ndparker/rcssmin/archive/1.0.6.tar.gz
+	md5sums = 50317e853aa273a963e9b406d5743528
+
+pkgname = python-rcssmin
+

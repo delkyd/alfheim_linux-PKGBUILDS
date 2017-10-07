@@ -1,0 +1,30 @@
+# $Id$
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=deepin-wm-switcher
+pkgver=1.1.4
+pkgrel=1
+pkgdesc='Window manager switcher for Deepin'
+arch=('i686' 'x86_64')
+url="https://github.com/linuxdeepin/deepin-wm-switcher"
+license=('GPL3')
+groups=('deepin')
+depends=('deepin-daemon' 'deepin-wm' 'deepin-metacity' 'qt5-x11extras')
+makedepends=('cmake')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/linuxdeepin/deepin-wm-switcher/archive/$pkgver.tar.gz")
+sha512sums=('cef7ad83f723513f8776f92c74019e225fd61f979bd3e2d157b2850a21bf50f677a50e4c6cb219c8d120dd3bc3e60585e9b7275a84161a1ead55409a4c65f46e')
+
+prepare() {
+  mkdir build
+}
+
+build() {
+  cd build
+  cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release ../$pkgname-$pkgver
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="$pkgdir" install
+}

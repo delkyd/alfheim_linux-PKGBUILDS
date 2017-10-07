@@ -1,0 +1,20 @@
+pkgbase = exec-as
+	pkgdesc = A command that lets you start another command with any argv[0]
+	pkgver = 1.1
+	pkgrel = 1
+	url = https://github.com/maandree/exec-as
+	install = exec-as.install
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = make
+	makedepends = coreutils
+	makedepends = gcc
+	makedepends = glibc
+	makedepends = texinfo
+	depends = glibc
+	source = https://github.com/maandree/exec-as/archive/1.1.tar.gz
+	sha256sums = 7dd73559c42cdb047dd74d735642f0a4f39790b16d44f23841935e69da926f4d
+
+pkgname = exec-as
+

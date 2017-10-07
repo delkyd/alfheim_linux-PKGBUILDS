@@ -1,0 +1,42 @@
+# $Id$
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+
+pkgname=xkbsel
+pkgver=0.13
+pkgrel=7
+pkgdesc="framework for defining, selecting and indicating XKB keyboard mappings"
+arch=('i686' 'x86_64')
+url="http://www.meduna.org/sw_xkbsel_en.html"
+license=('GPL')
+depends=('gdbm' 'libxaw')
+makedepends=('patch' 'xkeyboard-config')
+source=(https://www.meduna.org/code/$pkgname-$pkgver.tar.gz
+	build-fix.patch)
+sha256sums=('bfd330c96a78317d606460b3dfdf5e2f800b2d5d8269494b02517340757f6a69'
+            'da78b6a2c83c6dca08a2d36b6a7e8a1978b452e24ec0daf629bb2819069d5e52')
+
+prepare() {
+  cd "$srcdir"/$pkgname-$pkgver
+  sed -i 's|\${CC-cc}|${CC-cc} -O2 |g' ./configure
+}
+
+build() {
+  cd "$srcdir"/$pkgname-$pkgver
+
+#  autoreconf
+
+  patch -Np1 <../build-fix.patch
+  export CFLAGS="$CFLAGS -I/usr/include/gdbm -DHAVE_NDBM_H"
+  export LDFLAGS="-lgdbm -lgdbm_compat"
+
+  ./configure --prefix=/usr --localstatedir=/var/lib --sysconfdir=/etc/xkbsel \
+		--build=`uname -m` --host=`uname -m` --target=`uname -m` \
+		--mandir=/usr/share/man
+  make
+}
+
+package() {
+  cd "$srcdir"/$pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

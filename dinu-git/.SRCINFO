@@ -1,0 +1,21 @@
+pkgbase = dinu-git
+	pkgdesc = Launcher, file manager, one-way terminal
+	pkgver = r49.0474dbc
+	pkgrel = 1
+	url = https://github.com/weltensturm/dinu
+	arch = i686
+	arch = x86_64
+	groups = dlang
+	license = MIT
+	makedepends = dmd
+	makedepends = git
+	makedepends = dub
+	depends = libphobos
+	provides = dinu
+	conflicts = dinu
+	options = !strip
+	source = git+https://github.com/weltensturm/dinu
+	sha256sums = SKIP
+
+pkgname = dinu-git
+

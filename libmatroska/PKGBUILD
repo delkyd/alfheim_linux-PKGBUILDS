@@ -1,0 +1,33 @@
+# $Id$
+# Maintainer: Giovanni Scafora <giovanni@archlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor 03/08/04 <lefungus@altern.org>
+
+pkgname=libmatroska
+pkgver=1.4.7
+pkgrel=1
+pkgdesc='Matroska library'
+arch=('i686' 'x86_64')
+url='https://dl.matroska.org/downloads/libmatroska/'
+license=('LGPL')
+depends=('libebml.so')
+provides=('libmatroska.so')
+source=("https://dl.matroska.org/downloads/libmatroska/libmatroska-${pkgver}.tar.bz2")
+sha256sums=('46441eb3bae9f970f68affaa211dd74302a7072dcd2becfb1114da11b66525fa')
+
+build() {
+  cd libmatroska-${pkgver}
+
+  ./configure \
+    --prefix='/usr' \
+    --disable-static
+  make
+}
+
+package() {
+  cd libmatroska-${pkgver}
+
+  make prefix="${pkgdir}/usr" install
+}
+
+# vim: ts=2 sw=2 et:

@@ -1,0 +1,35 @@
+# Maintainer: Nadir Boussoukaia <boussou@gmail.com>
+
+# mdcharm is currently unmaintained. See https://github.com/zhangshine/MdCharm/issues/4
+# here is a build that will install the last binary from gthub
+
+pkgname=mdcharm-bin
+pkgver=1.2.0
+pkgrel=2
+pkgdesc="The best markdown editor so far (markdown extra) and Multi-Markdown available again from the last binary available on gthub"
+arch=('i686' 'x86_64')
+url="http://www.mdcharm.com/"
+license=('custom')
+#makedepends=('xz')
+
+prepare() {
+
+    wget https://github.com/zhangshine/MdCharm/releases/download/1.2.0/mdcharm_1.2_amd64.deb
+    ar x mdcharm_1.2_amd64.deb
+    tar xf data.tar.xz
+
+}
+
+package() {
+
+    install -Dm755 usr/bin/mdcharm $pkgdir/usr/bin/mdcharm
+#    install -Dm644 usr/share/applications/mdcharm.desktop $pkgdir/usr/share/applications/mdcharm.desktop
+  #  install -d usr/share/mdcharm $pkgdir/usr/share/mdcharm
+    
+    for i in `find usr/share -type f`; do  
+	    install -Dm644  "$i"  "$pkgdir/$i"
+   done
+   
+    
+} 
+

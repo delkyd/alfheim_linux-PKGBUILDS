@@ -1,0 +1,31 @@
+pkgbase = mudlet
+	pkgdesc = A modern MUD client with a graphical user inteface and built in Lua scripting
+	pkgver = 3.4.0
+	pkgrel = 1
+	url = http://www.mudlet.org
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = boost
+	makedepends = qt5-tools
+	depends = yajl
+	depends = qt5-base
+	depends = qt5-multimedia
+	depends = hunspell
+	depends = libzip
+	depends = glu
+	depends = lua51
+	depends = lua51-filesystem
+	depends = luazip5.1
+	depends = lua51-sql-sqlite
+	depends = lrexlib-pcre5.1
+	depends = qt5-gamepad
+	depends = lua51-utf8
+	conflicts = mudlet-dev
+	conflicts = mudlet-git
+	conflicts = mudlet-deb
+	source = http://www.mudlet.org/download/Mudlet-3.4.0.tar.xz
+	sha256sums = 67a8fe099d13cfd242edd2df17ff42409541a48e465239e7938739ab0bc791ac
+
+pkgname = mudlet
+

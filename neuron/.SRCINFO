@@ -1,0 +1,20 @@
+pkgbase = neuron
+	pkgdesc = Empirically-based simulations of neurons and networks of neurons
+	pkgver = 7.4
+	pkgrel = 1
+	url = http://www.neuron.yale.edu
+	arch = i686
+	arch = x86_64
+	license = GPL
+	depends = interviews
+	depends = openmpi
+	depends = python
+	optdepends = python-numpy
+	optdepends = python-scipy
+	optdepends = mpich2
+	options = libtool
+	source = http://www.neuron.yale.edu/ftp/neuron/versions/v7.4/nrn-7.4.tar.gz
+	md5sums = 2c0bbee8a9e55d60fa26336f4ab7acbf
+
+pkgname = neuron
+

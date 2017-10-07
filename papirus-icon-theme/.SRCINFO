@@ -1,0 +1,16 @@
+pkgbase = papirus-icon-theme
+	pkgdesc = Papirus icon theme
+	pkgver = 20170921
+	pkgrel = 1
+	url = https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+	arch = any
+	license = LGPL3
+	depends = gtk-update-icon-cache
+	provides = papirus-icon-theme
+	conflicts = papirus-icon-theme-git
+	options = !strip
+	source = papirus-icon-theme-20170921.tar.gz::https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/20170921.tar.gz
+	sha256sums = a45965c6b1d8f8d046ac458b9d462badfaac3a38076f1610350a990fa2bf5024
+
+pkgname = papirus-icon-theme
+

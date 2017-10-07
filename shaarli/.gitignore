@@ -1,0 +1,5 @@
+pkg/
+src/
+
+v*.tar.gz
+shaarli-v*-full.tar.gz

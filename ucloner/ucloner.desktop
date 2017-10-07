@@ -1,0 +1,17 @@
+[Desktop Entry]
+Categories=Utility;
+Comment[zh_CN]=Linux系统备份工具
+Comment=Linux system backup utility
+Exec=pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY ucloner
+GenericName[zh_CN]=
+GenericName=
+Icon=ucloner
+MimeType=
+Name[zh_CN]=UCloner
+Name=UCloner
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+

@@ -1,0 +1,20 @@
+pkgbase = python-yt
+	pkgdesc = A community-developed analysis and visualization toolkit for volumetric data.
+	pkgver = 3.3.2
+	pkgrel = 1
+	url = http://yt-project.org
+	arch = any
+	license = BSD
+	depends = python-numpy
+	depends = python-matplotlib
+	depends = cython
+	depends = python-nose
+	depends = python-sympy
+	depends = python-h5py
+	optdepends = jupyter
+	options = !emptydirs
+	source = https://pypi.io/packages/source/y/yt/yt-3.3.2.tar.gz
+	md5sums = 405211ea89a0d40eb289363055a54291
+
+pkgname = python-yt
+

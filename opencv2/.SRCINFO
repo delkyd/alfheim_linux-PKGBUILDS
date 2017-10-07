@@ -1,0 +1,34 @@
+pkgbase = opencv2
+	pkgdesc = Open Source Computer Vision Library (Legacy Version)
+	pkgver = 2.4.13.3
+	pkgrel = 1
+	url = http://opencv.org/
+	arch = i686
+	arch = x86_64
+	license = BSD
+	makedepends = cmake
+	makedepends = python2-numpy
+	makedepends = mesa
+	depends = intel-tbb
+	depends = openexr
+	depends = xine-lib
+	depends = libdc1394
+	depends = gtkglext
+	optdepends = opencv-samples
+	optdepends = eigen2
+	optdepends = libcl: For coding with OpenCL
+	optdepends = python2-numpy: Python 2.x interface
+	source = 2.4.13.3.zip::https://codeload.github.com/opencv/opencv/zip/2.4.13.3
+	source = cmake_ccache.patch
+	sha256sums = 838a2ef5821db868f71c26e248427d7be9f35f2fb996acd1b973150c8dd11656
+	sha256sums = 1a8afc6bf9c9a80204385911749250d179709f915e416fe2791fdfc2a7b4012a
+
+pkgname = opencv2
+	conflicts = opencv
+	options = staticlibs
+
+pkgname = opencv2-samples
+	pkgdesc = Open Source Computer Vision Library (Legacy Version) (samples)
+	depends = opencv2=2.4.13.3
+	conflicts = opencv-samples
+

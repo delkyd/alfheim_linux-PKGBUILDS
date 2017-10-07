@@ -1,0 +1,22 @@
+pkgbase = virt-backup
+	pkgdesc = Automatic backups for Libvirt
+	pkgver = 0.1.2
+	pkgrel = 1
+	url = https://github.com/Anthony25/virt-backup
+	arch = any
+	license = BSD
+	makedepends = python-setuptools
+	depends = libvirt-python3
+	depends = python-appdirs
+	depends = python-argparse
+	depends = python-arrow
+	depends = python-defusedxml
+	depends = python-lxml
+	depends = python-tqdm
+	depends = python-yaml
+	options = !emptydirs
+	source = https://github.com/Anthony25/virt-backup/archive/0.1.2.tar.gz
+	sha256sums = 9969ca255cd4de7e5218e0536f06c96dcb37d68223ac7054fb947b4b9d5a59d1
+
+pkgname = virt-backup
+

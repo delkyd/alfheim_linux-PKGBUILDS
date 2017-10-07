@@ -1,0 +1,13 @@
+pkgbase = breeze-red-cursor-theme
+	pkgdesc = Breeze Red cursor theme.
+	pkgver = 1.0
+	pkgrel = 3
+	url = https://kver.wordpress.com/2015/01/09/curses-i-mean-cursors/
+	arch = any
+	license = GPL
+	makedepends = unzip
+	source = https://code.jpope.org/jpope/breeze_cursor_sources/raw/master/breeze-red-cursor-theme.zip
+	sha256sums = 8b952060fffffd0e704501dfb568779782517a649c897e7f5f5fff638a1b5b32
+
+pkgname = breeze-red-cursor-theme
+

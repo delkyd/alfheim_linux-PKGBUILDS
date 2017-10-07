@@ -1,0 +1,18 @@
+pkgbase = textios-git
+	pkgdesc = Text interface to Icinga and Nagios
+	pkgver = 15.03
+	pkgrel = 1
+	url = https://github.com/vain/textios
+	arch = any
+	license = custom:PIZZA-WARE
+	makedepends = git
+	depends = python2
+	depends = curl
+	depends = vim
+	provides = textios
+	conflicts = textios
+	source = git://github.com/vain/textios.git
+	md5sums = SKIP
+
+pkgname = textios-git
+

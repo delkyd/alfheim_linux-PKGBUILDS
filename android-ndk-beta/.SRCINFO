@@ -1,0 +1,22 @@
+pkgbase = android-ndk-beta
+	pkgdesc = Android C/C++ developer kit (beta)
+	pkgver = r16_beta1
+	pkgrel = 1
+	url = https://developer.android.com/ndk/
+	install = android-ndk-beta.install
+	arch = x86_64
+	license = GPL
+	license = LGPL
+	license = custom
+	depends = ncurses5-compat-libs
+	optdepends = python: various helper scripts
+	options = !strip
+	options = staticlibs
+	backup = etc/profile.d/android-ndk-beta.sh
+	source = android-ndk-beta.sh
+	source = https://dl.google.com/android/repository/android-ndk-r16-beta1-linux-x86_64.zip
+	sha256sums = cadefdccf5da51dc56156fbc41945a2c27d913d12a043b32f47e15f253b0943d
+	sha256sums = cf340c2c6db5ce400cf96afc3b2728264947d6d67a65cfbe6f73a3dad2b4d631
+
+pkgname = android-ndk-beta
+

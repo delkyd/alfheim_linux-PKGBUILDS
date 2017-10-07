@@ -1,0 +1,34 @@
+pkgbase = owncloud
+	pkgdesc = A cloud server to store your files centrally on a hardware controlled by you
+	pkgver = 10.0.2
+	pkgrel = 1
+	url = https://owncloud.org/
+	arch = any
+	license = GPL
+	depends = php-gd
+	optdepends = php-apache: to use the Apache web server
+	optdepends = php-sqlite: to use the SQLite database backend
+	optdepends = php-pgsql: to use the PostgreSQL database backend
+	optdepends = php-ldap: LDAP authentication
+	optdepends = php-intl
+	optdepends = php-apcu
+	optdepends = php-xcache
+	optdepends = mariadb: to use the MySQL database backend
+	optdepends = smbclient: to mount SAMBA shares
+	optdepends = php-mcrypt
+	optdepends = ffmpeg: file preview
+	optdepends = libreoffice: file preview
+	conflicts = owncloud-app-gallery
+	replaces = owncloud-app-gallery
+	options = !strip
+	backup = etc/webapps/owncloud/apache.example.conf
+	source = https://download.owncloud.org/community/owncloud-10.0.2.tar.bz2
+	source = https://download.owncloud.org/community/owncloud-10.0.2.tar.bz2.asc
+	source = apache.example.conf
+	validpgpkeys = E3036906AD9F30807351FAC32D5D5E97F6978A26
+	sha256sums = 3645214d6b9527dc218b4cdcbbf1d01809aaba14435d644b545bee0274c88fd0
+	sha256sums = SKIP
+	sha256sums = 4a2ad4b4ecc6ede355bec9a21cbf8c8c4b9144033bdf0ed3366617bcb4df1144
+
+pkgname = owncloud
+

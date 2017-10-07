@@ -1,0 +1,53 @@
+post_install() {
+  gen_key
+  /usr/bin/printf "----------------------------------------------\n"
+  /usr/bin/printf " Start the expressvpn daemon with\n"
+  /usr/bin/printf "     # systemctl start expressvpn.service\n"
+  /usr/bin/printf " Then activate your expressVPN account with\n"
+  /usr/bin/printf "     $ expressvpn activate [activation code]\n"
+  /usr/bin/printf " (Your activation code can be found at\n"
+  /usr/bin/printf " https://www.expressvpn.com/licenses/current)\n"
+  /usr/bin/printf "\n"
+  /usr/bin/printf " Once activated, Use 'expressvpn list' to\n"
+  /usr/bin/printf " list servers and 'expressvpn connect [id]' \n"
+  /usr/bin/printf " to connect to your preferred server.\n"
+  /usr/bin/printf " See 'expressvpn help' for more information.\n"
+  /usr/bin/printf "----------------------------------------------\n"
+}
+
+gen_key() {
+  /usr/bin/expressvpnd --workdir "/var/lib/expressvpn/" generate-client-ca > /dev/null 2>&1
+  /usr/bin/expressvpnd --workdir "/var/lib/expressvpn/" generate-client-certs > /dev/null 2>&1
+  /usr/bin/chmod 644 "/var/lib/expressvpn/certs/client.key" > /dev/null 2>&1
+  /usr/bin/rm -f /var/lib/expressvpn/certs/client.req > /dev/null 2>&1
+  /usr/bin/rm -f /var/lib/expressvpn/certs/clientca.srl > /dev/null 2>&1
+}
+
+post_upgrade() {
+  gen_key
+  if [ "$(/usr/bin/vercmp 1.2.0 "$2")" -eq 1 ]; then
+    /usr/bin/printf "------------------------------------------------------------------------------\n"
+    /usr/bin/printf " Upstream now ship a systemd service file with a different name to the one we\n"
+    /usr/bin/printf " previously shipped. The new service name is:\n"
+    /usr/bin/printf "     'expressvpn.service'\n"
+    /usr/bin/printf " Please remember to enable it if you want the service to start at boot.\n"
+    /usr/bin/printf " If you had enabled the previous service file please manually remove its\n"
+    /usr/bin/printf " symlink:\n"
+    /usr/bin/printf "     # rm /etc/systemd/system/multi-user.target.wants/expressvpnd.service\n"
+    /usr/bin/printf " Unfortunately, you will need to reactivate your expressvpn after this update\n"
+    /usr/bin/printf "------------------------------------------------------------------------------\n"
+  fi
+  /usr/bin/printf "------------------------------------------------\n"
+  /usr/bin/printf " You may need to restart the expressvpn daemon:\n"
+  /usr/bin/printf "     # systemctl daemon-reload\n"
+  /usr/bin/printf "     # systemctl restart expressvpn.service\n"
+  /usr/bin/printf "------------------------------------------------\n"
+}
+
+post_remove() {
+  /usr/bin/rm -f /var/lib/expressvpn/certs/client.key
+  /usr/bin/rm -f /var/lib/expressvpn/certs/client.crt
+  /usr/bin/rm -f /var/lib/expressvpn/certs/client.p12
+  /usr/bin/rm -f /var/lib/expressvpn/certs/clientca.crt
+  /usr/bin/rm -f /var/lib/expressvpn/certs/clientca.key
+}

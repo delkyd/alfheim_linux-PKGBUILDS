@@ -1,0 +1,16 @@
+pkgbase = ttf-inziu-iosevka
+	pkgdesc = A composite of Iosevka, M+ and Source Han Sans.
+	pkgver = 1.13.3
+	pkgrel = 1
+	url = https://be5invis.github.io/Iosevka/inziu.html
+	arch = any
+	license = custom:OFL
+	depends = fontconfig
+	depends = xorg-font-utils
+	source = http://7xpdnl.dl1.z0.glb.clouddn.com/inziu-iosevka-1.13.3.7z
+	source = https://raw.githubusercontent.com/be5invis/Iosevka/master/LICENSE.md
+	sha256sums = de3b49f941552cd12c4fc5552e49325b040a2818fcbb850d227e49eb720253ed
+	sha256sums = a7a0e1da98ab1bae99a1f246f45e51720e0cc13a53b4a5b0692f64991d2191af
+
+pkgname = ttf-inziu-iosevka
+

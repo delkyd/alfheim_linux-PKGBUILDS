@@ -1,0 +1,20 @@
+pkgbase = razercommander-git
+	pkgdesc = Razer device manager for Linux
+	pkgver = 1.2.0.r31.g760e251
+	pkgrel = 1
+	url = https://github.com/gabmus/razercommander
+	install = razercommander-git.install
+	arch = any
+	license = GPL3
+	makedepends = git
+	makedepends = meson
+	depends = python-razer
+	depends = gtk3>=3.14
+	depends = python
+	provides = razercommander
+	conflicts = razercommander
+	source = razercommander::git+https://github.com/gabmus/razercommander
+	sha256sums = SKIP
+
+pkgname = razercommander-git
+

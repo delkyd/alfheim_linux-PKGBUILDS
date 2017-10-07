@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+notify-send -i "applications-education-language" -u critical "$(xsel -o)" "$(trans -b "$(xsel -o | sed "s/[\"'<>]//g")")"

@@ -1,0 +1,15 @@
+pkgbase = nodejs-browser-sync
+	pkgdesc = Live CSS Reload & Browser Syncing
+	pkgver = 2.18.13
+	pkgrel = 1
+	url = https://www.browsersync.io/
+	arch = any
+	license = Apache
+	depends = nodejs
+	depends = npm
+	noextract = browser-sync-2.18.13.tgz
+	source = https://registry.npmjs.org/browser-sync/-/browser-sync-2.18.13.tgz
+	sha1sums = c28dc3eb3be67c97a907082b772a37f915c14d7d
+
+pkgname = nodejs-browser-sync
+

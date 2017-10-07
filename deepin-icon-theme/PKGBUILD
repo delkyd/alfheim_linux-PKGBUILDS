@@ -1,0 +1,21 @@
+# $Id$
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Josip Ponjavic <josipponjavic at gmail dot com>
+# Contributor: Xu Fasheng <fasheng.xu[AT]gmail.com>
+
+pkgname=deepin-icon-theme
+pkgver=15.12.46
+pkgrel=1
+pkgdesc="Deepin Icons"
+arch=('any')
+url="https://github.com/linuxdeepin/deepin-icon-theme"
+license=('GPL3')
+replaces=('deepin-cursor-theme')
+conflicts=('deepin-cursor-theme')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/linuxdeepin/deepin-icon-theme/archive/$pkgver.tar.gz")
+sha512sums=('598d9988851f52c21f0c3c7b3b6168ef2ed690fc9466c1a53a0fbd5e15acc706aff708315122f1bf77c3a303084d3f80f9e2ea5d1aeb8625d52bf18e107038a0')
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

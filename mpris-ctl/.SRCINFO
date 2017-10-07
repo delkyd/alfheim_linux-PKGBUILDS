@@ -1,0 +1,15 @@
+pkgbase = mpris-ctl
+	pkgdesc = Control any music player that follows the MPRIS specification from the command line
+	pkgver = 0.6.1
+	pkgrel = 1
+	url = https://github.com/mariusor/mpris-ctl
+	arch = x86
+	arch = x86_64
+	license = MIT
+	makedepends = dbus
+	depends = dbus
+	source = https://github.com/mariusor/mpris-ctl/archive/v0.6.1.tar.gz
+	sha256sums = 6ef81bb3094d5c704368f7b0e5f05243d6b9c4d8d5ad6f6529125a4bcb0a3013
+
+pkgname = mpris-ctl
+

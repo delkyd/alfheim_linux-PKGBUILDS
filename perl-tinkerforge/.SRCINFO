@@ -1,0 +1,16 @@
+pkgbase = perl-tinkerforge
+	pkgdesc = perl binding for the TinkerForge hard-/software
+	pkgver = 2.1.4
+	pkgrel = 1
+	url = http://www.tinkerforge.com/en/doc/Software/API_Bindings_Perl.html
+	arch = any
+	license = PerlArtistic
+	license = GPL
+	depends = perl>=0
+	options = !emptydirs
+	source = http://download.tinkerforge.com/bindings/perl/tinkerforge_perl_bindings_2_1_4.zip
+	md5sums = ebb1ca6e64d4f22d124666ee77500f2c
+	sha512sums = 810cbac499ade0f2cf5c575256819d629feca9fb0297cee521e326522672d68cec0887b0c4c7ddc6645d9e5dd53dc177c0507661997dd557e3a5b27ba57e4e00
+
+pkgname = perl-tinkerforge
+

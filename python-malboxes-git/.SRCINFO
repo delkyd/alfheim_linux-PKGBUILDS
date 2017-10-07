@@ -1,0 +1,22 @@
+pkgbase = python-malboxes-git
+	pkgdesc = Builds malware analysis Windows VMs so that you don't have to.
+	pkgver = 294.f086475
+	pkgrel = 1
+	url = https://github.com/GoSecure/malboxes
+	arch = any
+	license = GPL
+	makedepends = python-pip
+	makedepends = git
+	depends = python
+	depends = packer-io
+	depends = virtualbox
+	depends = vagrant
+	depends = python-jsmin
+	depends = python-jinja
+	depends = python-appdirs
+	options = !emptydirs
+	source = git+https://github.com/GoSecure/malboxes.git
+	md5sums = SKIP
+
+pkgname = python-malboxes-git
+

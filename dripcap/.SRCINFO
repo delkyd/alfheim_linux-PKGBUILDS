@@ -1,0 +1,13 @@
+pkgbase = dripcap
+	pkgdesc = Caffeinated Packet Analyzer
+	pkgver = 0.6.15
+	pkgrel = 1
+	url = https://dripcap.org/
+	arch = x86_64
+	license = MIT
+	depends = wget
+	source = https://github.com/dripcap/dripcap/releases/download/v0.6.15/dripcap-linux-amd64.deb
+	sha1sums = 2fb97edbae959a1e89f60796fb2e1e9a47eea5b0
+
+pkgname = dripcap
+

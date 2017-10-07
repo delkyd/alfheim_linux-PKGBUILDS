@@ -1,0 +1,27 @@
+pkgbase = casync-git
+	pkgdesc = Content-Addressable Data Synchronization Tool
+	pkgver = 2.r19.g624550c
+	pkgrel = 1
+	url = https://github.com/systemd/casync
+	arch = x86
+	arch = x86_64
+	license = LGPL
+	checkdepends = rsync
+	makedepends = git
+	makedepends = meson
+	makedepends = python-sphinx
+	depends = acl
+	depends = libcurl.so
+	depends = openssl
+	depends = xz
+	depends = fuse2
+	depends = libselinux
+	depends = zlib
+	depends = zstd
+	provides = casync
+	conflicts = casync
+	source = casync-git::git+https://github.com/systemd/casync
+	sha256sums = SKIP
+
+pkgname = casync-git
+

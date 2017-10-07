@@ -1,0 +1,18 @@
+pkgbase = papirus-plasma-theme
+	pkgdesc = Papirus plasma theme for KDE
+	pkgver = 20161203
+	pkgrel = 1
+	url = https://github.com/icaroperseo/papirus-plasma-theme
+	install = papirus-plasma-theme.install
+	arch = any
+	license = GPL
+	makedepends = git
+	makedepends = make
+	depends = plasma-desktop
+	conflicts = papirus-plasma-theme-git
+	options = !strip
+	source = papirus-plasma-theme::git+https://github.com/icaroperseo/papirus-plasma-theme.git#commit=b26b93e
+	sha256sums = SKIP
+
+pkgname = papirus-plasma-theme
+

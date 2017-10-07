@@ -1,0 +1,18 @@
+pkgbase = yaourt-gui-manjaro
+	pkgdesc = A bash GUI for yaourt (Manjaro theming) and Romanian translation added
+	pkgver = 1.4.5
+	pkgrel = 2
+	url = http://alexiobash.com/yaourt-gui-a-bash-gui-per-yaourt-3/
+	install = yaourt-gui-manjaro.install
+	arch = any
+	license = GPL
+	depends = yaourt
+	depends = sudo
+	optdepends = aurvote: Tool to vote for favorite AUR packages
+	provides = yaourt-gui
+	conflicts = yaourt-gui
+	source = yaourt-gui-manjaro::git+https://github.com/alexandruianu/yaourt-gui-manjaro
+	md5sums = SKIP
+
+pkgname = yaourt-gui-manjaro
+

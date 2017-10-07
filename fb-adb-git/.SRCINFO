@@ -1,0 +1,20 @@
+pkgbase = fb-adb-git
+	pkgdesc = A better shell to use in place of adb when connecting to Android devices
+	pkgver = 20170602.r363.b931596
+	pkgrel = 5
+	url = https://github.com/facebook/fb-adb
+	arch = x86_64
+	license = GPL3
+	makedepends = git
+	makedepends = vim
+	makedepends = android-sdk-build-tools
+	makedepends = android-platform-19
+	makedepends = android-ndk
+	depends = android-tools
+	options = !strip
+	options = !buildflags
+	source = git+https://github.com/facebook/fb-adb.git
+	sha512sums = SKIP
+
+pkgname = fb-adb-git
+

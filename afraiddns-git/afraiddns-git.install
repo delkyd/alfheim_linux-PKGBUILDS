@@ -1,0 +1,4 @@
+post_install() {
+	echo "Please provide the API secret key you receive from afraid.org"
+	echo "in /etc/afraiddns/apikey "
+}

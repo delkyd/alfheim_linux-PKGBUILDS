@@ -1,0 +1,23 @@
+post_install() {
+    echo
+    echo
+    echo -e "\t                        GAME NOTES"
+    echo -e "\t                   ´*~##############~*\`"
+    echo -e "\t##########################################################"
+    echo -e "\t#                                                        #"
+    echo -e "\t# You need to create an account at                       #"
+    echo -e "\t# https://www.pokemon-revolution-online.net/Register.php #"
+    echo -e "\t#                                                        #"
+    echo -e "\t##########################################################"
+    echo
+    echo
+}
+
+post_upgrade() {
+    echo
+    echo "Thanks for using my pkg :)"
+    echo
+}
+
+
+

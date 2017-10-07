@@ -1,0 +1,19 @@
+pkgbase = shortcircuit
+	pkgdesc = A tool for EVE Online that finds the shortest path between solar systems (including wormholes)
+	pkgver = 0.1.4
+	pkgrel = 2
+	url = https://github.com/farshield/shortcircuit
+	arch = any
+	license = MIT
+	depends = python2
+	depends = python2-requests
+	depends = python2-pyside
+	source = https://github.com/farshield/shortcircuit/archive/v.0.1.4-beta.tar.gz
+	source = shortcircuit.desktop
+	source = shortcircuit-start.sh
+	md5sums = 0eec71bbb89c871b0f692dc4e4738cc1
+	md5sums = 284dfed1b0d0996b9b21417b5d9b0019
+	md5sums = b1e948a581bb4738724ded5231f71292
+
+pkgname = shortcircuit
+

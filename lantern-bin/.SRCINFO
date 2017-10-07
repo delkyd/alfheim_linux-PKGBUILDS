@@ -1,0 +1,26 @@
+pkgbase = lantern-bin
+	pkgdesc = Free desktop application that delivers fast, reliable and secure access to the open Internet. (Stable Channel, binary)
+	pkgver = 3.7.4
+	pkgrel = 1
+	url = https://getlantern.org
+	arch = i686
+	arch = x86_64
+	license = Apache
+	depends = libappindicator-gtk3
+	provides = lantern
+	conflicts = lantern
+	conflicts = lantern-headless
+	conflicts = lantern-headless-git
+	conflicts = lantern-git
+	options = !emptydirs
+	options = !strip
+	options = !docs
+	source = lantern.service
+	sha256sums = fdece37945be10c00210bbde7b4058c356ef1df0554bd963fcddd12990ff930b
+	source_i686 = lantern-bin-3.7.4-i686.deb::https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-32-bit.deb
+	sha256sums_i686 = 603cfb87ebed6ff9c0c68c3c27eac5c4a836206bb1b57459fd3b7cb21c43e3c0
+	source_x86_64 = lantern-bin-3.7.4-x86_64.deb::https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-64-bit.deb
+	sha256sums_x86_64 = 1d0e3fb1553653c895bc2c2587fa8ba7dab30db4d7d548a221f03dc8e63e91f1
+
+pkgname = lantern-bin
+

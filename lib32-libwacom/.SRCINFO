@@ -1,0 +1,20 @@
+pkgbase = lib32-libwacom
+	pkgdesc = Library to identify Wacom tablets and their features (32-bit)
+	pkgver = 0.22
+	pkgrel = 1
+	url = http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Libwacom
+	arch = x86_64
+	license = MIT
+	depends = glib2
+	depends = lib32-systemd
+	depends = lib32-libgudev
+	depends = lib32-gtk2
+	depends = libwacom
+	source = http://sourceforge.net/projects/linuxwacom/files/libwacom/libwacom-0.22.tar.bz2
+	source = http://sourceforge.net/projects/linuxwacom/files/libwacom/libwacom-0.22.tar.bz2.sig
+	validpgpkeys = 3C2C43D9447D5938EF4551EBE23B7E70B467F0BF
+	sha256sums = 97c19c216cbf4a2c54a5fc4f80d5a363bfa732500f0831a345bbc8ab385720c0
+	sha256sums = SKIP
+
+pkgname = lib32-libwacom
+

@@ -1,0 +1,24 @@
+pkgbase = pacitude
+	pkgdesc = a pacman/pacaur tui based on archfi
+	pkgver = 2.1
+	pkgrel = 3
+	url = https://github.com/undeadrevo/pacitude
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = git
+	depends = sudo
+	depends = pacaur
+	depends = cower
+	depends = reflector
+	optdepends = kilo-git
+	optdepends = nano
+	optdepends = pico
+	optdepends = vi
+	optdepends = vim
+	optdepends = slap
+	source = git://github.com/undeadrevo/pacitude.git
+	md5sums = SKIP
+
+pkgname = pacitude
+

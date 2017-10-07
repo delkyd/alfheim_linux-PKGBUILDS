@@ -1,0 +1,22 @@
+pkgbase = libretro-genesis-plus-gx-git
+	pkgdesc = libretro implementation of Genesis Plus GX. (Sega Master System/Sega Game Gear/Sega Mega Drive/Sega Genesis/Sega CD)
+	pkgver = 1145.365a28c
+	pkgrel = 1
+	url = https://github.com/libretro/Genesis-Plus-GX
+	arch = i686
+	arch = x86_64
+	arch = arm
+	arch = armv6h
+	arch = armv7h
+	groups = libretro
+	license = custom
+	makedepends = git
+	depends = zlib
+	conflicts = libretro-genplus-git
+	source = git+https://github.com/libretro/Genesis-Plus-GX.git
+	source = https://raw.github.com/libretro/libretro-super/master/dist/info/genesis_plus_gx_libretro.info
+	md5sums = SKIP
+	md5sums = SKIP
+
+pkgname = libretro-genesis-plus-gx-git
+

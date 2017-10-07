@@ -1,0 +1,16 @@
+pkgbase = etoys
+	pkgdesc = Educational tool and media-rich authoring environment for teaching children
+	pkgver = 5.0.2408
+	pkgrel = 1
+	url = http://squeakland.org/
+	arch = any
+	license = Apache
+	license = MIT
+	depends = squeak-vm
+	source = http://download.sugarlabs.org/sources/sucrose/glucose/etoys/etoys-5.0.2408.tar.gz
+	source = etoys.desktop
+	sha256sums = 65e89d6367fd9ac6a7ef9b017922510dcfcbd13c6f1417c7e6672877559c4f4f
+	sha256sums = cf9a73302eb9c69177e190a90714477f5fed8a478a5513256ac92f1b0b397774
+
+pkgname = etoys
+

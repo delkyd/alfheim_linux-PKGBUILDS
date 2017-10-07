@@ -1,0 +1,21 @@
+--- Makefile.libretro.org	2017-07-12 11:57:28.037188401 +0200
++++ Makefile.libretro	2017-07-12 12:01:08.095944312 +0200
+@@ -121,6 +121,9 @@
+ 
+ include Makefile.common
+ 
++INCFLAGS += -I/usr/include
++PLATFLAGS += -DHAVE_CAPSIMAGE=1
++
+ OBJECTS := $(SOURCES_C:.c=.o)
+ 
+ all: $(TARGET)
+@@ -128,7 +131,7 @@
+ 	$(AR) rcs $@ $(OBJECTS) 
+ else
+ $(TARGET): $(OBJECTS)
+-	$(CC) $(fpic) $(INCLUDES) -o $@ $(OBJECTS)  -lm -lz $(SHARED)
++	$(CC) $(fpic) $(INCLUDES) -o $@ $(OBJECTS)  -lm -lz $(SHARED) -lpthread -L/usr/lib64 -lcapsimage
+ endif
+ 
+ %.o: %.c

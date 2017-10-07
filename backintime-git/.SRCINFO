@@ -1,0 +1,42 @@
+pkgbase = backintime-git
+	pkgver = 1.1.12.r371.g87e7a6fb
+	pkgrel = 2
+	url = https://github.com/bit-team/backintime
+	arch = any
+	license = GPL
+	makedepends = git
+	makedepends = openssh
+	makedepends = python-dbus
+	makedepends = python-keyring
+	makedepends = rsync
+	makedepends = systemd
+	makedepends = xorg-xdpyinfo
+	source = backintime::git://github.com/bit-team/backintime.git
+	md5sums = SKIP
+
+pkgname = backintime-git
+	pkgdesc = Simple backup/snapshot system inspired by Flyback and TimeVault. Qt5 GUI version.
+	depends = backintime-cli-git
+	depends = libnotify
+	depends = polkit
+	depends = python-dbus
+	depends = python-pyqt5
+	depends = xorg-xdpyinfo
+	optdepends = kompare: diff tool
+	optdepends = python-secretstorage: store passwords
+	optdepends = meld: diff tool
+	provides = backintime
+	conflicts = backintime
+
+pkgname = backintime-cli-git
+	pkgdesc = Simple backup/snapshot system inspired by Flyback and TimeVault. CLI version.
+	depends = cron
+	depends = openssh
+	depends = python-dbus
+	depends = python-keyring
+	depends = rsync
+	optdepends = encfs: encrypted filesystems
+	optdepends = sshfs: remote filesystems
+	provides = backintime-cli
+	conflicts = backintime-cli
+

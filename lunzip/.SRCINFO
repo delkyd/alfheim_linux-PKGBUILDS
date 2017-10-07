@@ -1,0 +1,15 @@
+pkgbase = lunzip
+	pkgdesc = For extracting and viewing files in .lzip archives
+	pkgver = 1.9
+	pkgrel = 1
+	url = http://www.nongnu.org/lzip/lunzip.html
+	arch = i686
+	arch = x86_64
+	license = custom
+	depends = bzip2
+	depends = bash
+	source = http://download.savannah.gnu.org/releases/lzip/lunzip/lunzip-1.9.tar.gz
+	sha1sums = cc24cbd3ea3bfdc443e6e37442a0ad47b35db0d6
+
+pkgname = lunzip
+

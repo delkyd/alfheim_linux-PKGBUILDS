@@ -1,0 +1,24 @@
+Features:
+
+    "Experimental" slider styles now available in the options overlay (Knorke sliders, merging sliders, shrinking sliders). (#263)
+    Vertical navigation menu for the options overlay. (#298)
+    Input overlay keys during replays. (#307)
+    Updated the beatmap download servers.
+        Bloodcat uses captchas now, so download beatmaps in a web browser. (ab39b3e)
+        Updated the MengSky download API. (06370bd)
+        Removed dead download servers (YaS Online, Hexide). (8fe59a9)
+
+Other changes:
+
+    Beatmap star difficulty values now match osu!. (5a87d26)
+    Show instructions to resume the game when paused. (f685be1)
+    The options overlay is now accessible in the main menu by pressing Ctrl+O. (f4fa217)
+    No more socket binding; prevent multiple instances using database locks instead. (9074d43)
+
+Bug fixes:
+
+    Fixed various crashes. (#254, 12f56e7, c6b6f21, #261, 212a395)
+    Fixed video distortion issues. (58c4d60)
+    Fixed more audio issues in Linux/OpenJDK. (#252)
+    Fixed new skins not showing up when initially imported. (8dd92de)
+    Fixed applause/failure sounds not stopping when changing game states. (#299)

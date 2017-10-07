@@ -1,0 +1,8 @@
+*.part
+src
+srcdir
+pkg
+pkgdir
+*.xz
+*.gz
+*.pac.*

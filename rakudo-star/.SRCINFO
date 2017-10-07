@@ -1,0 +1,19 @@
+pkgbase = rakudo-star
+	pkgdesc = Rakudo Perl6 on MoarVM with additional modules
+	pkgver = 2017.07
+	pkgrel = 2
+	url = http://rakudo.org/
+	arch = i686
+	arch = x86_64
+	license = PerlArtistic
+	makedepends = perl>=5.8
+	depends = nqp>=2017.07
+	provides = rakudo-star
+	provides = rakudo-moarvm
+	conflicts = rakudo-star
+	conflicts = rakudo-moarvm
+	source = http://rakudo.org/downloads/star/rakudo-star-2017.07.tar.gz
+	sha512sums = 2fe8c55fe9ff2806cbdfd792e0f616bd5f58e931ba2d9a11684b3ebdf18ff8cc64565bbb1e73700ce47276f528fb80b0ad0427efe0e694113c036cf479b4fad1
+
+pkgname = rakudo-star
+

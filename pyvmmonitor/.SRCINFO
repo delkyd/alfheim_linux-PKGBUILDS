@@ -1,0 +1,13 @@
+pkgbase = pyvmmonitor
+	pkgdesc = Profiler with a simple goal: being the best way to profile a Python program.
+	pkgver = 1.0.1
+	pkgrel = 2
+	url = http://www.pyvmmonitor.com/
+	arch = x86_64
+	license = custom
+	depends = python-yappi
+	source = http://www.mediafire.com/download/bzmazee4bcysbi4/pyvmmonitor_1.0.1_linux.x86_64.tar.gz
+	md5sums = 1bc94a63fd858c2de32ad87466cd6997
+
+pkgname = pyvmmonitor
+

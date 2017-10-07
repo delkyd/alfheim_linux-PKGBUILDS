@@ -1,0 +1,12 @@
+[Unit]
+Description=Execute scripts on new messages using IDLE imap command (Python version)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python -u /usr/bin/pyimapnotify -vv -c %h/.config/imapnotify/%I
+Restart=always
+RestartSec=20
+
+[Install]
+WantedBy=default.target

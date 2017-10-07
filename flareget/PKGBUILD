@@ -1,0 +1,32 @@
+# Author: Syed Adnan Kamili <adnan.kamili AT gmail D0T com>
+# Maintainer: Marc Rozanc <marc AT rozanc D0T fr>
+
+pkgname=flareget
+_rel=4.5
+_subrel=102
+pkgver=${_rel}.${_subrel}
+pkgrel=1
+pkgdesc="A full featured, advanced, multi-threaded, multisegment download manager and accelerator."
+arch=('i686' 'x86_64')
+url="http://flareget.com"
+license=('custom')
+depends=('glibc>=2.13' 'qt4>=4.8.1' 'libmetalink')
+install=${pkgname}.install
+backup=('etc/opt/chrome/native-messaging-hosts/com.flareget.flareget.json'
+        'etc/chromium/native-messaging-hosts/com.flareget.flareget.json')
+source_i686=("https://flareget.com/downloads/files/flareget/rpm/i386/${pkgname}-${_rel}-${_subrel}.i386.rpm")
+source_x86_64=("https://flareget.com/downloads/files/flareget/rpm/amd64/${pkgname}-${_rel}-${_subrel}.x86_64.rpm")
+sha256sums_i686=("9f5dc208841c7beb6ba75c393623cd1d9869c6be158fc9069643b8a8085d82be")
+sha256sums_x86_64=("fdd020f6aec20fb290c2a7e2dfe51f21d9756689f3e727f52ea9ce48e2b2f646")
+
+package() {
+    cd $srcdir
+    [[ -d usr/lib64 ]] && mv usr/lib64 usr/lib
+    cp -ra usr $pkgdir/usr
+    cp -ra etc $pkgdir/etc
+    
+    # License
+    install -Dm644 $pkgdir/usr/share/doc/$pkgname/COPYING $pkgdir/usr/share/licenses/$pkgname/LICENSE
+    rm $pkgdir/usr/share/doc/$pkgname/COPYING
+}
+

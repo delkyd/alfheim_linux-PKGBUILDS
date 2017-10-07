@@ -1,0 +1,15 @@
+pkgbase = libsquish
+	pkgdesc = DXT compression library
+	pkgver = 1.15
+	pkgrel = 1
+	url = http://sourceforge.net/projects/libsquish/
+	arch = i686
+	arch = x86_64
+	license = MIT
+	makedepends = cmake
+	depends = gcc-libs
+	source = http://downloads.sourceforge.net/project/libsquish/libsquish-1.15.tgz
+	md5sums = c02645800131e55b519ff8dbe7284f93
+
+pkgname = libsquish
+

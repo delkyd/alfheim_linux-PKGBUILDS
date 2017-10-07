@@ -1,0 +1,20 @@
+pkgbase = pkgbuilder
+	pkgdesc = A Python AUR helper/library.
+	pkgver = 4.2.14
+	pkgrel = 1
+	url = https://github.com/Kwpolska/pkgbuilder
+	arch = any
+	license = BSD
+	depends = python
+	depends = python-setuptools
+	depends = pyalpm>=0.5.1-1
+	depends = python-requests
+	depends = python-srcinfo
+	depends = asp
+	depends = git
+	options = !emptydirs
+	source = https://files.pythonhosted.org/packages/source/p/pkgbuilder/pkgbuilder-4.2.14.tar.gz
+	md5sums = 3b0efaaad04d9e45c8d9001414d5aaf3
+
+pkgname = pkgbuilder
+

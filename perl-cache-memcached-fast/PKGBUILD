@@ -1,0 +1,48 @@
+# Maintainer: Moritz Bunkus <moritz@bunkus.org>
+
+pkgname="perl-cache-memcached-fast"
+pkgver="0.25"
+pkgrel='6'
+pkgdesc="Perl client for memcached, in C language"
+arch=('i686' 'x86_64' 'arm')
+url="http://search.cpan.org/dist/Cache-Memcached-Fast"
+license=('PerlArtistic')
+depends=('glibc')
+options=('!emptydirs')
+source=("https://cpan.metacpan.org/authors/id/R/RA/RAZ/Cache-Memcached-Fast-${pkgver}.tar.gz")
+sha512sums=('385b58f9dd66f86c7f99859782f098101d0f6bce9e2b22552895ab22d775ed73a1886544a51904797812b77e6849d8f2d79e61fb999a11e30497c6ae6de8c5c0')
+
+prepare_environment() {
+  export PERL_MM_USE_DEFAULT=1 PERL5LIB=""                 \
+    PERL_AUTOINSTALL=--skipdeps                            \
+    PERL_MM_OPT="INSTALLDIRS=vendor DESTDIR='$pkgdir'"     \
+    PERL_MB_OPT="--installdirs vendor --destdir '$pkgdir'" \
+    MODULEBUILDRC=/dev/null
+  cd "${srcdir}/Cache-Memcached-Fast-${pkgver}"
+}
+
+build() {
+  prepare_environment
+  /usr/bin/perl Makefile.PL
+
+  # parallel builds break due to a race during generation of a header
+  # file
+  make -j1
+}
+
+check() {
+  prepare_environment
+  make test
+}
+
+package() {
+  prepare_environment
+  make install
+  find "$pkgdir" "(" -name .packlist -o -name perllocal.pod ")" -delete
+}
+
+# Local Variables:
+# mode: shell-script
+# sh-basic-offset: 2
+# End:
+# vim:set ts=2 sw=2 et:

@@ -1,0 +1,192 @@
+#!/usr/bin/env python3
+"""
+Copyright (2013) Milan Oberkirch.
+
+Permission is hereby granted, free of charge, to any person (except persons
+working on behalf of the military, a military organizations or organizations
+promoting or manufacturing firearms or explosive weapons) obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+"""
+
+import os
+import logging
+import argparse
+import subprocess
+
+
+class PackageFileCollector:
+    """
+    Class to generate a folder containing symbolic links to all files of a
+    specific package.
+    """
+
+    """
+    Map from folder in the standard linux file-hierarchy to a folder in the
+    package-folder to create.
+    """
+    directory_mappings = {
+        '/etc/': 'config',
+        '/usr/bin/': 'binaries',
+        '/usr/share/': 'share',
+        '/usr/lib/': 'libraries',
+        '/usr/include/': 'includes',
+        '/usr/': '',
+        '/': 'misc'
+    }
+
+    _log_handler_formatter = logging.Formatter('%(levelname)s: %(message)s')
+    _log_handler = logging.StreamHandler()
+    _log = logging.getLogger(__name__)
+
+    __current_target_directory_key = "//"
+
+    def __init__(self, package_name, target_directory='./package-collector/',
+                 directory_mappings=None, log_level=logging.DEBUG):
+        self._log_handler.setFormatter(self._log_handler_formatter)
+        self._log.addHandler(self._log_handler)
+        self._log_handler.setLevel(log_level)
+
+        self.package_name = package_name
+        if target_directory[-1] != os.sep:
+            target_directory += os.sep
+        self.target_directory = target_directory + self.package_name + os.sep
+        if directory_mappings is not None:
+            self.default_directory_mappings = directory_mappings
+
+    def __get_current_target_directory(self):
+        """
+        Returns the directory, where following files/folders should be created,
+        pattet with directory-seperators.
+        """
+        return self.target_directory +\
+            self.directory_mappings[self.__current_target_directory_key] +\
+            os.sep
+
+    def __get_current_target_file(self, source_file):
+        return self.__get_current_target_directory() +\
+            source_file[len(self.__current_target_directory_key):]
+
+    def __switch_current_target(self, directory_key):
+        self.__current_target_directory_key = directory_key
+        directory = self.__get_current_target_directory()
+        if (self.directory_mappings[directory_key] != '' and not
+                os.path.exists(directory)):
+            os.mkdir(directory)
+
+    def _get_file_list(self):
+        """
+        Returns a list of all files that belong to a package, you might
+        want to overwrite it for other package-managers.
+        """
+        return subprocess.check_output(['pacman', '-Qlq', self.package_name],
+                                       universal_newlines=True).split('\n')
+
+    @classmethod
+    def configure(cls, *args, **kwargs):
+        """
+        Returns a configured instance of PackageFileCollector.
+        """
+        return cls(*args, **kwargs)
+
+    def run(self):
+        """
+        Creates a folder containing symbolic links too all files that belong to
+        the package named package_name.
+        """
+        os.makedirs(self.target_directory)
+        for file in self._get_file_list():
+            if file == "":
+                return 0
+            if os.path.isdir(file):
+                if file in self.directory_mappings.keys():
+                    self.__switch_current_target(file)
+                else:
+                    if not file[0: len(self.__current_target_directory_key)]\
+                       == self.__current_target_directory_key:
+                        self.__switch_current_target('/')
+                    os.makedirs(self.__get_current_target_file(file))
+            elif os.path.isfile(file):
+                os.symlink(file, self.__get_current_target_file(file))
+            elif os.path.islink(file):
+                self._log.warn('This is a dead link, which will not be '
+                               'included: "' + file + '"')
+            elif not os.path.exists(file):
+                self._log.error('No such file or directory (or not'
+                                ' enough permissions): "' + file + '".')
+            else:
+                self._log.error('Cannot access "' + file + '".')
+        return 1
+
+
+class PackageFileCollectorFrontend:
+    _ignored_packages = ['filesystem']
+
+    def __init__(self, *args, **kwargs):
+        parser = argparse.ArgumentParser(description=self.__doc__)
+        parser.add_argument('target_directory', type=str, help='target-folder')
+        parser.add_argument('--only', metavar='package', type=str,
+                            nargs='*', help='Only process packages given by '
+                            'name.')
+        parser.add_argument('--pacman-arg', metavar='arg', type=str,
+                            nargs='*', help='add  a single '
+                            'pacman-filter-option '
+                            'to the internal "pacman -Qq"-command. Currently '
+                            'only works with \'--pacman-args=""\'-syntax. Can '
+                            'be applied multible times')
+        args = parser.parse_args()
+        self._pacman_command = ['pacman', '-Qq']
+        if args.pacman_arg:
+            self._pacman_command.extend(args.pacman_arg)
+        if args.only:
+            self._pacman_command.extend(args.only)
+        self._set_package_list()
+        self._target_directory = args.target_directory
+
+    def _set_package_list(self):
+        package_list = subprocess.check_output(
+            self._pacman_command,
+            universal_newlines=True).split('\n')
+        self._package_list =\
+            [item
+             for item in package_list if item not in self._ignored_packages]
+
+    @classmethod
+    def configure(cls, *args, **kwargs):
+        """
+        Returns a configured instance of PackageFileCollectorFrontend.
+        """
+        return cls(*args, **kwargs)
+
+    def run(self, *args, **kwargs):
+        """
+        Create a folder containing a sub-folder for each package and put
+        symbolic links to all files belonging to this package into that
+        sub-folder.
+        """
+        for package in self._package_list:
+            if package == '':
+                return 0
+            pfc = PackageFileCollector.configure(package,
+                                                 self._target_directory, *args,
+                                                 **kwargs)
+            pfc.run()
+        return 1
+
+if __name__ == "__main__":
+    frontend = PackageFileCollectorFrontend.configure()
+    frontend.run()

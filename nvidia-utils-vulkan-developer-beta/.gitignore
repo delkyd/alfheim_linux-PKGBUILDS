@@ -1,0 +1,8 @@
+/*
+!.gitignore
+!PKGBUILD
+!.SRCINFO
+!20-nvidia.conf
+!nvidia-utils-vulkan-developer-beta.install
+!10-nvidia-drm-outputclass.conf
+!nvidia_icd.json

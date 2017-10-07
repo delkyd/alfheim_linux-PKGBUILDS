@@ -1,0 +1,23 @@
+pkgbase = gopass-git
+	pkgdesc = The slightly more awesome standard unix password manager for teams.
+	pkgver = r24.bddd1e0
+	pkgrel = 1
+	url = https://github.com/justwatchcom/gopass
+	arch = x86_64
+	arch = i686
+	arch = armv6h
+	arch = armv7h
+	license = MIT
+	makedepends = go>=1.7
+	makedepends = git
+	makedepends = make
+	depends = bash
+	depends = git
+	depends = gnupg
+	depends = xclip
+	provides = gopass=r24.bddd1e0
+	source = git://github.com/justwatchcom/gopass.git
+	sha256sums = SKIP
+
+pkgname = gopass-git
+

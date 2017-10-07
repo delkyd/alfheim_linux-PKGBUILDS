@@ -1,0 +1,17 @@
+pkgbase = mozvoikko
+	pkgdesc = Finnish spell-checker extension for Firefox/thunderbird/seamonkey using Voikko
+	pkgver = 2.2
+	pkgrel = 1
+	url = http://voikko.sourceforge.net
+	arch = any
+	license = GPL2
+	depends = libvoikko
+	optdepends = firefox
+	optdepends = thunderbird
+	optdepends = seamonkey=2.38
+	noextract = mozvoikko-2.2.xpi
+	source = http://www.puimula.org/voikko-sources/mozvoikko/mozvoikko-2.2.xpi
+	md5sums = 5f778cec1695a4e2e3aec3666f6ed9bc
+
+pkgname = mozvoikko
+

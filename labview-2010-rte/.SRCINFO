@@ -1,0 +1,35 @@
+pkgbase = labview-2010-rte
+	pkgdesc = Run-Time Engine for LabVIEW by National Instruments.
+	pkgver = SP1
+	pkgrel = 1
+	url = http://www.ni.com/labview/release-archive/2010/
+	arch = x86_64
+	license = custom:LabVIEW-2010
+	makedepends = libarchive
+	depends = llvm
+	optdepends = labview-2010: Full LabVIEW platform.
+	source = file://labview-2010-rte-10.0.1-1.i386.rpm
+	md5sums = 3a4f1541dde45dcf5f36d618fb039d8d
+	depends_x86_64 = lib32-expat
+	depends_x86_64 = lib32-gcc-libs
+	depends_x86_64 = lib32-glibc
+	depends_x86_64 = lib32-libdrm
+	depends_x86_64 = lib32-libice
+	depends_x86_64 = lib32-libsm
+	depends_x86_64 = lib32-libx11
+	depends_x86_64 = lib32-libxau
+	depends_x86_64 = lib32-libxcb
+	depends_x86_64 = lib32-libxdamage
+	depends_x86_64 = lib32-libxdmcp
+	depends_x86_64 = lib32-libxext
+	depends_x86_64 = lib32-libxfixes
+	depends_x86_64 = lib32-libxinerama
+	depends_x86_64 = lib32-libxshmfence
+	depends_x86_64 = lib32-libxt
+	depends_x86_64 = lib32-libxxf86vm
+	depends_x86_64 = lib32-mesa
+	depends_x86_64 = lib32-mesa-libgl
+	depends_x86_64 = lib32-util-linux
+
+pkgname = labview-2010-rte
+

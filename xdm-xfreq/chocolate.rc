@@ -1,0 +1,114 @@
+#!/bin/sh
+
+# General
+FOREGROUND="#cc4c00"
+BACKGROUND="#2a0308"
+WALLPAPER="/etc/xdm-xfreq/theme/wallpaper.jpg"
+
+# Greeter
+GREETFONT="-xos4-terminus-*-*-*-*-12-*-*-*-*-*-*-*"
+GREETFACE="DejaVuSans-8"
+
+GREETFOREGROUND="#cc4c00"
+
+# Login
+LOGINFONT="-xos4-terminus-medium-*-*-*-14-*-*-*-*-*-*-*"
+LOGINFACE="Sans-9"
+
+PROMPTFONT="-xos4-terminus-medium-*-*-*-14-*-*-*-*-*-*-*"
+PROMPTFACE="DejaVuSans-9"
+
+FAILFONT="-*-arial-*-i-*-*-*-*-*-*-*-*-*-*"
+FAILFACE="DejaVuSans-9:bold:italic"
+FAILTEXT="Access denied"
+FAILTIMEOUT="10"
+
+LOGINBACKGROUND=$BACKGROUND
+LOGINFOREGROUND="white"
+LOGINSHDCOLOR="#404040"
+LOGINHICOLOR="#737373"
+FAILFOREGROUND="yellow"
+
+# Chooser
+LABELFONT="-xos4-terminus-medium-*-*-*-14-*-*-*-*-*-*-*"
+LABELFACE="DejaVuSans-9"
+LISTFACE="DejaVuSans-9"
+CMDFACE="DejaVuSans-9"
+
+# Logo
+LOGOFILENAME="/etc/xdm-xfreq/theme/logo.xpm"
+LOGOPADDING="0"
+
+# Menu
+MENUFONT="-xos4-terminus-medium-*-*-*-14-*-*-*-*-*-*-*"
+MENUFACE="DejaVuSans-9"
+MENUGEOMETRY="$(( $WIDTH - 256 ))x32+0-0"
+
+# Clock
+CLOCKFACE="DejaVuSans-10"
+CLOCKFORMAT="%a %e %b %H:%M:%S"
+CLOCKUPDATE="1"
+CLOCKGEOMETRY="256x32-0-0"
+
+# Notification
+NOTIFYTIMEOUT="15"
+NOTIFYGEOMETRY="+24-64"
+
+# XFreq
+XFREQFONT="Fixed"
+XFREQFILLGFX="1"
+XFREQSHOWFREQ="1"
+XFREQSHOWCYCLES="0"
+XFREQSHOWIPS="0"
+XFREQSHOWIPC="0"
+XFREQSHOWCPI="0"
+XFREQSHOWRATIO="1"
+XFREQSHOWCSTATE="0"
+XFREQWALLBOARD="1"
+XFREQFOREGROUND="0x994c00"
+XFREQBACKGROUND="0x2a0308"
+XFREQGEOMETRY="0:0x0+24-48,1:0x0-24+16,2:0x0+24+16,3:0x0+540+16,4:0x0-24-48,5:0x0+540-48"
+
+# WM
+WMBORDERCOLOR=$BACKGROUND
+WMBORDERCLOCK=$BACKGROUND
+WMBORDERPOPUP=$BACKGROUND
+WMBORDERTASKS=$BACKGROUND
+WMBORDERTILEBG=$BACKGROUND
+WMBORDERTILEFG="chocolate"
+WMBORDERMENUBG="chocolate"
+WMBORDERICON="chocolate"
+WMDEFAULTBG=$BACKGROUND
+WMDEFAULTFG="#dfdfdf"
+WMTITLEBG=$BACKGROUND
+WMTITLEFG="#dfdfdf"
+WMMENUBG=$BACKGROUND
+WMMENUFG="#dfdfdf"
+WMMENUSHADOW=$BACKGROUND
+WMMENUTITLEBG=$BACKGROUND
+WMMENUTITLEFG="#efefef"
+WMICONBG=$BACKGROUND
+WMICONFG="#dfdfdf"
+WMTASKSBG=$BACKGROUND
+WMTASKSFG="#dfdfdf"
+WMTASKSLIGHT="#efefef"
+WMRUNWINBG=$BACKGROUND
+WMRUNWINFG="white"
+WMRUNSELBG="chocolate"
+WMRUNSELFG=$WMRUNWINFG
+WMPOPUPBG=$BACKGROUND
+WMPOPUPFG="#dfdfdf"
+WMTERMBG="black"
+WMTERMFG="white"
+WMCLOCKBG=$BACKGROUND
+WMCLOCKFG="white"
+
+WMMENUFONT="-misc-fixed-*-*-*-*-15-*-*-*-*-*-*-*"
+WMTITLEFONT="-misc-fixed-*-*-*-*-14-110-*-*-*-*-*-*"
+WMICONFONT="-misc-fixed-*-*-*-*-14-110-*-*-*-*-*-*"
+WMRESIZEFONT="-misc-fixed-*-*-*-*-12-*-*-*-*-*-*-*"
+WMPOPUPFONT="-misc-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
+WMCLOCKFACE="DejaVuSans-9:bold"
+WMTERMBIGFONT="-misc-fixed-medium-*-*-*-18-*-*-*-*-*-*-*"
+WMTERMMEDFONT="-misc-fixed-medium-*-*-*-14-*-*-*-*-*-*-*"
+WMTERMSMLFONT="-misc-fixed-medium-*-*-*-12-*-*-*-*-*-*-*"

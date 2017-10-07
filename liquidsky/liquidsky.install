@@ -1,0 +1,12 @@
+post_install() {
+    gtk-update-icon-cache -q -t -f usr/share/icons/hicolor
+    winetricks allfonts d3dx9_36
+}
+
+post_upgrade() {
+    gtk-update-icon-cache -q -t -f usr/share/icons/hicolor
+}
+
+post_remove() {
+    gtk-update-icon-cache -q -t -f usr/share/icons/hicolor
+}

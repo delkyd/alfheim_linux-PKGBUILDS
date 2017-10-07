@@ -1,0 +1,41 @@
+# $Id$
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Josip Ponjavic <josipponjavic at gmail dot com>
+# Contributor: Xu Fasheng <fasheng.xu[AT]gmail.com>
+
+pkgname=deepin-terminal
+pkgver=2.6.1
+pkgrel=1
+pkgdesc='Default terminal emulation application for Deepin'
+arch=('i686' 'x86_64')
+url="https://github.com/linuxdeepin/deepin-terminal"
+license=('GPL3')
+depends=('vte3' 'libsecret' 'libgee' 'libwnck3' 'expect' 'deepin-shortcut-viewer' 'deepin-menu'
+         'deepin-manual')
+makedepends=('vala' 'cmake')
+groups=('deepin-extra')
+#options=(!emptydirs)
+source=("$pkgname-$pkgver.tar.gz::https://github.com/linuxdeepin/deepin-terminal/archive/$pkgver.tar.gz")
+sha512sums=('990b50e4ae9e4e65e07d7c2510f047356d9aec4d0c85856f6330b3fdbd3b20ddbee71a40e4d32ffb25b24f2c949223fdd0bc5d5a619b8ec53a8a623c3c8930ec')
+
+prepare() {
+  mkdir -p build
+
+  sed -i 's|return __FILE__;|return "/usr/share/deepin-terminal/project_path.c";|' deepin-terminal-$pkgver/project_path.c
+
+  rm deepin-terminal-$pkgver/vapi/gee-0.8.vapi
+}
+
+build() {
+  cd build
+  cmake \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=Release \
+    ../deepin-terminal-$pkgver
+  make
+}
+
+package() {
+  make -C build DESTDIR="$pkgdir" install
+  ln -s deepin-terminal "$pkgdir"/usr/bin/x-terminal-emulator
+}

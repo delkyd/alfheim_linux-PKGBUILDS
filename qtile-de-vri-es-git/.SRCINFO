@@ -1,0 +1,20 @@
+pkgbase = qtile-de-vri-es-git
+	pkgdesc = A full-featured, pure-Python tiling window manager. (git version from de-vri-es)
+	pkgver = 2597.832b7b8
+	pkgrel = 3
+	url = http://www.qtile.org
+	arch = any
+	license = MIT
+	makedepends = python-setuptools
+	depends = python
+	depends = pango
+	depends = python-xcffib
+	depends = python-cairocffi
+	optdepends = python-setproctitle: change the process name to qtile
+	provides = qtile
+	conflicts = qtile
+	source = git+https://github.com/de-vri-es/qtile
+	md5sums = SKIP
+
+pkgname = qtile-de-vri-es-git
+

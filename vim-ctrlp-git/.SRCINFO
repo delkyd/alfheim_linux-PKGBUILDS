@@ -1,0 +1,17 @@
+pkgbase = vim-ctrlp-git
+	pkgdesc = Full path fuzzy file, buffer, mru, tag, ... finder
+	pkgver = 1.79.699.88b61e7
+	pkgrel = 2
+	url = https://github.com/ctrlpvim/ctrlp.vim
+	arch = any
+	groups = vim-plugins
+	license = custom:vim
+	makedepends = git
+	depends = vim
+	provides = vim-ctrlp
+	conflicts = vim-ctrlp
+	source = git+https://github.com/ctrlpvim/ctrlp.vim
+	sha512sums = SKIP
+
+pkgname = vim-ctrlp-git
+

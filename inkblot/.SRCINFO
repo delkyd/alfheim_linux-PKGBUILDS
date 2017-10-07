@@ -1,0 +1,17 @@
+pkgbase = inkblot
+	pkgdesc = Inkblot reports on the remaining ink levels in a wide variety of USB and Parallel connected printers.
+	pkgver = 0.99.9
+	pkgrel = 4
+	url = https://github.com/alexandre-mbm/inkblot
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = harfbuzz-icu
+	makedepends = libgnomeui
+	makedepends = perl-xml-parser
+	depends = libinklevel
+	source = https://github.com/alexandre-mbm/inkblot/archive/0.99.9.tar.gz
+	md5sums = eadeafc4a5621d684287fa1ac6aa65d3
+
+pkgname = inkblot
+

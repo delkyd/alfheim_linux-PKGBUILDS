@@ -1,0 +1,22 @@
+pkgbase = onedrive-git
+	pkgdesc = Free OneDrive client written in D
+	pkgver = r154.g4511242
+	pkgrel = 1
+	epoch = 1
+	url = https://github.com/skilion/onedrive
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = dmd
+	makedepends = git
+	depends = curl
+	depends = gcc-libs
+	depends = glibc
+	depends = sqlite
+	provides = onedrive=r154.g4511242
+	conflicts = onedrive
+	source = git+https://github.com/skilion/onedrive.git
+	sha256sums = SKIP
+
+pkgname = onedrive-git
+

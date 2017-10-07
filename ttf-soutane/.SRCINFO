@@ -1,0 +1,18 @@
+pkgbase = ttf-soutane
+	pkgdesc = Soutane TTF typeface
+	pkgver = 20150509
+	pkgrel = 1
+	url = http://www.911fonts.com/font/family/soutane
+	arch = any
+	license = custom
+	source = Soutane-Regular.ttf::http://www.911fonts.com/fonts/font-download-file/8595
+	source = Soutane-Bold.ttf::http://www.911fonts.com/fonts/font-download-file/8596
+	source = Soutane-Italic.ttf::http://www.911fonts.com/fonts/font-download-file/8598
+	source = Soutane-Bold-Italic.ttf::http://www.911fonts.com/fonts/font-download-file/8597
+	sha256sums = f8aeae94cb33a57a232e3c4a5e530d2173e6f0756663b9426a3de8b568d170f0
+	sha256sums = e8c14b7eb0c59aa32b117803e23d7f2eac853d705acbf7a04a8683094fa55be1
+	sha256sums = 5127d8814e7ae3d0e93f28f3c5351afc7fcea2c902bec6de312e3928176352e1
+	sha256sums = 2c1c51052c105257a3d3cc0ad1fe08136cc8bf2ddfbe89c911a3520e971bf633
+
+pkgname = ttf-soutane
+

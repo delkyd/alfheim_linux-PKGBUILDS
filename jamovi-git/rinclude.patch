@@ -1,0 +1,15 @@
+diff --git a/engine/Makefile b/engine/Makefile
+index 040936b..741fce2 100644
+--- a/engine/Makefile
++++ b/engine/Makefile
+@@ -36,8 +36,8 @@ ifeq ($(os),OSX)
+ else
+ ifeq ($(os),Linux)
+ 	R_HOME = /usr/lib/R
+-	INCLUDES += -I/usr/share/R/include
+-	LIBS  = -L$(SRCDIR)/../../modules/base/R/RInside/lib \
++	INCLUDES += -I/usr/share/R/include -I/usr/include/R
++	LIBS  = -L$(SRCDIR)/../../modules/base/R/RInside/lib -L$(R_HOME)/lib -L$(R_HOME)/library/RInside/lib \
+ 			-lboost_filesystem \
+ 			-lboost_system \
+ 			-lpthread \

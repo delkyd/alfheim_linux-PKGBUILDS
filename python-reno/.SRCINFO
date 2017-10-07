@@ -1,0 +1,23 @@
+pkgbase = python-reno
+	pkgdesc = OpenStack RElease NOtes manager
+	pkgver = 2.2.0
+	pkgrel = 2
+	url = https://docs.openstack.org/developer/reno/
+	arch = any
+	license = Apache
+	checkdepends = python-pbr
+	checkdepends = python-oslotest
+	checkdepends = python-mock
+	checkdepends = python-dulwich
+	makedepends = git
+	makedepends = python-setuptools
+	source = git+https://git.openstack.org/openstack/reno#tag=2.2.0
+	md5sums = SKIP
+
+pkgname = python-reno
+	depends = python-pbr
+	depends = python-babel
+	depends = python-yaml
+	depends = python-six
+	depends = python-dulwich
+

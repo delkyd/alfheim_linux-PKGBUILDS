@@ -1,0 +1,32 @@
+pkgbase = joxi
+	pkgdesc = Easy to use screenshot sharing application (Russian)
+	pkgver = 3.0.9
+	pkgrel = 3
+	url = http://joxi.net
+	arch = i686
+	arch = x86_64
+	license = unknown
+	depends = qt5-declarative
+	depends = qt5-x11extras
+	depends = qt5-base
+	depends = qt5-script
+	depends = qt5-xmlpatterns
+	depends = qt5-multimedia
+	depends = qt5-quick1
+	depends = libgl
+	depends = libx11
+	depends = libstdc++5
+	depends = libxdamage
+	depends = glib2
+	depends = gtk2
+	depends = libmcrypt
+	depends = libcurl-compat
+	depends = libappindicator-gtk2
+	options = emptydirs
+	source = http://dl.joxi.ru/linux/joxi-net_x86_64-fr.rpm
+	source = joxi.ld_preload.wrapper
+	md5sums = 5c2ef9b7e6b39dfb731f62ef0d146cb7
+	md5sums = fa1d9cf5344c0e586d1cf0784713195b
+
+pkgname = joxi
+

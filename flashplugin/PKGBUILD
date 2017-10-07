@@ -1,0 +1,58 @@
+# $Id$
+# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Contributor: Ionut Biru <ibiru@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+
+pkgname=(flashplugin pepper-flash)
+pkgver=27.0.0.130
+pkgrel=1
+pkgdesc="Adobe Flash Player"
+arch=('i686' 'x86_64')
+url="https://get.adobe.com/flashplayer/"
+license=('custom' 'LGPL')
+options=('!strip')
+source_i686=(flash_player_npapi_linux_$pkgver.i386.tar.gz::https://fpdownload.adobe.com/get/flashplayer/pdc/$pkgver/flash_player_npapi_linux.i386.tar.gz
+             flash_player_ppapi_linux_$pkgver.i386.tar.gz::https://fpdownload.adobe.com/get/flashplayer/pdc/$pkgver/flash_player_ppapi_linux.i386.tar.gz)
+source_x86_64=(flash_player_npapi_linux_$pkgver.x86_64.tar.gz::https://fpdownload.adobe.com/get/flashplayer/pdc/$pkgver/flash_player_npapi_linux.x86_64.tar.gz
+               flash_player_ppapi_linux_$pkgver.x86_64.tar.gz::https://fpdownload.adobe.com/get/flashplayer/pdc/$pkgver/flash_player_ppapi_linux.x86_64.tar.gz)
+noextract=(${source_i686[@]%::*}
+           ${source_x86_64[@]%::*})
+sha256sums_i686=('4615bec6a21822629ce7e0f5bf768ef12fe09c275f4bb18892563da20d9b7c62'
+                 'c23a0c1a73872851b4e8879e713331242c0b17c73ccd57a29c17c94f3732920e')
+sha256sums_x86_64=('ecbd2254a68c7b0bb7675babe58cbe1b5f317bd2556ba49776eb3a6cd9526d62'
+                   '3a9a860a42770547e0fc3c9f4c6fd6b539c122b0a9ee5bd65c9b9cd25541a752')
+
+prepare() {
+  local _dir
+  for f in *.tar.gz; do
+    _dir=$(grep -Eo '([np]papi)' <<< $f)
+    mkdir -p $_dir
+    tar xfC $f $_dir
+  done
+}
+
+package_flashplugin() {
+  pkgdesc+=" NPAPI"
+  depends=('libxt' 'gtk2' 'nss' 'curl' 'hicolor-icon-theme')
+  optdepends=('libvdpau: GPU acceleration on Nvidia cards')
+
+  cd npapi
+  install -Dm644 libflashplayer.so "$pkgdir/usr/lib/mozilla/plugins/libflashplayer.so"
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname" license.pdf LGPL/notice.txt
+
+  install -D -t "$pkgdir/usr/bin" usr/bin/flash-player-properties
+  cp -a usr/share/{applications,icons} "$pkgdir/usr/share/"
+
+}
+
+package_pepper-flash() {
+  pkgdesc+=" PPAPI"
+  depends=('gcc-libs')
+  optdepends=('flashplugin: settings utility')
+
+  cd ppapi
+  install -Dm644 -t "$pkgdir/usr/lib/PepperFlash" manifest.json libpepflashplayer.so
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname" license.pdf LGPL/notice.txt
+}
+
+# vim:set ts=2 sw=2 et:

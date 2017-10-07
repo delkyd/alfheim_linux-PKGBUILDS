@@ -1,0 +1,27 @@
+pkgbase = motioneye
+	pkgdesc = web-based user interface for motion
+	pkgver = 0.37.1
+	pkgrel = 1
+	url = https://github.com/ccrisan/motioneye/
+	install = motioneye.install
+	arch = any
+	license = GPL
+	makedepends = python2-distribute
+	depends = motion
+	depends = ffmpeg
+	depends = v4l-utils
+	depends = python2
+	depends = openssl
+	depends = curl
+	depends = python2-tornado
+	depends = python2-jinja
+	depends = python2-pycurl
+	depends = python2-pillow
+	depends = mime-types
+	options = emptydirs
+	backup = etc/motioneye/motioneye.conf
+	source = https://github.com/ccrisan/motioneye/archive/0.37.1.tar.gz
+	md5sums = ca1bd5d97dfa0da67c1a53b4c37fe1c5
+
+pkgname = motioneye
+

@@ -1,0 +1,19 @@
+pkgbase = arma3-linux-launcher-git
+	pkgdesc = Advanced launcher for ArmA 3 on Linux
+	pkgver = 48.e04dc1c
+	pkgrel = 1
+	url = https://github.com/muttleyxd/arma3-unix-launcher
+	arch = i686
+	arch = x86_64
+	license = MIT
+	makedepends = cmake
+	makedepends = git
+	depends = gtkmm3
+	depends = steam
+	provides = arma3-unix-launcher
+	conflicts = arma3-unix-launcher
+	source = arma3-linux-launcher-git::git://github.com/muttleyxd/arma3-unix-launcher.git
+	md5sums = SKIP
+
+pkgname = arma3-linux-launcher-git
+

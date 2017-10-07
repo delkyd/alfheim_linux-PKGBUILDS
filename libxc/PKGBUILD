@@ -1,0 +1,27 @@
+# Maintainer: James Spencer <james.s.spencer@gmail.com>
+
+pkgname=libxc
+pkgver=3.0.0
+pkgrel=2
+pkgdesc="library of exchange-correlation functionals for density-functional theory"
+arch=('i686' 'x86_64')
+url="http://www.tddft.org/programs/octopus/wiki/index.php/Libxc"
+license=('LGPL')
+makedepends=('gcc' 'gcc-fortran')
+optdepends=()
+source=(http://www.tddft.org/programs/octopus/download/libxc/libxc-$pkgver.tar.gz)
+sha1sums=('ecc61e6fdc84d8aa884e1a784d3a41397c892e8d')
+options=(staticlibs)
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  FCCPP='/usr/bin/cpp -P -ansi' ./configure --prefix=/usr --enable-shared
+  make
+}
+
+package() {
+
+  cd "$srcdir/$pkgname-$pkgver"
+  make DESTDIR="$pkgdir/" install
+
+}

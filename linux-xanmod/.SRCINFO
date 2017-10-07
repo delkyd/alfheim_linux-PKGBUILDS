@@ -1,0 +1,49 @@
+pkgbase = linux-xanmod
+	pkgver = 4.13.4
+	pkgrel = 3
+	url = http://www.xanmod.org/
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	makedepends = xmlto
+	makedepends = kmod
+	makedepends = inetutils
+	makedepends = bc
+	makedepends = libelf
+	options = !strip
+	source = https://github.com/xanmod/linux/archive/4.13.4-xanmod8.tar.gz
+	source = 90-linux.hook
+	source = linux-xanmod.preset
+	sha256sums = 9c8591d9ad3ffadfc35ab1267d755112020d112fceac538eb6d10e2994f1ae59
+	sha256sums = 834bd254b56ab71d73f59b3221f056c72f559553c04718e350ab2a3e2991afe0
+	sha256sums = ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65
+	source_i686 = config.i686::https://git.archlinux.org/svntogit/packages.git/plain/trunk/config.i686?h=packages/linux&id=6c9f606816c018a38542520b3e8b2b6f60c901ac
+	sha256sums_i686 = 73278ee56c5d3855e67ff50caa77a7cb47fb29ebd8f9b7ca9ebee4e2d446529c
+	source_x86_64 = config.x86_64::https://git.archlinux.org/svntogit/packages.git/plain/trunk/config.x86_64?h=packages/linux&id=6c9f606816c018a38542520b3e8b2b6f60c901ac
+	sha256sums_x86_64 = 1b9cbe1c25653d563515344a7c6cc9f79447ac9274fcf4de0007228e979b55dd
+
+pkgname = linux-xanmod
+	pkgdesc = The Linux kernel and modules with Xanmod patches
+	install = linux.install
+	depends = coreutils
+	depends = linux-firmware
+	depends = kmod
+	depends = mkinitcpio>=0.7
+	optdepends = crda: to set the correct wireless channels of your country
+	provides = linux
+	provides = linux-xanmod-git
+	conflicts = linux-xanmod-git
+	replaces = linux-xanmod-git
+	backup = etc/mkinitcpio.d/linux-xanmod.preset
+
+pkgname = linux-xanmod-headers
+	pkgdesc = Header files and scripts for building modules for Xanmod Linux kernel
+	provides = linux-headers
+	provides = linux-xanmod-git-headers
+	conflicts = linux-xanmod-git-headers
+	replaces = linux-xanmod-git-headers
+
+pkgname = linux-xanmod-docs
+	pkgdesc = Kernel hackers manual - HTML documentation that comes with the Linux kernel
+	provides = linux-docs
+

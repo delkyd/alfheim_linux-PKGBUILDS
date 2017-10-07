@@ -1,0 +1,42 @@
+# Maintainer: Mantas Mikulėnas <grawity@gmail.com>
+
+pkgname=libverto
+pkgver=0.3.0.r1.gc57599d
+pkgrel=1
+pkgdesc="Main event loop abstraction library"
+arch=(i686 x86_64)
+url="https://github.com/latchset/libverto"
+license=(MIT)
+makedepends=(
+# Supported event loops
+  'glib2'
+  'libev'
+  'libevent'
+  'tevent'
+)
+source=('git+https://github.com/latchset/libverto.git')
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/libverto"
+  git describe --tags | sed 's/-/.r/; s/[_-]/./g'
+}
+
+prepare() {
+  cd "$srcdir/libverto"
+  autoreconf -i -f
+}
+
+build() {
+  cd "$srcdir/libverto"
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd "$srcdir/libverto"
+  make DESTDIR="$pkgdir" install
+  install -Dm0644 "COPYING" "$pkgdir/usr/share/licenses/$pkgname"
+}
+
+# vim: ts=2:sw=2:et

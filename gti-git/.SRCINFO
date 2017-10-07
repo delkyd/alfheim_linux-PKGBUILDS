@@ -1,0 +1,16 @@
+pkgbase = gti-git
+	pkgdesc = A silly git launcher
+	pkgver = v1.0.4.5.g23f5819
+	pkgrel = 1
+	url = http://r-wos.org/hacks/gti
+	arch = i686
+	arch = x86_64
+	license = custom
+	makedepends = git
+	provides = gti
+	conflicts = gti
+	source = git://github.com/rwos/gti.git
+	sha256sums = SKIP
+
+pkgname = gti-git
+

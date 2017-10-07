@@ -1,0 +1,40 @@
+# $Id$
+# Maintainer: Jerome Leclanche <jerome@leclan.ch>
+
+pkgname=libfm-qt
+pkgver=0.11.2
+pkgrel=2
+pkgdesc="Core library of PCManFM-Qt (Qt binding for libfm)"
+arch=("i686" "x86_64")
+url="http://lxqt.org"
+license=("GPL2")
+depends=("libfm" "qt5-x11extras")
+makedepends=("lxqt-build-tools")
+source=(
+	"https://github.com/lxde/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"
+	"https://github.com/lxde/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz.asc"
+)
+sha256sums=(
+	"d6154760fd89eea9c4f87acce4c8c692852229ed8d5bbaf25f4a8517024f74fd"
+	"SKIP"
+)
+validpgpkeys=(
+	"169704C6FB490C6892C7F23C37E0AF1FDA48F373"  # Jerome Leclanche <jerome@leclan.ch>
+	"7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3"  # Alf Gaida <agaida@siduction.org>
+)
+
+
+build() {
+	mkdir -p build
+	cd build
+
+	cmake "$srcdir/$pkgname-$pkgver" \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	make
+}
+
+package() {
+	cd build
+	make DESTDIR="$pkgdir" install
+}

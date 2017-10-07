@@ -1,0 +1,56 @@
+pkgbase = bin32-jdk-devel
+	pkgdesc = Oracle Java 9 Development Kit Snapshot (32-bit)
+	pkgver = 9b181
+	pkgrel = 1
+	url = http://jdk.java.net/9/
+	install = bin32-jdk-devel.install
+	arch = x86_64
+	license = custom:Oracle
+	depends = ca-certificates-java
+	depends = hicolor-icon-theme
+	depends = java32-environment-common
+	depends = java32-runtime-common
+	depends = lib32-gcc-libs
+	depends = lib32-libxrender
+	depends = lib32-libxtst
+	depends = lib32-nss
+	depends = xdg-utils
+	optdepends = eclipse-java: "Oracle Java Mission Control" plugins for Eclipse
+	optdepends = lib32-alsa-lib: for basic sound support
+	optdepends = lib32-gtk2: for Gtk+ look and feel (desktop)
+	provides = java32-runtime=9
+	provides = java32-runtime-headless=9
+	provides = java32-web-start=9
+	provides = java32-environment=9
+	provides = java32-runtime-jre=9
+	provides = java32-runtime-headless-jre=9
+	provides = java32-web-start-jre=9
+	provides = java32-environment-jdk=9
+	provides = java32-openjfx=9
+	options = !strip
+	backup = etc/java32-jdk9/management/jmxremote.access
+	backup = etc/java32-jdk9/management/management.properties
+	backup = etc/java32-jdk9/security/java.policy
+	backup = etc/java32-jdk9/security/java.security
+	backup = etc/java32-jdk9/security/javaws.policy
+	backup = etc/java32-jdk9/fontconfig.properties.src
+	backup = etc/java32-jdk9/logging.properties
+	backup = etc/java32-jdk9/net.properties
+	backup = etc/java32-jdk9/psfont.properties.ja
+	backup = etc/java32-jdk9/psfontj2d.properties
+	backup = etc/java32-jdk9/sound.properties
+	source = http://download.java.net/java/jdk9/archive/181/binaries/jdk-9+181_linux-x86_bin.tar.gz
+	source = jconsole32-jdk9.desktop
+	source = jmc32-jdk9.desktop
+	source = jvisualvm32-jdk9.desktop
+	source = policytool32-jdk9.desktop
+	source = LICENSE-Early-Adopter-Terms.txt
+	sha256sums = ba0c77644ece024cdb933571d79f0f035e91a9c9ab70de9c82446c9fbd000c97
+	sha256sums = 4699009a941791cc82e6bcc85e80365b4c5b10f217e5f023a84f917abbe98ae1
+	sha256sums = 082c7594570133117e06f2b3a74c9e40ecea89384ab874fa1ef111e1c998302e
+	sha256sums = 653729575c23d7faaef6bb106fdc4889e9a2240723540ad92a74bf1972367faf
+	sha256sums = ff17209204c70e8b637b8386327486c98e0b70b9b715970fa7a73093d1ef3f91
+	sha256sums = a8b0ecff3221f39c53092d910dfd903ff243a185835ad6d121abbbe82225d335
+
+pkgname = bin32-jdk-devel
+

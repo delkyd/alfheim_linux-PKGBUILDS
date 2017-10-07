@@ -1,0 +1,16 @@
+pkgbase = zendframework2
+	pkgdesc = An object-oriented framework for PHP - Full version
+	pkgver = 2.4.9
+	pkgrel = 1
+	url = http://framework.zend.com/
+	arch = any
+	license = BSD
+	depends = php>=5.3.23
+	conflicts = zendframework2-min
+	conflicts = zendframework2-git
+	options = !strip
+	source = http://packages.zendframework.com/releases/ZendFramework-2.4.9/ZendFramework-2.4.9.tgz
+	sha256sums = ea8b3fc3f1169e149bc79885254731f46866a4b7a764ec6567e0e19141b1080f
+
+pkgname = zendframework2
+

@@ -1,0 +1,61 @@
+# $Id$
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+
+pkgname=roundcubemail
+pkgver=1.3.1
+pkgrel=1
+pkgdesc="A PHP web-based mail client"
+arch=('any')
+url="http://www.roundcube.net"
+license=('GPL')
+depends=('php' 'php-gd')
+makedepends=('php-composer' 'git')
+optdepends=('python2')
+backup=('etc/webapps/roundcubemail/.htaccess'
+	'etc/webapps/roundcubemail/apache.conf')
+install=roundcubemail.install
+options=('!strip' 'emptydirs')
+source=("https://github.com/roundcube/roundcubemail/releases/download/$pkgver/roundcubemail-$pkgver-complete.tar.gz"
+	apache.conf)
+sha256sums=('f071bbe84f90ba55582289dcef7b70198b81e0aedd4de8422945658bbee3da0b'
+            'c90981405527ebaf153a407af6b8178b41d078bd4472d63b837b3b4cd5ae36b0')
+
+prepare() {
+  cd "$srcdir"/roundcubemail-${pkgver/rc/-rc}
+  sed -i \
+    -e "s|RCUBE_INSTALL_PATH . 'temp.*|'/var/cache/roundcubemail';|" \
+    -e "s|RCUBE_INSTALL_PATH . 'logs.*|'/var/log/roundcubemail';|" \
+    config/defaults.inc.php \
+    program/lib/Roundcube/rcube_config.php
+#  mv composer.json-dist composer.json
+#  php -d extension=gd.so ../composer.phar install --no-dev
+}
+
+package() {
+  mkdir -p "$pkgdir"/etc/webapps/roundcubemail
+  mkdir -p "$pkgdir"/usr/share/webapps
+  mkdir -p "$pkgdir"/var/log
+  cd "$pkgdir"/usr/share/webapps
+  cp -ra "$srcdir"/roundcubemail-${pkgver/rc/-rc} roundcubemail
+  cd roundcubemail
+
+  mv .htaccess "$pkgdir"/etc/webapps/roundcubemail/
+  ln -s /etc/webapps/roundcubemail/.htaccess .htaccess
+
+  mv config "$pkgdir"/etc/webapps/roundcubemail/
+  ln -s /etc/webapps/roundcubemail/config config
+
+  install -dm0750 "$pkgdir"/var/{log,cache}/roundcubemail
+  install -Dm0644 "$srcdir"/apache.conf "$pkgdir"/etc/webapps/roundcubemail/apache.conf
+
+  rm -rf temp logs
+  find "$pkgdir" -name .git -exec rm -rf {} \; || true
+
+#  sed -i "s|"$srcdir"/roundcubemail-${pkgver/rc/-rc}/vendor/pear-pear.php.net/Console_CommandLine/data|/usr/share/webapps/roundcubemail/vendor/pear-pear.php.net|g" \
+#    vendor/pear-pear.php.net/Console_CommandLine/Console/CommandLine/XmlParser.php
+
+#  sed -i "s|"$srcdir"/roundcubemail-${pkgver/rc/-rc}|/usr/share/webapps/roundcubemail|g" \
+#    vendor/pear-pear.php.net/Crypt_GPG/bin/crypt-gpg-pinentry \
+#    vendor/pear-pear.php.net/Crypt_GPG/Crypt/GPG/Engine.php \
+#    vendor/pear-pear.php.net/Crypt_GPG/Crypt/GPG/PinEntry.php
+}

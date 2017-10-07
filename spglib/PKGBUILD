@@ -1,0 +1,27 @@
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+
+pkgname=spglib
+pkgver=1.9.10
+pkgrel=1
+pkgdesc="C library for finding and handling crystal symmetries"
+arch=(i686 x86_64)
+url="http://spglib.sf.net/"
+license=(custom)
+depends=(glibc)
+makedepends=()
+source=($pkgname-$pkgver.tar.gz::"https://github.com/atztogo/spglib/archive/v$pkgver.tar.gz")
+sha256sums=('b5e66f6f693ae7cca882348fecb41fcffe08b69f53a0c249aaa755d9004c3c04')
+
+build() {
+  cd $pkgname-$pkgver
+  touch INSTALL NEWS README AUTHORS
+  autoreconf -vi
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+  install -Dm644 "$srcdir"/$pkgname-$pkgver/COPYING "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

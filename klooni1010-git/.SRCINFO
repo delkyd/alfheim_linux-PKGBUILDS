@@ -1,0 +1,19 @@
+pkgbase = klooni1010-git
+	pkgdesc = Puzzle game based on the original 1010!
+	pkgver = 0.6.1.r13.gb0abab1
+	pkgrel = 2
+	url = https://lonamiwebs.github.io/klooni
+	arch = any
+	license = GPL3
+	makedepends = jdk8-openjdk
+	makedepends = git
+	makedepends = gendesk
+	depends = bash
+	depends = java-environment
+	provides = klooni1010
+	conflicts = klooni1010
+	source = git://github.com/LonamiWebs/Klooni1010
+	md5sums = SKIP
+
+pkgname = klooni1010-git
+

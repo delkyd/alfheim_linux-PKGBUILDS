@@ -1,0 +1,17 @@
+pkgbase = chromebook_keyboard_backlight_driver
+	pkgdesc = Keyboard backlight driver for various chromebook models
+	pkgver = 1.0r14.g86bac41
+	pkgrel = 2
+	url = https://github.com/corcoran/chromebook_keyboard_backlight_driver
+	install = chromebook_keyboard_backlight_driver.install
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = linux-headers
+	provides = chromebook_keyboard_backlight_driver
+	conflicts = chromebook_keyboard_backlight_driver
+	source = git://github.com/corcoran/chromebook_keyboard_backlight_driver.git
+	md5sums = SKIP
+
+pkgname = chromebook_keyboard_backlight_driver
+

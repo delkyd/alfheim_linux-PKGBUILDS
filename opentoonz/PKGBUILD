@@ -1,0 +1,48 @@
+# Maintainer: Cyrus Anakin <cyrantosaurus at gmail dot com>
+
+pkgname=opentoonz
+pkgver=1.1.3
+pkgrel=1
+pkgdesc='2D animation software based on Toonz Studio Ghibli Version.'
+arch=('x86_64')
+license=('BSD')
+source=(
+  "git+https://github.com/opentoonz/opentoonz.git#tag=v${pkgver}"
+  'opentoonz.desktop'
+  'opentoonz.png'
+)
+md5sums=(
+  'SKIP'
+  '0b47406a1aae0326e77c5768283c9f65'
+  '3d8620258a66ee0f58c91ea6a38e33c1'
+)
+conflicts=('opentoonz-git')
+makedepends=('cmake' 'git' 'make')
+depends=('cblas' 'lzo' 'sdl2' 'qt5-script' 'superlu' 'glew' 'freeglut' 'qt5-multimedia')
+
+build() {
+  export LC_ALL=C
+
+  cd ${pkgname}/thirdparty/tiff-4.0.3
+  ./configure --with-pic --disable-jbig
+  make
+  cd -
+
+  cmake \
+    -H${pkgname}/toonz/sources \
+    -B${pkgname}-build \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  cd ${pkgname}-build
+  make
+}
+
+package() {
+  cd ${pkgname}-build
+  make DESTDIR="${pkgdir}/" install
+
+  cd ${srcdir}
+  install -Dm644 "${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+  install -Dm644 "${pkgname}.png" "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
+  ln -s '/usr/lib/libgfortran.so' "${pkgdir}/usr/lib/${pkgname}/libgfortran.so.3"
+}

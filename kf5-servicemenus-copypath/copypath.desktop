@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Service
+Icon=edit-copy
+Actions=CopyPath
+X-KDE-Priority=TopLevel
+ServiceTypes=KonqPopupMenu/Plugin,,all/allfiles,application/octet-stream,inode/directory,inode/directory-locked,inode/directory-hidden
+
+[Desktop Action CopyPath]
+Name=Copy Path
+Icon=edit-copy
+Exec=echo "%F" | tr -d '\n' | xclip -selection clipboard

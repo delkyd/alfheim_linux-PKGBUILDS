@@ -1,0 +1,23 @@
+pkgbase = gnutls-openssl
+	pkgdesc = Secure communications library with OpenSSL
+	pkgver = 3.5.13
+	pkgrel = 1
+	url = http://gnutls.org/
+	arch = i686
+	arch = x86_64
+	license = GPL
+	depends = libidn
+	depends = libtasn1
+	depends = nettle
+	depends = gc
+	optdepends = zlib: for compression
+	optdepends = p11-kit: for PKCS #11 support
+	optdepends = guile: for use with Guile bindings
+	optdepends = unbound: for DNSSEC/DANE functionality
+	provides = gnutls
+	conflicts = gnutls
+	source = ftp://ftp.gnutls.org/gcrypt/gnutls/v3.5/gnutls-3.5.13.tar.xz
+	sha256sums = 79f5480ad198dad5bc78e075f4a40c4a315a1b2072666919d2d05a08aec13096
+
+pkgname = gnutls-openssl
+

@@ -1,0 +1,17 @@
+pkgbase = eclipse-jubula-git
+	pkgdesc = Jubula plugins for Eclipse IDE to create functional GUI tests (gerrit version)
+	pkgver = 5.0.0
+	pkgrel = 2
+	url = http://eclipse.org/jubula/
+	arch = any
+	license = EPL
+	depends = eclipse>=4.6.0
+	depends = eclipse-common
+	provides = eclipse-jubula
+	conflicts = eclipse-jubula
+	options = !strip
+	source = https://hudson.eclipse.org/jubula/job/jubula-gerrit/lastStableBuild/artifact/org.eclipse.jubula.core/org.eclipse.jubula.repo/target/org.eclipse.jubula.repo-5.0.0-SNAPSHOT.zip
+	sha256sums = SKIP
+
+pkgname = eclipse-jubula-git
+

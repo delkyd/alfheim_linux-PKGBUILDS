@@ -1,0 +1,14 @@
+pkgbase = i3-swap-git
+	pkgdesc = i3 script to swap workspaces with a dual monitor setup.
+	pkgver = 9.84c27eb
+	pkgrel = 1
+	url = https://github.com/saneki/i3-swap
+	arch = any
+	license = GPL-3.0
+	makedepends = git
+	depends = python-i3-git
+	source = git://github.com/saneki/i3-swap.git
+	sha256sums = SKIP
+
+pkgname = i3-swap-git
+

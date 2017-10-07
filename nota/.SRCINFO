@@ -1,0 +1,12 @@
+pkgbase = nota
+	pkgdesc = Simple note taking using your $EDITOR and git
+	pkgver = 1.1.0
+	pkgrel = 1
+	url = http://github.com/cdown/nota
+	arch = any
+	license = Public domain
+	source = https://github.com/cdown/nota/archive/1.1.0.zip
+	md5sums = 219102b6a3643a22a20fe3ca005959d7
+
+pkgname = nota
+

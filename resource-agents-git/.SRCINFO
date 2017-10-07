@@ -1,0 +1,20 @@
+pkgbase = resource-agents-git
+	pkgdesc = OCF resource agents for rgmanager and pacemaker
+	pkgver = 4.0.1.r76.gc5715c96
+	pkgrel = 1
+	url = http://clusterlabs.org/
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	makedepends = git
+	makedepends = libxslt
+	makedepends = python
+	depends = bash
+	depends = perl
+	provides = resource-agents
+	conflicts = resource-agents
+	source = resource-agents-git::git+https://github.com/ClusterLabs/resource-agents
+	md5sums = SKIP
+
+pkgname = resource-agents-git
+

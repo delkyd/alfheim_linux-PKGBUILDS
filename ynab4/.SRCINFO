@@ -1,0 +1,26 @@
+pkgbase = ynab4
+	pkgdesc = You Need A Budget, installs with wine
+	pkgver = 4.3.857
+	pkgrel = 1
+	url = http://youneedabudget.com/
+	arch = x86_64
+	license = unknown
+	depends = wine
+	depends = lib32-lcms
+	depends = lib32-lcms2
+	depends = wine-mono
+	depends = wine_gecko
+	depends = lib32-gnutls
+	depends = lib32-mpg123
+	depends = lib32-ncurses
+	depends = winetricks
+	depends = samba
+	optdepends = dropbox
+	noextract = Setup.exe
+	source = ynab4
+	source = Setup.exe::http://classic.youneedabudget.com/CDNOrigin/download/${pkgname}/liveCaptive/Win/YNAB%204_${pkgver}_Setup.exe
+	md5sums = 764cd9a8cec68ebcad04427110045267
+	md5sums = a25c0a73350a99559f1e30c2f86ad0b9
+
+pkgname = ynab4
+

@@ -1,0 +1,13 @@
+pkgbase = torrentinfo
+	pkgdesc = Bittorrent .torrent file parser and summariser
+	pkgver = 1.8.6
+	pkgrel = 1
+	url = https://github.com/Fuuzetsu/torrentinfo
+	arch = any
+	license = GPL2
+	depends = python2
+	source = https://github.com/Fuuzetsu/torrentinfo/archive/v1.8.6.tar.gz
+	sha1sums = b3e17039b081e383dda92dae5c614698cba2398d
+
+pkgname = torrentinfo
+

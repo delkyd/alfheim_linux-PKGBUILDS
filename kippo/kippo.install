@@ -1,0 +1,14 @@
+post_install() {
+  getent group kippo > /dev/null || groupadd kippo
+  getent passwd kippo > /dev/null || \
+    useradd -d /opt/kippo -g kippo -s /bin/nologin kippo
+
+  mkdir -p /opt/kippo/log/tty /opt/kippo/dl
+  chown -R kippo:kippo /opt/kippo
+}
+
+post_upgrade() {
+  post_install
+}
+
+# vim: ts=2 sw=2 et:

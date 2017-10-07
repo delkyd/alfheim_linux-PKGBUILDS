@@ -1,0 +1,25 @@
+pkgbase = tracktion-7
+	pkgdesc = Commercial Proprietary Music Production Software
+	pkgver = 7.2.1
+	pkgrel = 1
+	url = http://www.tracktion.com/
+	install = tracktion7.install
+	arch = x86_64
+	license = custom
+	depends = alsa-lib
+	depends = libgl
+	depends = desktop-file-utils
+	depends = shared-mime-info
+	depends = curl
+	depends = libx11
+	depends = libxext
+	depends = libxinerama
+	depends = freetype2
+	depends = libcurl-gnutls
+	optdepends = jack: A low-latency audio server
+	optdepends = ladspa-plugins: A set of ladspa plugins
+	source = https://s3-us-west-2.amazonaws.com/tracktion-marketplace-public/TracktionInstall_7_Linux_64Bit_latest.deb
+	md5sums = 91d1877497e5509c0ab3d684c7c34b61
+
+pkgname = tracktion-7
+

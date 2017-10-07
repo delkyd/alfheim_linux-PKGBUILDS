@@ -1,0 +1,34 @@
+pkgbase = unity-editor-bin
+	pkgdesc = The world's most popular development platform for creating 2D and 3D multiplatform games and interactive experiences.
+	pkgver = 5.6.2x2017.2.0+f1
+	pkgrel = 1
+	url = https://unity3d.com/
+	arch = x86_64
+	license = custom
+	depends = desktop-file-utils
+	depends = xdg-utils
+	depends = gcc-multilib
+	depends = libgl
+	depends = glu
+	depends = nss
+	depends = libpng12
+	depends = libxtst
+	depends = libpqxx
+	depends = monodevelop
+	depends = npm
+	depends = alsa-lib
+	depends = gconf
+	optdepends = ffmpeg: for WebGL exporting
+	optdepends = nodejs: for WebGL exporting
+	optdepends = java-runtime: for WebGL exporting
+	optdepends = gzip: for WebGL exporting
+	optdepends = java-environment: for Android and Tizen exporting
+	optdepends = android-sdk: for Android Remote
+	optdepends = android-udev: for Android Remote
+	provides = unity-editor=5.6.2x2017.2.0+f1
+	conflicts = unity-editor
+	options = !strip
+	source = https://beta.unity3d.com/download/ad31c9083c46/unity-editor_amd64-2017.2.0f1.deb
+	sha512sums = cfc88d448ce19d7f3b847d5fa1e1304a57d0abafa2662cfbfb311213b169186487a1535d9bd344804ffce4676f3a2569e606d316b057d351ab524555409bc243
+
+pkgname = unity-editor-bin

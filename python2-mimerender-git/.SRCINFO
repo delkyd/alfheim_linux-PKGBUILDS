@@ -1,0 +1,16 @@
+pkgbase = python2-mimerender-git
+	pkgver = v0.5.5.r2.g62da8bb
+	pkgrel = 1
+	url = https://github.com/martinblech/mimerender
+	arch = any
+	license = BSD
+	makedepends = git
+	makedepends = python2-setuptools
+	depends = python2
+	provides = mimerender
+	conflicts = mimerender
+	source = git://github.com/martinblech/mimerender#branch=master
+	sha512sums = SKIP
+
+pkgname = python2-mimerender-git
+

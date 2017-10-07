@@ -1,0 +1,22 @@
+pkgbase = st-ametisf-git
+	pkgdesc = Port of simple terminal to wayland - ametisf fork
+	pkgver = 986.f4f6a5d
+	pkgrel = 1
+	epoch = 1
+	url = http://github.com/ametisf/st
+	arch = i686
+	arch = x86_64
+	license = MIT
+	makedepends = ncurses
+	makedepends = libxext
+	makedepends = git
+	makedepends = tup
+	depends = libxft
+	provides = st
+	conflicts = st
+	options = zipman
+	source = git+https://github.com/ametisf/st.git
+	sha1sums = SKIP
+
+pkgname = st-ametisf-git
+

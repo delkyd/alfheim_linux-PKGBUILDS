@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# Exit status codes:
+#   0 =  Version reported correctly
+#   1 =  Error
+
+TWS_TIMEOUT="15"
+
+if ! test -e "$1"; then
+	echo "Usage:   $0 <sh>" 1>&2
+	echo "Example: $0 $HOME/.tws_scripts/tws-latest-standalone-linux-x64.sh" 1>&2
+	exit 1
+fi
+
+ARG1="$(readlink -v -f "$1")" || exit 1
+
+TDIR="$(mktemp -d -t twsdir.XXXX)" || exit 1
+trap "rm -rf ${TDIR}" exit
+cd "${TDIR}" || exit 1
+
+rm -rf $HOME/.install4j $HOME/.i4j_jres $HOME/Jts
+chmod +x ${ARG1}
+${ARG1} -q &> /dev/null
+
+MAJORVER=`find $HOME/Jts -maxdepth 1 -type d -regex '.*/[0-9]*' -printf '%f'`
+
+TWS_HOME="${TDIR}/twshome"
+mkdir "${TWS_HOME}" || exit 1
+LOG="${TWS_HOME}/launcher.log"
+
+TWS_CP=`find ${HOME}/Jts/${MAJORVER}/jars -type f -name \*.jar -printf '%p:'`
+java -cp "${TWS_CP}" jclient.LoginFrame "${TWS_HOME}" &
+disown
+TWS_PID="$!"
+
+# give TWS JVM chance to start writing to $LOG
+x=0
+while [ "$x" -lt 50 -a ! -e /path/to/the/file_name ]; do
+    x=$((x+1))
+    sleep .1
+done
+
+VERSION_LINE="$(timeout --preserve-status "${TWS_TIMEOUT}" grep -m1 --line-buffered " - Build" "${LOG}")"
+kill -9 "${TWS_PID}" &>/dev/null
+
+rm -rf $HOME/.install4j $HOME/.i4j_jres $HOME/Jts
+
+if test "${VERSION_LINE}" == ""; then
+	echo "could not grep version string" 1>&2
+	exit 1
+fi
+
+echo "${VERSION_LINE}" |sed -e 's/.*Build //1' -e 's/,.*//1'

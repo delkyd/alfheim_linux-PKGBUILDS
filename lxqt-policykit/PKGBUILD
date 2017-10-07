@@ -1,0 +1,39 @@
+# $Id$
+# Maintainer: Jerome Leclanche <jerome@leclan.ch>
+
+pkgname=lxqt-policykit
+pkgver=0.11.1
+pkgrel=2
+pkgdesc="The LXQt policykit authentication agent"
+arch=("i686" "x86_64")
+groups=("lxqt")
+url="http://lxqt.org"
+license=("LGPL2.1")
+depends=("liblxqt" "polkit-qt5")
+makedepends=("lxqt-build-tools")
+source=(
+	"https://github.com/lxde/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"
+	"https://github.com/lxde/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz.asc"
+)
+sha256sums=(
+	"0d94ccb8afd21ae1afc50fd67cbd3928631aaaba446ec74540c8a74ffb66f76e"
+	"SKIP"
+)
+validpgpkeys=(
+	"169704C6FB490C6892C7F23C37E0AF1FDA48F373"  # Jerome Leclanche <jerome@leclan.ch>
+	"7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3"  # Alf Gaida <agaida@siduction.org>
+)
+
+
+build() {
+	mkdir -p build
+	cd build
+	cmake "$srcdir/$pkgname-$pkgver" \
+		-DCMAKE_INSTALL_PREFIX=/usr
+	make
+}
+
+package() {
+	cd build
+	make DESTDIR="$pkgdir" install
+}

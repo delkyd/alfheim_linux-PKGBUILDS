@@ -1,0 +1,9 @@
+*
+!PKGBUILD
+!.SRCINFO
+!.gitignore
+!restclient
+!restclient-cli
+!restclient.desktop
+!restclient.install
+!restclient.png

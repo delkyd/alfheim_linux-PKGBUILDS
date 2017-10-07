@@ -1,0 +1,29 @@
+pkgbase = dsp-git
+	pkgdesc = An audio processing program with an interactive mode
+	pkgver = 279.700283f
+	pkgrel = 1
+	url = https://github.com/bmc0/dsp
+	arch = i686
+	arch = x86_64
+	arch = armv6h
+	arch = armv7h
+	arch = aarch64
+	license = ISC
+	license = GPL2
+	license = LGPL2.1
+	makedepends = git
+	makedepends = ladspa
+	depends = fftw
+	depends = libsndfile
+	depends = ffmpeg
+	depends = alsa-lib
+	depends = libao
+	depends = libmad
+	depends = libpulse
+	depends = zita-convolver
+	depends = libltdl
+	source = git+https://github.com/bmc0/dsp.git
+	md5sums = SKIP
+
+pkgname = dsp-git
+

@@ -1,0 +1,14 @@
+pkgbase = hastebin
+	pkgdesc = Upload data to hastebin.com via stdin
+	pkgver = r5.ef0fd37
+	pkgrel = 1
+	url = https://github.com/kevr/sprunge
+	arch = any
+	license = GPL2
+	depends = python
+	depends = python-requests
+	source = hastebin
+	sha256sums = b2ac5a7a8fab997e0b9454fcd54eaf8d3fc2a937bcca8bd2605d2bdd6a04a789
+
+pkgname = hastebin
+

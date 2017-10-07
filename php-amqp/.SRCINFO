@@ -1,0 +1,17 @@
+pkgbase = php-amqp
+	pkgdesc = PHP extension compatible with AMQP 0-9-1 message brokers
+	pkgver = 1.9.1
+	pkgrel = 1
+	url = https://pecl.php.net/package/amqp
+	arch = i686
+	arch = x86_64
+	license = PHP
+	makedepends = php
+	depends = glibc
+	depends = librabbitmq-c
+	backup = etc/php/conf.d/amqp.ini
+	source = http://pecl.php.net/get/amqp-1.9.1.tgz
+	sha256sums = 219cdad0ef26d30c9d820be3d0c06a9b35d3d1cb6b7e049948bc952223721119
+
+pkgname = php-amqp
+

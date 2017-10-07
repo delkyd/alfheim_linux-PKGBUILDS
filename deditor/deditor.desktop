@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Deditor
+Version=0.4.0
+Comment=Python text-editor
+GenericName=Deditor
+Terminal=false
+Icon=/usr/share/pixmaps/deditor.gif
+Type=Application
+Exec=deditor
+Categories=Development;

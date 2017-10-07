@@ -1,0 +1,21 @@
+pkgbase = python2-bitmerchant-git
+	pkgdesc = Bitcoin/altcoin merchant tools
+	pkgver = 20150909
+	pkgrel = 1
+	url = https://github.com/sbuss/bitmerchant
+	arch = any
+	license = MIT
+	makedepends = git
+	makedepends = python2-setuptools
+	depends = python2
+	depends = python2-base58
+	depends = python2-cachetools
+	depends = python2-ecdsa
+	depends = python2-six
+	provides = python2-bitmerchant
+	conflicts = python2-bitmerchant
+	source = python2-bitmerchant::git+https://github.com/sbuss/bitmerchant
+	sha256sums = SKIP
+
+pkgname = python2-bitmerchant-git
+

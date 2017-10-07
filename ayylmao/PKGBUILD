@@ -1,0 +1,19 @@
+# Maintainer: Dario Ostuni <another.code.996@gmail.com>
+pkgname=ayylmao
+pkgver=1.0.0
+pkgrel=2
+pkgdesc="ayylmao"
+arch=('any')
+license=('APACHE2')
+depends=('bash')
+options=()
+source=("ayy"
+        "lmao")
+sha256sums=('c862971f4ae58f9db7277cead3f7c4295d9206393fca9dc0a59ca2b69ef5f70c'
+            'aa67031091650ad7e9590daf05362a4f994a263bc9aa5887d8e186cc744dcd1d')
+
+package() {
+    cd "$srcdir"
+    install -Dm755 ayy "$pkgdir/usr/bin/ayy"
+    install -Dm755 lmao "$pkgdir/usr/bin/lmao"
+}

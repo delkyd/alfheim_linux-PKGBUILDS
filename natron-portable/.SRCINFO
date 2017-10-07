@@ -1,0 +1,31 @@
+pkgbase = natron-portable
+	pkgdesc = Video compositing software similar to Nuke and Adobe After Effects, portable snapshot
+	pkgver = 2.1.7
+	pkgrel = 2
+	url = http://natron.fr/
+	arch = x86_64
+	license = GPL
+	depends = ffmpeg
+	depends = p7zip
+	optdepends = blender: for 3d opencolor-io support
+	conflicts = natron
+	options = !strip
+	source = natron.desktop
+	source = x-natron.xml
+	source = natronIcon256_linux.png
+	source = natronProjectIcon_linux.png
+	md5sums = 5c65b106c295abe0b5346eff18a06767
+	md5sums = ca5186feb5a7f336517c015f72d0f8c8
+	md5sums = 60eb9f97a0ddeab5acda48d15894559a
+	md5sums = 475e14142c51d8b545f7cbc4b5426ce2
+	source_x86_64 = https://bitbucket.org/juanperez89/natron/downloads/natron-port-2.1.7-2-x86_64.pkg.tar.xz
+	source_x86_64 = natron-port-2.1.7-2-x86_64.pkg.tar.xz.sig
+	sha256sums_x86_64 = d697a3b0557cd2596a04a1ea68002cf1e0b3117939b3a0bd4c039f13aff4b859
+	sha256sums_x86_64 = SKIP
+	sha384sums_x86_64 = 46862f6a9ea43f3e32c41c9c1dd87ac18d36ec11738fc47f12532375ae9462029602b86a18d36fa565922125ef580d8d
+	sha384sums_x86_64 = SKIP
+	sha512sums_x86_64 = 1312b187e0cb7c3b39b50da5e5055a8aebc5569415b5368870909bb58a8efca188e496ad60b6073ee3d50ff3c84a7ef4fd796f6d8dd8ef160990c6fcc87e4eec
+	sha512sums_x86_64 = SKIP
+
+pkgname = natron-portable
+

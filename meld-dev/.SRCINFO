@@ -1,0 +1,27 @@
+pkgbase = meld-dev
+	pkgdesc = Visual diff and merge tool
+	pkgver = 3.17.4
+	pkgrel = 1
+	url = http://meldmerge.org/
+	install = meld.install
+	arch = any
+	license = GPL
+	makedepends = intltool
+	makedepends = gnome-doc-utils
+	makedepends = itstool
+	depends = python>=3.3
+	depends = gtk3>=3.6
+	depends = glib2>=2.36
+	depends = python2-gobject>=3.14
+	depends = pygobject-devel>=3.14
+	depends = python-cairo>=1.10.0-6
+	optdepends = python2-dbus: open a new tab in an already running instance
+	provides = meld
+	conflicts = meld meld-git
+	replaces = meld meld-git
+	options = !emptydirs
+	source = https://download.gnome.org/sources/meld/3.17/meld-3.17.4.tar.xz
+	sha1sums = 823e8c6b49728de4794ba26d655061e87ba03377
+
+pkgname = meld-dev
+

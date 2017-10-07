@@ -1,0 +1,20 @@
+pkgbase = keyleds
+	pkgdesc = Logitech Keyboard per-key lighting control
+	pkgver = 0.5.0
+	pkgrel = 1
+	url = https://github.com/spectras/keyleds
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = cmake>=3.0
+	depends = libxml2
+	depends = libyaml
+	depends = libx11
+	depends = libxi
+	depends = qt5-base
+	backup = etc/keyledsd.conf
+	source = https://github.com/spectras/keyleds/archive/v0.5.0/keyleds-0.5.0.tar.gz
+	md5sums = 9d31ab53c52c06a32d03e8ff3c9c190c
+
+pkgname = keyleds
+

@@ -1,0 +1,15 @@
+pkgbase = mariadb-jdbc
+	pkgdesc = The official JDBC driver (Java library) for MariaDB
+	pkgver = 2.1.1
+	pkgrel = 1
+	url = https://downloads.mariadb.org/client-java/
+	arch = any
+	license = LGPL2.1
+	depends = java-runtime
+	provides = mysql-jdbc
+	replaces = mysql-jdbc
+	source = https://downloads.mariadb.com/enterprise/x18t-d36g/connectors/java/connector-java-2.1.1/mariadb-java-client-2.1.1.jar
+	md5sums = b5e812bae4c5250fd23de850414b412a
+
+pkgname = mariadb-jdbc
+

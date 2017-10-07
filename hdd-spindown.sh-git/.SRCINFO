@@ -1,0 +1,20 @@
+pkgbase = hdd-spindown.sh-git
+	pkgdesc = Automatic Disk Standby using Kernel diskstats and hdparm
+	pkgver = 20170713
+	pkgrel = 1
+	url = https://github.com/lynix/hdd-spindown.sh
+	arch = any
+	license = MIT
+	depends = coreutils
+	depends = grep
+	depends = systemd
+	depends = hdparm
+	optdepends = smartmontools: recognizing SMART self-tests
+	optdepends = iputils: host monitoring feature
+	optdepends = util-linux: logging to syslog
+	backup = etc/hdd-spindown.rc
+	source = git://github.com/lynix/hdd-spindown.sh.git
+	md5sums = SKIP
+
+pkgname = hdd-spindown.sh-git
+

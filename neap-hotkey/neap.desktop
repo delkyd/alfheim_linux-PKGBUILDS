@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Neap Hotkey
+Name[fr]=Neap Hotkey
+Comment=A simple pager/desktop switcher
+Comment[fr]=Un pager/changeur de bureau simple
+Exec=neap-hotkey
+TryExec=neap-hotkey
+Icon=workspace-switcher
+StartupNotify=true
+Categories=GTK;Utility;
+Terminal=false

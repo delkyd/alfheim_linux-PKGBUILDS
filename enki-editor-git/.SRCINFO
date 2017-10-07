@@ -1,0 +1,24 @@
+pkgbase = enki-editor-git
+	pkgdesc = Text editor for programmers. Live preview in Markdown, reStructuredText and HTML
+	pkgver = 16.04.1.r3.g5b3994b6
+	pkgrel = 1
+	url = http://enki-editor.org/
+	install = enki-editor-git.install
+	arch = any
+	license = GPL
+	makedepends = git
+	makedepends = python
+	depends = python-pyparsing
+	depends = qutepart-git
+	optdepends = ctags: navigation in file
+	optdepends = python-code-chat: source code to HTML translation (literate programming)
+	optdepends = python-docutils: reStructuredText preview
+	optdepends = python-markdown: Markdown preview
+	optdepends = tre: preview synchronization
+	provides = enki-editor
+	conflicts = enki-editor
+	source = enki-editor-git::git://github.com/hlamer/enki.git
+	md5sums = SKIP
+
+pkgname = enki-editor-git
+

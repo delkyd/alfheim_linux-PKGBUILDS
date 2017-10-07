@@ -1,0 +1,47 @@
+# Maintainer: Cyrus Anakin <cyrantosaurus at gmail dot com>
+
+pkgname=ultra_outliner
+pkgver=0.9.8b
+pkgrel=2
+pkgdesc='Card-based outlining software for screenwriters, novelists and all story writers.'
+arch=('x86_64')
+url='http://ultraoutliner.com/'
+license=('LGPL3')
+depends=('libgl' 'libutil-linux' 'libxi')
+makedepends=('gendesk')
+_source='ultra_outliner.ubuntu64.tar.gz'
+_target="${pkgname}-${pkgver}"
+source=("http://www.ultraoutliner.com/info/download_build?build=80&locale=en/${_source}")
+md5sums=('3ca1f6bae7c06e1597baa12806f780b2')
+noextract=("${_source}")
+
+
+prepare() {
+
+  cd "${srcdir}"
+
+  gendesk -f --pkgname "${pkgname}" \
+  --pkgdesc "Card-based outlining software" \
+  --name="Ultra Outliner" \
+  --exec "${pkgname} %f" \
+  --categories "Office"
+
+  mkdir -p "${_target}"
+  tar -xz -f "${_source}" -C "${_target}"
+
+}
+
+
+package() {
+
+  cd "${srcdir}"
+
+  install -dm755 "${pkgdir}/opt/${pkgname}"
+  mv "${_target}"/* "${pkgdir}/opt/${pkgname}"
+
+  install -dm755 "${pkgdir}/usr/bin"
+  ln -s "/opt/${pkgname}/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+
+  install -Dm644 "${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+
+}

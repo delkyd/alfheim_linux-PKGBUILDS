@@ -1,0 +1,11 @@
+[Unit]
+Description=Tiny ZFS Web Interface
+
+[Service]
+Type=simple
+WorkingDirectory=/usr/share/webapps/ZFSmond
+ExecStart=/usr/bin/python2 main.py
+
+[Install]
+WantedBy=multi-user.target
+

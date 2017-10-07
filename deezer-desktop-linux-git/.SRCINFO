@@ -1,0 +1,20 @@
+pkgbase = deezer-desktop-linux-git
+	pkgdesc = deezer desktop from git
+	pkgver = r29.cb487e7
+	pkgrel = 1
+	url = https://github.com/baptistedonaux/deezer-desktop-linux
+	arch = any
+	license = MIT
+	makedepends = gcc>=4.5.0-2
+	makedepends = gcc-multilib>=4.5.0-2
+	makedepends = git
+	makedepends = npm
+	makedepends = readline
+	makedepends = gcc-libs
+	makedepends = lib32-gcc-libs
+	makedepends = pepper-flash
+	source = deezer-desktop-linux.sh
+	md5sums = eee6a71bebc74dddc4b422fdf51c7598
+
+pkgname = deezer-desktop-linux-git
+

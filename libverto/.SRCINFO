@@ -1,0 +1,17 @@
+pkgbase = libverto
+	pkgdesc = Main event loop abstraction library
+	pkgver = 0.3.0
+	pkgrel = 1
+	url = https://github.com/latchset/libverto
+	arch = i686
+	arch = x86_64
+	license = MIT
+	makedepends = glib2
+	makedepends = libev
+	makedepends = libevent
+	makedepends = tevent
+	source = https://github.com/latchset/libverto/releases/download/0.3.0/libverto-0.3.0.tar.gz
+	sha256sums = 955d3ff4192830c74ce88185f39621c9e490d5a3e7aba04d1e5346d4886f862e
+
+pkgname = libverto
+

@@ -1,0 +1,56 @@
+# Maintainer: Benjamin Chretien <chretien at lirmm dot fr>
+pkgname=libdart
+pkgver=5.1.1
+pkgrel=1
+pkgdesc="Dynamic Animation and Robotics Toolkit"
+arch=('i686' 'x86_64')
+url="http://dartsim.github.io"
+license=('BSD')
+depends=('assimp' 'boost' 'eigen>=3' 'fcl' 'flann' 'glut' 'libccd' 'libgl'
+         'urdfdom' 'tinyxml' 'tinyxml2')
+optdepends=('bullet: Bullet support'
+            'coin-or-ipopt: Ipopt support'
+            'nlopt: NLopt support')
+makedepends=('cmake' 'doxygen')
+_name=dart
+source=(https://github.com/dartsim/${_name}/archive/v${pkgver}.tar.gz)
+sha256sums=('e186c990176d8b7dd7039c59f934555d3738bd01a9205234b9b007a0be138363')
+
+# Build type
+_buildtype="Release"
+
+# Build the project
+build() {
+  cd "${srcdir}/${_name}-${pkgver}"
+
+  msg "Starting CMake (build type = ${_buildtype})"
+
+  # Create a build directory
+  mkdir -p "${srcdir}/${_name}-${pkgver}-build"
+  cd "${srcdir}/${_name}-${pkgver}-build"
+
+  # Run CMake in release
+  cmake -DCMAKE_BUILD_TYPE="${_buildtype}" \
+        -DCMAKE_INSTALL_PREFIX="/usr" \
+        "${srcdir}/${_name}-${pkgver}"
+
+  # Compile the library
+  msg "Building the project"
+  make
+}
+
+# Run unit tests
+check() {
+  msg "Running unit tests"
+  cd "${srcdir}/${_name}-${pkgver}-build"
+  make test
+}
+
+# Create the package
+package() {
+  # Install in /opt/roboptim
+  cd "${srcdir}/${_name}-${pkgver}-build"
+
+  msg "Installing files"
+  make DESTDIR="${pkgdir}/" install
+}

@@ -1,0 +1,16 @@
+post_install() {
+    systemd-tmpfiles --create trafficserver.conf
+}
+
+post_upgrade() {
+    # There are configuration changes required when upgrading to major
+    # version 6.
+    if [[ "${2%%.*}" -lt 7 ]]; then
+        echo 'Please review your configuration when upgrading to v7:'
+        echo ' https://cwiki.apache.org/confluence/display/TS/Upgrading+to+v7.0'
+    fi
+}
+
+post_remove() {
+    echo 'Tserver log files and cache files must be cleaned up manually.'
+}

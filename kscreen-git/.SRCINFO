@@ -1,0 +1,24 @@
+pkgbase = kscreen-git
+	pkgdesc = KDE screen management software
+	pkgver = r735.f04d6d3
+	pkgrel = 1
+	url = https://projects.kde.org/projects/kde/workspace/kscreen
+	install = kscreen-git.install
+	arch = i686
+	arch = x86_64
+	groups = plasma
+	license = LGPL
+	makedepends = extra-cmake-modules
+	makedepends = git
+	makedepends = python
+	depends = kxmlgui
+	depends = libkscreen-git
+	depends = qt5-graphicaleffects
+	depends = hicolor-icon-theme
+	provides = kscreen
+	conflicts = kscreen
+	source = git://anongit.kde.org/kscreen.git
+	md5sums = SKIP
+
+pkgname = kscreen-git
+

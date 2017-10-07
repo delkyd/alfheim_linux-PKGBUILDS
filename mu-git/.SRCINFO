@@ -1,0 +1,23 @@
+pkgbase = mu-git
+	pkgdesc = mu and mu4e from git
+	pkgver = v0.9.16.95.g7585506
+	pkgrel = 1
+	url = http://www.djcbsoftware.nl/code/mu
+	install = mu-git.install
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = git
+	makedepends = libtool
+	depends = xapian-core
+	depends = gmime
+	depends = sqlite3
+	optdepends = guile: guile support,
+	optdepends = emacs: mu4e support
+	provides = mu
+	conflicts = mu
+	source = git+https://github.com/djcb/mu.git
+	md5sums = SKIP
+
+pkgname = mu-git
+

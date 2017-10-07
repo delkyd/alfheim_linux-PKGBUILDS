@@ -1,0 +1,24 @@
+pkgbase = miller-git
+	pkgdesc = Miller is like sed, awk, cut, join, and sort for name-indexed data such as CSV
+	pkgver = 3.4.0
+	pkgrel = 3
+	epoch = 2
+	url = https://github.com/johnkerl/miller
+	arch = x86_64
+	arch = i686
+	license = MIT
+	makedepends = make
+	makedepends = gcc
+	makedepends = flex
+	makedepends = ctags
+	makedepends = valgrind
+	makedepends = autoconf
+	makedepends = automake
+	depends = glibc
+	provides = miller
+	conflicts = miller-git
+	source = https://github.com/johnkerl/miller/archive/master.zip
+	md5sums = SKIP
+
+pkgname = miller-git
+

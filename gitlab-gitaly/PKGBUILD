@@ -1,0 +1,52 @@
+# Maintainer: Sven-Hendrik Haase <sh@lutzhaase.com>
+
+pkgname=gitlab-gitaly
+pkgver=0.43.0
+pkgrel=2
+pkgdesc="Speed up Git access using caching"
+arch=('x86_64')
+url="https://gitlab.com/gitlab-org/gitaly"
+license=('MIT')
+depends=('glibc' 'ruby2.3')
+options=(!buildflags)
+makedepends=('go' 'ruby2.3-bundler' 'cmake')
+backup=("etc/gitlab-gitaly/config.toml")
+source=("${pkgname}-${pkgver}.tar.gz::https://gitlab.com/gitlab-org/gitaly/repository/archive.tar.gz?ref=v${pkgver}"
+        "gitlab-gitaly.service")
+sha512sums=('38612087525f4159e260c5785ba40f15a6fc8eb2c146ba177e11c18a10ff784a07080cf847f26c3303dd832f357a348957104ecab691f6dac72dd532618b705b'
+            'b330c0f42592322ad2131079ca554a13a364007182dded8c556198caff2c9ec642acf5bb7dfecb05de5a3d89bffec6588b6d05c8c7c5c771a46df3d296deed28')
+
+_homedir="/var/lib/gitlab"
+
+prepare() {
+  cd "gitaly-v${pkgver}-"*
+
+  sed -i "s/bundle install/bundle-2.3 install/" Makefile
+  sed -i "s/bundle config/bundle-2.3 config/" Makefile
+  sed -i "s/bundle/bundle-2.3/" internal/rubyserver/rubyserver.go
+  sed -i "s/bundle/bundle-2.3/" internal/linguist/linguist.go
+  sed -i "s/VERSION = .*/VERSION = ${pkgver}/" Makefile
+  sed -i "s/env ruby/env ruby-2.3/" ruby/bin/gitaly-ruby
+  sed -i "s|dir = \"/home/git/gitaly/ruby\"|dir = \"/usr/share/webapps/gitlab-gitaly/ruby\"|" config.toml.example
+  sed -i "s|dir = \"/home/git/gitlab-shell\"|dir = \"/usr/share/webapps/gitlab-shell\"|" config.toml.example
+}
+
+package() {
+  cd "gitaly-v${pkgver}-"*
+
+  make PREFIX=/usr DESTDIR=${pkgdir} install
+  mkdir -p "${pkgdir}/etc/${pkgname}"
+  sed \
+    -e "s|^socket_path =.*|socket_path = \"${_homedir}/sockets/gitlab-gitaly.socket\"|" \
+    -e "s|^path =.*|path = \"${_homedir}/repositories\"|" \
+    config.toml.example > "${pkgdir}/etc/${pkgname}/config.toml"
+
+  mkdir -p ${pkgdir}/usr/share/webapps/gitlab-gitaly
+  cp -r ruby ${pkgdir}/usr/share/webapps/gitlab-gitaly/ruby
+
+  install -Dm644 config.toml.example "${pkgdir}/usr/share/${pkgname}/config.toml.example"
+  install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -Dm0644 "${srcdir}/gitlab-gitaly.service" "${pkgdir}/usr/lib/systemd/system/gitlab-gitaly.service"
+}
+
+# vim:set ts=2 sw=2 et:

@@ -1,0 +1,7 @@
+post_install(){
+    printf '\n%s\n' 'Please install at least one of the optional dependencies.'
+}
+
+post_upgrade(){
+    post_install
+}

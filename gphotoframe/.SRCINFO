@@ -1,0 +1,24 @@
+pkgbase = gphotoframe
+	pkgdesc = Photo frame gadget for the GNOME Desktop
+	pkgver = 2.0.2
+	pkgrel = 1
+	url = https://github.com/iblis17/gphotoframe
+	arch = any
+	license = GPL3
+	makedepends = gnome-doc-utils
+	makedepends = python2-distutils-extra
+	depends = libchamplain
+	depends = python2-feedparser
+	depends = python2-gobject
+	depends = python2-oauth
+	depends = python2-pyopenssl
+	depends = python2-twisted
+	depends = python2-xdg
+	depends = webkit2gtk
+	source = gphotoframe-2.0.2.tar.gz::https://github.com/iblis17/gphotoframe/archive/cafe98c74744df0c70d5d375889e4c88f9cdb078.tar.gz
+	source = webkit2.patch
+	sha256sums = 19e7c43a817381f8a93249d109c0b062970644cb6f7b069e7e5c1c798b874fb4
+	sha256sums = be7b536e986b8f55ba8481120dfaff644ee589aa98ea3e0e62649c2c2b5d2891
+
+pkgname = gphotoframe
+

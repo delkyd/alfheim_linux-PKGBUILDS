@@ -1,0 +1,19 @@
+pkgbase = python-getdist
+	pkgdesc = MCMC sample analysis, kernel densities, plotting, and GUI
+	pkgver = 0.2.8.1
+	pkgrel = 1
+	url = https://github.com/cmbant/getdist
+	arch = any
+	makedepends = python-setuptools
+	depends = python-numpy
+	depends = python-matplotlib
+	depends = python-six
+	depends = python-scipy
+	depends = python-pyside
+	depends = python-pandas
+	options = !emptydirs
+	source = https://github.com/cmbant/getdist/archive/0.2.8.1.tar.gz
+	sha256sums = 2383b63c34be1eaac3e004ab5bb773587849c0007c095700a827bdf5d578311a
+
+pkgname = python-getdist
+

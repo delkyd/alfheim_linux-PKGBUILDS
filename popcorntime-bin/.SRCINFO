@@ -1,0 +1,29 @@
+pkgbase = popcorntime-bin
+	pkgdesc = Stream movies and TV shows from torrents
+	pkgver = 0.3.10
+	pkgrel = 1
+	url = https://popcorntime.sh
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	depends = alsa-lib
+	depends = gconf
+	depends = gtk2
+	depends = nss
+	depends = ttf-font
+	depends = libxtst
+	depends = libnotify
+	depends = desktop-file-utils
+	provides = popcorntime
+	provides = popcorn-time-ce
+	conflicts = popcorntime
+	options = !strip
+	source = popcorntime.desktop
+	sha256sums = 4422f21e16176fda697ed0c8a6d1fb6f9dd7c4bc3f3694f9bcc19cbe66630334
+	source_i686 = https://get.popcorntime.sh/repo/build/Popcorn-Time-0.3.10-Linux-32.tar.xz
+	sha256sums_i686 = c6497b067304918c3d19db2fecd36cc9efe1fff13765d461b24fd2cd8692ed42
+	source_x86_64 = https://get.popcorntime.sh/repo/build/Popcorn-Time-0.3.10-Linux-64.tar.xz
+	sha256sums_x86_64 = b7f789c2e2f3b0f7e3408a437080404f8a2aa7ce4a41858cf891b02cda8c37a5
+
+pkgname = popcorntime-bin
+

@@ -1,0 +1,27 @@
+pkgbase = cndrvcups-common-lb
+	pkgdesc = Common printer driver modules for cndrvcups-lb package, built from source
+	pkgver = 3.80
+	pkgrel = 1
+	url = http://support-au.canon.com.au/contents/AU/EN/0100270808.html
+	arch = i686
+	arch = x86_64
+	license = GPL
+	license = MIT
+	license = custom
+	makedepends = automake
+	makedepends = autoconf
+	makedepends = glib2
+	makedepends = gtk2
+	conflicts = cndrvcups-lb-bin
+	options = !emptydirs
+	options = !strip
+	options = staticlibs
+	source = http://gdlp01.c-wss.com/gds/8/0100002708/17/linux-UFRII-drv-v340-uken.tar.gz
+	sha512sums = 05f12d2cac5ae9987fe389be1a15b11d280734f6d47b86f04fa2fcb61bf94175b7afdba4cc1cf5ecf2c1ef5a8e2c14eda5d72f7671618d7c94581c620fea4494
+	depends_i686 = libglade
+	depends_i686 = gcc-libs
+	depends_x86_64 = libglade
+	depends_x86_64 = lib32-gcc-libs
+
+pkgname = cndrvcups-common-lb
+

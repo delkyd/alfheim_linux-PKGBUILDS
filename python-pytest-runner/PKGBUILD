@@ -1,0 +1,55 @@
+# $Id$
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgbase=python-pytest-runner
+pkgname=('python-pytest-runner' 'python2-pytest-runner')
+pkgver=2.12.1
+pkgrel=1
+pkgdesc="Invoke py.test as distutils command with dependency resolution"
+arch=('any')
+license=('MIT')
+url="https://github.com/pytest-dev/pytest-runner"
+makedepends=('python-pytest' 'python2-pytest' 'python-setuptools-scm' 'python2-setuptools-scm'
+             'python-pytest-virtualenv' 'python2-pytest-virtualenv')
+source=("$pkgbase-$pkgver.tar.gz::https://github.com/pytest-dev/pytest-runner/archive/$pkgver.tar.gz")
+sha512sums=('b8621c58624cb3cd2992bf4ce501306a3c906fc410f520c9dd96c89c46054cdbc30e0728c29d82d2e39b538770ac9c82b265a8eb2cd5a96a882d6023ddca1d7d')
+
+prepare() {
+  cp -a pytest-runner-$pkgver{,-py2}
+
+  export SETUPTOOLS_SCM_PRETEND_VERSION=$pkgver
+}
+
+build() {
+  cd "$srcdir"/pytest-runner-$pkgver
+  python setup.py build
+
+  cd "$srcdir"/pytest-runner-$pkgver-py2
+  python2 setup.py build
+}
+
+check() {
+  cd "$srcdir"/pytest-runner-$pkgver
+  python setup.py egg_info
+  PYTHONPATH="$PWD" pytest
+
+  cd "$srcdir"/pytest-runner-$pkgver-py2
+  python2 setup.py egg_info
+  PYTHONPATH="$PWD" pytest2
+}
+
+package_python-pytest-runner() {
+  depends=('python-pytest')
+
+  cd pytest-runner-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}
+
+package_python2-pytest-runner() {
+  depends=('python2-pytest')
+
+  cd pytest-runner-$pkgver-py2
+  python2 setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

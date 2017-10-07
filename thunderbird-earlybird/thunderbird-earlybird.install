@@ -1,0 +1,21 @@
+post_install() {
+    update-desktop-database -q
+    gtk-update-icon-cache -q -t -f usr/share/icons/hicolor
+    repo_info
+}
+
+post_upgrade() {
+    post_install
+}
+
+post_remove() {
+    post_install
+}
+
+repo_info() {
+    echo "============================="
+    echo "You can download the package in repo:"
+    echo "[home_alextalker_aur_Arch_Extra]"
+    echo "SigLevel = Never"
+    echo 'Server = http://download.opensuse.org/repositories/home:/alextalker:/aur/Arch_Extra/$arch'
+}

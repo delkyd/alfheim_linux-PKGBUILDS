@@ -1,0 +1,16 @@
+pkgbase = duperemove
+	pkgdesc = Btrfs extent deduplication utility
+	pkgver = 0.10
+	pkgrel = 2
+	url = https://github.com/markfasheh/duperemove
+	arch = x86_64
+	arch = i686
+	license = GPL
+	depends = glib2
+	depends = sqlite
+	conflicts = duperemove-git
+	source = https://github.com/markfasheh/duperemove/archive/v0.10.tar.gz
+	sha512sums = 11bb1a9937b9ca7969b9176bb4cfc8fff91c257a8645baa0ca0ec6b634ae3c464712414f856d5a75ed16c6d13f0ae85ac3584df1f474575a975cb20ae0d7a9f1
+
+pkgname = duperemove
+

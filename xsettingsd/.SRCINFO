@@ -1,0 +1,17 @@
+pkgbase = xsettingsd
+	pkgdesc = xsettingsd is a daemon that implements the XSETTINGS specification.
+	pkgver = r82
+	pkgrel = 1
+	epoch = 1
+	url = http://code.google.com/p/xsettingsd/
+	arch = i686
+	arch = x86_64
+	license = custom:BSD
+	makedepends = git
+	makedepends = scons
+	depends = libx11
+	source = git+https://github.com/derat/xsettingsd.git
+	md5sums = SKIP
+
+pkgname = xsettingsd
+

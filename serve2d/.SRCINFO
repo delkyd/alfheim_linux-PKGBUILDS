@@ -1,0 +1,19 @@
+pkgbase = serve2d
+	pkgdesc = A protocol detecting server, based off the serve2 library
+	pkgver = 0.3.1
+	pkgrel = 1
+	url = https://github.com/joushou/serve2d
+	arch = i686
+	arch = x86_64
+	license = MIT
+	makedepends = go
+	conflicts = serve2d-git
+	source = https://github.com/joushou/serve2d/archive/v0.3.1.tar.gz
+	source = https://github.com/joushou/serve2/archive/v0.3.1.zip
+	source = serve2d@.service
+	sha256sums = c3873cfdd36bfe8122cbe0c220975b586716f32645b7c02c6edd4254003083b5
+	sha256sums = 6aa5dcb83aa6b165cf6e26b278eb48fedbaf4c2aaef2ab9c2991929e27d39d9c
+	sha256sums = f098dd9b71d21623df02da180fc841b4d9923add17bb1472c732541f3d3c99dc
+
+pkgname = serve2d
+

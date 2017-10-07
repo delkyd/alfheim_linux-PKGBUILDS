@@ -1,0 +1,17 @@
+pkgbase = pycollada-git
+	pkgdesc = Create, edit and load COLLADA documents in Python
+	pkgver = 277.afd44fd
+	pkgrel = 1
+	url = https://github.com/pycollada/pycollada
+	arch = any
+	license = BSD3
+	makedepends = git
+	depends = python2-lxml
+	depends = python2-numpy
+	depends = python2-dateutil
+	depends = python2-distribute
+	source = git+https://github.com/pycollada/pycollada.git
+	sha512sums = SKIP
+
+pkgname = pycollada-git
+

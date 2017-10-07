@@ -1,0 +1,17 @@
+pkgbase = clarcharr-pacman
+	pkgdesc = Clar's pacman configuration.
+	pkgver = 2.0.2
+	pkgrel = 1
+	url = https://github.com/clarcharr/config-pacman
+	arch = i686
+	arch = x86_64
+	groups = clarcharr-config
+	license = CC0
+	depends = pacman
+	depends = reflector
+	source = git+https://github.com/clarcharr/config-pacman#
+	validpgpkeys = 4BDA23A98EE4E049CBC3BA6C69DA5B388573EE35
+	sha256sums = SKIP
+
+pkgname = clarcharr-pacman
+

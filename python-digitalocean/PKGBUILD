@@ -1,0 +1,51 @@
+# $Id$
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgbase=python-digitalocean
+pkgname=('python-digitalocean' 'python2-digitalocean')
+pkgver=1.12
+pkgrel=1
+pkgdesc='digitalocean.com API to manage Droplets and Images'
+arch=('any')
+license=('LGPL')
+url='https://github.com/koalalorenzo/python-digitalocean'
+makedepends=('python-setuptools' 'python2-setuptools' 'python-requests' 'python2-requests')
+checkdepends=('python-pytest-runner' 'python2-pytest-runner' 'python-responses' 'python2-responses')
+source=("$pkgbase-$pkgver.tar.gz::https://github.com/koalalorenzo/python-digitalocean/archive/v$pkgver.tar.gz")
+sha512sums=('5ccb536c5e21b9787413122aa15d6eccd1f47e820c7d5bf5724ccda862775034bee341a14e52b5bbc01e8185b6401da182cdd796b80b9675c687756c8f11cf1f')
+
+prepare() {
+  cp -a python-digitalocean-$pkgver{,-py2}
+}
+
+build() {
+  cd "$srcdir"/python-digitalocean-$pkgver
+  python setup.py build
+
+  cd "$srcdir"/python-digitalocean-$pkgver-py2
+  python2 setup.py build
+}
+
+check() {
+  cd "$srcdir"/python-digitalocean-$pkgver
+  python setup.py pytest
+
+  cd "$srcdir"/python-digitalocean-$pkgver-py2
+  python2 setup.py pytest
+}
+
+package_python-digitalocean() {
+  depends=('python-requests')
+
+  cd python-digitalocean-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+}
+
+package_python2-digitalocean() {
+  depends=('python2-requests')
+
+  cd python-digitalocean-$pkgver-py2
+  python2 setup.py install --root="$pkgdir" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

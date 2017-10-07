@@ -1,0 +1,29 @@
+pkgbase = urbackup2-server
+	pkgdesc = Client Server backup system
+	pkgver = 2.1.19
+	pkgrel = 2
+	url = http://www.urbackup.org/
+	install = urbackup.install
+	arch = i686
+	arch = x86_64
+	arch = armv5
+	arch = armv6h
+	arch = armv6
+	arch = armv7h
+	arch = armv7
+	arch = aarch64
+	license = GPL
+	makedepends = gcc-libs
+	makedepends = gcc
+	makedepends = make
+	depends = sqlite
+	depends = crypto++
+	depends = curl
+	depends = fuse
+	depends = zlib
+	conflicts = urbackup-server
+	source = https://www.urbackup.org/downloads/Server/2.1.19/urbackup-server-2.1.19.tar.gz
+	sha512sums = d5c89101bde6bdd22905efb202d10f1c04eb3a533c191c655b156ee959db330007e653e7707b1e6f1e235a6d3cb97ca5e5f41e3f4ffd4959882f11b5cea3ccf0
+
+pkgname = urbackup2-server
+

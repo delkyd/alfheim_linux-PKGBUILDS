@@ -1,0 +1,16 @@
+pkgbase = memry
+	pkgdesc = mem'ry, tar pipe curl
+	pkgver = 2.0.1
+	pkgrel = 2
+	url = https://github.com/kpcyrd/memry
+	install = memry.install
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = npm
+	depends = nodejs
+	source = https://registry.npmjs.org/memry/-/memry-2.0.1.tgz
+	sha512sums = fccc5c284ea4134a204069218795346e0888a780dae6af72ee3add51c84649c8945860d0cbeabf18ab68f40abfb2eb440a169398299420f73d692a3f1d8d619c
+
+pkgname = memry
+

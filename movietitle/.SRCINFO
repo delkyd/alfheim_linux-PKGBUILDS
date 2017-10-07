@@ -1,0 +1,18 @@
+pkgbase = movietitle
+	pkgdesc = An application to rename movie files.
+	pkgver = 0.0.2.2
+	pkgrel = 3
+	url = http://www.atareao.es/apps/limpiar-los-titulos-de-las-peliculas-en-ubuntu-con-movietitle/
+	arch = any
+	license = GPL3
+	makedepends = python2-distutils-extra
+	depends = python2-beautifulsoup4
+	depends = python2-exiv2
+	depends = python2-nautilus
+	depends = python2-polib
+	provides = movietitle
+	source = https://launchpad.net/~atareao/+archive/ubuntu/nautilus-extensions/+files/movietitle_0.0.2.2-1ubuntu0.tar.xz
+	sha256sums = 7595c0debc9f4731fc00fca66886b26f9a468094c8efa6ccfb8d94763a36ae4c
+
+pkgname = movietitle
+

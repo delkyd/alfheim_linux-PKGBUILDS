@@ -1,0 +1,22 @@
+pkgbase = pyjama
+	pkgdesc = Unofficial Python/GTK Medialibrary for Jamendo
+	pkgver = 0.3.1
+	pkgrel = 2
+	url = https://launchpad.net/pyjama
+	arch = any
+	license = GPL
+	depends = pygtk
+	depends = python2-simplejson
+	depends = python2-pysqlite
+	depends = gstreamer0.10-python
+	depends = gstreamer0.10-bad-plugins
+	depends = python2-numpy
+	depends = gstreamer0.10-ugly-plugins
+	depends = python2-lxml
+	optdepends = gnome-python-extras
+	optdepends = python2-notify
+	source = pyjama.tgz::http://bazaar.launchpad.net/~pyjamateam/pyjama/main/tarball/273?start_revid=273
+	sha256sums = SKIP
+
+pkgname = pyjama
+

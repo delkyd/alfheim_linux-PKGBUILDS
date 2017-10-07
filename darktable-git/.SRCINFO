@@ -1,0 +1,49 @@
+pkgbase = darktable-git
+	pkgdesc = A virtual lighttable and darkroom for photographers
+	pkgver = release.2.3.0.r54.gc4fc7e36c
+	pkgrel = 1
+	url = http://www.darktable.org/
+	install = darktable.install
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = git
+	makedepends = intltool>=0.40
+	makedepends = cmake
+	makedepends = librsvg
+	makedepends = flickcurl
+	depends = exiv2>=0.18
+	depends = intltool>=0.40
+	depends = lcms2
+	depends = lensfun>=0.2.3
+	depends = libglade
+	depends = dbus-glib
+	depends = curl
+	depends = libgnome-keyring
+	depends = libgphoto2
+	depends = libusb-compat
+	depends = openexr
+	depends = sqlite
+	depends = libxslt
+	depends = libsoup
+	depends = osm-gps-map
+	depends = pugixml
+	depends = colord
+	depends = lua52
+	depends = libsecret
+	depends = colord-gtk
+	depends = sdl
+	depends = openjpeg2
+	depends = graphicsmagick
+	depends = glu
+	optdepends = librsvg
+	optdepends = flickcurl: flickr upload
+	provides = darktable
+	conflicts = darktable
+	options = !emptydirs
+	options = !libtool
+	source = git://github.com/darktable-org/darktable.git
+	md5sums = SKIP
+
+pkgname = darktable-git
+

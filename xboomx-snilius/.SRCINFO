@@ -1,0 +1,18 @@
+pkgbase = xboomx-snilius
+	pkgdesc = A wrapper for most common occurrences in dmenu
+	pkgver = 0.7.5
+	pkgrel = 1
+	url = https://github.com/victorhaggqvist/xboomx
+	arch = any
+	license = GPL-2.0
+	makedepends = python-setuptools
+	depends = python
+	depends = python-sqlalchemy
+	depends = dmenu
+	provides = xboomx
+	conflicts = xboomx
+	source = https://github.com/victorhaggqvist/xboomx/archive/v0.7.5.zip
+	sha512sums = 4e5c09f59c67351e2e08d093c7847b2efbca3f71cd73fd191410f56b9b4236b6910b4d5920dca61cdc0b64434a17f95d06ce08bd22160e9c9b9d2049b4d705e6
+
+pkgname = xboomx-snilius
+

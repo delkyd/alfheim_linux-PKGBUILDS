@@ -1,0 +1,13 @@
+pkgbase = star-cshl
+	pkgdesc = STAR aligns RNA-seq reads to a reference genome using uncompressed suffix arrays
+	pkgver = 2.5.3a
+	pkgrel = 1
+	url = https://github.com/alexdobin/STAR
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	source = https://github.com/alexdobin/STAR/archive/2.5.3a.tar.gz
+	sha1sums = e7535fec05b76619ab851e63e85e163b4c972ed3
+
+pkgname = star-cshl
+

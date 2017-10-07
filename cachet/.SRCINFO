@@ -1,0 +1,17 @@
+pkgbase = cachet
+	pkgdesc = An open source status page system for everyone.
+	pkgver = 2.3.11
+	pkgrel = 1
+	url = https://cachethq.io/
+	install = cachet.install
+	arch = any
+	license = custom
+	makedepends = composer
+	depends = php-gd
+	depends = python
+	backup = etc/webapps/cachet/config.env
+	source = cachet-2.3.11.tar.gz::https://github.com/CachetHQ/Cachet/archive/v2.3.11.tar.gz
+	sha256sums = fb0f834103ae055ce55e869807d0e50ff1df79e214e241d70a36e5969ea50c97
+
+pkgname = cachet
+

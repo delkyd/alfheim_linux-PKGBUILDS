@@ -1,0 +1,16 @@
+pkgbase = lighthouse-bitcoin
+	pkgdesc = Specialised Bitcoin wallet that uses the advanced smart contracts features of the Bitcoin protocol to provide all-or-nothing crowdfunding
+	pkgver = 25
+	pkgrel = 1
+	url = https://www.vinumeris.com/lighthouse
+	arch = i686
+	arch = x86_64
+	license = APACHE
+	conflicts = lighthouse-git
+	source_i686 = https://s3-eu-west-1.amazonaws.com/vinumeris/lighthouse/lighthouse-32bit.deb
+	md5sums_i686 = 1be86a9dd0c9e6ddd501a8faf8719caa
+	source_x86_64 = https://s3-eu-west-1.amazonaws.com/vinumeris/lighthouse/lighthouse-64bit.deb
+	md5sums_x86_64 = 0f2c633c72dab8ffc2e052fa9fae3249
+
+pkgname = lighthouse-bitcoin
+

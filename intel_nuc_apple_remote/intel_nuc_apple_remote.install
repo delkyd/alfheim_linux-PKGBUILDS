@@ -1,0 +1,11 @@
+post_install() {
+    grep -q -F '*\t*\t\t\t appleremote' /etc/rc_maps.cfg || echo -e '*\t*\t\t\t appleremote' >> /etc/rc_maps.cfg
+}
+
+post_upgrade() {
+	post_install
+}
+
+post_remove() {
+    sed -i '/*\t*\t\t\t appleremote/d' /etc/rc_maps.cfg
+}

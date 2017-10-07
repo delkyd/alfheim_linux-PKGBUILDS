@@ -1,0 +1,23 @@
+pkgbase = pyrescene-hg
+	pkgdesc = pyReScene is a port of ReScene .NET to the Python programming language.
+	pkgver = 646
+	pkgrel = 2
+	url = https://bitbucket.org/Gfy/pyrescene
+	arch = any
+	license = MIT
+	license = GPL
+	license = Custom
+	makedepends = mercurial
+	makedepends = git
+	depends = python2
+	depends = chromaprint
+	depends = python2-numpy
+	depends = unrar
+	depends = lib32-libstdc++5
+	source = hg+https://bitbucket.org/Gfy/pyrescene/
+	source = git://github.com/dryes/rarlinux.git
+	md5sums = SKIP
+	md5sums = SKIP
+
+pkgname = pyrescene-hg
+

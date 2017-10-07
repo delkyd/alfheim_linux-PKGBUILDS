@@ -1,0 +1,27 @@
+pkgbase = mystudio
+	pkgdesc = Rizzoli Education - Il sistema digitale per studenti e insegnati.
+	pkgver = 3.1.5
+	pkgrel = 1
+	url = http://mystudio.rizzolieducation.it/
+	arch = i686
+	arch = x86_64
+	license = unknown
+	depends = fontconfig
+	depends = libpulse
+	depends = gtk2
+	depends = xdg-utils
+	depends = postgresql-libs
+	depends = qt5-webkit
+	depends = qt5-tools
+	depends = qt5-svg
+	depends = vlc
+	depends = lame
+	depends = gstreamer0.10-base
+	noextract = setup_MyStudio_315_Linux_x86_64bit.deb
+	source_i686 = http://openbook.rizzolieducation.it/linux/setup_MyStudio_315_Linux_x86_64bit.deb
+	md5sums_i686 = b83d78c1ad87712435cc5485362aade7
+	source_x86_64 = http://openbook.rizzolieducation.it/linux/setup_MyStudio_315_Linux_x86_64bit.deb
+	md5sums_x86_64 = b83d78c1ad87712435cc5485362aade7
+
+pkgname = mystudio
+

@@ -1,0 +1,27 @@
+pkgbase = picoscope
+	pkgdesc = gui for picotech oscilloscope
+	pkgver = 6.11.13_4r3
+	pkgrel = 1
+	url = http://www.picotech.com/linux.html
+	install = picoscope.install
+	arch = i686
+	arch = x86_64
+	license = custom
+	makedepends = dpkg
+	depends = mono
+	depends = mono-tools
+	depends = libpicoipp
+	depends = desktop-file-utils
+	optdepends = libps3000: support for picoscope 3000 series
+	optdepends = libps2000: support for picoscope 2000 series
+	optdepends = libps2000a: support for picoscope 2000 series
+	options = !strip
+	source = http://labs.picotech.com/debian/pool/main/p/picoscope/picoscope_6.11.13-4r3_all.deb
+	source = picoscope.install
+	source = 95-pico.rules
+	md5sums = 4ea5ca9a7b071eb549c55ac3d42a5db9
+	md5sums = 503df69f2e6001e3e9269970a552af13
+	md5sums = afedfca88c003ead013c18f26f789fd4
+
+pkgname = picoscope
+

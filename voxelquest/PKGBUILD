@@ -1,0 +1,59 @@
+# Maintainer: Cyrus Anakin <cyrus dot anakin at tutanota dot de>
+
+pkgname=voxelquest
+pkgver=0.1
+pkgrel=3
+pkgdesc='Both an open source voxel game engine and a role playing game.'
+url='http://www.voxelquest.com/'
+license=('MIT')
+arch=('x86_64')
+conflicts=('voxelquest-git')
+depends=('freeglut' 'sfml')
+makedepends=('git' 'cmake' 'make' 'unzip')
+
+_lzz='lzz_2_8_2_linux.zip'
+source=(
+  "${pkgname}::git+https://github.com/gavanw/vqisosmall.git#tag=${pkgver}"
+  "https://github.com/gavanw/vqisosmall/releases/download/${pkgver}/resources.zip"
+  "http://www.lazycplusplus.com/${_lzz}"
+)
+md5sums=(
+  'SKIP'
+  '3d8da23048f9a64d3f3ed7cdd7598d72'
+  '0aad7107b76ebf338a2e38e7604dbedb'
+)
+noextract=(
+  'resources.zip'
+  "${_lzz}"
+)
+
+_patch_path() {
+  grep -rl "\.\./${1}" * | xargs sed -i "s:\.\./${1}:/usr/share/${pkgname}/${1}:g"
+}
+
+prepare() {
+  unzip -o "${_lzz}" -d "${srcdir}/${pkgname}"
+
+  cd "${srcdir}/${pkgname}/src"
+  _patch_path src/glsl
+  _patch_path cdat
+  _patch_path data
+}
+
+build() {
+  cd "${srcdir}/${pkgname}"
+  mkdir -p build && cd build
+  cmake .. && make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}"
+  
+  install -D -m755 "build/VoxelQuest" "${pkgdir}/usr/bin/${pkgname}"
+  install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
+  
+  install -d "${pkgdir}/usr/share/${pkgname}/src"
+  cp -a src/glsl "${pkgdir}/usr/share/${pkgname}/src"
+  cp -a cdat "${pkgdir}/usr/share/${pkgname}"
+  unzip -o ../resources.zip data/* -d "${pkgdir}/usr/share/${pkgname}"
+}

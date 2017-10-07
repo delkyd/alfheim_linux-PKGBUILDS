@@ -1,0 +1,16 @@
+pkgbase = luxblend25-hg
+	pkgdesc = LuxRender exporter plugin for Blender
+	pkgver = 3789.456ed1eb8aef
+	pkgrel = 1
+	url = http://www.luxrender.net/
+	arch = any
+	license = GPL
+	makedepends = mercurial
+	depends = luxrender
+	depends = blender
+	conflicts = luxblend25
+	source = hg+https://bitbucket.org/luxrender/luxblend25
+	md5sums = SKIP
+
+pkgname = luxblend25-hg
+

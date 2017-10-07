@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Aporia
+Comment=IDE for Nim programming language
+Exec=aporia %U
+Icon=aporia
+Terminal=false
+Categories=Development;IDE;
+StartupWMClass=aporia

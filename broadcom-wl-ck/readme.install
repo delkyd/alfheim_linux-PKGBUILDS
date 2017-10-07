@@ -1,0 +1,8 @@
+post_upgrade() {
+	EXTRAMODULES='extramodules-4.12-ck'
+	depmod $(cat /usr/lib/modules/$EXTRAMODULES/version)
+}
+
+post_install() {
+	post_upgrade
+}

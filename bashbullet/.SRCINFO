@@ -1,0 +1,23 @@
+pkgbase = bashbullet
+	pkgdesc = A pushbullet systray notification daemon for linux. also a simple client to receive, mirror, and send pushes.
+	pkgver = 20170415
+	pkgrel = 1
+	url = https://github.com/Boteium/bashbullet
+	arch = any
+	license = GPL
+	depends = jshon
+	depends = nodejs
+	depends = libnotify
+	depends = yad>=0.31
+	depends = wscat
+	depends = xclip
+	optdepends = screen: running in background
+	optdepends = surl: url shortener support
+	optdepends = nodejs-atob: nodejs module for encryption support
+	optdepends = nodejs-btoa: nodejs module for encryption support
+	optdepends = nodejs-node-forge: nodejs module for encryption support
+	source = git://github.com/Boteium/bashbullet.git
+	md5sums = SKIP
+
+pkgname = bashbullet
+

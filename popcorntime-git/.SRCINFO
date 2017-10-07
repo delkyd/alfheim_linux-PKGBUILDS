@@ -1,0 +1,28 @@
+pkgbase = popcorntime-git
+	pkgdesc = Stream movies and TV shows from torrents
+	pkgver = r6211.db796345
+	pkgrel = 1
+	url = https://popcorntime.sh
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = git
+	makedepends = npm
+	depends = alsa-lib
+	depends = gconf
+	depends = gtk2
+	depends = nss
+	depends = ttf-font
+	depends = libxtst
+	depends = libnotify
+	provides = popcorntime
+	conflicts = popcorntime
+	conflicts = popcorn-time-ce
+	options = !strip
+	source = git+https://github.com/popcorn-official/popcorn-desktop.git#branch=development
+	source = popcorntime.desktop
+	sha256sums = SKIP
+	sha256sums = 7e22d234a2e7dd1e632e094154c44b31be7f93962df93dd865f3775b8e644c05
+
+pkgname = popcorntime-git
+

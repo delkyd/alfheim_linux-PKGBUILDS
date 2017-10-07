@@ -1,0 +1,9 @@
+pkg/
+src/
+*-git/
+*.swp
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.zip
+*.gem

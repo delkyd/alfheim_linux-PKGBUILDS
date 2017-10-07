@@ -1,0 +1,22 @@
+pkgbase = dmenu-ametisf-git
+	pkgdesc = generic menu for swc-based compositors - ametisf fork
+	pkgver = 7.fd26ff8
+	pkgrel = 1
+	url = https://github.com/ametisf/dmenu
+	arch = i686
+	arch = x86_64
+	license = MIT
+	makedepends = git
+	makedepends = libx11
+	makedepends = swc
+	makedepends = tup
+	depends = sh
+	depends = wld
+	depends = stest-git
+	provides = dmenu
+	conflicts = dmenu
+	source = git+https://github.com/ametisf/dmenu.git
+	sha256sums = SKIP
+
+pkgname = dmenu-ametisf-git
+

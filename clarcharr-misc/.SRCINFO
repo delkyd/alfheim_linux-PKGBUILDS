@@ -1,0 +1,20 @@
+pkgbase = clarcharr-misc
+	pkgdesc = Clar's miscellaneous configuration.
+	pkgver = 0.2.0
+	pkgrel = 1
+	url = https://github.com/clarcharr/config-misc
+	install = clarcharr-misc.install
+	arch = i686
+	arch = x86_64
+	groups = clarcharr-config
+	license = CC0
+	depends = git
+	depends = jq
+	source = git+https://github.com/clarcharr/config-misc#
+	source = clarcharr-misc.install
+	validpgpkeys = 4BDA23A98EE4E049CBC3BA6C69DA5B388573EE35
+	sha256sums = SKIP
+	sha256sums = 91e59196425d37cc10433008072b1b0635f6636f93bf205fbddcd37bab52bb1a
+
+pkgname = clarcharr-misc
+

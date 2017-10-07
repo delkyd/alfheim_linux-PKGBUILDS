@@ -1,0 +1,17 @@
+pkgbase = omnikey_ifdokccid
+	pkgdesc = CCID driver for HID Global OMNIKEY CardMan Smartcard reader series
+	pkgver = 4.2.8
+	pkgrel = 1
+	url = http://www.hidglobal.com/
+	arch = i686
+	arch = x86_64
+	license = unknown
+	depends = libusb
+	depends = pcsclite
+	source_i686 = http://www.hidglobal.com/sites/hidglobal.com/files/drivers/ifdokccid_linux_i686-v4.2.8.tar.gz
+	md5sums_i686 = 36d4c303a44a86f18cc43ccdca94ba78
+	source_x86_64 = http://www.hidglobal.com/sites/hidglobal.com/files/drivers/ifdokccid_linux_x86_64-v4.2.8.tar.gz
+	md5sums_x86_64 = 53981b212d47b5ccbd5906c302401bbe
+
+pkgname = omnikey_ifdokccid
+

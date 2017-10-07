@@ -1,0 +1,27 @@
+# $Id$
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Roman Kyrylych <roman@archlinux.org>
+# Contributor: Johannes Sjolund <j.sjolund@gmail.com>
+
+pkgname=mxml
+pkgver=2.10
+pkgrel=1
+pkgdesc="A small XML parsing library"
+arch=('i686' 'x86_64')
+url="http://www.minixml.org/"
+license=('LGPL')
+source=("https://www.msweet.org/files/project3/$pkgname-$pkgver.tar.gz")
+sha256sums=('267ff58b64ddc767170d71dab0c729c06f45e1df9a9b6f75180b564f09767891')
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+#  [ "$CARCH" = x86_64 ] && export CFLAGS="$CFLAGS -fPIC"
+  ./configure --prefix=/usr --enable-shared
+  make
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make DSTROOT="$pkgdir" install
+  chmod -x "$pkgdir/usr/lib/libmxml.a"
+}

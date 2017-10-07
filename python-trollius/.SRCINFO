@@ -1,0 +1,16 @@
+pkgbase = python-trollius
+	pkgdesc = Port of the Tulip project (asyncio module, PEP 3156)
+	pkgver = 2.1
+	pkgrel = 1
+	url = https://github.com/haypo/trollius
+	arch = any
+	license = Apache
+	checkdepends = python-pytest
+	makedepends = python-sphinx
+	depends = python
+	source = python-trollius-2.1.tar.gz::https://github.com/haypo/trollius/archive/trollius-2.1.tar.gz
+	sha256sums = c9f7f35b011afa6adbd92d91ca347e76412ac3ff56a53133d36800892e5e6383
+	sha512sums = 30e9234fcd702dfb2a843efeab00a499f83e5e3621d19b0468fa77827697d730d69a24917db259349b6d59340a07e035098a8e57f3719993ae6374127ae06b1c
+
+pkgname = python-trollius
+

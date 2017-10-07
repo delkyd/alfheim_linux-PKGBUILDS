@@ -1,0 +1,16 @@
+pkgbase = passera
+	pkgdesc = A small tool to turn any entered passphrase into a strong secure password
+	pkgver = 0.1.5
+	pkgrel = 1
+	url = https://github.com/icaroperseo/passera
+	arch = i686
+	arch = x86_64
+	license = GPL
+	makedepends = go
+	optdepends = xclip: X11 clipboard support
+	optdepends = xsel: Manipulate the X selection
+	source = passera::git+https://github.com/icaroperseo/passera.git
+	sha256sums = SKIP
+
+pkgname = passera
+

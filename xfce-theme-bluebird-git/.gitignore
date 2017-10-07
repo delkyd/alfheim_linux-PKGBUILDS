@@ -1,0 +1,12 @@
+src
+srcdir
+pkg
+pkgdir
+Bluebird
+*.tar.*
+*.xz
+*.gz
+*.bz2
+*.tar
+*.zip
+*.rar

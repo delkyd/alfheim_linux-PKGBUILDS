@@ -1,0 +1,28 @@
+pkgbase = tauon-music-box
+	pkgdesc = A streamlined music player that uses BASS
+	pkgver = 2.5.2
+	pkgrel = 1
+	url = https://github.com/taiko2k/tauonmb
+	arch = x86_64
+	license = custom
+	depends = python3
+	depends = noto-fonts
+	depends = noto-fonts-emoji
+	depends = sdl2_image
+	depends = python-pillow
+	depends = python-pylast
+	depends = python-xlib
+	depends = python-gobject
+	depends = xdg-utils
+	depends = python-beautifulsoup4
+	depends = python-requests
+	depends = python-cairo
+	depends = python-stagger
+	depends = python-hsaudiotag3k
+	optdepends = python-flask: Web interface
+	optdepends = ffmpeg: File transcoding
+	source = https://github.com/Taiko2k/tauonmb/releases/download/v2.5.2/Tauon.Music.Box.v2.5.2.Linux.Bass.64bit.zip
+	sha1sums = 301bf7391208fd3cf92f2c138a75ae40248a5030
+
+pkgname = tauon-music-box
+

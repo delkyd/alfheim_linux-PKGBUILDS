@@ -1,0 +1,18 @@
+pkgbase = git-staredown-git
+	pkgdesc = A utility to find which GitHub pull requests have been associated with a file
+	pkgver = r9.121f916
+	pkgrel = 1
+	url = https://github.com/iv597/git-staredown
+	arch = any
+	license = MIT
+	makedepends = git
+	depends = python-pygit2
+	depends = python-github3
+	depends = python-colorama
+	provides = git-staredown
+	conflicts = git-staredown
+	source = git+https://github.com/iv597/git-staredown.git
+	md5sums = SKIP
+
+pkgname = git-staredown-git
+

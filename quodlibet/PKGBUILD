@@ -1,0 +1,44 @@
+# $Id$
+# Maintainer: Eric Bélanger <eric@archlinux.org>
+
+pkgname=quodlibet
+pkgver=3.9.1
+pkgrel=1
+pkgdesc="An audio library tagger, manager and player"
+arch=('any')
+license=('GPL2')
+url="https://github.com/quodlibet/quodlibet"
+depends=('gtk3' 'python2-gobject' 'python2-dbus' 'python2-cairo' 'mutagen' 
+         'gst-plugins-base' 'gst-plugins-good' 'gst-plugins-ugly' 
+	 'python2-futures' 'python2-feedparser' 'python2-faulthandler')
+makedepends=('intltool')
+optdepends=('gst-libav: for ffmpeg (ASF/WMA) support'
+            'gst-plugins-bad: for Musepack support'
+            'libkeybinder3: for the multimedia keys support'
+            'media-player-info: for media devices support'
+            'python2-musicbrainzngs: for "MusicBrainz Lookup" plugin'
+            'python2-pyinotify: for "Automatic library update" plugin'
+	    'kakasi: for "Kana/Kanji Simple Inverter" plugin'
+            'gst-plugins-bad: for "Audio Pitch/Speed" plugin')
+provides=('quodlibet-plugins')
+conflicts=('quodlibet-plugins')
+replaces=('quodlibet-plugins')
+options=('!makeflags')
+source=(${pkgname}-${pkgver}.tar.gz::https://github.com/quodlibet/quodlibet/archive/release-${pkgver}.tar.gz)
+sha1sums=('e6c5b3b25d682d6846642fe797bf66d3463b3a33')
+
+prepare() {
+  cd ${pkgname}-release-${pkgver}/quodlibet
+# Fix zsh completions dir
+  sed -e 's|vendor-completions|site-functions|' -i gdist/zsh_completions.py
+}
+
+build() {
+  cd ${pkgname}-release-${pkgver}/quodlibet
+  python2 setup.py build
+}
+
+package() {
+  cd ${pkgname}-release-${pkgver}/quodlibet
+  python2 setup.py install --root="${pkgdir}"
+}

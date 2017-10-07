@@ -1,0 +1,15 @@
+pkgbase = egl-man-pages
+	pkgdesc = EGL Man Pages
+	pkgver = 20170107.r10
+	pkgrel = 1
+	url = http://www.opengl.org/wiki/Getting_started/XML_Toolchain_and_Man_Pages
+	arch = any
+	license = custom
+	makedepends = libxslt
+	makedepends = docbook-xsl
+	makedepends = subversion
+	source = git+https://github.com/KhronosGroup/EGL-Registry
+	md5sums = SKIP
+
+pkgname = egl-man-pages
+

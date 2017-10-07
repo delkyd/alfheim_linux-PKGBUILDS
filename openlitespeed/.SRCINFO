@@ -1,0 +1,24 @@
+pkgbase = openlitespeed
+	pkgdesc = A high-performance, lightweight, open source HTTP server
+	pkgver = 1.4.26
+	pkgrel = 1
+	url = http://open.litespeedtech.com/mediawiki/index.php/Downloads
+	install = openlitespeed.install
+	arch = x86_64
+	arch = i686
+	license = GPLv3
+	makedepends = git
+	makedepends = imake
+	depends = pcre
+	depends = rcs
+	depends = geoip
+	depends = expat
+	depends = openssl
+	provides = openlitespeed
+	source = http://open.litespeedtech.com/packages/openlitespeed-1.4.26.tgz
+	source = openlitespeed.service
+	md5sums = 61be0e87c997b2346b360fc5f8367962
+	md5sums = f4acf3cdbf449a457818982eb933d6f7
+
+pkgname = openlitespeed
+

@@ -1,0 +1,21 @@
+pkgbase = python-musicbrainzngs-git
+	pkgdesc = bindings for the MusicBrainz NGS web service (WS/2)
+	pkgver = 0.5_86.g98b6885
+	pkgrel = 1
+	url = http://python-musicbrainzngs.readthedocs.org/
+	arch = any
+	license = BSD
+	makedepends = git
+	source = git+https://github.com/alastair/python-musicbrainzngs.git
+	md5sums = SKIP
+
+pkgname = python-musicbrainzngs-git
+	depends = python
+	provides = python-musicbrainzngs=0.5_86.g98b6885
+	conflicts = python-musicbrainzngs
+
+pkgname = python2-musicbrainzngs-git
+	depends = python2
+	provides = python2-musicbrainzngs=0.5_86.g98b6885
+	conflicts = python2-musicbrainzngs
+

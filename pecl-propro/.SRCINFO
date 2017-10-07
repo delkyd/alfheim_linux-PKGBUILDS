@@ -1,0 +1,15 @@
+pkgbase = pecl-propro
+	pkgdesc = Property proxy
+	pkgver = 2.0.0
+	pkgrel = 1
+	url = http://pecl.php.net/package/propro
+	arch = i686
+	arch = x86_64
+	license = BSD
+	makedepends = autoconf
+	depends = php
+	source = http://pecl.php.net/get/propro-2.0.0.tgz
+	md5sums = 355d8fe8ca8a2ac47ecbc3a80e09af5f
+
+pkgname = pecl-propro
+

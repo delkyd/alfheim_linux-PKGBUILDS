@@ -1,0 +1,35 @@
+# $Id$
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Committer: Manolis Tzanidakis <manolis@archlinux.org>
+
+pkgname=getmail
+pkgver=5.3
+pkgrel=1
+pkgdesc="A POP3 mail retriever with reliable Maildir and command delivery."
+arch=(any)
+url="http://pyropus.ca/software/getmail"
+license=("GPL")
+depends=('python2')
+optdepends=('python2-gnomekeyring: for storing passwords in gnome-keyring')
+# no signature, no https
+source=(http://pyropus.ca/software/getmail/old-versions/$pkgname-$pkgver.tar.gz)
+sha256sums=('804cd54753272826b490d4c826fd78cc352e1ae3e400c57c698b55eb288a9c3e')
+
+prepare() {
+  cd ${pkgname}-${pkgver}
+  # fix broken shebang calls
+  sed -i -e "s|#![ ]*/usr/bin/env python|#!/usr/bin/env python2|" getmailcore/__init__.py
+  sed -i -e "s|#![ ]*/usr/bin/env python2.3|#!/usr/bin/env python2|" $(find . -name '*.py')
+  # recheck
+  head -1 $(find . -name '*.py')
+}
+
+build() {
+  cd ${pkgname}-${pkgver}
+  python2 setup.py build
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  python2 setup.py install --root=${pkgdir}
+}

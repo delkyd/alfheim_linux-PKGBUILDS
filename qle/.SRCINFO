@@ -1,0 +1,40 @@
+pkgbase = qle
+	pkgdesc = QSO logger and log editor
+	pkgver = 0.0.40
+	pkgrel = 1
+	url = http://home.kpn.nl/w.knol18/qle/qle.html
+	arch = any
+	license = GPL
+	depends = perl>=5.10.0
+	depends = perl-tk
+	depends = sqlite3
+	depends = sqlite3-doc
+	depends = perl-pdf-labels
+	depends = perl-dbd-sqlite
+	depends = perl-dbi
+	depends = perl-config-general
+	depends = perl-term-twiddle-qle
+	depends = perl-tk-splash>=0.16
+	depends = hamradio-menus
+	optdepends = hamlib: rig interfacing
+	optdepends = cwdaemon: transmitting cw
+	optdepends = winkeydaemon: usb cw xmit
+	optdepends = perl-tk-fontdialog: font choosing
+	optdepends = masterscp: supercheckpartial files
+	optdepends = cty: country files
+	optdepends = bigcty: contest version country files
+	source = http://home.kpn.nl/w.knol18/qle/qle-0.0.40.tar.gz
+	source = qle.desktop
+	source = qle.png
+	source = qle.1
+	md5sums = a9af22383c5c93183a7d9cb539b08264
+	md5sums = b857e609ba681a0b165cd4fe6892844f
+	md5sums = 5b60b0fe52cb3ca0fab0cfe87a5f0c8a
+	md5sums = 6d96b9ef2d85019c2630819db6e2e369
+	sha256sums = 37583ab5a7fd39ba9e5c87c42fe7b9112ab5cf4605b217c13dac193379409e81
+	sha256sums = 382596bf1c17c2325cf5fb9bd80c3e9d9384d24a2bf137c1dbfa135f51dbfdb4
+	sha256sums = a01093436465b946dc39d49a69ddf55ab9ec7ae56d4408167d03bbf698c5c570
+	sha256sums = 75f688dddbddada3c9ade3a6a74809853ad3f15f94ed4d85f410ad7cdcc5a20c
+
+pkgname = qle
+

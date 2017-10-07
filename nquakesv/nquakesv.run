@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ ! -d ~/.nquakesv ];
+then
+  /usr/bin/nquakesv-init
+fi
+
+cd ~/.nquakesv
+/usr/share/nquakesv/mvdsv  "$@"
+exit $?

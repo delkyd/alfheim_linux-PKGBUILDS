@@ -1,0 +1,27 @@
+pkgbase = scapy-git
+	pkgdesc = A powerful interactive packet manipulation program written in Python
+	pkgver = 2.3.3.dev519
+	pkgrel = 1
+	url = http://www.secdev.org/projects/scapy/
+	arch = any
+	license = GPL2
+	checkdepends = python2-cryptography
+	checkdepends = python2-pyx
+	checkdepends = python2-matplotlib
+	checkdepends = graphviz
+	checkdepends = sox
+	makedepends = git
+	depends = tcpdump
+	depends = python2
+	optdepends = python2-cryptography: WEP, IPsec and SSL/TLS support
+	optdepends = python2-pyx: psdump() and pdfdump() functions
+	optdepends = python2-matplotlib: plotting support
+	optdepends = graphviz: conversations() method support
+	optdepends = sox: for VOIP support
+	provides = scapy
+	conflicts = scapy
+	source = scapy-git::git+https://github.com/secdev/scapy
+	sha256sums = SKIP
+
+pkgname = scapy-git
+

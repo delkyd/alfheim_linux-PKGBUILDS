@@ -1,0 +1,27 @@
+post_install() {
+  for username in `ls /home`; do
+    user_exists=$(id -u $username > /dev/null 2>&1; echo $?)
+
+    if [ "$user_exists" != "1" ]; then
+        user_id=`id --user $username`
+
+        su - $username -c "XDG_RUNTIME_DIR=/run/user/$user_id /usr/bin/systemctl --user daemon-reload > /dev/null 2>&1"
+        su - $username -c "XDG_RUNTIME_DIR=/run/user/$user_id /usr/bin/systemctl --user enable appimaged > /dev/null 2>&1"
+        su - $username -c "XDG_RUNTIME_DIR=/run/user/$user_id /usr/bin/systemctl --user start appimaged > /dev/null 2>&1"
+    fi
+  done
+}
+
+pre_remove() {
+  for username in `ls /home`; do
+    user_exists=$(id -u $username > /dev/null 2>&1; echo $?)
+
+    if [ "$user_exists" != "1" ]; then
+        user_id=`id --user $username`
+
+        su - $username -c "XDG_RUNTIME_DIR=/run/user/$user_id /usr/bin/systemctl --user daemon-reload > /dev/null 2>&1"
+        su - $username -c "XDG_RUNTIME_DIR=/run/user/$user_id /usr/bin/systemctl --user stop appimaged > /dev/null 2>&1"
+        su - $username -c "XDG_RUNTIME_DIR=/run/user/$user_id /usr/bin/systemctl --user disable appimaged > /dev/null 2>&1"
+    fi
+  done
+}

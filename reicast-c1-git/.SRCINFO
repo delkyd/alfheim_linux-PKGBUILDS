@@ -1,0 +1,20 @@
+pkgbase = reicast-c1-git
+	pkgdesc = A multiplatform Sega Dreamcast emulator for ODROID-C1 (development version)
+	pkgver = r1284.d3c3feb
+	pkgrel = 1
+	url = http://reicast.com/
+	arch = armv7h
+	license = GPL2
+	license = BSD
+	license = MIT
+	makedepends = git
+	depends = libgl
+	depends = alsa-lib
+	provides = reicast
+	conflicts = reicast
+	conflicts = reicast-git
+	source = reicast::git+https://github.com/reicast/reicast-emulator.git
+	md5sums = SKIP
+
+pkgname = reicast-c1-git
+

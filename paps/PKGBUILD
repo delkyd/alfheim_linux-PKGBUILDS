@@ -1,0 +1,34 @@
+# $Id$
+# Maintainer: Gaetan Bisson <bisson@archlinux.org>
+# Contributor: Artyom 'logus' Pervukhin <logus9@gmail.com>
+# Contributor: Tim Yang <tdy@gmx.com>
+
+pkgname=paps
+pkgver=0.6.8
+pkgrel=6
+pkgdesc='UTF-8 to PostScript converter via Pango'
+url='http://paps.sourceforge.net/'
+license=('LGPL')
+depends=('pango')
+arch=('i686' 'x86_64')
+source=("https://downloads.sourceforge.net/paps/paps-${pkgver}.tar.gz"
+        'freetype2.patch')
+sha256sums=('db214c4ea7ecde2f7986b869f6249864d3ff364e6f210c15aa2824bcbd850a20'
+            '67b182e7f42d6ccad3c33c1d6f64187cd7ec5b60581d1f4b1fed2f458271d94a')
+
+prepare() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	export LDFLAGS=${LDFLAGS/,--as-needed/}
+	patch -p1 -i ../freetype2.patch
+}
+
+build() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	./configure --prefix=/usr --mandir=/usr/share/man
+	make
+}
+
+package() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	make DESTDIR="${pkgdir}" install
+}

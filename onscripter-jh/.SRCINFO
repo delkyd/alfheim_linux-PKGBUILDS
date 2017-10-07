@@ -1,0 +1,27 @@
+pkgbase = onscripter-jh
+	pkgdesc = onscripter fork with custom improvements.
+	pkgver = 0.7.3
+	pkgrel = 1
+	url = https://bitbucket.org/jh10001/onscripter-jh
+	arch = i686
+	arch = x86_64
+	arch = armv7h
+	license = GPL
+	makedepends = gcc
+	depends = sdl2
+	depends = sdl2_mixer
+	depends = sdl2_ttf
+	depends = sdl2_image
+	depends = libjpeg-turbo
+	depends = bzip2
+	depends = libvorbis
+	depends = lua
+	provides = onscripter-jh-hg
+	conflicts = onscripter-jh-hg
+	source = https://bitbucket.org/jh10001/onscripter-jh/get/SDL2.zip
+	source = target.patch
+	sha256sums = 6f0c6495c72477af2d52d64182b964aa567db9bb8729f5cf03e0b29b40c70ace
+	sha256sums = d169f6ec66c70429bce973be76f77c8ae05ecaead30e1586e5f68e284dfc4b94
+
+pkgname = onscripter-jh
+

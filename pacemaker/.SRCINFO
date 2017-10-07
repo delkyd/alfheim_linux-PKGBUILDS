@@ -1,0 +1,30 @@
+pkgbase = pacemaker
+	pkgdesc = advanced, scalable high-availability cluster resource manager
+	pkgver = 1.1.16
+	pkgrel = 8
+	url = https://github.com/ClusterLabs/pacemaker/
+	install = pacemaker.install
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	makedepends = libxml2
+	makedepends = inkscape
+	makedepends = help2man
+	makedepends = asciidoc
+	depends = gnutls
+	depends = glib2
+	depends = pam
+	depends = libtool
+	depends = python
+	depends = libxslt
+	depends = libesmtp
+	depends = corosync
+	depends = libqb
+	depends = resource-agents
+	source = https://github.com/ClusterLabs/pacemaker/archive/Pacemaker-1.1.16.tar.gz
+	source = crm_report.in
+	md5sums = a3b9d075bc9114ff698966e57e50bb12
+	md5sums = 07f26ba3fff0749cc5bc5b4da154611d
+
+pkgname = pacemaker
+

@@ -1,0 +1,15 @@
+pkgbase = hangupsbot
+	pkgdesc = Bot for Google Hangouts
+	pkgver = 1.7.1
+	pkgrel = 2
+	url = https://github.com/xmikos/hangupsbot
+	arch = any
+	license = GPL3
+	makedepends = python-setuptools
+	depends = hangups-git
+	depends = python-appdirs
+	source = https://github.com/xmikos/hangupsbot/archive/v1.7.1.tar.gz
+	sha256sums = 5c0cda30ef0b556d04b91fed1c17a5d170bc556bb23b0c960b301224272b5565
+
+pkgname = hangupsbot
+

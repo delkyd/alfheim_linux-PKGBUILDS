@@ -1,0 +1,20 @@
+pkgbase = python-grip
+	pkgdesc = Preview GitHub Markdown files like Readme locally before committing them
+	pkgver = 4.4.0
+	pkgrel = 1
+	url = https://github.com/joeyespo/grip
+	arch = any
+	license = MIT
+	makedepends = python-setuptools
+	depends = python
+	depends = python-docopt
+	depends = python-flask
+	depends = python-markdown
+	depends = python-path-and-address
+	depends = python-pygments
+	depends = python-requests
+	source = python-grip-4.4.0.tar.gz::https://github.com/joeyespo/grip/archive/v4.4.0.tar.gz
+	sha256sums = fc0a46635b3bd305f9de7e65cf5dcc675a76fdd06abc7112f59a9b2ffe3bbfcc
+
+pkgname = python-grip
+

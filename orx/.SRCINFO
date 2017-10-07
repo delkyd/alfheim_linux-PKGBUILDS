@@ -1,0 +1,16 @@
+pkgbase = orx
+	pkgdesc = ORX: Portable Game Engine
+	pkgver = 1.8
+	pkgrel = 1
+	url = http://orx-project.org
+	arch = i686
+	arch = x86_64
+	license = zlib/libpng
+	depends = openal
+	depends = libsndfile
+	depends = mesa-libgl
+	source = https://github.com/orx/orx/releases/download/1.8/orx-dev-linux32-1.8.tar.bz2
+	md5sums = 00c0bbb2c6423ec9f5d63ac844815663
+
+pkgname = orx
+

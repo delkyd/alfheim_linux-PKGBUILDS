@@ -1,0 +1,77 @@
+#!/bin/ash
+
+set -u
+set -e
+# set -x
+
+# Grab functions
+[ -f /usr/lib/nannycam/nannycam.functions ] && source /usr/lib/nannycam/nannycam.functions
+[ -f nannycam.functions ] && source nannycam.functions
+
+# Check if running outside the initramfs environment, setup env otherwise
+ensure_initramfs_environment
+
+# Parse options
+while getopts ":k:h:q:m:p:e:" opt; do
+  case $opt in
+    k)
+      AUTH_KEY_FILE="$OPTARG"
+      ;;
+    h)
+      HASH_ALG="$OPTARG"
+      ;;
+    q)
+      QR_OPTS="$OPTARG"
+      ;;
+    m)
+      EXPECTED_MBR_HASH="$OPTARG"
+      ;;
+    p)
+      EXPECTED_MBR_GAP_HASH="$OPTARG"
+      ;;
+    e)
+      EXPECTED_EFI_STUB_HASH="$OPTARG"
+      ;;
+    \?)
+      nannycam_usage >&2
+      exit 1
+      ;;
+    :)
+      echo "$OPTARG requires an argument" >&2
+      exit 1
+  esac
+done
+
+[ -z ${AUTH_KEY_FILE:-} ] && err_required_arg k
+[ -z ${EXPECTED_MBR_HASH:-} ] && err_required_arg m
+[ -z ${EXPECTED_MBR_GAP_HASH:-} ] && err_required_arg p
+[ -z ${EXPECTED_EFI_STUB_HASH:-} ] && err_required_arg e
+
+# Can't access block devices unless root
+assert_root
+
+ACTUAL_MBR_HASH="not checked"
+ACTUAL_MBR_GAP_HASH="not checked"
+ACTUAL_EFI_STUB_HASH="not checked"
+
+if [ ! -f "$AUTH_KEY_FILE" ]; then
+  echo "Keyfile: $AUTH_KEY_FILE not found, aborting boot." >&2
+  exit 2
+fi
+
+check_mbr && check_mbr_gap && check_efi_stub || hash_mismatch
+
+DATE_TIME="$(date +%s)"
+PREFIX="D${DATE_TIME}S"
+(
+  echo -n "$PREFIX"
+  echo -n "$DATE_TIME" \
+  | openssl dgst -"$HASH_ALG" -sign "$AUTH_KEY_FILE" 
+) \
+  | qrencode -8 $QR_OPTS
+echo "$DATE_TIME"
+
+response=""
+while [[ "$response" != "YES" ]]; do
+  read -p "Enter YES if the signature is correct: " response
+done
